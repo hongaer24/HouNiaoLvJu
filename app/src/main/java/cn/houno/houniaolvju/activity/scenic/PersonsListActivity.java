@@ -70,7 +70,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
         userid = PrefUtils.getString(mActivity, "userid", "");
         RequestParams params = new RequestParams(Constants.GET_TOURIST_URL);
         params.addBodyParameter("userid", userid);
-        Log.i("888", "id===" + params);
+
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
