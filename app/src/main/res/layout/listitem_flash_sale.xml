@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@color/imageview_background_gray"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/tv_order_title_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="#505050"
+        android:textSize="16sp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_order_title_txt"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/iv_hdsj"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/hdsj"/>
+
+        <TextView
+            android:id="@+id/tv_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toLeftOf="@+id/tv_price"
+            android:layout_toRightOf="@+id/iv_hdsj"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="2016-10-18~2016-11-21"
+            android:textColor="@color/app_theme_green"/>
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="#ff0000"
+            android:textSize="16sp"/>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,113 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/app_theme_green</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <!--=====================================================-->
+    <style name="radioButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:padding">1dp</item>
+        <item name="android:textColor">@color/selector_tab_txt</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+    </style>
+
+    <style name="textStyle01">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
+    <style name="textStyle00">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="textStyle02">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/light_gray_txt</item>
+    </style>
+
+    <style name="textStyle04">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="textStyle05">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="popup_anim" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/pop_exit_anim</item>
+    </style>
+
+    <style name="bigRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_evaluate_big</item>
+        <item name="android:minHeight">30dp</item>
+        <item name="android:maxHeight">30dp</item>
+        <item name="android:minWidth">30dp</item>
+    </style>
+
+    <style name="smallRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingbar_evaluate_small</item>
+        <item name="android:minHeight">20dp</item>
+        <item name="android:maxHeight">20dp</item>
+        <item name="android:minWidth">20dp</item>
+    </style>
+
+    <style name="Dialog" parent="android:style/Theme.Dialog">
+        <item name="android:background">#00000000</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="LetterIndexTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">@dimen/side_letter_bar_width</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/cp_gray</item>
+    </style>
+
+    <declare-styleable name="Border2TextView">
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="cornerRadius" format="dimension" />
+        <attr name="strokeColor" format="color" />
+        <attr name="followTextColor" format="boolean" />
+    </declare-styleable>
+
+    <style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/selector_order_check_box</item>
+    </style>
+
+    <style name="PromptCarryDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="DatePicker.Dialog" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+</resources>

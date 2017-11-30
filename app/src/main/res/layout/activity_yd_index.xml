@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_theme_green"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="异地养老"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/ll_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
+            android:orientation="horizontal">
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                style="@style/Widget.AppCompat.ProgressBar"
+                tools:targetApi="lollipop"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:indeterminateTint="#009A44"
+
+                android:indeterminateTintMode="src_atop" />
+
+            <TextView
+                android:id="@+id/tv_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="数据加载中..." />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <!--搜索栏-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="7dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/shape_white_gray"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="10dp"
+                    android:src="@drawable/icon_hotel_list_search" />
+
+                <EditText
+                    android:id="@+id/et_yd_index_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:ellipsize="end"
+                    android:hint="异养机构/位置不限"
+                    android:imeOptions="actionSearch"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@null"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <com.andview.refreshview.XRefreshView xmlns:xrefreshview="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rfv_yd_index"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#fff"
+                xrefreshview:autoRefresh="false">
+
+                <com.andview.refreshview.XScrollView
+                    android:id="@+id/xsv_yd_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/ll_main_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <com.jude.rollviewpager.RollPagerView
+                            android:id="@+id/rpv_yd_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            app:rollviewpager_play_delay="3000" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pic_hot_region" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rcv_hot_region"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:background="@color/home_space" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/pic_hot_partment" />
+
+                        <cn.houno.houniaolvju.view.InnerListView
+                            android:id="@+id/lv_yd_index"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+                </com.andview.refreshview.XScrollView>
+            </com.andview.refreshview.XRefreshView>
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

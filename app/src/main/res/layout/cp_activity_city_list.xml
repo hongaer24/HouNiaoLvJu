@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cp_content_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/ly_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/app_theme_green">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:src="@drawable/icon_back" />
+
+            <TextView
+                android:id="@+id/tv_topbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="城市选择"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/cp_shadow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_white_gray"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="6dp"
+            android:src="@drawable/cp_ic_search"
+            tools:ignore="ContentDescription" />
+
+        <AutoCompleteTextView
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:completionThreshold="1"
+            android:gravity="center_vertical"
+            android:hint="@string/cp_hint_search_box"
+            android:inputType="text"
+            android:singleLine="true"
+            android:textColor="@color/cp_gray"
+            android:textColorHint="@color/cp_gray"
+            android:textSize="16sp"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:id="@+id/iv_search_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:src="@drawable/cp_ic_search_clear"
+            android:visibility="gone"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#dddddd" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="#009A44"
+            android:indeterminateTintMode="src_atop"
+            tools:targetApi="lollipop" />
+
+        <ListView
+            android:id="@+id/listview_all_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:listSelector="@android:color/transparent"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_letter_overlay"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/cp_overlay_bg"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <cn.houno.houniaolvju.view.SideLetterBar
+            android:id="@+id/side_letter_bar"
+            android:layout_width="@dimen/side_letter_bar_width"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            tools:ignore="RtlHardcoded" />
+
+        <ListView
+            android:id="@+id/listview_search_result"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:cacheColorHint="@android:color/transparent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0dp"
+            android:listSelector="@android:color/transparent"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="center_horizontal"
+            android:visibility="gone"
+            tools:showIn="@layout/cp_activity_city_list">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/cp_nothing_found"
+                android:textColor="@color/cp_gray"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

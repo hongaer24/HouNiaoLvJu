@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/app_theme_green"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back"/>
+
+        <TextView
+            android:id="@+id/tv_topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="绑定会员卡"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_banner"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/pic_bg_member"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="120dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:src="@drawable/pic_member_card"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:divider="@drawable/line_dddddd"
+                android:dividerPadding="10dp"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="旅居卡号"
+                        android:textColor="#505050"
+                        android:textSize="15sp"/>
+
+                    <EditText
+                        android:id="@+id/et_vip_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="会员姓名"
+                        android:textColor="#505050"
+                        android:textSize="15sp"/>
+
+                    <cn.houno.houniaolvju.view.NameEditText
+                        android:id="@+id/et_vip_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:inputType="textPersonName"
+                        android:background="@null"
+                        android:textSize="15sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_phonenum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="手机号码"
+                        android:textColor="#505050"
+                        android:textSize="15sp"/>
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toLeftOf="@+id/tv_get_cord"
+                        android:layout_toRightOf="@+id/tv_phonenum"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:textSize="15sp"
+                        />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_yzm"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="验  证  码"
+                        android:textColor="#505050"
+                        android:textSize="15sp"/>
+
+                    <EditText
+                        android:layout_toRightOf="@+id/tv_yzm"
+                        android:id="@+id/et_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toLeftOf="@+id/tv_get_cord"
+                        android:background="@null"
+                        android:inputType="number"
+                        android:textSize="15sp"
+                        />
+                    <TextView
+                        android:id="@+id/tv_get_cord"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="获取验证码"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/btn_bind"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/selector_orgs_btn"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="绑定"
+                android:textColor="#ffffff"
+                android:textSize="17sp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

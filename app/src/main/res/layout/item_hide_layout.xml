@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#F0F0F0"
+    android:layout_marginLeft="20dp"
+    android:weightSum="4">
+
+    <TextView
+        android:id="@+id/tv_seat_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="一等座" />
+
+    <TextView
+        android:id="@+id/tv_seat_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="10dp"
+        android:text="¥12282" />
+
+    <TextView
+        android:id="@+id/tv_seat_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:paddingRight="30dp"
+        android:text="1张" />
+
+
+    <TextView
+        android:id="@+id/tv_seat_reserve"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="预定" />
+
+</LinearLayout>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_hide_area"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="#F0F0F0"
+    android:weightSum="4">
+
+    <TextView
+        android:id="@+id/tv_seat_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:text="一等座" />
+
+    <TextView
+        android:id="@+id/tv_seat_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingLeft="10dp"
+        android:text="¥189"
+        android:textColor="@color/red" />
+
+    <TextView
+        android:id="@+id/tv_seat_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+       android:gravity="right"
+        android:text="142张" />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_seat_reserve"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:background="@drawable/custom_corners_bg_green"
+            android:gravity="center"
+            android:text="预定"
+            android:textSize="12sp"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.houno.houniaolvju">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- <uses-permission android:name="android.permission.REAL_GET_TASKS" -->
+    <!-- android:permissionGroup="android.permission-group.APP_INFO" -->
+    <!-- android:protectionLevel="signature|system" -->
+    <!-- /> -->
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <!-- ShareSdk -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <!-- 百度地图权限 -->
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- SD卡读取权限，用户写入离线定位数据 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <!-- 百度地图导航权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 摄影机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- 支付宝权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 银联支付权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature android:name="android.hardware.nfc.hce" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/icon_app"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <!-- 百度地图配置 -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="z04oGZNc2oHWWp1vlgkcHllpdrD8Deym" />
+        <!-- 百度地图定位 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <!-- 欢迎动画 -->
+        <activity
+            android:name=".SplashActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 主页 -->
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 侧边栏关于界面 -->
+        <activity
+            android:name=".activity.AboutActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 搜索界面 -->
+        <activity
+            android:name=".activity.SearchActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 扫描二维码界面 -->
+        <activity
+            android:name="com.zxing.activity.CaptureActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+        <!-- 扫描二维码之后界面 -->
+        <activity
+            android:name=".activity.ScanPromptActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 限时抢购列表 -->
+        <activity
+            android:name=".activity.FlashSaleListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 限时抢购详情 -->
+        <activity
+            android:name=".activity.FlashSaleDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 限时抢购下单 -->
+        <activity
+            android:name=".activity.FillInFlashSaleOrderActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 周边酒店 -->
+        <activity
+            android:name=".activity.AmbitusHotelActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 酒店列表 -->
+        <activity
+            android:name=".activity.hotel.HotelListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 国际酒店列表 -->
+        <activity
+            android:name=".activity.foreignhotel.ForeignHotelListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 活动列表 -->
+        <activity
+            android:name=".activity.ActivityListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 酒店搜索 -->
+        <activity
+            android:name=".activity.hotel.SearchHotelActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 日期选择 -->
+        <activity
+            android:name=".activity.DatePickerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 酒店详情 -->
+        <activity
+            android:name=".activity.hotel.HotelDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 酒店详情信息 -->
+        <activity
+            android:name=".activity.hotel.HotelDetailDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 酒店详情点评 -->
+        <activity
+            android:name=".activity.hotel.CommentListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 酒店地图 -->
+        <activity
+            android:name=".activity.hotel.HotelMapActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 酒店导航 -->
+        <activity
+            android:name=".activity.BNDemoGuideActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 酒店填写订单 -->
+        <activity
+            android:name=".activity.hotel.FillInHotelOrderActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 酒店订单详情 -->
+        <activity
+            android:name=".activity.OrderDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 分权度假详情 -->
+        <activity
+            android:name=".activity.FenQuanDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 城市列表 -->
+        <activity
+            android:name=".activity.CitySelectActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 景点首页 -->
+        <activity
+            android:name=".activity.scenic.ScenicIndexActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 景点列表 -->
+        <activity
+            android:name=".activity.scenic.ScenicListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 景点详情 -->
+        <activity
+            android:name=".activity.scenic.ScenicDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 景点填写订单 -->
+        <activity
+            android:name=".activity.scenic.FillInScenicOrderActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 景点游玩日期选择页面 -->
+        <activity
+            android:name=".activity.scenic.SingleDatePickerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 异地养老首页 -->
+        <activity
+            android:name=".activity.ydhotel.YdIndexActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 异地养老列表 -->
+        <activity
+            android:name=".activity.ydhotel.YdListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 异地养老详情 -->
+        <activity
+            android:name=".activity.ydhotel.YdDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 异地养老下单 -->
+        <activity
+            android:name=".activity.ydhotel.FillInYdOrderActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 异地养老住宿时间选择 -->
+        <activity
+            android:name=".activity.ydhotel.YdDatePickerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 进行中订单详情 -->
+        <activity
+            android:name=".fragment.orderpage.IngOrderDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 机票订单详情 -->
+        <activity
+            android:name=".fragment.orderpage.FlightOrderActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 机票改签 -->
+        <activity
+            android:name=".fragment.orderpage.FlightChangeSignActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 已结束订单详情 -->
+        <activity
+            android:name=".fragment.orderpage.EndOrderDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 订单评论 -->
+        <activity
+            android:name=".fragment.orderpage.CommentDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 设置密码 -->
+        <activity
+            android:name=".fragment.myinfo.ModifyPasswordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 头像图片选择 -->
+        <activity
+            android:name="me.iwf.photopicker.PhotoPickerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <!-- 头像查看 -->
+        <activity
+            android:name="me.iwf.photopicker.PhotoPagerActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+
+        <!-- 编辑资料 -->
+        <activity
+            android:name=".fragment.myinfo.EditActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 关于我们 -->
+        <activity
+            android:name=".fragment.myinfo.AboutUsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 我的钱包 -->
+        <activity
+            android:name=".fragment.myinfo.wallet.MyWalletActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+        <!-- 我的钱包-充值记录 -->
+        <activity
+            android:name=".fragment.myinfo.wallet.WalletRecodeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 我的钱包-返现详情 -->
+        <activity
+            android:name=".fragment.myinfo.wallet.WalletBackDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 我的钱包-余额提现 -->
+        <activity
+            android:name=".fragment.myinfo.wallet.WalletWithDrawActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 我的钱包-提现详情 -->
+        <activity
+            android:name=".fragment.myinfo.wallet.WalletDrawalsDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 找回密码 -->
+        <activity
+            android:name=".fragment.myinfo.BackPasswordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 登录 -->
+        <activity
+            android:name=".fragment.myinfo.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".fragment.myinfo.RegisterActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- 头像 -->
+        <activity
+            android:name=".fragment.myinfo.HeadImageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 收藏 -->
+        <activity
+            android:name=".fragment.myinfo.CollectionActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 优惠券 -->
+        <activity
+            android:name=".fragment.myinfo.coupon.CouponActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 优惠券列表 -->
+        <activity
+            android:name=".fragment.myinfo.coupon.CouponListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 绑定会员卡 -->
+        <activity
+            android:name=".fragment.myinfo.card.BindCardActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 会员卡 -->
+        <activity
+            android:name=".fragment.myinfo.card.MemberCardActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop" />
+        <!-- 会员卡信息 -->
+        <activity
+            android:name=".fragment.myinfo.card.MemberCardInfoActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 会员卡密码修改 -->
+        <activity
+            android:name=".fragment.myinfo.card.ModifyCardPassword"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 旅居卡充值 -->
+        <activity
+            android:name=".fragment.myinfo.card.CardAndWalletRechargeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 卡的充值/消费记录 -->
+        <activity
+            android:name=".fragment.myinfo.card.CardRecodeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 记录详情 -->
+        <activity
+            android:name=".fragment.myinfo.card.RecodeDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 机票预订 -->
+        <activity
+            android:name=".activity.flight.FlightNewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <!-- 机场城市列表 -->
+        <activity
+            android:name=".activity.flight.CityPickerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <!-- 机票列表 -->
+        <activity
+            android:name=".activity.flight.FlightListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <!-- 机票列表详情 -->
+        <activity
+            android:name=".activity.flight.FlightSeatActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <!-- 机票下单 -->
+        <activity
+            android:name=".activity.flight.FillInFlightOrderActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="false"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 添加乘机人 -->
+        <activity
+            android:name=".activity.flight.SelectPassengersActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="false"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- 编辑乘机人 -->
+        <activity
+            android:name=".activity.flight.EditPassengersActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="false"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <!-- 机票订单详情页 -->
+        <activity
+            android:name=".activity.flight.FlightOrderPayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:hardwareAccelerated="false"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <!-- =============================火车票相关=========================== -->
+        <activity
+            android:name=".activity.train.TrainInquiryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.train.TrainCitySelectActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.train.TrainOrderFillinActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".activity.train.TrainPassengersSelectActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.train.TrainListActivity1"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.train.TrainPassengersEditActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.train.TrainOrderPayActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.train.TrainOrderDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.train.TrainDatePickerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <!-- =============================支付宝=========================== -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <!-- =============================微信支付=========================== -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent" />
+        <!-- =============================银联支付=========================== -->
+        <!-- 银联支付相关配置 -->
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" />
+
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.unionpay.UPPayWapActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- =============================ShareSdk的Activity=========================== -->
+        <activity
+            android:name="com.mob.tools.MobUIShell"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <!-- QQ和QQ空间分享 QQ登录的回调必须要配置的 -->
+            <intent-filter>
+                <data android:scheme="tencent1105734270" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 调用新浪原生SDK，需要注册的回调activity -->
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- 微信分享回调 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" />
+        <activity android:name=".activity.scenic.FillNumberofPersonActivity" />
+        <activity android:name=".activity.scenic.PersonsListActivity" />
+        <activity android:name=".activity.scenic.PersonsEditActivity"></activity>
+    </application>
+
+</manifest>

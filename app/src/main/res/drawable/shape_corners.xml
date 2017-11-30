@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 实心 -->
+    <solid android:color="@android:color/white"/>
+    <!-- 边框 -->
+    <stroke
+        android:width="1px"
+        android:color="@color/hotel_list_line"/>
+
+    <corners android:radius="2dp"/>
+    <padding
+        android:bottom="2dp"
+        android:left="2dp"
+        android:right="2dp"
+        android:top="2dp"/>
+</shape>

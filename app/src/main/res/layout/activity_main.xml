@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/activity_background"
+                android:clipToPadding="true"
+                android:fitsSystemWindows="true"
+    >
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_tab_bar"
+        />
+
+     <RadioGroup
+        android:id="@+id/rg_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/tab_background"
+        android:orientation="horizontal"
+        android:paddingTop="3dp">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/radioButton"
+            android:checked="true"
+            android:drawableTop="@drawable/selector_tab_home"
+            android:text="首页"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_call"
+            style="@style/radioButton"
+            android:drawableTop="@drawable/selector_tab_call"
+            android:text="电话预定"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_order"
+            style="@style/radioButton"
+            android:drawableTop="@drawable/selector_tab_order"
+            android:text="订单"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_my"
+            style="@style/radioButton"
+            android:drawableTop="@drawable/selector_tab_my"
+            android:text="我的"/>
+    </RadioGroup>
+
+</RelativeLayout>

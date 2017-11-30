@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:background="@color/app_theme_green">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_alignParentLeft="true"
+            android:padding="10.0dip"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="选择乘车人"
+            android:textColor="#ffffffff"
+            android:textSize="20.0dip" />
+
+        <TextView
+            android:id="@+id/tv_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:padding="10.0dip"
+            android:text="确定"
+            android:textColor="#ffffffff" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#fff0f0f0"
+        android:orientation="vertical"
+        android:padding="10.0dip">
+
+        <RelativeLayout
+            android:id="@+id/rl_add_passengers"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_corners"
+            android:minHeight="45.0dip">
+
+            <ImageView
+                android:id="@+id/iv_1"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip"
+                android:layout_centerVertical="true"
+                android:padding="10.0dip"
+                android:src="@drawable/icon_add_passengers"
+                android:tint="@color/app_theme_green" />
+
+            <TextView
+                android:id="@+id/tv_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/iv_1"
+                android:text="添加乘车人"
+                android:textColor="@color/app_theme_green"
+                android:textSize="16.0sp" />
+
+            <ImageView
+                android:layout_width="15.0dip"
+                android:layout_height="15.0dip"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10.0dip"
+                android:src="@drawable/icon_go" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <cn.houno.houniaolvju.view.InnerListView
+                android:id="@+id/lv_passengers"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15.0dip"
+                android:divider="@drawable/line_dddddd"
+                android:dividerHeight="1dp"
+                android:background="#ffffffff" />
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:+'
+}
+android {
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+    /* defaultConfig {
+        multiDexEnabled true
+    }*/
+
+    defaultConfig {
+        applicationId "cn.houno.houniaolvju"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 19
+        versionName "2.2.4"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+            //multiDexEnabled true
+        }
+        buildTypes {
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            }
+        }
+        lintOptions {
+            checkReleaseBuilds false
+            abortOnError false
+        }
+    }
+
+    dependencies {
+        compile fileTree(include: ['*.jar'], dir: 'libs')
+        testCompile 'junit:junit:4.12'
+        compile 'com.android.support:appcompat-v7:23.4.0'
+        compile 'com.android.support:design:23.4.0'
+        compile 'com.jakewharton:butterknife:7.0.0'
+        compile project(':rollviewpager')
+        compile 'org.xutils:xutils:3.3.38'
+        //okHttp
+        compile 'com.squareup.okhttp:okhttp:2.4.0'
+        compile 'com.squareup.okio:okio:1.5.0'
+        compile 'com.google.code.gson:gson:2.8.0'
+        compile project(':countdownview')
+        compile project(':viewpagerindicator')
+        compile project(':dropdownmenu')
+        compile project(':expandabletextview')
+        compile files('libs/MobCommons-2016.1222.1756.jar')
+        compile files('libs/MobTools-2016.1222.1756.jar')
+        compile files('libs/ShareSDK-Core-2.8.0.jar')
+        compile files('libs/ShareSDK-QQ-2.8.0.jar')
+        compile files('libs/ShareSDK-QZone-2.8.0.jar')
+        compile files('libs/ShareSDK-Wechat-2.8.0.jar')
+        compile files('libs/ShareSDK-Wechat-Core-2.8.0.jar')
+        compile files('libs/ShareSDK-Wechat-Moments-2.8.0.jar')
+        compile project(':circleprogressbar')
+        compile files('libs/alipaySdk-20170922.jar')
+        compile files('libs/BaiduLBS_Android.jar')
+        compile files('libs/httpmime-4.1.2.jar')
+        compile files('libs/libammsdk.jar')
+        compile files('libs/UPPayAssistEx.jar')
+        compile files('libs/UPPayPluginExPro.jar')
+        compile project(':slidingmenu')
+        compile 'com.bigkoo:pickerview:2.1.1'
+        compile 'com.bigkoo:alertview:1.0.3'
+        compile 'com.makeramen:roundedimageview:2.2.1'
+        compile project(':barCodeTest')
+        compile project(':xrefreshview')
+        compile project(':PhotoPicker')
+    }
+}

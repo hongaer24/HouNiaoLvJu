@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:minHeight="50dp"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_seat_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="经济舱"
+        android:textColor="@color/black_txt"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_seat_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@+id/tv_seat_msg"
+        android:text="剩余3张"
+        android:textColor="#ff0000"
+        android:textSize="16sp" />
+
+    <cn.houno.houniaolvju.view.Border2TextView
+        android:id="@+id/tv_flight_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="去预订"
+       android:padding="3dp"
+        android:textColor="@color/app_theme_green"
+        android:textSize="15sp" />
+    <TextView
+        android:id="@+id/tv_flight_price"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/tv_flight_book"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="¥880"
+        android:textColor="@color/btn_orgs"/>
+</RelativeLayout>

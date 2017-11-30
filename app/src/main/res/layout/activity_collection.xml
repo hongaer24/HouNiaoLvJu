@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_wdsc"
+        android:background="@color/app_theme_green"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <ImageView
+            android:id="@+id/iv_wdsc_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back"/>
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="我的收藏"
+            android:textSize="20dp"/>
+
+    </RelativeLayout>
+
+    <com.andview.refreshview.XRefreshView
+        android:id="@+id/rfv_collection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_wdsc"
+
+        >
+
+        <ListView
+            android:id="@+id/lv_collection"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </com.andview.refreshview.XRefreshView>
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_no_collection"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂无收藏，快去收藏吧~"/>
+
+
+</RelativeLayout>

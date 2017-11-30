@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/app_theme_green">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back" />
+
+
+        <TextView
+            android:id="@+id/tv_dep_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/iv_plane"
+            android:text=""
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_plane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_plane"
+            android:tint="#fff" />
+
+        <TextView
+            android:id="@+id/tv_arr_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_plane"
+            android:text=""
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/app_theme_green"
+        android:orientation="horizontal">
+        <!--left-->
+        <LinearLayout
+            android:id="@+id/ll_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/iv_left"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="5dp"
+                android:src="@drawable/icon_return"
+                android:tint="#fff" />
+
+            <TextView
+                android:id="@+id/tv_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="前一天"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+        <!--middle-->
+        <RelativeLayout
+            android:id="@+id/rl_middle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="2"
+            android:background="@drawable/shape_corners">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/tv_date"
+                android:src="@drawable/icon_flight_date" />
+
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textColor="@color/app_theme_green"
+                android:textSize="17sp" />
+
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tv_date"
+                android:layout_centerVertical="true"
+                android:src="@drawable/icon_down"
+                android:tint="@color/app_theme_green" />
+        </RelativeLayout>
+        <!--right-->
+        <LinearLayout
+            android:id="@+id/ll_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="后一天"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+
+                <ImageView
+                    android:id="@+id/iv_right"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/icon_go"
+                    android:tint="#fff" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#F0F0F0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:id="@+id/ll_sort_price"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/tv_sort_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="价格"
+                android:textColor="@color/selector_sort_txt"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/iv_sort_price"
+                android:layout_width="5dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/ic_sort_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_sort_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <TextView
+                android:id="@+id/tv_sort_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间"
+                android:textColor="@color/selector_sort_txt"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/iv_sort_time"
+                android:layout_width="5dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="2dp"
+                android:background="@drawable/ic_sort_normal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.andview.refreshview.XRefreshView
+        android:id="@+id/rfv_flight_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/lv_flight_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.andview.refreshview.XRefreshView>
+
+    <LinearLayout
+        android:id="@+id/ll_fail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="抱歉，没有符合您搜索条件的航班"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_back_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="返回首页" />
+    </LinearLayout>
+</LinearLayout>

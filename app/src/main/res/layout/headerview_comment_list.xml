@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+    >
+
+    <TextView
+        android:textColor="@color/black_txt"
+        android:id="@+id/tv_comment_rate_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:text="总体满意度"/>
+
+    <TextView
+        android:textSize="16sp"
+        android:id="@+id/tv_comment_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textColor="#ff0000"
+        android:layout_toRightOf="@+id/tv_comment_rate_txt"
+        />
+
+    <TextView
+        android:id="@+id/tv_comment_count"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textColor="@color/black_txt"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:textSize="16sp"
+        android:text="22"/>
+</RelativeLayout>

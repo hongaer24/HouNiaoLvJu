@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/app_theme_green"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back"/>
+
+        <TextView
+            android:id="@+id/tv_topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="旅居卡信息"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rl_banner"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/pic_bg_member"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:src="@drawable/pic_member_card"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:orientation="vertical"
+                android:divider="@drawable/line_dddddd"
+                android:showDividers="middle|end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="会员卡号"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_cardno"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="800520"
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="持卡人"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="消费密码"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_modify_pwd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="修改"
+                        android:textColor="#ff0000"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="持卡人手机"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="固定电话"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_telphone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="证件号"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="性别"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="联系人QQ"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_qq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="联系人微信"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_wx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="联系人地址"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="生效日期"
+                        android:layout_alignParentLeft="true"/>
+
+                    <TextView
+                        android:textSize="16sp"
+                        android:id="@+id/tv_card_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/app_theme_green"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

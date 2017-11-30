@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_theme_green"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="景点列表"
+            android:textColor="#ffffff"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/shape_white_gray"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/icon_hotel_list_search"/>
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:hint="输入城市名、景点或游玩主题"
+            android:textColor="@color/black_txt"
+            android:imeOptions="actionSearch"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@drawable/line_dddddd"/>
+    <com.zxl.library.DropDownMenu
+        android:id="@+id/ddm_scenic_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:ddmaskColor="@color/mask_color"
+        app:ddmenuBackgroundColor="@color/white"
+        app:ddmenuMaxHeight="-1dp"
+        app:ddmenuSelectedIcon="@mipmap/drop_down_selected_icon"
+        app:ddmenuTextSize="15sp"
+        app:ddmenuUnselectedIcon="@mipmap/drop_down_unselected_icon"
+        app:ddneedSetSlectedColor="true"
+        app:ddtextSelectedColor="@color/app_theme_green"
+        app:ddtextUnselectedColor="@color/tab_txt"/>
+</LinearLayout>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@id/ly_top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:background="@color/app_theme_green"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_alignParentLeft="true"
+            android:padding="10.0dip"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/tv_topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="火车票查询"
+            android:textColor="#ffffffff"
+            android:textSize="18.0sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:gravity="center"
+        android:minHeight="45.0dip">
+
+        <TextView
+            android:id="@+id/tv_dep_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignRight="@+id/view3"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
+            android:maxLength="4"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="海口"
+            android:textColor="#ff505050"
+            android:textSize="20.0sp" />
+
+        <TextView
+            android:id="@+id/tv_arr_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/view2"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLength="4"
+            android:maxWidth="100.0dip"
+            android:singleLine="true"
+            android:text="北京"
+            android:textColor="#ff505050"
+            android:textSize="20.0sp" />
+
+        <ImageView
+            android:id="@+id/btn_change"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_train_change"
+            android:tint="@color/app_theme_green" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_below="@id/btn_change"
+            android:layout_marginRight="20.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_toLeftOf="@id/btn_change"
+            android:background="#ffdddddd" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="fill_parent"
+            android:layout_height="1.0dip"
+            android:layout_below="@+id/btn_change"
+            android:layout_marginLeft="20.0dip"
+            android:layout_marginTop="10.0dip"
+            android:layout_toRightOf="@+id/btn_change"
+            android:background="#ffdddddd" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_select_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffffff"
+        android:gravity="center_vertical"
+        android:minHeight="45.0dip"
+        android:orientation="horizontal"
+        android:paddingLeft="10.0dip">
+
+        <TextView
+            android:id="@+id/tv_select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3月3日"
+            android:textColor="@color/text_black"
+            android:textSize="20.0sp" />
+
+        <TextView
+            android:id="@+id/tv_select_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5.0dip"
+            android:layout_marginTop="2.0dip"
+            android:text="今天" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1.0dip"
+        android:layout_marginLeft="10.0dip"
+        android:layout_marginRight="10.0dip"
+        android:background="#ffdddddd" />
+
+    <TextView
+        android:id="@+id/btn_query"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20.0dip"
+        android:layout_marginBottom="10.0dip"
+        android:background="@drawable/selector_orgs_btn"
+        android:gravity="center"
+        android:padding="10.0dip"
+        android:text="查 询"
+        android:textColor="#ffffffff"
+        android:textSize="18.0sp" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="10.0dip"
+        android:background="#fff0f0f0"
+        android:visibility="gone"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="10.0dip"
+        android:text="特价火车票"
+        android:textColor="#ffff9911"
+        android:textSize="18.0sp"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <cn.houno.houniaolvju.view.InnerGridView
+            android:id="@+id/gv_special_train"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="10.0dip"
+            android:numColumns="2"
+            android:padding="10.0dip"
+            android:verticalSpacing="10.0dip" />
+    </ScrollView>
+
+
+</LinearLayout>

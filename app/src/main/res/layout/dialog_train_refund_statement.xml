@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="退票说明"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:textStyle="bold"/>
+
+
+    <cn.houno.houniaolvju.activity.train.JustifyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/train_ticket_return"
+        android:lineSpacingExtra="6dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textStyle="bold"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发车前48小时以上，手续费5%"
+        android:textSize="14sp"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发车前24-48小时，手续费10%"
+        android:textSize="14sp"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="center"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="发车前24小时以内，手续费20%"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="6dp"/>
+
+
+    <cn.houno.houniaolvju.activity.train.JustifyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="退票手续费最低按2元收取，最终退款以铁路部门是退为准。"
+        android:textSize="14sp"
+        android:layout_marginBottom="6dp"
+        android:lineSpacingExtra="6dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:textSize="14sp"
+            android:height="30dp"
+            android:background="#f0f0f0"/>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="确定退票"
+            android:layout_marginLeft="1dp"
+            android:gravity="center"
+            android:textColor="#6699FF"
+            android:textSize="14sp"
+            android:layout_weight="1"
+            android:height="30dp"
+            android:background="#f0f0f0"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

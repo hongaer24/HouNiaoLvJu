@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="90dp">
+
+        <FrameLayout
+            android:id="@+id/fl_hotel_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ga_pt" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="拼团"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/iv_foreign_hotel_img"
+            android:layout_width="130dp"
+            android:layout_height="match_parent"
+            android:background="@color/imageview_background_gray"
+            android:scaleType="fitXY" />
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <!--1-->
+        <TextView
+            android:id="@+id/tv_foreign_hotel_title"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="#505050"
+            android:textSize="16sp" />
+
+        <!--2-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_foreign_hotel_address"
+                android:layout_width="0dp"
+                android:text=""
+                android:maxLines="1"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                />
+
+            </LinearLayout>
+        <!--3-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/tv_hotel_price"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_foreign_hotel_scenic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/light_gray_txt" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_foreign_hotel_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/orgs_txt"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

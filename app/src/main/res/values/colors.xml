@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <color name="tab_top_text_1">#aaa</color>
+    <color name="tab_top_text_2">#000</color>
+    <color name="tab_top_text_3">#e1e1e1</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="red">#ff0000</color>
+    <color name="black">#000000</color>
+    <color name="text_black">#343434</color>
+    <color name="dark_gray">#666666</color>
+    <color name="app_theme_green_press">#FF015E2A</color>
+    <color name="app_theme_green">#009A44</color>
+    <color name="app_light_green">#7bc730</color>
+    <color name="activity_background">#FFFFFF</color>
+    <color name="tab_background">#F7F8FC</color>
+    <color name="tab_txt">#6A6A6A</color>
+    <color name="btm_txt">#7f000000</color>
+    <color name="black_txt">#505050</color>
+    <color name="xsqg_txt">#25D9B2</color>
+    <color name="match_width_view">#E5E9EC</color>
+    <color name="light_gray_txt">#999999</color>
+    <color name="orgs_txt">#FF6600</color>
+    <color name="dark_orgs">#FF6634</color>
+    <color name="btn_orgs">#FF9911</color>
+    <color name="home_space">#F4F4F4</color>
+    <color name="detail_space">#F5f5f5</color>
+    <color name="hotel_list_top_bg">#F0F0F0</color>
+    <color name="hotel_list_line">#DDDDDD</color>
+    <color name="hotellist_location_mainlist_background">#F0EFF5</color>
+    <color name="imageview_background_gray">#ECECEC</color>
+    <!--景点标签-->
+    
+    <color name="label_mid_green">#A1DACF</color>
+    <color name="label_dark_green">#489C02</color>
+    <color name="label_light_green">#F2FAED</color>
+
+    <color name="label_mid_red">#FDD0E4</color>
+    <color name="label_dark_red">#EB5D90</color>
+    <color name="label_light_red">#FDECF4</color>
+
+    <color name="label_mid_blue">#B5DBFB</color>
+    <color name="label_dark_blue">#3A88D8</color>
+    <color name="label_light_blue">#E7F3FF</color>
+
+    <color name="indicator_tab_bottom">#58ACED</color>
+    <color name="indicator_tab_txt">#6F6F6F</color>
+
+    <color name="cp_colorAccent">#F3F3F3</color>
+    <color name="cp_colorPrimary">@color/cp_colorAccent</color>
+    <color name="cp_colorPrimaryDark">@color/cp_colorAccent</color>
+
+    <color name="cp_divider">#E5E5E5</color>
+    <color name="cp_shadow">#AAEBEBEB</color>
+    <color name="cp_common_bg">#FAFAFA</color>
+    <color name="cp_content_bg">@color/cp_colorAccent</color>
+    <color name="cp_gray">#8c8c8c</color>
+    <color name="cp_gray_deep">#5c5c5c</color>
+    <color name="cp_alpha_gray">#CC646464</color>
+    <color name="cp_theme_gray">#646464</color>
+</resources>

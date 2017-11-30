@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_theme_green"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/tv_topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:ellipsize="end"
+            android:layout_toRightOf="@+id/iv_back"
+            android:layout_toLeftOf="@+id/iv_home"
+            android:gravity="center"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="填写订单"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_home"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentRight="true"
+            android:padding="12dp"
+            android:src="@drawable/icon_back_home" />
+    </RelativeLayout>
+
+    <com.andview.refreshview.XScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ly_top_bar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f5f5f5"
+            android:divider="@drawable/line_dddddd"
+            android:orientation="vertical"
+            android:showDividers="middle|end">
+
+
+            <!--门票信息-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:minHeight="80dp"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/ll_scenic_order_price"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_scenic_order_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="门票 - 成人票"
+                        android:textColor="@color/black_txt"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/tv_scenic_order_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="海南省三亚市天涯区西岛―肖旗港码头"
+                        android:textColor="@color/app_theme_green"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_scenic_order_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_scenic_order_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="¥118.00"
+                        android:textColor="#ff0000" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/张"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <!--购买数量-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="购买数量"
+                    android:textSize="16sp" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_refer_sub"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/tv_refer_num"
+                        android:background="@drawable/selector_btn_order_sub"
+                        android:textSize="20sp" />
+
+
+                    <TextView
+                        android:id="@+id/tv_refer_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_toLeftOf="@+id/btn_refer_add"
+                        android:text="1"
+                        android:textColor="@color/black_txt"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/btn_refer_add"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/selector_btn_order_add"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_yw"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="游玩日期"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_days_selector"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text=""
+                    android:textColor="@color/black_txt"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_yk"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="姓　名"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_jd_name"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="请填写真实姓名"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black_txt"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_jd_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="手机号"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_jd_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="用于接收确认短信"
+                    android:inputType="phone"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black_txt"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:padding="10dp"
+                android:gravity="center_vertical"
+                android:background="#ffffff"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/tv_number_person"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="出游人（需要填写1个出游人）"
+                    android:textSize="17sp"/>
+
+                <ImageView
+                    android:id="@+id/iv_number_person"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:padding="15dp"
+                    android:src="@drawable/icon_go"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.andview.refreshview.XScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#dddddd" />
+
+        <TextView
+            android:id="@+id/tv_zxzf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:text="在线支付 "
+            android:textColor="#ff0000" />
+
+        <TextView
+            android:id="@+id/tv_zxzf_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/tv_zxzf"
+            android:textColor="#ff0000"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_jd_tjdd"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_orgs_btn"
+            android:padding="10dp"
+            android:text="提交订单"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+</RelativeLayout>

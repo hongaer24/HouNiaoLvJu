@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff0f0f0"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="45.0dip"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_theme_green"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_alignParentLeft="true"
+            android:padding="10.0dip"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:id="@+id/tv_topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="订单填写"
+            android:textColor="#ffffffff"
+            android:textSize="18.0sp" />
+
+        <ImageView
+            android:id="@+id/iv_home"
+            android:layout_width="45.0dip"
+            android:layout_height="45.0dip"
+            android:layout_alignParentRight="true"
+            android:padding="12.0dip"
+            android:src="@drawable/icon_back_home" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ly_top_bar">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff0f0f0"
+            android:divider="@drawable/line_dddddd"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10.0dip"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ff23be79"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/tv_train_code"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:layout_weight="1"
+                            android:padding="5.0dip"
+                            android:text="D901"
+                            android:textColor="#ffffffff" />
+
+                        <TextView
+                            android:id="@+id/tv_ticket_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="right"
+                            android:padding="5dp"
+                            android:text="02-07 (周二)"
+                            android:textColor="#ffffffff" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#ffffffff"
+                        android:orientation="horizontal"
+                        android:padding="10.0dip">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:minWidth="100.0dip"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tv_ticket_dep_station"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:text="北京西"
+                                android:textColor="@color/black_txt"
+                                android:textSize="18.0sp" />
+
+                            <TextView
+                                android:id="@+id/tv_ticket_dep_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:ellipsize="end"
+                                android:maxLength="20"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="20:10"
+                                android:textColor="@color/black_txt"
+                                android:textSize="12.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0.0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_weight="1.0"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0.0dip"
+                                android:layout_weight="1.0"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal"
+                                android:paddingLeft="10.0dip"
+                                android:paddingRight="10.0dip">
+
+                                <!--<View-->
+                                <!--android:layout_width="0.0dip"-->
+                                <!--android:layout_height="1.0px"-->
+                                <!--android:layout_weight="1.0"-->
+                                <!--android:background="#ffdbdee3" />-->
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/train_to_from" />
+
+                                <!--<View-->
+                                <!--android:layout_width="0.0dip"-->
+                                <!--android:layout_height="1.0px"-->
+                                <!--android:layout_weight="1.0"-->
+                                <!--android:background="#ffdbdee3" />-->
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ticket_total_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="约3时15分"
+                                android:textColor="@color/dark_gray"
+                                android:textSize="12.0sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minWidth="100.0dip"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_ticket_arr_station"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:text="广州南"
+                                    android:textColor="@color/black_txt"
+                                    android:textSize="18.0sp" />
+
+                                <TextView
+                                    android:id="@+id/tv_add_one_day"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentTop="true"
+                                    android:padding="2.0dip"
+                                    android:text="+1天"
+                                    android:textColor="@color/black_txt"
+                                    android:textSize="10.0sp"
+                                    android:visibility="invisible" />
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/tv_ticket_arr_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLength="20"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:text="06:28"
+                                android:textColor="@color/black_txt"
+                                android:textSize="12.0sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="fill_parent"
+                        android:layout_height="1.0px"
+                        android:background="@drawable/line_dddddd" />
+
+                    <!--<RelativeLayout-->
+                    <!--android:layout_width="fill_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="#ffffffff"-->
+                    <!--android:padding="10.0dip">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_ticket_adult"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginRight="10.0dip"-->
+                    <!--android:text="成人票"-->
+                    <!--android:textColor="@color/dark_gray"-->
+                    <!--android:textSize="12.0sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_ticket_adult_price"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginRight="10.0dip"-->
+                    <!--android:layout_toRightOf="@id/tv_ticket_adult"-->
+                    <!--android:text="¥670"-->
+                    <!--android:textColor="@color/dark_gray"-->
+                    <!--android:textSize="12.0sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_fuel_adult"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginRight="10.0dip"-->
+                    <!--android:layout_toRightOf="@id/tv_ticket_adult_price"-->
+                    <!--android:text="机建+燃油"-->
+                    <!--android:textColor="@color/dark_gray"-->
+                    <!--android:textSize="12.0sp" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_fuel_adult_price"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginRight="10.0dip"-->
+                    <!--android:layout_toRightOf="@id/tv_fuel_adult"-->
+                    <!--android:text="¥50"-->
+                    <!--android:textColor="@color/dark_gray"-->
+                    <!--android:textSize="12.0sp" />-->
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/iv_icon_go"-->
+                    <!--android:layout_width="20.0dip"-->
+                    <!--android:layout_height="20.0dip"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:src="@drawable/icon_go"-->
+                    <!--android:tint="@color/app_theme_green" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tv_back_alter_ticket"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="20.0dip"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_toLeftOf="@id/iv_icon_go"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:text="退改签说明"-->
+                    <!--android:textColor="@color/app_theme_green"-->
+                    <!--android:textSize="12.0sp" />-->
+                    <!--</RelativeLayout>-->
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:layout_marginBottom="10dp"
+                android:background="#ffffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10.0dip"
+                android:weightSum="3">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:text="已选座席" />
+
+                <TextView
+                    android:id="@+id/tv_seat_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingRight="20dp"
+                    android:text="软卧"
+                    android:textColor="@color/dark_gray" />
+
+                <TextView
+                    android:id="@+id/tv_seat_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="¥880"
+                    android:textColor="@color/red" />
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="#ffffffff">
+
+                <ImageView
+                    android:id="@+id/iv_order_passengers"
+                    android:layout_width="40.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_centerVertical="true"
+                    android:padding="10.0dip"
+                    android:src="@drawable/icon_order_passengers" />
+
+                <TextView
+                    android:id="@+id/tv_passengers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv_order_passengers"
+                    android:text="乘车人"
+                    android:textColor="#ff6a6a6a"
+                    android:textSize="15.0sp" />
+
+                <TextView
+                    android:id="@+id/tv_add_passengers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10.0dip"
+                    android:paddingRight="10.0dip"
+                    android:text="＋添加乘车人"
+                    android:textColor="#ff009a44"
+                    android:textSize="15.0sp" />
+            </RelativeLayout>
+
+            <cn.houno.houniaolvju.view.InnerListView
+                android:id="@+id/lv_passengers"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffffff"
+                android:divider="@drawable/line_dddddd"
+                android:dividerHeight="1dp" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="#ffffffff">
+
+                <ImageView
+                    android:id="@+id/iv_order_phone"
+                    android:layout_width="40.0dip"
+                    android:layout_height="40.0dip"
+                    android:layout_centerVertical="true"
+                    android:padding="9.0dip"
+                    android:src="@drawable/icon_order_phone" />
+
+                <TextView
+                    android:id="@+id/tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv_order_phone"
+                    android:text="手机号"
+                    android:textColor="#ff6a6a6a"
+                    android:textSize="15.0sp" />
+                />
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:layout_toRightOf="@id/tv_phone"
+                    android:background="@null"
+                    android:hint="用于接收通知短信"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black_txt"
+                    android:textColorHint="#ffdddddd"
+                    android:textSize="16.0sp" />
+            </RelativeLayout>
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="10.0dip" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip"
+                android:background="#ffffffff"
+                android:gravity="center_vertical"
+                android:paddingLeft="10.0dip">
+
+                <TextView
+                    android:id="@+id/tv_no_seat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="接受无座"
+                    android:textColor="@color/dark_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_no_seat"
+                    android:text="若所选座票余票不足，为您购买无座票"
+                    android:textColor="@color/light_gray_txt" />
+
+                <CheckBox
+                    android:id="@+id/cb_agree"
+                    style="@style/CustomCheckboxTheme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="6dp"
+                    android:textColor="@color/black_txt"
+                    android:textSize="13.0sp" />
+
+            </RelativeLayout>
+
+            <!--<Space-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="10.0dip" />-->
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="50.0dip"-->
+            <!--android:background="#ffffffff"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingLeft="10.0dip">-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="*"-->
+            <!--android:textColor="#ffff0000" />-->
+
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="如需报销，支付成功后选择“补寄报销凭证”"-->
+            <!--android:textColor="@color/dark_gray" />-->
+            <!--</LinearLayout>-->
+
+            <!--<RelativeLayout-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="50.0dip"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingLeft="10.0dip">-->
+
+            <!--<CheckBox-->
+            <!--android:id="@+id/cb_agree"-->
+            <!--style="@style/CustomCheckboxTheme"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:paddingLeft="15dp"-->
+            <!--android:text="我已阅读"-->
+            <!--android:textColor="@color/black_txt"-->
+            <!--android:textSize="13.0sp" />-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tv_prompt_carry"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_toRightOf="@id/cb_agree"-->
+            <!--android:text="《关于乘车注意事项》"-->
+            <!--android:textColor="@color/app_theme_green"-->
+            <!--android:textSize="12.0sp" />-->
+            <!--</RelativeLayout>-->
+
+            <Space
+                android:layout_width="fill_parent"
+                android:layout_height="50.0dip" />
+        </LinearLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffffff">
+
+        <TextView
+            android:id="@+id/tv_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10.0dip"
+            android:text="总额："
+            android:textColor="@color/black_txt" />
+
+        <TextView
+            android:id="@+id/tv_total_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_total"
+            android:text="¥0"
+            android:textColor="@color/dark_orgs"
+            android:textSize="18.0sp" />
+
+        <Button
+            android:id="@+id/btn_submit_order"
+            android:layout_width="wrap_content"
+            android:layout_height="50.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/red"
+            android:padding="10.0dip"
+            android:text="提交订单"
+            android:textColor="#ffffffff"
+            android:textSize="18.0sp" />
+    </RelativeLayout>
+</RelativeLayout>

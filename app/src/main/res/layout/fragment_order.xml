@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_order_ddlb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/app_theme_green">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_order_toggle"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:src="@drawable/icon_home_toggle" />
+
+        <TextView
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:text="订单列表"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/rg_top_bar"
+        android:orientation="horizontal"
+        android:layout_below="@+id/rl_order_ddlb"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+
+        <TextView
+            android:id="@+id/rb_ddlb_ing"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="进行中"
+            android:textColor="#505050"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/rb_ddlb_end"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="已结束"
+            android:textColor="#505050"
+            android:textSize="18sp"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_lan"
+        android:layout_below="@+id/rg_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@android:color/darker_gray"/>
+
+    <cn.houno.houniaolvju.view.NoScrollViewPager
+        android:layout_below="@+id/view_lan"
+        android:id="@+id/no_vp_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+</RelativeLayout>

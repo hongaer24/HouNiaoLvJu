@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 取数据成功 -->
+    <item name="doSucceed" type="id"/>
+    <!-- 去数据失败 -->
+    <item name="doFail" type="id"/>
+    <!-- 正在读取数据 -->
+    <item name="doGetting" type="id"/>
+    <!-- 提交数据 -->
+    <item name="doSubmit" type="id"/>
+    <!-- 摇一摇状态 -->
+    <item name="doShakeState" type="id"/>
+    <!-- 摇一摇状态失败-->
+    <item name="doShankeFail" type="id"/>
+    <!-- 显示popupwindow-->
+    <item name="doShowPopupWindow" type="id"/>
+</resources>

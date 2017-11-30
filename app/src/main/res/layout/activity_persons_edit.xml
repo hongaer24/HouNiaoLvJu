@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="cn.houno.houniaolvju.activity.scenic.PersonsEditActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5"
+        android:divider="@drawable/line_dddddd"
+        android:orientation="vertical"
+        android:showDividers="middle|end">
+        <RelativeLayout
+            android:id="@+id/ly_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/app_theme_green"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:padding="10dp"
+                android:src="@drawable/icon_back" />
+
+            <TextView
+                android:id="@+id/tv_topbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:ellipsize="end"
+                android:layout_toRightOf="@+id/iv_back"
+                android:layout_toLeftOf="@+id/iv_home"
+                android:gravity="center"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:text="编辑出游人"
+                android:textColor="#ffffff"
+                android:textSize="18sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_edit_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="姓名"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_edit_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="必填"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/black_txt"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_edit_ID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="证件类型"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_ID"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="身份证"
+                android:textSize="16sp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_edit_IDcard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="证件号"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_edit_IDcard"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="必填"
+                android:inputType="phone"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/black_txt"
+                android:textSize="16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_jd_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="手机号"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/et_jd_phone"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="必填"
+                android:inputType="phone"
+                android:maxLength="20"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@color/black_txt"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/add_person_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:textColor="#ffff"
+            android:background="@color/btn_orgs"
+            android:text="添加出游人"
+
+            />
+    </LinearLayout>
+
+</RelativeLayout >

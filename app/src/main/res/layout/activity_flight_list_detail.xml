@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/app_theme_green">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back" />
+
+
+        <TextView
+            android:id="@+id/tv_dep_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@+id/iv_plane"
+            android:text="海口"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/iv_plane"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/icon_plane"
+            android:tint="#fff" />
+
+        <TextView
+            android:id="@+id/tv_arr_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_plane"
+            android:text="长沙"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="10dp">
+
+
+        <ImageView
+            android:id="@+id/iv_went"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/pic_flight_went" />
+
+        <TextView
+            android:id="@+id/tv_dep_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_went"
+            android:padding="5dp"
+            android:text="02-15"
+            android:textColor="@color/black_txt"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_dep_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_dep_date"
+            android:padding="5dp"
+            android:text="周四"
+            android:textColor="@color/black_txt"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/tv_dep_week"
+            android:padding="5dp"
+            android:text="海口-长沙"
+            android:textColor="@color/black_txt"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/iv_time_line"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_alignLeft="@+id/tv_dep_week"
+            android:layout_below="@+id/tv_dep_week"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/pic_flight_timeline" />
+
+        <TextView
+            android:id="@+id/tv_dep_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_time_line"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/iv_time_line"
+            android:text="07:35"
+            android:textColor="@color/black_txt"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_arr_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_time_line"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/iv_time_line"
+            android:text="09:55"
+            android:textColor="@color/black_txt"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_dep_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_time_line"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_time_line"
+            android:text="北京首都机场"
+            android:textColor="@color/black_txt"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_arr_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_time_line"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/iv_time_line"
+            android:text="上海浦东机场"
+            android:textColor="@color/black_txt"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_total_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/tv_arr_name"
+            android:layout_below="@+id/tv_dep_name"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/iv_time_line"
+            android:gravity="center"
+            android:text="2h20m" />
+
+        <TextView
+            android:id="@+id/tv_avi_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/tv_dep_name"
+            android:gravity="right"
+            android:text="中国国航\nCA1835"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#dddddd" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#dddddd" />
+
+    <ListView
+        android:id="@+id/lv_seat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff" />
+</LinearLayout>

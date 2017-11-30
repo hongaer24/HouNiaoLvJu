@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10.0dip">
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="乘  车  人：" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_passengers_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*永昌"
+            android:textColor="@color/black_txt"
+            android:textSize="16.0sp" />
+
+        <TextView
+            android:id="@+id/tv_passengers_certificate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:text="身份证 4****************0"
+            android:textColor="@color/black_txt"
+            android:textSize="16.0sp" />
+
+
+        <TextView
+            android:id="@+id/tv_seat_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dip"
+            android:text="二等座 01车厢,03D座"
+            android:textColor="@color/black_txt"
+            android:textSize="16.0sp"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

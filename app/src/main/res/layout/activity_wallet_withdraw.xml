@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/app_theme_green"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back"/>
+
+        <TextView
+            android:id="@+id/tv_topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="余额提现"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="选择银行"
+                        android:textColor="#505050"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_select_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:text="点击选择储蓄卡"
+                            android:textSize="16sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#505050"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:minHeight="50dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="银行卡号"
+                        android:textColor="#505050"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <cn.houno.houniaolvju.view.ClearableEditText
+                            android:id="@+id/cet_card_account"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:paddingLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:hint="请输入您的卡号"
+                            android:inputType="number"
+                            android:textCursorDrawable="@null"
+                            android:textSize="16sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#505050"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:minHeight="50dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="客户姓名"
+                        android:textColor="#505050"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <cn.houno.houniaolvju.view.ClearableEditText
+                            android:id="@+id/cet_username"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:paddingLeft="10dp"
+                            android:gravity="center_vertical"
+                            android:hint="请输入您的姓名"
+                            android:textCursorDrawable="@null"
+                            android:textSize="16sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#505050"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:minHeight="50dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="手机号码"
+                        android:textColor="#505050"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <cn.houno.houniaolvju.view.ClearableEditText
+                            android:id="@+id/cet_card_phone"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+
+                            android:layout_marginBottom="2dp"
+                            android:paddingLeft="10dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="请输入您的手机号码"
+                            android:inputType="phone"
+                            android:textCursorDrawable="@null"
+                            android:textSize="16sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#505050"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:minHeight="50dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="提现金额"
+                        android:textColor="#505050"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <cn.houno.houniaolvju.view.ClearableEditText
+                            android:id="@+id/cet_withdrawals"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="请输入您的提现金额"
+                            android:inputType="number"
+                            android:textCursorDrawable="@null"
+                            android:textSize="16sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#505050"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="bottom"
+                    android:minHeight="50dp"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="附加备注"
+                        android:textColor="#505050"
+                        android:textSize="16sp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="vertical"
+                        >
+
+                        <cn.houno.houniaolvju.view.ClearableEditText
+                            android:id="@+id/cet_remark"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="2dp"
+                            android:layout_weight="1"
+                            android:paddingLeft="10dp"
+                            android:background="@null"
+                            android:gravity="center_vertical"
+                            android:hint="备注"
+                            android:textCursorDrawable="@null"
+                            android:textSize="16sp"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#505050"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tv_withdrawal_now"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/app_theme_green"
+            android:gravity="center"
+            android:text="立即提现"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>

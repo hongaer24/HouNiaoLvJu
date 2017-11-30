@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/app_theme_green">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:padding="10dp"
+            android:src="@drawable/icon_back"
+            android:tint="#ffffff" />
+
+        <LinearLayout
+            android:id="@+id/ll_home_search"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_back"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_home_search"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:textCursorDrawable="@null"
+                android:background="@null"
+                android:hint="酒店/景点/门票"
+                android:imeOptions="actionSearch"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="#ffffff"
+                android:textColorHint="#e0ffffff"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/iv_search"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:contentDescription="@null"
+                android:padding="10dp"
+                android:src="@drawable/icon_search2"
+                android:tint="#ffffff" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/ll_home_search"
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/iv_back"
+            android:background="#ffffff" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+
+
+                >
+
+                <TextView
+                    android:id="@+id/tv_tip"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="left|center_vertical"
+                    android:text="搜索历史" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#EEEEEE" />
+
+                <cn.houno.houniaolvju.view.InnerListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <cn.houno.houniaolvju.view.InnerListView
+                    android:id="@+id/lv_auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="#EEEEEE" />
+
+              </LinearLayout>
+    </ScrollView>
+</LinearLayout>

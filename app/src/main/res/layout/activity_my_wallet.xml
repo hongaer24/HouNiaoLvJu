@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--标题栏-->
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/app_theme_green"
+        >
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:padding="10dp"
+            android:src="@drawable/icon_back"/>
+
+        <TextView
+            android:id="@+id/tv_topbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我的钱包"
+            android:textColor="#fff"
+            android:textSize="18sp"/>
+    </RelativeLayout>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:background="@drawable/pic_card_wallet_bg">
+
+                <ImageView
+                    android:id="@+id/iv_head_img"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_nick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_head_img"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"/>
+
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="返现金额(元)"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_backamount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ff0000"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="1px"
+                    android:layout_height="35dp"
+                    android:background="#e1e1e1"/>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingLeft="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="可用余额(元)"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#ff0000"
+                        android:textSize="16sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_recharge"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_orgs_btn"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="充 值"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp"/>
+
+                <TextView
+                    android:id="@+id/btn_withdrawal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_btn_white"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="提 现"
+                    android:textColor="#3780e7"
+                    android:textSize="17sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:divider="@drawable/line_dddddd"
+                android:dividerPadding="10dp"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/tv_recharge_recode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_selector"
+                    android:drawableLeft="@drawable/icon_topup"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:padding="10dp"
+                    android:text="充值记录"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_withdrawal_recode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_selector"
+                    android:drawableLeft="@drawable/icon_topup"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:padding="10dp"
+                    android:text="提现记录"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:id="@+id/tv_back_record"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_selector"
+                    android:drawableLeft="@drawable/icon_topup"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical"
+                    android:minHeight="50dp"
+                    android:padding="10dp"
+                    android:text="返现记录"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
