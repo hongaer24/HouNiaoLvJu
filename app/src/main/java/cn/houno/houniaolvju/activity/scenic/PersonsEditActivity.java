@@ -73,10 +73,16 @@ public class PersonsEditActivity extends AppCompatActivity {
 
         if (getIntent() != null && getIntent().getSerializableExtra("consignee") != null) {
             getScenicBean = (GetScenicPassengerBean.DataBean) getIntent().getSerializableExtra("consignee");
-            etEditName.setText(getScenicBean.getName());
-            etEditIDcard.setText(getScenicBean.getIdentityno());
-            etJdPhone.setText(getScenicBean.getPhone());
         }
+            if(getScenicBean==null){
+                getScenicBean=new GetScenicPassengerBean.DataBean();
+            }else {
+                etEditName.setText(getScenicBean.getName());
+                etEditIDcard.setText(getScenicBean.getIdentityno());
+                etJdPhone.setText(getScenicBean.getPhone());
+            }
+
+
 
         Intent intent = getIntent();
         mId = intent.getStringExtra("id");
@@ -84,18 +90,20 @@ public class PersonsEditActivity extends AppCompatActivity {
 
 
     }
-    private void AddScenicPassenger() {
+    private void AddScenicPassenger(GetScenicPassengerBean.DataBean getScenicBean) {
         //userid = PrefUtils.getString(mActivity, "userid", "");
-        RequestParams params = new RequestParams(Constants.ADD_TOURIST_URL);
+       /* RequestParams params = new RequestParams(Constants.ADD_TOURIST_URL);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("info[name]","吴三");
         params.addBodyParameter("info[phone]", "18502502014");
-        params.addBodyParameter("info[identityNo]", "440606197001010898");
-       /* params.addBodyParameter("info[name]",getScenicBean.getName());
+        params.addBodyParameter("info[identityNo]", "440606197001010898");*/
+        RequestParams params = new RequestParams(Constants.ADD_TOURIST_URL);
+        params.addBodyParameter("userid", userid);
+        params.addBodyParameter("info[name]",getScenicBean.getId());
         params.addBodyParameter("info[phone]", getScenicBean.getPhone());
-        params.addBodyParameter("info[identityNo]", getScenicBean.getIdentityno());*/
+        params.addBodyParameter("info[identityNo]", getScenicBean.getIdentityno());
         //params.addBodyParameter("userid", userid);
-        Log.i("999", "id===" + params);
+       // Log.i("999", "id===" + params);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -186,9 +194,9 @@ public class PersonsEditActivity extends AppCompatActivity {
             showToast("请输入手机号");
             return false;
         }
-        getScenicBean.setPhone(etJdPhone.getText().toString());
+       getScenicBean.setPhone(etJdPhone.getText().toString());
 
-        ////////////////
+
         if (TextUtils.isEmpty(etEditIDcard.getText().toString())) {
             showToast("请输入身份证号");
             return false;
@@ -204,15 +212,14 @@ public class PersonsEditActivity extends AppCompatActivity {
                 finish();
                 break;
             case R.id.add_person_btn:
+
                 if (checkData()) {
                     if (getIntent() != null && getIntent().getSerializableExtra("consignee") != null) {
                         EditScenicPassenger(getScenicBean);
 
-
                     } else {
-                        AddScenicPassenger();
+                        AddScenicPassenger(getScenicBean);
                     }
-
                     finish();
                     break;
                 }
