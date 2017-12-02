@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HouNiaoLvJu.iml" filepath="$PROJECT_DIR$/HouNiaoLvJu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PhotoPicker/PhotoPicker.iml" filepath="$PROJECT_DIR$/PhotoPicker/PhotoPicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/barCodeTest/barCodeTest.iml" filepath="$PROJECT_DIR$/barCodeTest/barCodeTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/circleprogressbar/circleprogressbar.iml" filepath="$PROJECT_DIR$/circleprogressbar/circleprogressbar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/countdownview/countdownview.iml" filepath="$PROJECT_DIR$/countdownview/countdownview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dropdownmenu/dropdownmenu.iml" filepath="$PROJECT_DIR$/dropdownmenu/dropdownmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/expandabletextview/expandabletextview.iml" filepath="$PROJECT_DIR$/expandabletextview/expandabletextview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rollviewpager/rollviewpager.iml" filepath="$PROJECT_DIR$/rollviewpager/rollviewpager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/slidingmenu/slidingmenu.iml" filepath="$PROJECT_DIR$/slidingmenu/slidingmenu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" filepath="$PROJECT_DIR$/viewpagerindicator/viewpagerindicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xrefreshview/xrefreshview.iml" filepath="$PROJECT_DIR$/xrefreshview/xrefreshview.iml" />
+    </modules>
+  </component>
+</project>

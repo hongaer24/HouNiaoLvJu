@@ -32,10 +32,12 @@ import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.PrefUtils;
 
-public class PersonsListActivity extends AppCompatActivity implements PersonsListAdapter.GetScenicListener{
+public class PersonsListActivity extends AppCompatActivity implements PersonsListAdapter.GetScenicListener, PersonsListAdapter.CheckInterface {
 
     @Bind(R.id.iv_back)
     ImageView ivBack;
+    @Bind(R.id.tv_title_person)
+    TextView tvTitlePerson;
     @Bind(R.id.tv_topbar_title)
     TextView tvTopbarTitle;
     @Bind(R.id.ly_top_bar)
@@ -50,7 +52,10 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
     private PersonsListActivity mActivity;
 
     private PersonsListAdapter madapter;
-   private List<GetScenicPassengerBean.DataBean> touristDataBean;
+    private List<GetScenicPassengerBean.DataBean> touristDataBean;
+    private int personNum;
+    private int variaNum;
+    private int checkdeNum=0;
 
 
     @Override
@@ -63,7 +68,14 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
     }
 
     private void initData() {
+        Intent intent = getIntent();
+        personNum = intent.getIntExtra("persons", 0);
+        variaNum=personNum;
+        PrefUtils.setInt(mActivity, "num", personNum);
+        PrefUtils.setInt(mActivity, "variaNum", variaNum);
+        tvTitlePerson.setText("您还需选择" + personNum + "个出游人（0/" + personNum + "）");
         getDataFromServer();
+
     }
 
     private void getDataFromServer() {
@@ -78,7 +90,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
 
                     JSONObject obj = new JSONObject(result);
                     int status = obj.getInt("status");
-                    Log.i("888", "id===" + status);
+
                     if (status == 0) {
                         // Log.i("999", "result==="+result);
                         parseData(result);
@@ -115,27 +127,37 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
         GetScenicPassengerBean getScenicPassengerBean = gson.fromJson(result, GetScenicPassengerBean.class);
         touristDataBean = getScenicPassengerBean.getData();
 
-        showData(touristDataBean);
+
+        if (madapter == null) {
+            madapter = new PersonsListAdapter(this, this, touristDataBean, tvTitlePerson);
+            madapter.setCheckInterface(this);
+            addressListv.setAdapter(madapter);
+        } else {
+            madapter.setData(touristDataBean);
+        }
+        // showData(touristDataBean);
 
 
     }
 
-    private void showData(List<GetScenicPassengerBean.DataBean> touristsMessageBeanList) {
-                       madapter=new PersonsListAdapter(this,this,touristsMessageBeanList);
-                       addressListv.setAdapter(madapter);
-    }
+    /*private void showData(List<GetScenicPassengerBean.DataBean> touristsMessageBeanList) {
+        madapter = new PersonsListAdapter(this, this, touristsMessageBeanList);
+        addressListv.setAdapter(madapter);
+    }*/
 
-    @OnClick({R.id.iv_back, R.id.add_address_btn,R.id.tv_add_person})
+    @OnClick({R.id.iv_back, R.id.add_address_btn, R.id.tv_add_person})
     public void onViewClicked(View view) {
-       // int position = Integer.valueOf(view.getTag().toString());
+        // int position = Integer.valueOf(view.getTag().toString());
 
         switch (view.getId()) {
             case R.id.iv_back:
+                finish();
                 break;
             case R.id.add_address_btn:
                 break;
             case R.id.tv_add_person:
                 Intent intent = new Intent(this, PersonsEditActivity.class);
+                //intent.putExtra("consignee",getScenicBean);
                 //intent.putExtra("id",touristDataBean.get(position).getId() );
                 startActivity(intent);
                 break;
@@ -145,17 +167,43 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
     @Override
     public void onItemEdit(GetScenicPassengerBean.DataBean getScenicBean) {
         Intent intent = new Intent(this, PersonsEditActivity.class);
-        intent.putExtra("consignee",getScenicBean);
+        intent.putExtra("consignee", getScenicBean);
         startActivity(intent);
     }
 
-    @Override
-    public void onItemCheck(GetScenicPassengerBean.DataBean GetScenicBean) {
-             GetScenicBean.setChoosed(true);
-    }
     @Override
     protected void onResume() {
         super.onResume();
         initData();
     }
+
+    @Override
+    public void CheckPersonNum(int position, boolean ischecked) {
+
+        int newNum = personNum;
+
+        if (ischecked) {
+            if(variaNum>0){
+                variaNum--;
+                checkdeNum++;
+                tvTitlePerson.setText("您还需选择" + variaNum + "个出游人（"+checkdeNum+"/" + newNum + "）");
+            }
+
+
+        } else {
+            if(variaNum<newNum){
+                variaNum++;
+                checkdeNum--;
+                tvTitlePerson.setText("您还需选择" + variaNum + "个出游人（"+checkdeNum+"/" + newNum + "）");
+
+            }
+
+        }
+        PrefUtils.setInt(mActivity, "variaNum", variaNum);
+
+
+        // tvTitlePerson.setText("您还需选择"+personNum+"个出游人（0/"+newNum+"）");
+    }
+
+
 }

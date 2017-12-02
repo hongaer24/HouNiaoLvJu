@@ -76,6 +76,7 @@ public class PersonsEditActivity extends AppCompatActivity {
         }
             if(getScenicBean==null){
                 getScenicBean=new GetScenicPassengerBean.DataBean();
+                tvTopbarTitle.setText("添加出游人");
             }else {
                 etEditName.setText(getScenicBean.getName());
                 etEditIDcard.setText(getScenicBean.getIdentityno());
@@ -99,7 +100,7 @@ public class PersonsEditActivity extends AppCompatActivity {
         params.addBodyParameter("info[identityNo]", "440606197001010898");*/
         RequestParams params = new RequestParams(Constants.ADD_TOURIST_URL);
         params.addBodyParameter("userid", userid);
-        params.addBodyParameter("info[name]",getScenicBean.getId());
+        params.addBodyParameter("info[name]",getScenicBean.getName());
         params.addBodyParameter("info[phone]", getScenicBean.getPhone());
         params.addBodyParameter("info[identityNo]", getScenicBean.getIdentityno());
         //params.addBodyParameter("userid", userid);
@@ -155,7 +156,7 @@ public class PersonsEditActivity extends AppCompatActivity {
 
                     JSONObject obj = new JSONObject(result);
                     int status = obj.getInt("status");
-                    Log.i("333", "id===" + result);
+
                     if (status == 0) {
                         showToast(obj.getString("msg"));
                     } else {
@@ -228,11 +229,11 @@ public class PersonsEditActivity extends AppCompatActivity {
     public void showToast(String msg) {
         SPDialogUtils.showToast(this, msg);
     }
-    @Override
+  /*  @Override
     protected void onResume() {
         super.onResume();
         initData();
-    }
+    }*/
 
 }
 

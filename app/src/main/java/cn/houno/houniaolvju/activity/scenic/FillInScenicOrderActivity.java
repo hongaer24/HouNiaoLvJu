@@ -190,6 +190,7 @@ public class FillInScenicOrderActivity extends Activity {
                 break;
             case R.id.iv_number_person:
                 Intent intent1 = new Intent(this, PersonsListActivity.class);
+                intent1.putExtra("persons", intTicketNum);
                 startActivity(intent1);
                 finish();
                 break;
@@ -287,11 +288,13 @@ public class FillInScenicOrderActivity extends Activity {
                 if (intTicketNum > 1) {
                     intTicketNum--;
                     mTvReferNum.setText(intTicketNum + "");
+                    tvNumberPerson.setText("出游人（需要填写"+intTicketNum+"个出游人）");
                 }
             } else if (i == R.id.btn_refer_add) {
                 if (intTicketNum < ticketNumEst) {
                     intTicketNum++;
                     mTvReferNum.setText(intTicketNum + "");
+                    tvNumberPerson.setText("出游人（需要填写"+intTicketNum+"个出游人）");
                 }
             }
             allPrice = price * intTicketNum;
@@ -307,7 +310,6 @@ public class FillInScenicOrderActivity extends Activity {
             Bundle extras = data.getExtras();
             mCheckDate = extras.getString("dateIn");
             mCheckWeek = extras.getString("dateInWeek");
-
             mTvDaysSelector.setText(mCheckDate + " " + mCheckWeek);
 
         }

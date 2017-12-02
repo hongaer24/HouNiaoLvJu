@@ -1,0 +1,1 @@
+include ':app', ':rollviewpager', ':countdownview', ':viewpagerindicator', ':dropdownmenu', ':expandabletextview', ':circleprogressbar', ':slidingmenu', ':barCodeTest', ':xrefreshview', ':PhotoPicker'
