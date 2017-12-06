@@ -77,7 +77,10 @@ public class Constants {
     //景点评论列表
     public static final String SCENIC_COMMENT_LIST = "http://apis.houno.cn/getScenicComment.php";
     //景点订单
-    public static final String SCENIC_ORDER_URL = "http://apis.houno.cn/addScenicOrder";
+   // public static final String SCENIC_ORDER_URL = "http://apis.houno.cn/addScenicOrder";
+     public static final String SCENIC_ORDER_URL = "http://apis.houno.cn/addToursScenicOrder";
+
+
 
     //获取游客信息
     public static final String GET_TOURIST_URL = "http://apis.houno.cn/GetScenicPassenger";
@@ -135,7 +138,8 @@ public class Constants {
     //我的订单
     public static final String MYORDER_URL = "http://apis.houno.cn/myorder.php";
     //订单详细
-    public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail.php";
+   // public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail.php";
+    public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail";
     //取消订单
     public static final String CANCEL_ORDER_URL = "http://apis.houno.cn/cancelorder.php";
 

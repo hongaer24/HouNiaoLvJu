@@ -251,7 +251,8 @@ public class OrderListBean implements Serializable{
             private String payfs;
             private String row_number;
             private String id;
-            private String title;
+            //title
+            private String scenicname;
             private String address;
             private String city;
             private String telphone;
@@ -463,11 +464,11 @@ public class OrderListBean implements Serializable{
             }
 
             public String getTitle() {
-                return title;
+                return scenicname;
             }
 
             public void setTitle(String title) {
-                this.title = title;
+                this.scenicname = title;
             }
 
             public String getAddress() {

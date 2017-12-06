@@ -28,9 +28,21 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/iv_order_type"
-            android:text="酒店"
+            android:text="酒店 |"
             android:textColor="@color/black_txt"
             android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_orderno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3514460"
+            android:textSize="15sp"
+            android:textColor="#918f8f"
+            android:layout_toRightOf="@+id/tv_order_type"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"
+            />
 
         <TextView
             android:id="@+id/tv_pay_status"
@@ -167,4 +179,5 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:background="#dddddd" />
+
 </LinearLayout>

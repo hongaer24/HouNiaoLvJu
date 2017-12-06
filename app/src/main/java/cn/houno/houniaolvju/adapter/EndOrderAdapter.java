@@ -136,7 +136,7 @@ public class EndOrderAdapter extends BaseAdapter {
             holder.llOrderNumber.setVisibility(View.VISIBLE);
             holder.llAirlines.setVisibility(View.GONE);
 
-            if (TextUtils.equals(type, "Scenic")) {
+            if (TextUtils.equals(type, "toursscenic")) {
                 //景点
                 holder.tvCheckDateTxt.setText("预订日期：");
                 holder.tvOrderProjectTxt.setText("预订项目：");
@@ -147,6 +147,7 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
+                holder.tvOrderno.setText(mList.get(position).getOrderno());
                 String checkIn = mList.get(position).getCheckin();
                 holder.tvCheckDate.setText(checkIn);
             } else {
@@ -183,6 +184,8 @@ public class EndOrderAdapter extends BaseAdapter {
         }
         //支付判断
         String status = mList.get(position).getStatus();
+        String pay_status = mList.get(position).getPay_status();
+
 
         if (TextUtils.equals(type, "Train")) {
             if (TextUtils.equals(status, "1")) {
@@ -197,7 +200,10 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvPayStatus.setText("已完成");
             }
         } else {
-            if (TextUtils.equals(status, "2")) {
+            if(TextUtils.equals(status, "1")&&TextUtils.equals(pay_status, "0")||TextUtils.equals(status, "10")&&TextUtils.equals(pay_status, "0")){
+                holder.tvPayStatus.setText("已取消");
+            }
+           /* if (TextUtils.equals(status, "2")) {
                 holder.tvPayStatus.setText("已取消");
             } else if (TextUtils.equals(status, "3")) {
                 holder.tvPayStatus.setText("已完成");
@@ -205,10 +211,10 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvPayStatus.setText("已退款");
             } else {
                 holder.tvPayStatus.setText("待支付");
-            }
+            }*/
         }
-        String price = Double.parseDouble(mList.get(position).getPrice()) + "";
-        MyText2Utils.formatTicketPrice(mContext, holder.tvOrderPrice, price);
+        //String price = Double.parseDouble(mList.get(position).getPrice()) + "";
+        //MyText2Utils.formatTicketPrice(mContext, holder.tvOrderPrice, price);
         return convertView;
     }
 
@@ -222,6 +228,8 @@ public class EndOrderAdapter extends BaseAdapter {
         TextView tvOrderType;
         @Bind(R.id.tv_pay_status)
         TextView tvPayStatus;
+        @Bind(R.id.tv_orderno)
+        TextView tvOrderno;
         @Bind(R.id.tv_order_title)
         TextView tvOrderTitle;
         @Bind(R.id.tv_order_price)

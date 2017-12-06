@@ -20,6 +20,9 @@ import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -234,17 +237,68 @@ public class FillInScenicOrderActivity extends Activity {
         mProgressDialog.setCancelable(true);
         mProgressDialog.show();
 
-        Map<String, String> params = new HashMap<>();
-        params.put("userid", userid);
-        params.put("sid", mScenicId);
-        params.put("tid", mTicketId);
-        params.put("info[phone]", mEtJdPhone.getText().toString().trim());
-        params.put("info[username]", mEtJdName.getText().toString().trim());
-        params.put("info[ticketnum]", mTvReferNum.getText().toString().trim());
+        //Map<String, String> params = new HashMap<>();
+        RequestParams params = new RequestParams(Constants.SCENIC_ORDER_URL);
+        params.addBodyParameter("userid", userid);
+        params.addBodyParameter("info[productId]",  mTicketId);
+        params.addBodyParameter("info[startTime]","2017-12-06");
+        params.addBodyParameter("info[productname]", mTicketTitle);
+        params.addBodyParameter("contact[tel]", mEtJdPhone.getText().toString().trim());
+        params.addBodyParameter("contact[name]", mEtJdName.getText().toString().trim());
+        params.addBodyParameter("info[bookNumber]", mTvReferNum.getText().toString().trim());
+        params.addBodyParameter("info[totalprice]",allPrice+"");
 
-        params.put("info[checkin]", mCheckDate);
 
-        OkHttpClientManager.postAsync(Constants.SCENIC_ORDER_URL, params, null, new Handler() {
+        x.http().post(params, new Callback.CommonCallback<String>() {
+
+            @Override
+            public void onSuccess(String result) {
+                try {
+
+                    JSONObject obj = new JSONObject(result);
+                    int status = obj.getInt("status");
+
+                    if (status == 0) {
+                         Log.i("0101", "result==="+result);
+                         Log.i("0101", "result==="+ obj.getString("orderno"));
+                        Intent intent = new Intent();
+                        intent.putExtra("type", "tuniuscenic");
+                        intent.putExtra("price", allPrice);
+                        intent.putExtra("orderno", obj.getString("orderno"));
+                        intent.putExtra("title", mScenicTitle + " - " + mTicketTitle);
+                        intent.setClass(mActivity, OrderDetailActivity.class);
+                        startActivity(intent);
+                        //parseData(result);
+
+
+                    } else {
+                        Toast.makeText(mActivity, obj.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+               /* pbLoading.setVisibility(View.GONE);
+                tvLoading.setText("加载失败");*/
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+                //rfvScenicDetail.stopRefresh();
+            }
+        });
+
+        // params.put("info[checkin]", mCheckDate);
+
+      /*  OkHttpClientManager.postAsync(Constants.SCENIC_ORDER_URL, params, null, new Handler() {
             @Override
             public void handleMessage(Message msg) {
                 if (mProgressDialog.isShowing()) {
@@ -255,12 +309,13 @@ public class FillInScenicOrderActivity extends Activity {
                         String succeedResult = msg.obj.toString();
                         try {
                             JSONObject obj = new JSONObject(succeedResult);
+                            Log.i("0101", "id===== "+obj.getInt("status"));
                             if (obj.getInt("status") == 0) {
                                 Intent intent = new Intent();
                                 intent.putExtra("type", "scenic");
                                 intent.putExtra("orderno", obj.getString("orderno"));
                                 intent.putExtra("title", mScenicTitle + " - " + mTicketTitle);
-                                intent.putExtra("price", allPrice);
+                                //intent.putExtra("price", allPrice);
                                 IngOrderPager.refresh = true;
                                 intent.setClass(mActivity, OrderDetailActivity.class);
                                 startActivity(intent);
@@ -276,7 +331,7 @@ public class FillInScenicOrderActivity extends Activity {
                         break;
                 }
             }
-        }, R.id.doSucceed, R.id.doFail);
+        }, R.id.doSucceed, R.id.doFail);*/
     }
 
     private class TicketClick implements View.OnClickListener {

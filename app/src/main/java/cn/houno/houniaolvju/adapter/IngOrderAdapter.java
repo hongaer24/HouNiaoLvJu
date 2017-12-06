@@ -158,15 +158,17 @@ public class IngOrderAdapter extends BaseAdapter {
             holder.llOrderNumber.setVisibility(View.VISIBLE);
             holder.llAirlines.setVisibility(View.GONE);
 
-            if (TextUtils.equals(type, "Scenic")) {
+            if (TextUtils.equals(type, "toursscenic")) {
                 //景点
                 holder.tvCheckDateTxt.setText("预订日期：");
                 holder.tvOrderProjectTxt.setText("预订项目：");
                 holder.tvOrderNumberTxt.setText("预订人数：");
                 holder.ivOrderType.setImageResource(R.drawable.label_order_scenic);
-                holder.tvOrderType.setText("景点");
+                holder.tvOrderType.setText("景点 |");
                 String payStatus = mList.get(position).getPay_status();
-                if (TextUtils.equals(payStatus, "1")) {//已支付
+                String  Status = mList.get(position).getStatus();
+
+                if (TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "0")) {//已支付
                     holder.tvPayStatus.setText("已支付");
                 } else {
                     holder.tvPayStatus.setText("待支付");
@@ -174,6 +176,10 @@ public class IngOrderAdapter extends BaseAdapter {
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
+                if(mList.get(position).getPrice()!=null){
+                    holder.tvOrderPrice.setText(mList.get(position).getPrice().trim());
+                }
+                holder.tvOrderno.setText(mList.get(position).getOrderno());
                 String checkIn = mList.get(position).getCheckin();
                 holder.tvCheckDate.setText(checkIn);
             } else {
@@ -214,11 +220,10 @@ public class IngOrderAdapter extends BaseAdapter {
                 }
             }
         }
-        String price = Double.parseDouble(mList.get(position).getPrice()) + "";
-        MyText2Utils.formatTicketPrice(mContext, holder.tvOrderPrice, price);
+        //String price = Double.parseDouble(mList.get(position).getPrice()) + "";
+       // MyText2Utils.formatTicketPrice(mContext, holder.tvOrderPrice, price);
         return convertView;
     }
-
 
     static class ViewHolder {
         @Bind(R.id.tv_train_arrive_time)
@@ -243,6 +248,8 @@ public class IngOrderAdapter extends BaseAdapter {
         TextView tvOrderNumberTxt;
         @Bind(R.id.tv_order_number)
         TextView tvOrderNumber;
+        @Bind(R.id.tv_orderno)
+        TextView tvOrderno;
         @Bind(R.id.ll_order_number)
         LinearLayout llOrderNumber;
         @Bind(R.id.tv_check_date_txt)
