@@ -1,5 +1,6 @@
 package cn.houno.houniaolvju.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -11,7 +12,7 @@ import java.util.List;
  * 修改时间：2017/1/4 16:06
  * 修改备注：
  */
-public class ScenicDetailBean  {
+public class ScenicDetailBean implements Serializable {
 
     /**
      * status : 0
