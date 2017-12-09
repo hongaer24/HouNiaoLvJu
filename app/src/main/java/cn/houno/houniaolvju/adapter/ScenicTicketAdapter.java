@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.List;
 
 import cn.houno.houniaolvju.R;
@@ -120,14 +122,18 @@ public class ScenicTicketAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
 
-                    Intent intent = new Intent();
-                    intent.setClass(mContext, FillInScenicOrderActivity.class);
-                   // intent.putExtra("sid", list.get(position).getSid());
+                   /* Intent intent = new Intent();
+                    intent.setClass(mContext, FillInScenicOrderActivity.class);*/
+                    Intent intent = new Intent(mContext, FillInScenicOrderActivity .class);
+                    // intent.putExtra("sid", list.get(position).getSid());
                     intent.putExtra("tid", list.get(position).getProductId());
                     intent.putExtra("scenicTitle", scenicTitle.trim());
                     intent.putExtra("scenicAddress", scenicAddress.trim());
                     intent.putExtra("ticketTitle", list.get(position).getProductName().trim());
-                    intent.putExtra("price", price + "");
+                    intent.putExtra("price", price);
+                    intent.putExtra("custInfoLimit", list.get(position).getTicketlistinfo().getCustinfolimit());
+                    intent.putExtra("position", position);
+                   // Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
                     mContext.startActivity(intent);
 
                 }

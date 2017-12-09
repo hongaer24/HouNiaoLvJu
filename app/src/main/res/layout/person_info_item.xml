@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dip"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dip">
+
+            <TextView
+                android:id="@+id/tv_personinfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/address_edit_btn"
+                android:text="张三"
+                android:gravity="center_vertical|left"
+                android:paddingLeft="30dp"
+                android:textColor="#212121"
+                />
+
+            <TextView
+                android:id="@+id/tv_person_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toRightOf="@+id/address_edit_btn"
+                android:text="身份证：460103210090020001"
+                android:lines="2"
+                android:gravity="center_vertical|right"
+                android:paddingRight="20dp"
+                />
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</LinearLayout>

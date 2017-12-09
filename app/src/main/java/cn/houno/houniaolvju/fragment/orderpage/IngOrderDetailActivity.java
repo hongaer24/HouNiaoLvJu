@@ -321,15 +321,15 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     }
 
     public void getDataFromServer() {
-       /* Map<String, String> map = new HashMap<>();
+        Map<String, String> map = new HashMap<>();
         map.put("userid", userid);
         map.put("orderno",orderNo);
-        map.put("type",  type);*/
-        RequestParams params = new RequestParams(Constants.ORDER_DETAIL_URL);
+        map.put("type",  "tuniuscenic");
+      /*  RequestParams params = new RequestParams(Constants.ORDER_DETAIL_URL);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("orderno", orderNo);
-        params.addBodyParameter("type","tuniuscenic");
-        x.http().post(params, new Callback.CommonCallback<String>() {
+        params.addBodyParameter("type","tuniuscenic");*/
+     /*   x.http().post(params, new Callback.CommonCallback<String>() {
 
             @Override
             public void onSuccess(String result) {
@@ -343,13 +343,13 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                         parserData(result);
                         setText();
                         setStatus();
-                       /* Intent intent = new Intent();
+                       *//* Intent intent = new Intent();
                         intent.putExtra("type", "tuniuscenic");
                         intent.putExtra("price", allPrice);
                         intent.putExtra("orderno", obj.getString("orderno"));
                         intent.putExtra("title", mScenicTitle + " - " + mTicketTitle);
                         intent.setClass(mActivity, OrderDetailActivity.class);
-                        startActivity(intent);*/
+                        startActivity(intent);*//*
                         //parseData(result);
 
                     } else {
@@ -362,8 +362,8 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
 
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-               /* pbLoading.setVisibility(View.GONE);
-                tvLoading.setText("加载失败");*/
+               *//* pbLoading.setVisibility(View.GONE);
+                tvLoading.setText("加载失败");*//*
             }
 
             @Override
@@ -375,13 +375,13 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
             public void onFinished() {
                 //rfvScenicDetail.stopRefresh();
             }
-        });
+        });*/
 
-        //OkHttpClientManager.postAsync(Constants.ORDER_DETAIL_URL, map, null, handler, R.id.doSucceed, R.id.doFail);
+        OkHttpClientManager.postAsync(Constants.ORDER_DETAIL_URL, map, null, handler, R.id.doSucceed, R.id.doFail);
 
     }
 
-   /* private Handler handler = new Handler() {
+    private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
@@ -398,7 +398,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                     break;
             }
         }
-    };*/
+    };
 
 
     private void setText() {
@@ -432,7 +432,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
             //tvAddress.setText(mHotelAddress);
            // tvOther.setVisibility(View.GONE);
         }
-         tvOrdernoNumber.setText(orderNo);
+        tvOrdernoNumber.setText(orderNo);
         tvName.setText("取票人：" + mCheckName);
         tvPhone.setText("手机号：" + mCheckPhone);
         tvOrderPrice.setText("订单总额¥"+mTotalPrice);

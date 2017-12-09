@@ -260,12 +260,18 @@
         <activity
             android:name=".activity.scenic.FillInScenicOrderActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
             android:windowSoftInputMode="adjustPan|stateHidden" />
 
         <!-- 景点游玩日期选择页面 -->
         <activity
             android:name=".activity.scenic.SingleDatePickerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize" />
+
+        <activity
+            android:name=".activity.scenic.MoreInfoCalendarActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+
         <!-- 异地养老首页 -->
         <activity
             android:name=".activity.ydhotel.YdIndexActivity"
@@ -564,8 +570,8 @@
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent" />
-        <activity android:name=".activity.scenic.FillNumberofPersonActivity" />
-        <activity android:name=".activity.scenic.PersonsListActivity" />
+       <!-- <activity android:name=".activity.scenic.FillNumberofPersonActivity" />-->
+        <activity android:name=".activity.scenic.PersonsListActivity" ></activity>
         <activity android:name=".activity.scenic.PersonsEditActivity"></activity>
     </application>
 

@@ -27,6 +27,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
+import cn.houno.houniaolvju.adapter.PersonInfoAdapter;
 import cn.houno.houniaolvju.adapter.PersonsListAdapter;
 import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
 import cn.houno.houniaolvju.global.Constants;
@@ -52,6 +53,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
     private PersonsListActivity mActivity;
 
     private PersonsListAdapter madapter;
+   // private PersonInfoAdapter mPersonInfoAdapter;
     private List<GetScenicPassengerBean.DataBean> touristDataBean;
     private int personNum;
     private int variaNum;
@@ -92,7 +94,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                     int status = obj.getInt("status");
 
                     if (status == 0) {
-                        // Log.i("999", "result==="+result);
+
                         parseData(result);
 
                     } else {
@@ -126,6 +128,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
         Gson gson = new Gson();
         GetScenicPassengerBean getScenicPassengerBean = gson.fromJson(result, GetScenicPassengerBean.class);
         touristDataBean = getScenicPassengerBean.getData();
+        Log.i("7878", "result==="+ touristDataBean);
 
 
         if (madapter == null) {
@@ -135,6 +138,9 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
         } else {
             madapter.setData(touristDataBean);
         }
+
+
+
         // showData(touristDataBean);
 
 
@@ -154,6 +160,8 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 finish();
                 break;
             case R.id.add_address_btn:
+                finish();
+
                 break;
             case R.id.tv_add_person:
                 Intent intent = new Intent(this, PersonsEditActivity.class);
@@ -171,6 +179,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
         startActivity(intent);
     }
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -187,6 +196,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 variaNum--;
                 checkdeNum++;
                 tvTitlePerson.setText("您还需选择" + variaNum + "个出游人（"+checkdeNum+"/" + newNum + "）");
+
             }
 
 
@@ -200,6 +210,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
 
         }
         PrefUtils.setInt(mActivity, "variaNum", variaNum);
+        //touristDataBean.get(position).setChoosed(ischecked);
 
 
         // tvTitlePerson.setText("您还需选择"+personNum+"个出游人（0/"+newNum+"）");

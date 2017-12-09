@@ -38,6 +38,7 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
     CheckBox checkBox;
     private GetScenicPassengerBean.DataBean touristsBean;
     private CheckInterface checkInterface;
+    private PersonInfoInterface personInfoInterface;
 
 
     public PersonsListAdapter(Context context, GetScenicListener getScenicListener, List<GetScenicPassengerBean.DataBean> touristsMessageBeanList, TextView tvTitlePerson) {
@@ -54,6 +55,8 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
     public void setCheckInterface(CheckInterface checkInterface) {
         this.checkInterface = checkInterface;
     }
+
+
 
     public void setData(List<GetScenicPassengerBean.DataBean> touristsMessageBeanList) {
         if (touristsMessageBeanList == null) return;
@@ -149,6 +152,12 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
             case R.id.person_edit_btn:
                 if (mGetScenicListener != null)
                     mGetScenicListener.onItemEdit(touristsBean);
+
+                break;
+
+            case R.id.determine_chekbox:
+                if (personInfoInterface != null)
+                    personInfoInterface.CheckPersonIfno(touristsBean);
                 break;
 
         }
@@ -178,14 +187,22 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
 
     public interface GetScenicListener {
         void onItemEdit(GetScenicPassengerBean.DataBean GetScenicBean);
-
         // void onItemCheck(GetScenicPassengerBean.DataBean GetScenicBean);
-
     }
+
+   /* public interface CheckScenicListener {
+        void onItemCheck(GetScenicPassengerBean.DataBean GetScenicBean);
+        // void onItemCheck(GetScenicPassengerBean.DataBean GetScenicBean);
+    }*/
 
     public interface CheckInterface {
         void CheckPersonNum(int position, boolean ischecked);
+        //void CheckPersonIfno(GetScenicPassengerBean.DataBean GetScenicBean);
+    }
 
+    public interface PersonInfoInterface {
+
+        void CheckPersonIfno(GetScenicPassengerBean.DataBean GetScenicBean);
     }
 
 

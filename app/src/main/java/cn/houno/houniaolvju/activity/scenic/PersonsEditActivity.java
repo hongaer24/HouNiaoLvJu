@@ -211,6 +211,8 @@ public class PersonsEditActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.iv_back:
                 finish();
+
+
                 break;
             case R.id.add_person_btn:
 

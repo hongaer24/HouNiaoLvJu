@@ -52,7 +52,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="#f5f5f5"
             android:divider="@drawable/line_dddddd"
             android:orientation="vertical"
@@ -219,7 +219,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:background="#ffffff"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -250,7 +250,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:background="#ffffff"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -278,17 +278,56 @@
                     android:singleLine="true"
                     android:textColor="@color/black_txt"
                     android:textSize="16sp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_idcard"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_idcard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="身份证"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_idcard"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="用于景区入园等凭证"
+                    android:inputType="phone"
+                    android:maxLength="20"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black_txt"
+                    android:textSize="16sp" />
+
+
             </LinearLayout>
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
             <LinearLayout
+                android:id="@+id/ll_personinfo"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="40dp"
                 android:padding="10dp"
                 android:gravity="center_vertical"
                 android:background="#ffffff"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone" >
 
 
                 <TextView
@@ -307,7 +346,17 @@
                     android:src="@drawable/icon_go"/>
             </LinearLayout>
 
+
+            <ListView
+                android:id="@+id/lv_person"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+
         </LinearLayout>
+
+
+
     </com.andview.refreshview.XScrollView>
 
     <RelativeLayout
