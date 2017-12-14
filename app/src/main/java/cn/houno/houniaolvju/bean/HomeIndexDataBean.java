@@ -1,7 +1,7 @@
 package cn.houno.houniaolvju.bean;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 项目名称：Houniaolvju
@@ -17,7 +17,7 @@ public class HomeIndexDataBean implements Serializable {
 
     /**
      * status : 0
-     * data : {"fqHouses":[{"id":"2","title":"曼特宁温泉公寓式酒店","img":"http://fq.houno.cn/Uploads/OffActi/20161107/1725475820489b4cc34.jpg","description":"曼特宁温泉公寓式酒店是海南候鸟旅居旅游地产股份有限公司实力打造的极具地域特色并时具备较高投资价值的品质之作。是兴隆具备大型商业配套的酒店式公寓，项目总占地19825.30平方，总建筑面积26027.12平方（商业楼8000多平方，公寓楼12000多平方，余下4000平方为地下室）。规划有商业和小户型公寓，并引进特产超市、特色餐厅、博物馆作为将来的大商业配套。让您足不出户坐享齐全的生活、娱乐及商业配套。","price":"69800.0000","region":"","address":"海南兴隆旅游区温泉大道南侧","project":"花园洋房,舒适软装,养生避暑","property_type":"公寓式酒店","ksdate":"1970-01-01 08:00","jsdate":"1970-01-01 08:00","add_time":"1477556079","row_number":"1"}],"sports":[{"id":"11","img":"http://pic.houno.cn/Uploads/OffActi/20161118/170014582ec31ee9de8.png","title":"海口周边一日游","price":"198.0000","ksdate":"2016-11-18 11:00:00.000","jsdate":"2016-12-23 11:00:00.000","row_number":"1"}],"tgHotel":[{"id":"25604","cate_id":"1","img":"http://pic.houno.cn/Uploads/Hotel/20161206/102614584621c6ee81c.jpg","map":"18.7528850000|110.2272510000","lat":"18.7528850000","lng":"110.2272510000","title":"兴隆曼特宁温泉度假酒店","star":"1","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"3","is_wifi":"1","is_network":"1","is_breakfast":"0","is_restaurant":"0","is_more_room":"0","is_big_bed":"0","is_tow_bed":"0","is_park":"1","is_swimming":"1","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"0","is_reception":"0","is_pet":"0","row_number":"1","catename":"酒店","street":"温泉大道","merName":{"id":"268384","title":"高级园景房","area":"56","bed_num":"2","people_num":"2","roomtype":"","webprice":"198","marketprice":"0","row_number":"1"},"tg":{"id":"37","rid":"268384","title":"5间团购","num":"5","price":"","discount_money":"30","remark":"","status":"1","addtime":"2016-12-07 17:35:53.000","start_time":"2016-12-07 00:00:00.000","end_time":"2017-01-10 00:00:00.000","mer_id":"0","row_number":"1"}}],"actiScenic":[{"img":"http://pic.houno.cn/Uploads/Scenic/20161020/09382458082010d1775.png","title":"海口观澜湖华谊冯小刚电影公社","id":"176","address":"海南省海口市观澜湖大道1号观澜湖度假区内","cate_id":"3","star":"2A以下景区","hits":"10","row_number":"1","cate_name":"主题乐园","price":{"webprice":"88.00","marketprice":"138.00","price":".00","userprice":".00","stock":"500","row_number":"1"}}],"mainHotel":[{"id":"16781","cate_id":"1","img":"http://pic.houno.cn/Uploads/Hotel/20161114/11090558292ad13a804.png","map":"20.0098790000|110.3438600000","lat":"20.0098790000","lng":"110.3438600000","title":"海口自游岛酒店坡博店 ","star":"1","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"1","is_wifi":"1","is_network":"1","is_breakfast":"0","is_restaurant":"0","is_more_room":"0","is_big_bed":"0","is_tow_bed":"0","is_park":"1","is_swimming":"0","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"0","is_reception":"0","is_pet":"0","row_number":"1","catename":"酒店","street":"坡博路","merName":{"id":"50876","title":"温馨双床房","area":"30","bed_num":"2","people_num":"2","roomtype":"","webprice":"148","marketprice":"0","row_number":"1"}},{"id":"16782","cate_id":"1","img":"http://pic.houno.cn/Uploads/Hotel/20161114/1150355829348b6ce64.png","map":"20.0363460000|110.3781050000","lat":"20.0363460000","lng":"110.3781050000","title":"海口自游岛酒店美苑店 ","star":"1","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"1","is_wifi":"0","is_network":"1","is_breakfast":"0","is_restaurant":"0","is_more_room":"0","is_big_bed":"0","is_tow_bed":"0","is_park":"1","is_swimming":"0","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"0","is_reception":"0","is_pet":"0","row_number":"2","catename":"酒店","street":"美苑路","merName":{"id":"50885","title":"温馨大床房","area":"20","bed_num":"1","people_num":"2","roomtype":"","webprice":"128","marketprice":"0","row_number":"1"}},{"id":"16784","cate_id":"1","img":"http://pic.houno.cn/Uploads/Hotel/20161114/1211565829398ce5555.png","map":"20.0296370000|110.3430800000","lat":"20.0296370000","lng":"110.3430800000","title":"海口自游岛酒店海秀店 ","star":"3","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"1","is_wifi":"1","is_network":"1","is_breakfast":"0","is_restaurant":"0","is_more_room":"0","is_big_bed":"0","is_tow_bed":"0","is_park":"1","is_swimming":"0","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"0","is_reception":"0","is_pet":"0","row_number":"3","catename":"酒店","street":"海秀东路","merName":{"id":"50892","title":"欧式公寓房 大床/双标","area":"20","bed_num":"","people_num":"2","roomtype":"","webprice":"128","marketprice":"0","row_number":"1"}}]}
+     * data : {"sports":[{"id":"13","img":"http://pic.houno.cn/Uploads/OffActi/20170426/09463158fffbf7d9fdb.jpg","title":"220元限时抢！海口三弦印象·家酒店","market_price":"298.0000","price":"220.0000","ksdate":"2017-04-25","jsdate":"2017-06-30","row_number":"1","now_date":"2017-12-14 17:15:40"}],"tgHotel":[{"id":"25604","cate_id":"1","commentnum":"9","average":"5.0","img":"http://pic.houno.cn/Uploads/Hotel/20170118/170327587f2f5fe3443.jpg","map":"18.7528850000|110.2272510000","lat":"18.7528850000","lng":"110.2272510000","title":"兴隆曼特宁温泉度假酒店","star":"9","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"3","is_wifi":"1","is_network":"1","is_breakfast":"1","is_restaurant":"1","is_more_room":"0","is_big_bed":"1","is_tow_bed":"0","is_park":"1","is_swimming":"1","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"1","is_reception":"0","is_pet":"0","row_number":"1","catename":"酒店","street":"温泉大道","room":{"id":"268385","title":"豪华景观房","area":"56","bed_num":"2","people_num":"2","roomtype":"高级双床房","webprice":"220","marketprice":"0","row_number":"1"},"tg":{"id":"36","rid":"268385","title":"5间团购","num":"5","price":"","discount_money":"30","remark":"","status":"1","addtime":"2017-06-08 09:32:27.000","start_time":"2016-12-07 00:00:00.000","end_time":"2017-11-30 00:00:00.000","mer_id":"103","row_number":"1"}}],"actiScenic":[{"scenicname":"观澜湖新城","id":"1026","scenicid":"3532855","opentime":"10:00-22:00。","scenicaddress":"海南省海口观澜湖新城9栋三楼2304、2305号铺（兰桂坊楼上）反弹蹦床公园。","defaultpic":"http://m.tuniucdn.com/fb2/t1/G1/M00/CE/03/Cii9EVjmGRWIOSJbAAFoJQWDFZwAAJYQgOggZYAAWg9863_w240_h135_c1_t0.jpg","hits":"6063","saleprice":"88.0","webprice":"98.0","row_number":"1"}],"mainHotel":[{"id":"33421","cate_id":"1","commentnum":"0","average":"5.0","img":"http://pic.houno.cn/Uploads/ctrip/5910043/200408000000374gxB4B4_R_550_412.jpg","map":"39.862312|116.413506","lat":"39.8623120","lng":"116.4135060","title":"麗枫酒店（北京南站木樨园店）","star":"4","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"1","is_wifi":"0","is_network":"0","is_breakfast":"0","is_restaurant":"0","is_more_room":"0","is_big_bed":"0","is_tow_bed":"0","is_park":"0","is_swimming":"0","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"0","is_reception":"0","is_pet":"0","row_number":"1","catename":"酒店","street":"东罗园路","room":{"id":"959625","title":"高级大床房（无窗）","area":"20","bed_num":"1","people_num":"2","roomtype":"高级大床房（无窗）","webprice":"456","marketprice":"0","row_number":"1"}}],"mainTours":[{"id":"6753","productname":"<埃及-迪拜10日游>阿航成都直飞，马车巡游卢克索神庙，帆船游香蕉岛，2晚红海，棕榈岛单轨列车，全程WIFI，性价比连游，金字塔，狮身人面像","classbrandname":"常规跟团","price":8599,"img":"http://m.tuniucdn.com/fb2/t1/G1/M00/1A/E5/Cii9EVkeyDaIPFFHABzmDlqfWo0AAKWFwI1HKEAHOYm573_w450_h300_c1_t0.jpg","hits":"859","row_number":"1"},{"id":"7","productname":"<张家界森林公园-天门山-大峡谷-玻璃桥-凤凰古城双飞5日游>直飞张家界、玻璃桥栈道、玻璃桥、回程贴心安排接机、省时省心","classbrandname":"常规跟团","price":3190,"img":"http://m.tuniucdn.com/filebroker/cdn/online/50/29/5029c46d_w450_h300_c1_t0.jpg","hits":"57","row_number":"2"},{"id":"6879","productname":"<北京双高5日半自助游>告别传统跟团，半自助，王府井国贸等著名商圈酒店享自助早餐 ，含长城一日游可加故宫一日游","classbrandname":"半自助","price":2756,"img":"http://m.tuniucdn.com/fb2/t1/G2/M00/4C/0D/Cii-TFfABHSIPA3hAAi6kIZy6ygAABv6gB8yX8ACLqo981_w450_h300_c1_t0.jpg","hits":"53","row_number":"3"}]}
      * msg : 数据获取成功
      */
 
@@ -50,290 +50,68 @@ public class HomeIndexDataBean implements Serializable {
     }
 
     public static class DataBean {
-        /**
-         * id : 2
-         * title : 曼特宁温泉公寓式酒店
-         * img : http://fq.houno.cn/Uploads/OffActi/20161107/1725475820489b4cc34.jpg
-         * description : 曼特宁温泉公寓式酒店是海南候鸟旅居旅游地产股份有限公司实力打造的极具地域特色并时具备较高投资价值的品质之作。是兴隆具备大型商业配套的酒店式公寓，项目总占地19825.30平方，总建筑面积26027.12平方（商业楼8000多平方，公寓楼12000多平方，余下4000平方为地下室）。规划有商业和小户型公寓，并引进特产超市、特色餐厅、博物馆作为将来的大商业配套。让您足不出户坐享齐全的生活、娱乐及商业配套。
-         * price : 69800.0000
-         * region :
-         * address : 海南兴隆旅游区温泉大道南侧
-         * project : 花园洋房,舒适软装,养生避暑
-         * property_type : 公寓式酒店
-         * ksdate : 1970-01-01 08:00
-         * jsdate : 1970-01-01 08:00
-         * add_time : 1477556079
-         * row_number : 1
-         */
+        private List<SportsBean> sports;
+        private List<TgHotelBean> tgHotel;
+        private List<ActiScenicBean> actiScenic;
+        private List<MainHotelBean> mainHotel;
+        private List<MainToursBean> mainTours;
 
-        private ArrayList<FqHousesBean> fqHouses;
-        /**
-         * id : 11
-         * img : http://pic.houno.cn/Uploads/OffActi/20161118/170014582ec31ee9de8.png
-         * title : 海口周边一日游
-         * price : 198.0000
-         * ksdate : 2016-11-18 11:00:00.000
-         * jsdate : 2016-12-23 11:00:00.000
-         * row_number : 1
-         */
-
-        private ArrayList<SportsBean> sports;
-        /**
-         * id : 25604
-         * cate_id : 1
-         * img : http://pic.houno.cn/Uploads/Hotel/20161206/102614584621c6ee81c.jpg
-         * map : 18.7528850000|110.2272510000
-         * lat : 18.7528850000
-         * lng : 110.2272510000
-         * title : 兴隆曼特宁温泉度假酒店
-         * star : 1
-         * is_sale : 0
-         * is_recommend : 0
-         * is_hot : 0
-         * waptj : 3
-         * is_wifi : 1
-         * is_network : 1
-         * is_breakfast : 0
-         * is_restaurant : 0
-         * is_more_room : 0
-         * is_big_bed : 0
-         * is_tow_bed : 0
-         * is_park : 1
-         * is_swimming : 1
-         * is_waiter : 0
-         * is_gym : 0
-         * is_meeting : 0
-         * is_business : 0
-         * is_bus : 0
-         * is_newopen : 0
-         * is_reception : 0
-         * is_pet : 0
-         * row_number : 1
-         * catename : 酒店
-         * street : 温泉大道
-         * merName : {"id":"268384","title":"高级园景房","area":"56","bed_num":"2","people_num":"2","roomtype":"","webprice":"198","marketprice":"0","row_number":"1"}
-         * tg : {"id":"37","rid":"268384","title":"5间团购","num":"5","price":"","discount_money":"30","remark":"","status":"1","addtime":"2016-12-07 17:35:53.000","start_time":"2016-12-07 00:00:00.000","end_time":"2017-01-10 00:00:00.000","mer_id":"0","row_number":"1"}
-         */
-
-        private ArrayList<TgHotelBean> tgHotel;
-        /**
-         * img : http://pic.houno.cn/Uploads/Scenic/20161020/09382458082010d1775.png
-         * title : 海口观澜湖华谊冯小刚电影公社
-         * id : 176
-         * address : 海南省海口市观澜湖大道1号观澜湖度假区内
-         * cate_id : 3
-         * star : 2A以下景区
-         * hits : 10
-         * row_number : 1
-         * cate_name : 主题乐园
-         * price : {"webprice":"88.00","marketprice":"138.00","price":".00","userprice":".00","stock":"500","row_number":"1"}
-         */
-
-        private ArrayList<ActiScenicBean> actiScenic;
-        /**
-         * id : 16781
-         * cate_id : 1
-         * img : http://pic.houno.cn/Uploads/Hotel/20161114/11090558292ad13a804.png
-         * map : 20.0098790000|110.3438600000
-         * lat : 20.0098790000
-         * lng : 110.3438600000
-         * title : 海口自游岛酒店坡博店
-         * star : 1
-         * is_sale : 0
-         * is_recommend : 0
-         * is_hot : 0
-         * waptj : 1
-         * is_wifi : 1
-         * is_network : 1
-         * is_breakfast : 0
-         * is_restaurant : 0
-         * is_more_room : 0
-         * is_big_bed : 0
-         * is_tow_bed : 0
-         * is_park : 1
-         * is_swimming : 0
-         * is_waiter : 0
-         * is_gym : 0
-         * is_meeting : 0
-         * is_business : 0
-         * is_bus : 0
-         * is_newopen : 0
-         * is_reception : 0
-         * is_pet : 0
-         * row_number : 1
-         * catename : 酒店
-         * street : 坡博路
-         * merName : {"id":"50876","title":"温馨双床房","area":"30","bed_num":"2","people_num":"2","roomtype":"","webprice":"148","marketprice":"0","row_number":"1"}
-         */
-
-        private ArrayList<MainHotelBean> mainHotel;
-
-        public ArrayList<FqHousesBean> getFqHouses() {
-            return fqHouses;
-        }
-
-        public void setFqHouses(ArrayList<FqHousesBean> fqHouses) {
-            this.fqHouses = fqHouses;
-        }
-
-        public ArrayList<SportsBean> getSports() {
+        public List<SportsBean> getSports() {
             return sports;
         }
 
-        public void setSports(ArrayList<SportsBean> sports) {
+        public void setSports(List<SportsBean> sports) {
             this.sports = sports;
         }
 
-        public ArrayList<TgHotelBean> getTgHotel() {
+        public List<TgHotelBean> getTgHotel() {
             return tgHotel;
         }
 
-        public void setTgHotel(ArrayList<TgHotelBean> tgHotel) {
+        public void setTgHotel(List<TgHotelBean> tgHotel) {
             this.tgHotel = tgHotel;
         }
 
-        public ArrayList<ActiScenicBean> getActiScenic() {
+        public List<ActiScenicBean> getActiScenic() {
             return actiScenic;
         }
 
-        public void setActiScenic(ArrayList<ActiScenicBean> actiScenic) {
+        public void setActiScenic(List<ActiScenicBean> actiScenic) {
             this.actiScenic = actiScenic;
         }
 
-        public ArrayList<MainHotelBean> getMainHotel() {
+        public List<MainHotelBean> getMainHotel() {
             return mainHotel;
         }
 
-        public void setMainHotel(ArrayList<MainHotelBean> mainHotel) {
+        public void setMainHotel(List<MainHotelBean> mainHotel) {
             this.mainHotel = mainHotel;
         }
 
-        public static class FqHousesBean implements Serializable {
-            private String id;
-            private String title;
-            private String img;
-            private String description;
-            private String price;
-            private String region;
-            private String address;
-            private String project;
-            private String property_type;
-            private String ksdate;
-            private String jsdate;
-            private String add_time;
-            private String row_number;
+        public List<MainToursBean> getMainTours() {
+            return mainTours;
+        }
 
-            public String getId() {
-                return id;
-            }
-
-            public void setId(String id) {
-                this.id = id;
-            }
-
-            public String getTitle() {
-                return title;
-            }
-
-            public void setTitle(String title) {
-                this.title = title;
-            }
-
-            public String getImg() {
-                return img;
-            }
-
-            public void setImg(String img) {
-                this.img = img;
-            }
-
-            public String getDescription() {
-                return description;
-            }
-
-            public void setDescription(String description) {
-                this.description = description;
-            }
-
-            public String getPrice() {
-                return price;
-            }
-
-            public void setPrice(String price) {
-                this.price = price;
-            }
-
-            public String getRegion() {
-                return region;
-            }
-
-            public void setRegion(String region) {
-                this.region = region;
-            }
-
-            public String getAddress() {
-                return address;
-            }
-
-            public void setAddress(String address) {
-                this.address = address;
-            }
-
-            public String getProject() {
-                return project;
-            }
-
-            public void setProject(String project) {
-                this.project = project;
-            }
-
-            public String getProperty_type() {
-                return property_type;
-            }
-
-            public void setProperty_type(String property_type) {
-                this.property_type = property_type;
-            }
-
-            public String getKsdate() {
-                return ksdate;
-            }
-
-            public void setKsdate(String ksdate) {
-                this.ksdate = ksdate;
-            }
-
-            public String getJsdate() {
-                return jsdate;
-            }
-
-            public void setJsdate(String jsdate) {
-                this.jsdate = jsdate;
-            }
-
-            public String getAdd_time() {
-                return add_time;
-            }
-
-            public void setAdd_time(String add_time) {
-                this.add_time = add_time;
-            }
-
-            public String getRow_number() {
-                return row_number;
-            }
-
-            public void setRow_number(String row_number) {
-                this.row_number = row_number;
-            }
+        public void setMainTours(List<MainToursBean> mainTours) {
+            this.mainTours = mainTours;
         }
 
         public static class SportsBean {
+            /**
+             * id : 13
+             * img : http://pic.houno.cn/Uploads/OffActi/20170426/09463158fffbf7d9fdb.jpg
+             * title : 220元限时抢！海口三弦印象·家酒店
+             * market_price : 298.0000
+             * price : 220.0000
+             * ksdate : 2017-04-25
+             * jsdate : 2017-06-30
+             * row_number : 1
+             * now_date : 2017-12-14 17:15:40
+             */
+
             private String id;
             private String img;
             private String title;
-
-
             private String market_price;
             private String price;
             private String ksdate;
@@ -415,6 +193,45 @@ public class HomeIndexDataBean implements Serializable {
         }
 
         public static class TgHotelBean implements Serializable {
+            /**
+             * id : 25604
+             * cate_id : 1
+             * commentnum : 9
+             * average : 5.0
+             * img : http://pic.houno.cn/Uploads/Hotel/20170118/170327587f2f5fe3443.jpg
+             * map : 18.7528850000|110.2272510000
+             * lat : 18.7528850000
+             * lng : 110.2272510000
+             * title : 兴隆曼特宁温泉度假酒店
+             * star : 9
+             * is_sale : 0
+             * is_recommend : 0
+             * is_hot : 0
+             * waptj : 3
+             * is_wifi : 1
+             * is_network : 1
+             * is_breakfast : 1
+             * is_restaurant : 1
+             * is_more_room : 0
+             * is_big_bed : 1
+             * is_tow_bed : 0
+             * is_park : 1
+             * is_swimming : 1
+             * is_waiter : 0
+             * is_gym : 0
+             * is_meeting : 0
+             * is_business : 0
+             * is_bus : 0
+             * is_newopen : 1
+             * is_reception : 0
+             * is_pet : 0
+             * row_number : 1
+             * catename : 酒店
+             * street : 温泉大道
+             * room : {"id":"268385","title":"豪华景观房","area":"56","bed_num":"2","people_num":"2","roomtype":"高级双床房","webprice":"220","marketprice":"0","row_number":"1"}
+             * tg : {"id":"36","rid":"268385","title":"5间团购","num":"5","price":"","discount_money":"30","remark":"","status":"1","addtime":"2017-06-08 09:32:27.000","start_time":"2016-12-07 00:00:00.000","end_time":"2017-11-30 00:00:00.000","mer_id":"103","row_number":"1"}
+             */
+
             private String id;
             private String cate_id;
             private String commentnum;
@@ -449,35 +266,7 @@ public class HomeIndexDataBean implements Serializable {
             private String row_number;
             private String catename;
             private String street;
-            /**
-             * id : 268384
-             * title : 高级园景房
-             * area : 56
-             * bed_num : 2
-             * people_num : 2
-             * roomtype :
-             * webprice : 198
-             * marketprice : 0
-             * row_number : 1
-             */
-
             private RoomBean room;
-            /**
-             * id : 37
-             * rid : 268384
-             * title : 5间团购
-             * num : 5
-             * price :
-             * discount_money : 30
-             * remark :
-             * status : 1
-             * addtime : 2016-12-07 17:35:53.000
-             * start_time : 2016-12-07 00:00:00.000
-             * end_time : 2017-01-10 00:00:00.000
-             * mer_id : 0
-             * row_number : 1
-             */
-
             private TgBean tg;
 
             public String getId() {
@@ -768,7 +557,19 @@ public class HomeIndexDataBean implements Serializable {
                 this.tg = tg;
             }
 
-            public static class RoomBean implements Serializable {
+            public static class RoomBean {
+                /**
+                 * id : 268385
+                 * title : 豪华景观房
+                 * area : 56
+                 * bed_num : 2
+                 * people_num : 2
+                 * roomtype : 高级双床房
+                 * webprice : 220
+                 * marketprice : 0
+                 * row_number : 1
+                 */
+
                 private String id;
                 private String title;
                 private String area;
@@ -852,7 +653,23 @@ public class HomeIndexDataBean implements Serializable {
                 }
             }
 
-            public static class TgBean implements Serializable {
+            public static class TgBean {
+                /**
+                 * id : 36
+                 * rid : 268385
+                 * title : 5间团购
+                 * num : 5
+                 * price :
+                 * discount_money : 30
+                 * remark :
+                 * status : 1
+                 * addtime : 2017-06-08 09:32:27.000
+                 * start_time : 2016-12-07 00:00:00.000
+                 * end_time : 2017-11-30 00:00:00.000
+                 * mer_id : 103
+                 * row_number : 1
+                 */
+
                 private String id;
                 private String rid;
                 private String title;
@@ -974,40 +791,36 @@ public class HomeIndexDataBean implements Serializable {
         }
 
         public static class ActiScenicBean implements Serializable {
-            private String img;
-            private String title;
-            private String id;
-            private String address;
-            private String cate_id;
-            private String star;
-            private String hits;
-            private String row_number;
-            private String cate_name;
             /**
-             * webprice : 88.00
-             * marketprice : 138.00
-             * price : .00
-             * userprice : .00
-             * stock : 500
+             * scenicname : 观澜湖新城
+             * id : 1026
+             * scenicid : 3532855
+             * opentime : 10:00-22:00。
+             * scenicaddress : 海南省海口观澜湖新城9栋三楼2304、2305号铺（兰桂坊楼上）反弹蹦床公园。
+             * defaultpic : http://m.tuniucdn.com/fb2/t1/G1/M00/CE/03/Cii9EVjmGRWIOSJbAAFoJQWDFZwAAJYQgOggZYAAWg9863_w240_h135_c1_t0.jpg
+             * hits : 6063
+             * saleprice : 88.0
+             * webprice : 98.0
              * row_number : 1
              */
 
-            private PriceBean price;
+            private String scenicname;
+            private String id;
+            private String scenicid;
+            private String opentime;
+            private String scenicaddress;
+            private String defaultpic;
+            private String hits;
+            private String saleprice;
+            private String webprice;
+            private String row_number;
 
-            public String getImg() {
-                return img;
+            public String getScenicname() {
+                return scenicname;
             }
 
-            public void setImg(String img) {
-                this.img = img;
-            }
-
-            public String getTitle() {
-                return title;
-            }
-
-            public void setTitle(String title) {
-                this.title = title;
+            public void setScenicname(String scenicname) {
+                this.scenicname = scenicname;
             }
 
             public String getId() {
@@ -1018,28 +831,36 @@ public class HomeIndexDataBean implements Serializable {
                 this.id = id;
             }
 
-            public String getAddress() {
-                return address;
+            public String getScenicid() {
+                return scenicid;
             }
 
-            public void setAddress(String address) {
-                this.address = address;
+            public void setScenicid(String scenicid) {
+                this.scenicid = scenicid;
             }
 
-            public String getCate_id() {
-                return cate_id;
+            public String getOpentime() {
+                return opentime;
             }
 
-            public void setCate_id(String cate_id) {
-                this.cate_id = cate_id;
+            public void setOpentime(String opentime) {
+                this.opentime = opentime;
             }
 
-            public String getStar() {
-                return star;
+            public String getScenicaddress() {
+                return scenicaddress;
             }
 
-            public void setStar(String star) {
-                this.star = star;
+            public void setScenicaddress(String scenicaddress) {
+                this.scenicaddress = scenicaddress;
+            }
+
+            public String getDefaultpic() {
+                return defaultpic;
+            }
+
+            public void setDefaultpic(String defaultpic) {
+                this.defaultpic = defaultpic;
             }
 
             public String getHits() {
@@ -1050,6 +871,22 @@ public class HomeIndexDataBean implements Serializable {
                 this.hits = hits;
             }
 
+            public String getSaleprice() {
+                return saleprice;
+            }
+
+            public void setSaleprice(String saleprice) {
+                this.saleprice = saleprice;
+            }
+
+            public String getWebprice() {
+                return webprice;
+            }
+
+            public void setWebprice(String webprice) {
+                this.webprice = webprice;
+            }
+
             public String getRow_number() {
                 return row_number;
             }
@@ -1057,86 +894,49 @@ public class HomeIndexDataBean implements Serializable {
             public void setRow_number(String row_number) {
                 this.row_number = row_number;
             }
-
-            public String getCate_name() {
-                return cate_name;
-            }
-
-            public void setCate_name(String cate_name) {
-                this.cate_name = cate_name;
-            }
-
-            public PriceBean getPrice() {
-                return price;
-            }
-
-            public void setPrice(PriceBean price) {
-                this.price = price;
-            }
-
-            public static class PriceBean implements Serializable {
-                private String webprice;
-                private String marketprice;
-                private String price;
-                private String userprice;
-                private String stock;
-                private String row_number;
-
-                public String getWebprice() {
-                    return webprice;
-                }
-
-                public void setWebprice(String webprice) {
-                    this.webprice = webprice;
-                }
-
-                public String getMarketprice() {
-                    return marketprice;
-                }
-
-                public void setMarketprice(String marketprice) {
-                    this.marketprice = marketprice;
-                }
-
-                public String getPrice() {
-                    return price;
-                }
-
-                public void setPrice(String price) {
-                    this.price = price;
-                }
-
-                public String getUserprice() {
-                    return userprice;
-                }
-
-                public void setUserprice(String userprice) {
-                    this.userprice = userprice;
-                }
-
-                public String getStock() {
-                    return stock;
-                }
-
-                public void setStock(String stock) {
-                    this.stock = stock;
-                }
-
-                public String getRow_number() {
-                    return row_number;
-                }
-
-                public void setRow_number(String row_number) {
-                    this.row_number = row_number;
-                }
-            }
         }
 
-        public static class MainHotelBean implements Serializable {
+        public static class MainHotelBean {
+            /**
+             * id : 33421
+             * cate_id : 1
+             * commentnum : 0
+             * average : 5.0
+             * img : http://pic.houno.cn/Uploads/ctrip/5910043/200408000000374gxB4B4_R_550_412.jpg
+             * map : 39.862312|116.413506
+             * lat : 39.8623120
+             * lng : 116.4135060
+             * title : 麗枫酒店（北京南站木樨园店）
+             * star : 4
+             * is_sale : 0
+             * is_recommend : 0
+             * is_hot : 0
+             * waptj : 1
+             * is_wifi : 0
+             * is_network : 0
+             * is_breakfast : 0
+             * is_restaurant : 0
+             * is_more_room : 0
+             * is_big_bed : 0
+             * is_tow_bed : 0
+             * is_park : 0
+             * is_swimming : 0
+             * is_waiter : 0
+             * is_gym : 0
+             * is_meeting : 0
+             * is_business : 0
+             * is_bus : 0
+             * is_newopen : 0
+             * is_reception : 0
+             * is_pet : 0
+             * row_number : 1
+             * catename : 酒店
+             * street : 东罗园路
+             * room : {"id":"959625","title":"高级大床房（无窗）","area":"20","bed_num":"1","people_num":"2","roomtype":"高级大床房（无窗）","webprice":"456","marketprice":"0","row_number":"1"}
+             */
+
             private String id;
             private String cate_id;
-
-
             private String commentnum;
             private String average;
             private String img;
@@ -1169,19 +969,7 @@ public class HomeIndexDataBean implements Serializable {
             private String row_number;
             private String catename;
             private String street;
-            /**
-             * id : 50876
-             * title : 温馨双床房
-             * area : 30
-             * bed_num : 2
-             * people_num : 2
-             * roomtype :
-             * webprice : 148
-             * marketprice : 0
-             * row_number : 1
-             */
-
-            private RoomBean room;
+            private RoomBeanX room;
 
             public String getId() {
                 return id;
@@ -1455,15 +1243,27 @@ public class HomeIndexDataBean implements Serializable {
                 this.street = street;
             }
 
-            public RoomBean getRoom() {
+            public RoomBeanX getRoom() {
                 return room;
             }
 
-            public void setRoom(RoomBean room) {
+            public void setRoom(RoomBeanX room) {
                 this.room = room;
             }
 
-            public static class RoomBean implements Serializable {
+            public static class RoomBeanX {
+                /**
+                 * id : 959625
+                 * title : 高级大床房（无窗）
+                 * area : 20
+                 * bed_num : 1
+                 * people_num : 2
+                 * roomtype : 高级大床房（无窗）
+                 * webprice : 456
+                 * marketprice : 0
+                 * row_number : 1
+                 */
+
                 private String id;
                 private String title;
                 private String area;
@@ -1545,6 +1345,82 @@ public class HomeIndexDataBean implements Serializable {
                 public void setRow_number(String row_number) {
                     this.row_number = row_number;
                 }
+            }
+        }
+
+        public static class MainToursBean {
+            /**
+             * id : 6753
+             * productname : <埃及-迪拜10日游>阿航成都直飞，马车巡游卢克索神庙，帆船游香蕉岛，2晚红海，棕榈岛单轨列车，全程WIFI，性价比连游，金字塔，狮身人面像
+             * classbrandname : 常规跟团
+             * price : 8599
+             * img : http://m.tuniucdn.com/fb2/t1/G1/M00/1A/E5/Cii9EVkeyDaIPFFHABzmDlqfWo0AAKWFwI1HKEAHOYm573_w450_h300_c1_t0.jpg
+             * hits : 859
+             * row_number : 1
+             */
+
+            private String id;
+            private String productname;
+            private String classbrandname;
+            private int price;
+            private String img;
+            private String hits;
+            private String row_number;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public String getProductname() {
+                return productname;
+            }
+
+            public void setProductname(String productname) {
+                this.productname = productname;
+            }
+
+            public String getClassbrandname() {
+                return classbrandname;
+            }
+
+            public void setClassbrandname(String classbrandname) {
+                this.classbrandname = classbrandname;
+            }
+
+            public int getPrice() {
+                return price;
+            }
+
+            public void setPrice(int price) {
+                this.price = price;
+            }
+
+            public String getImg() {
+                return img;
+            }
+
+            public void setImg(String img) {
+                this.img = img;
+            }
+
+            public String getHits() {
+                return hits;
+            }
+
+            public void setHits(String hits) {
+                this.hits = hits;
+            }
+
+            public String getRow_number() {
+                return row_number;
+            }
+
+            public void setRow_number(String row_number) {
+                this.row_number = row_number;
             }
         }
     }
