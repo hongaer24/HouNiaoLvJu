@@ -213,6 +213,12 @@ public class FillInScenicOrderActivity extends Activity {
         madapter = new PersonInfoAdapter(mActivity, mPassnersList,intTicketNum);
         lvPerson.setAdapter(madapter);
 
+        list.add("身份证");
+        list.add("护照");
+        list.add("军官证");
+        list.add("港澳通行证");
+        list.add("台胞证");
+
 
 /*
         List<GetScenicPassengerBean.DataBean> PassengerList = getPassengerList();
@@ -282,11 +288,7 @@ public class FillInScenicOrderActivity extends Activity {
 
     private void showPickerView() {
 
-        list.add("身份证");
-        list.add("护照");
-        list.add("军官证");
-        list.add("港澳通行证");
-        list.add("台胞证");
+
 
         pvOption = new OptionsPickerView.Builder(this, new OptionsPickerView.OnOptionsSelectListener() {
             @Override
@@ -373,13 +375,13 @@ public class FillInScenicOrderActivity extends Activity {
             {
                 params.addBodyParameter("contact[identityType]","1");
 
-            }else if(id.equals(1)) {
+            }else if(id.equals(list.get(1))) {
                 params.addBodyParameter("contact[identityType]","2");
-            }else if(id.equals(2)) {
+            }else if(id.equals(list.get(2))) {
                 params.addBodyParameter("contact[identityType]","3");
-            }else if(id.equals(3)) {
+            }else if(id.equals(list.get(3))) {
                 params.addBodyParameter("contact[identityType]","4");
-            }else if(id.equals(1)) {
+            }else if(id.equals(list.get(4))) {
                 params.addBodyParameter("contact[identityType]","5");
             }
         }

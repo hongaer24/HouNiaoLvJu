@@ -247,11 +247,11 @@ public class IngOrderPager extends Fragment {
     public void onResume() {
         super.onResume();
         System.out.println("IngOrderPage:onResume");
-        /*if (refresh) {
+      /*  if (refresh) {
             refresh = false;
             getDataFromServer();
         }*/
-        //getDataFromServer();
+        getDataFromServer();
     }
 
     @Override

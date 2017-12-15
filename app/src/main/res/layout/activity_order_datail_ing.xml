@@ -5,7 +5,7 @@
     android:background="#F0F0F0"
     android:orientation="vertical">
 
-         <RelativeLayout
+    <RelativeLayout
              android:id="@+id/rl_top_bar"
              android:layout_width="match_parent"
              android:layout_height="45dp"
@@ -36,7 +36,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/rl_bottom_bar"
         android:layout_below="@+id/rl_top_bar"
-        android:visibility="visible">
+        android:visibility="gone">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -532,7 +532,34 @@
 
     </ScrollView>
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/ll_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="120dp"
+        android:orientation="horizontal">
+
+        <ProgressBar
+            android:id="@+id/pb_loading"
+            style="@style/Widget.AppCompat.ProgressBar"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:indeterminateTint="#009A44"
+            android:indeterminateTintMode="src_atop"
+            />
+
+        <TextView
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:gravity="center_vertical"
+            android:text="数据加载中..." />
+
+    </LinearLayout>
+
+ <!--   <TextView
         android:id="@+id/tv_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -546,7 +573,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="#7f000000"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/iv_circle"
@@ -630,6 +657,6 @@
             android:textSize="16sp"
             android:visibility="gone" />
 
-    </RelativeLayout>
+    </RelativeLayout>-->
 
 </LinearLayout>

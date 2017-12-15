@@ -4,10 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -38,42 +39,44 @@ import cn.houno.houniaolvju.utils.StatusBarUtils;
  */
 public class EndOrderDetailActivity extends Activity {
 
-    @Bind(R.id.iv_back)
+   /* @Bind(R.id.iv_back)
     ImageView ivBack;
     @Bind(R.id.rl_top_bar)
-    RelativeLayout rlTopBar;
-    @Bind(R.id.iv_tab_img)
+    RelativeLayout rlTopBar;*/
+   /* @Bind(R.id.iv_tab_img)
     ImageView ivTabImg;
     @Bind(R.id.tv_tab_title)
     TextView tvTabTitle;
     @Bind(R.id.tv_order_no)
-    TextView tvOrderNo;
-    @Bind(R.id.tv_order_title)
+    TextView tvOrderNo;*/
+   /* @Bind(R.id.tv_order_title)
     TextView tvOrderTitle;
     @Bind(R.id.tv_count)
     TextView tvCount;
     @Bind(R.id.tv_time)
-    TextView tvTime;
-    @Bind(R.id.tv_address_txt)
-    TextView tvAddressTxt;
-    @Bind(R.id.tv_address)
-    TextView tvAddress;
-    @Bind(R.id.ll_address)
-    LinearLayout llAddress;
-    @Bind(R.id.tv_total_price)
+    TextView tvTime;*/
+   /* @Bind(R.id.tv_address_txt)
+    TextView tvAddressTxt;*/
+   /* @Bind(R.id.tv_address)
+    TextView tvAddress;*/
+   /* @Bind(R.id.ll_address)
+    LinearLayout llAddress;*/
+   /* @Bind(R.id.tv_total_price)
     TextView tvTotalPrice;
     @Bind(R.id.tv_order_info)
     TextView tvOrderInfo;
     @Bind(R.id.tv_name)
     TextView tvName;
     @Bind(R.id.tv_phone)
-    TextView tvPhone;
-    @Bind(R.id.tv_other)
-    TextView tvOther;
+    TextView tvPhone;*/
+  /*  @Bind(R.id.tv_other)
+    TextView tvOther;*/
+
     @Bind(R.id.sv_order_detail)
     ScrollView svOrderDetail;
     @Bind(R.id.tv_loading)
     TextView tvLoading;
+
     @Bind(R.id.iv_circle)
     ImageView ivCircle;
     @Bind(R.id.tv_order_status)
@@ -82,6 +85,50 @@ public class EndOrderDetailActivity extends Activity {
     TextView tvOrderComment;
     @Bind(R.id.rl_bottom_bar)
     RelativeLayout rlBottomBar;
+    @Bind(R.id.tv_order_statu)
+    TextView tvOrderStatu;
+    @Bind(R.id.tv_countdowntime)
+    TextView tvCountdowntime;
+    @Bind(R.id.btn_order_pay)
+    Button btnOrderPay;
+    @Bind(R.id.btn_order_cacel)
+    Button btnOrderCacel;
+    @Bind(R.id.tv_order_type)
+    TextView tvOrderType;
+    @Bind(R.id.tv_orderno_number)
+    TextView tvOrdernoNumber;
+    @Bind(R.id.tv_pay_status)
+    TextView tvPayStatus;
+    @Bind(R.id.tv_orderno_title)
+    TextView tvOrdernoTitle;
+    @Bind(R.id.iv_number_person)
+    ImageView ivNumberPerson;
+    @Bind(R.id.tv_order_name)
+    TextView tvOrderName;
+    @Bind(R.id.tv_order_time)
+    TextView tvOrderTime;
+    @Bind(R.id.tv_use_way)
+    TextView tvUseWay;
+    @Bind(R.id.tv_rule)
+    TextView tvRule;
+    @Bind(R.id.tv_order_person_info)
+    TextView tvOrderPersonInfo;
+    @Bind(R.id.tv_order_data)
+    TextView tvOrderData;
+    @Bind(R.id.tv_pay_way)
+    TextView tvPayWay;
+    @Bind(R.id.tv_order_price)
+    TextView tvOrderPrice;
+    @Bind(R.id.tv_count)
+    TextView tvCount;
+    @Bind(R.id.tv_name)
+    TextView tvName;
+    @Bind(R.id.tv_phone)
+    TextView tvPhone;
+    @Bind(R.id.pb_loading)
+    ProgressBar pbLoading;
+    @Bind(R.id.ll_loading)
+    LinearLayout llLoading;
 
 
     private String mHotelName;
@@ -111,10 +158,12 @@ public class EndOrderDetailActivity extends Activity {
     private String type;
 
 
-
     private OrderListBean.DataBean dataBean;
     private int mPayStatusInt;
     private int mOrderStatusInt;
+    private String productname;
+    private String scenicName;
+    private EndOrderDetailActivity mActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -124,6 +173,7 @@ public class EndOrderDetailActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_order_detail_end);
         ButterKnife.bind(this);
+        mActivity = EndOrderDetailActivity.this;
         StatusBarUtils.setWindowStatusBarColor(EndOrderDetailActivity.this, R.color.app_theme_green);
 
         initData();
@@ -136,7 +186,7 @@ public class EndOrderDetailActivity extends Activity {
         dataBean = (OrderListBean.DataBean) intent.getSerializableExtra("data");
         orderNo = dataBean.getOrderno();
 
-        type = dataBean.getType();
+        type = "tuniuscenic";
 
 
         getDataFromServer();
@@ -182,7 +232,7 @@ public class EndOrderDetailActivity extends Activity {
     public void getDataFromServer() {
         RequestParams params = new RequestParams(Constants.ORDER_DETAIL_URL);
         params.addBodyParameter("userid", userid);
-        params.addBodyParameter("type", type);
+        params.addBodyParameter("type", "tuniuscenic");
         params.addBodyParameter("orderno", orderNo);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
@@ -211,7 +261,7 @@ public class EndOrderDetailActivity extends Activity {
 
     private void setText() {
 
-        tvTabTitle.setText(mHotelName);     //图片文字
+      /*  tvTabTitle.setText(mHotelName);     //图片文字
         x.image().bind(ivTabImg, mHotelImg);    //图片
         tvOrderNo.setText("订单编号：" + orderNo);     //订单编号
 
@@ -231,18 +281,27 @@ public class EndOrderDetailActivity extends Activity {
             tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
             llAddress.setVisibility(View.GONE);
             tvOther.setText("其他需求：" + mOtherInfo);
-        } else if ("Scenic".equals(type)) {
-            type = "scenic";
-            tvOrderTitle.setText("景点名称：" + mHotelName);
+        } else */
+        if ("tuniuscenic".equals(type)) {
+           /* type = "tuniuscenic";
+            tvOrderTitle.setText(scenicName);
             tvCount.setText("预定数量：" + mRoomCount + "人");
             tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
             tvAddress.setText(mHotelAddress);
-            tvOther.setVisibility(View.GONE);
+            tvOther.setVisibility(View.GONE);*/
+            type = "tuniuscenic";
+            tvOrdernoTitle.setText(scenicName);
+            tvOrderName.setText(productname);
+            tvCount.setText("门票数量：" + mRoomCount + "张");
+            tvOrderTime.setText("出游时间" + mCheckInDate);
         }
-
-        tvName.setText("姓　　名：" + mCheckName);
+        tvOrdernoNumber.setText(orderNo);
+        tvName.setText("取票人：" + mCheckName);
+        tvPhone.setText("手机号：" + mCheckPhone);
+        tvOrderPrice.setText("订单总额¥" + mTotalPrice);
+       /* tvName.setText("姓　　名：" + mCheckName);
         tvPhone.setText("手　　机：" + mCheckPhone);
-        tvTotalPrice.setText(Html.fromHtml("订单金额：<font color=\"#009A44\">¥" + mTotalPrice + "</font>"));
+        tvTotalPrice.setText(Html.fromHtml("订单金额：<font color=\"#009A44\">¥" + mTotalPrice + "</font>"));*/
 
 
     }
@@ -251,12 +310,16 @@ public class EndOrderDetailActivity extends Activity {
         try {
             JSONObject json = new JSONObject(result);
 
-            if (json.getInt("status")==0) {
+            if (json.getInt("status") == 0) {
                 tvLoading.setVisibility(View.GONE);
+                llLoading.setVisibility(View.GONE);
                 svOrderDetail.setVisibility(View.VISIBLE);
-                rlBottomBar.setVisibility(View.VISIBLE);
+                //rlBottomBar.setVisibility(View.VISIBLE);
                 mHotelName = json.getJSONObject("data").getJSONObject("detail").getString("title");
                 mHotelImg = json.getJSONObject("data").getJSONObject("detail").getString("img");
+
+                productname = json.getJSONObject("data").getString("productname");
+                scenicName = json.getJSONObject("data").getString("scenicName");
                 orderNo = json.getJSONObject("data").getString("orderno");
 
                 mStatusStr = json.getJSONObject("data").getString("paymentMessage")
@@ -271,7 +334,7 @@ public class EndOrderDetailActivity extends Activity {
                     mCheckName = json.getJSONObject("data").getString("username");
                     mCheckPhone = json.getJSONObject("data").getString("phone");
                     mOtherInfo = json.getJSONObject("data").getString("kefumemo");
-                } else if ("scenic".equalsIgnoreCase(type)) {
+                } else if ("tuniuscenic".equalsIgnoreCase(type)) {
                     String isComment = json.getJSONObject("data").getString("iscomment");
                     if (mOrderStatusInt == 3 && mPayStatusInt == 1) {
                         if ("0".equals(isComment)) {
@@ -286,8 +349,8 @@ public class EndOrderDetailActivity extends Activity {
                     mCheckOutDate = json.getJSONObject("data").getString("checkout");
                     mHotelAddress = json.getJSONObject("data").getJSONObject("detail").getString("address").trim();
                     mTotalPrice = json.getJSONObject("data").getString("price");
-                    mCheckName = json.getJSONObject("data").getString("username");
-                    mCheckPhone = json.getJSONObject("data").getString("phone");
+                    mCheckName = json.getJSONObject("data").getJSONObject("contact").getString("name").trim();
+                    mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
                     mOtherInfo = json.getJSONObject("data").getString("memo");
                 } else {
                     mRoomName = json.getJSONObject("data").getJSONObject("detail").getString("roomname");
@@ -315,7 +378,7 @@ public class EndOrderDetailActivity extends Activity {
                     mTotalPrice = json.getJSONObject("data").getString("price");
                 }
 
-            }else {
+            } else {
                 tvLoading.setText("加载失败");
             }
         } catch (JSONException e) {
@@ -351,7 +414,6 @@ public class EndOrderDetailActivity extends Activity {
             tvOrderComment.setVisibility(View.GONE);
         }
     }
-
 
 
 }

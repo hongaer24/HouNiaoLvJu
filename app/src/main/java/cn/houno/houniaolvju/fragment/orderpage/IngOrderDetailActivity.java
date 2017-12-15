@@ -2,11 +2,9 @@ package cn.houno.houniaolvju.fragment.orderpage;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.icu.text.StringPrepParseException;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -15,6 +13,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -43,7 +43,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.OrderDetailActivity;
-import cn.houno.houniaolvju.activity.scenic.FillInScenicOrderActivity;
 import cn.houno.houniaolvju.bean.OrderListBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.pay.alipay.PayResult;
@@ -96,24 +95,24 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     @Bind(R.id.tv_other)
     TextView tvOther;*/
 
-    @Bind(R.id.iv_circle)
-    ImageView ivCircle;
-    @Bind(R.id.tv_order_status)
-    TextView tvOrderStatus;
-    @Bind(R.id.tv_cash_pay)
+    /*  @Bind(R.id.iv_circle)
+      ImageView ivCircle;
+      @Bind(R.id.tv_order_status)
+      TextView tvOrderStatus;*/
+   /* @Bind(R.id.tv_cash_pay)
     TextView tvCashPay;
     @Bind(R.id.tv_order_pay)
-    TextView tvOrderPay;
-    @Bind(R.id.tv_order_cancel)
+    TextView tvOrderPay;*/
+   /* @Bind(R.id.tv_order_cancel)
     TextView tvOrderCancel;
     @Bind(R.id.tv_refund)
-    TextView tvRefund;
-    @Bind(R.id.rl_bottom_bar)
-    RelativeLayout rlBottomBar;
+    TextView tvRefund;*/
+   /* @Bind(R.id.rl_bottom_bar)
+    RelativeLayout rlBottomBar;*/
     @Bind(R.id.sv_order_detail)
     ScrollView svContent;
-    @Bind(R.id.tv_loading)
-    TextView tvLoading;
+   /* @Bind(R.id.tv_loading)
+    TextView tvLoading;*/
 
     @Bind(R.id.iv_back)
     ImageView ivBack;
@@ -161,6 +160,13 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     Button btnOrderPay;
     @Bind(R.id.btn_order_cacel)
     Button btnOrderCacel;
+
+    @Bind(R.id.pb_loading)
+    ProgressBar pbLoading;
+    @Bind(R.id.tv_loading)
+    TextView tvLoading;
+    @Bind(R.id.ll_loading)
+    LinearLayout llLoading;
 
     private int PAY_TYPE = 0;   //支付类型
     private static final int ALI_PAY = 201;   //支付宝
@@ -262,8 +268,8 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                     JSONObject jsonObject = new JSONObject(result);
                     int status = jsonObject.getInt("status");
                     if (status == 0) {
-                        tvRefund.setVisibility(View.GONE);
-                        tvOrderStatus.setText("已支付/退款中");
+                        //tvRefund.setVisibility(View.GONE);
+                        //tvOrderStatus.setText("已支付/退款中");
                     }
                     Toast.makeText(IngOrderDetailActivity.this, jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
@@ -407,7 +413,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                     setStatus();
                     break;
                 case R.id.doFail:
-                    tvLoading.setText("加载失败");
+                    //tvLoading.setText("加载失败");
                     break;
             }
         }
@@ -417,9 +423,11 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         try {
             JSONObject json = new JSONObject(result);
             if (json.getInt("status") == 0) {
-                tvLoading.setVisibility(View.GONE);
+                //tvLoading.setVisibility(View.GONE);
                 svContent.setVisibility(View.VISIBLE);
-                rlBottomBar.setVisibility(View.VISIBLE);
+                llLoading.setVisibility(View.GONE);
+
+                //rlBottomBar.setVisibility(View.VISIBLE);
 
                 //      System.out.println("订单详情json" + json);
                 // mHotelName = json.getJSONObject("data").getJSONObject("detail").getString("title").trim();
@@ -481,7 +489,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                     mOtherInfo = json.getJSONObject("data").getString("memo");
                 }
             } else {
-                tvLoading.setText("加载失败");
+                //tvLoading.setText("加载失败");
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -533,7 +541,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         switch (mPayStatusInt) {
             case 0:
                 //"待支付";
-                tvCashPay.setVisibility(View.GONE);
+               /* tvCashPay.setVisibility(View.GONE);
                 tvOrderPay.setVisibility(View.VISIBLE);
                 if (mHotelPayfs == 1) {
                     //前台现付
@@ -541,18 +549,18 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                     tvCashPay.setVisibility(View.VISIBLE);
                 } else {
                     //支付订单
-                }
+                }*/
                 break;
             case 1:
                 // "已支付";
-                tvOrderCancel.setVisibility(View.GONE);
-                tvOrderPay.setVisibility(View.GONE);
+                //tvOrderCancel.setVisibility(View.GONE);
+                //tvOrderPay.setVisibility(View.GONE);
                 break;
             case 2:
                 //"前台支付";
-                tvCashPay.setVisibility(View.GONE);
-                tvOrderCancel.setVisibility(View.GONE);
-                tvOrderPay.setVisibility(View.GONE);
+                // tvCashPay.setVisibility(View.GONE);
+                //tvOrderCancel.setVisibility(View.GONE);
+                //tvOrderPay.setVisibility(View.GONE);
                 break;
         }
 
@@ -566,8 +574,8 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                 break;
             case 2:
                 //"已取消";
-                tvCashPay.setVisibility(View.GONE);
-                tvOrderCancel.setVisibility(View.GONE);
+                //tvCashPay.setVisibility(View.GONE);
+                //tvOrderCancel.setVisibility(View.GONE);
                 break;
             case 4:
                 //"已退款";
@@ -943,18 +951,18 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         PrefUtils.setInt(IngOrderDetailActivity.this, "wxpaystatus", -3);
     }
 
-    @OnClick({R.id.btn_order_cacel,R.id.iv_back, R.id.tv_cash_pay, R.id.tv_order_pay, R.id.tv_order_cancel, R.id.tv_refund,R.id.btn_order_pay})
+    @OnClick({R.id.btn_order_cacel, R.id.iv_back, R.id.btn_order_pay})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
-            case R.id.tv_cash_pay:
+          /*  case R.id.tv_cash_pay:
                 showPayWithMoneyDialog();
                 break;
             case R.id.tv_order_pay:
                 showPayDialogs();
-                break;
+                break;*/
             case R.id.tv_order_cancel:
                 showCancelOrderDialog();
                 break;
@@ -964,22 +972,23 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
             case R.id.btn_order_pay:
                 Intent intent = new Intent();
 
-                   //price=Integer.parseInt(mTotalPrice.trim());
-                   intent.putExtra("type", "tuniuscenic");
-                   intent.putExtra("price",mTotalPrice);
-                   intent.putExtra("orderno", orderNo);
-                   intent.putExtra("title", scenicName + " - " + productname);
-                   intent.setClass(mActivity, OrderDetailActivity.class);
-                   startActivity(intent);
-                   break;
+                //price=Integer.parseInt(mTotalPrice.trim());
+                intent.putExtra("type", "tuniuscenic");
+                intent.putExtra("mprice", mTotalPrice);
+                intent.putExtra("orderno", orderNo);
+                intent.putExtra("title", scenicName + " - " + productname);
+                intent.setClass(mActivity, OrderDetailActivity.class);
+                startActivity(intent);
+
+                break;
             case R.id.btn_order_cacel:
                 showCancelOrderDialog();
                 break;
-               }
-
-
         }
+
+
     }
+}
 
 
 

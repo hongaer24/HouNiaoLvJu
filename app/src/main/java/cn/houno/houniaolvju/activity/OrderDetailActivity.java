@@ -89,6 +89,7 @@ public class  OrderDetailActivity extends Activity {
     private static final String PARTNER = "2088321007217320";
     private static final String SERVICE = "mobile.securitypay.pay";
     private String Price;
+    private String mprice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,14 +137,25 @@ public class  OrderDetailActivity extends Activity {
         }else if (type.equals("ydhotel")){
             price = intent.getDoubleExtra("price", 0)+"";
         }else {
-            price = intent.getIntExtra("price", 0)+"";
-            price=intent.getStringExtra("price");
+          /*  if(getIntent()!=null&&getIntent().getStringExtra("price")!=null){
+                mprice=intent.getStringExtra("price");
+                tvPrice.setText(mprice + "元");
+            }else if(getIntent()!=null&&getIntent().getIntExtra("price",0)>0){}
+                price = intent.getIntExtra("price", 0)+"";*/
+            mprice=intent.getStringExtra("mprice");
+            price=intent.getIntExtra("price",0)+"";
         }
 
 
         tvOrder.setText(orderno);
         tvTitle.setText(title);
-        tvPrice.setText(price + "元");
+        if (getIntent() != null && getIntent().getStringExtra("mprice") != null) {
+
+            tvPrice.setText(mprice + "元");
+        } else if (getIntent() != null && getIntent().getIntExtra("price", 0) > 0) {
+            tvPrice.setText(price + "元");
+        }
+
     }
 
 
