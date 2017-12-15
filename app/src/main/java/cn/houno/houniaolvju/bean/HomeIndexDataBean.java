@@ -192,7 +192,7 @@ public class HomeIndexDataBean implements Serializable {
             }
         }
 
-        public static class TgHotelBean implements Serializable {
+        public static class  TgHotelBean implements Serializable {
             /**
              * id : 25604
              * cate_id : 1
@@ -557,7 +557,7 @@ public class HomeIndexDataBean implements Serializable {
                 this.tg = tg;
             }
 
-            public static class RoomBean {
+            public static class RoomBean implements Serializable{
                 /**
                  * id : 268385
                  * title : 豪华景观房
@@ -653,7 +653,7 @@ public class HomeIndexDataBean implements Serializable {
                 }
             }
 
-            public static class TgBean {
+            public static class TgBean implements Serializable{
                 /**
                  * id : 36
                  * rid : 268385

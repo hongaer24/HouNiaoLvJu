@@ -1,6 +1,7 @@
 package cn.houno.houniaolvju.application;
 
 import android.app.Application;
+import android.content.Context;
 
 import com.baidu.mapapi.SDKInitializer;
 
@@ -16,6 +17,12 @@ public class MyApplication extends Application{
 
 
     private static MyApplication instance;
+    private static Context mContex;
+
+    public static Context getContex() {
+        return mContex;
+    }
+
 
     @Override
     public void onCreate() {
@@ -31,6 +38,7 @@ public class MyApplication extends Application{
         SDKInitializer.initialize(this);
 
         Utils.init(this);
+        this.mContex=this;
     }
 
     public static MyApplication getInstance() {

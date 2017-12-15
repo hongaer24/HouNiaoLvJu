@@ -303,7 +303,7 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         }*/
 
         InfoBean infoBean = scenicDetailBean.getData().getInfo();
-        mId = infoBean.getScenicid();
+        //Id = infoBean.getScenicid();
         mTitle = infoBean.getScenicname().trim();
         tvTitle.setText(mTitle);
         tvTopbarTitle.setText(mTitle);

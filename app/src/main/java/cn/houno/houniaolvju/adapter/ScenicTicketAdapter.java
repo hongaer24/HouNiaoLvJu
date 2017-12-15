@@ -20,9 +20,11 @@ import java.util.List;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.scenic.FillInScenicOrderActivity;
 //import cn.houno.houniaolvju.bean.ScenicDetailBean.DataBean.TicketBean.TicketDataBean;
+import cn.houno.houniaolvju.application.MyApplication;
 import cn.houno.houniaolvju.bean.ScenicDetailBean;
 import cn.houno.houniaolvju.fragment.myinfo.LoginActivity;
 import cn.houno.houniaolvju.utils.MyText2Utils;
+import cn.houno.houniaolvju.utils.PassengerStorage;
 import cn.houno.houniaolvju.utils.PrefUtils;
 
 /**
@@ -43,6 +45,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
 
     private String scenicTitle;
     private String scenicAddress;
+    private String inpolicy;
 
 
     public ScenicTicketAdapter(Context context, List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean> list
@@ -121,11 +124,11 @@ public class ScenicTicketAdapter extends BaseAdapter {
             viewHolder.llBook.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                   // PrefUtils.deleteString(MyApplication.getContex());
                    /* Intent intent = new Intent();
                     intent.setClass(mContext, FillInScenicOrderActivity.class);*/
                     Intent intent = new Intent(mContext, FillInScenicOrderActivity .class);
-                    // intent.putExtra("sid", list.get(position).getSid());
+                    // intent.putExtra("sid", list.get(position).);
                     intent.putExtra("tid", list.get(position).getProductId());
                     intent.putExtra("scenicTitle", scenicTitle.trim());
                     intent.putExtra("scenicAddress", scenicAddress.trim());
@@ -133,6 +136,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
                     intent.putExtra("price", price);
                     intent.putExtra("custInfoLimit", list.get(position).getTicketlistinfo().getCustinfolimit());
                     intent.putExtra("position", position);
+
                    // Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
                     mContext.startActivity(intent);
 
@@ -142,7 +146,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
             viewHolder.price.setText("暂无价格");
             viewHolder.llBook.setClickable(false);
         }
-        final String inpolicy = list.get(position).getTicketlistinfo().getInfo();
+        inpolicy = list.get(position).getTicketlistinfo().getInfo();
         viewHolder.know.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

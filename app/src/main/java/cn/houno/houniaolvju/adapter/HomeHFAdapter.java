@@ -18,7 +18,7 @@ import java.util.List;
 
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.bean.FenQuanListBean;
-import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.FqHousesBean;
+//import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.FqHousesBean;
 import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.MainHotelBean;
 import cn.houno.houniaolvju.fragment.home.MainHotelFqHousesPage;
 
@@ -36,9 +36,9 @@ public class HomeHFAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdap
     private String[] tabList = new String[]{"特价酒店", "精品线路"};
     private Context context;
     private LayoutInflater inflate;
-    ArrayList<MainHotelBean> mMainHotel;
+    List<MainHotelBean> mMainHotel;
     List<FenQuanListBean.DataBean> mShareProperty;
-    ArrayList<MainHotelFqHousesPage> mFragments;
+    List<MainHotelFqHousesPage> mFragments;
 
     public HomeHFAdapter(Context context, FragmentManager fragmentManager,ArrayList<MainHotelFqHousesPage> fragments) {
         super(fragmentManager);
@@ -59,7 +59,7 @@ public class HomeHFAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdap
         mFragments = fragments;
     }
 
-    public void setMainHotelData(ArrayList<MainHotelBean> mainHotel) {
+    public void setMainHotelData(List<MainHotelBean> mainHotel) {
         mMainHotel = mainHotel;
 //        if (mFragments.size() != 0) {
 //            mFragments.clear();
@@ -110,7 +110,7 @@ public class HomeHFAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdap
           //  fragment = new MainHotelFqHousesPage();
             fragment =mFragments.get(0);
             args.putString("page", "mainhotel");
-            args.putSerializable("data", mMainHotel);
+            args.putSerializable("data", (Serializable) mMainHotel);
 
         } else {
            // fragment = new MainHotelFqHousesPage();

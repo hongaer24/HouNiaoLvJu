@@ -17,6 +17,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
+import cn.houno.houniaolvju.utils.PassengerStorage;
 import cn.houno.houniaolvju.utils.PrefUtils;
 
 /**
@@ -26,7 +27,8 @@ import cn.houno.houniaolvju.utils.PrefUtils;
 public class PersonsListAdapter extends BaseAdapter implements View.OnClickListener {
 
     private final Context context;
-    private final TextView tvTitlePerson;
+    //private final TextView tvTitlePerson;
+    private final int personNum;
     private int constantNum;
     private int variaNum;
     private List<GetScenicPassengerBean.DataBean> datas;
@@ -38,14 +40,14 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
     CheckBox checkBox;
     private GetScenicPassengerBean.DataBean touristsBean;
     private CheckInterface checkInterface;
-    private PersonInfoInterface personInfoInterface;
+    //private PersonInfoInterface personInfoInterface;
 
 
-    public PersonsListAdapter(Context context, GetScenicListener getScenicListener, List<GetScenicPassengerBean.DataBean> touristsMessageBeanList, TextView tvTitlePerson) {
+    public PersonsListAdapter(Context context, GetScenicListener getScenicListener, List<GetScenicPassengerBean.DataBean> touristsMessageBeanList, int   personNum) {
         this.context = context;
         this.datas = touristsMessageBeanList;
         this.mGetScenicListener = getScenicListener;
-        this.tvTitlePerson = tvTitlePerson;
+        this.personNum =personNum;
         mInflate = LayoutInflater.from(context);
         variaNum = PrefUtils.getInt(context, "variaNum", 0);
         constantNum=variaNum;
@@ -100,12 +102,13 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
 
 
           holder.checkBox.setChecked(touristsBean.isChoosed());
+
           holder.checkBox.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
                   if(constantNum>0){
                       holder.checkBox.setChecked(((CheckBox) v).isChecked());
-                      checkInterface.CheckPersonNum(position, ((CheckBox) v).isChecked());
+                      checkInterface.CheckPersonNum(position, ((CheckBox) v).isChecked(),touristsBean);
 
                       if(holder.checkBox.isChecked()){
                           constantNum--;
@@ -115,7 +118,7 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
                   }else if(constantNum==0){
                       if (touristsBean.isChoosed()) {
                           holder.checkBox.setChecked(((CheckBox) v).isChecked());
-                          checkInterface.CheckPersonNum(position, ((CheckBox) v).isChecked());
+                          checkInterface.CheckPersonNum(position, ((CheckBox) v).isChecked(),touristsBean);
                           if (holder.checkBox.isChecked()) {
                               constantNum--;
                           } else {
@@ -126,9 +129,13 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
                       }
                   }
                   touristsBean.setChoosed(((CheckBox) v).isChecked());
+
               }
 
         });
+
+
+
           holder.personEditBtn.setOnClickListener(this);
           holder.personEditBtn.setTag(position);
 
@@ -155,10 +162,10 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
 
                 break;
 
-            case R.id.determine_chekbox:
+           /* case R.id.determine_chekbox:
                 if (personInfoInterface != null)
                     personInfoInterface.CheckPersonIfno(touristsBean);
-                break;
+                break;*/
 
         }
     }
@@ -196,14 +203,14 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
     }*/
 
     public interface CheckInterface {
-        void CheckPersonNum(int position, boolean ischecked);
+        void CheckPersonNum(int position, boolean ischecked,GetScenicPassengerBean.DataBean GetScenicBean);
         //void CheckPersonIfno(GetScenicPassengerBean.DataBean GetScenicBean);
     }
 
-    public interface PersonInfoInterface {
+    /*public interface PersonInfoInterface {
 
         void CheckPersonIfno(GetScenicPassengerBean.DataBean GetScenicBean);
-    }
+    }*/
 
 
 }

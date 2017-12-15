@@ -46,7 +46,7 @@ import cn.houno.houniaolvju.utils.StatusBarUtils;
  * Created by Administrator on 2017/1/10.
  */
 
-public class OrderDetailActivity extends Activity {
+public class  OrderDetailActivity extends Activity {
 
     @Bind(R.id.iv_back)
     ImageView ivBack;
@@ -88,6 +88,7 @@ public class OrderDetailActivity extends Activity {
 
     private static final String PARTNER = "2088321007217320";
     private static final String SERVICE = "mobile.securitypay.pay";
+    private String Price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +137,7 @@ public class OrderDetailActivity extends Activity {
             price = intent.getDoubleExtra("price", 0)+"";
         }else {
             price = intent.getIntExtra("price", 0)+"";
+            price=intent.getStringExtra("price");
         }
 
 

@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 dependencies {
-    implementation 'com.android.support.constraint:constraint-layout:+'
 }
 android {
     compileSdkVersion 26
@@ -13,8 +12,8 @@ android {
     }
     /* defaultConfig {
         multiDexEnabled true
-    }*/
-
+    }
+*/
     defaultConfig {
         applicationId "cn.houno.houniaolvju"
         minSdkVersion 14
@@ -71,8 +70,9 @@ android {
         compile files('libs/UPPayAssistEx.jar')
         compile files('libs/UPPayPluginExPro.jar')
         compile project(':slidingmenu')
-        compile 'com.bigkoo:pickerview:2.1.1'
+        //compile 'com.bigkoo:pickerview:2.1.1'
         compile 'com.bigkoo:alertview:1.0.3'
+        compile 'com.contrarywind:Android-PickerView:3.2.7'
         compile 'com.makeramen:roundedimageview:2.2.1'
         compile project(':barCodeTest')
         compile project(':xrefreshview')

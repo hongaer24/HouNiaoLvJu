@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -17,6 +18,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.bigkoo.pickerview.OptionsPickerView;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -34,12 +37,16 @@ import butterknife.OnClick;
 import cn.houno.houniaolvju.MainActivity;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.OrderDetailActivity;
+import cn.houno.houniaolvju.adapter.PassengersAdapter;
 import cn.houno.houniaolvju.adapter.PersonInfoAdapter;
 import cn.houno.houniaolvju.adapter.PersonsListAdapter;
+import cn.houno.houniaolvju.application.MyApplication;
 import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
+import cn.houno.houniaolvju.bean.PassengersListBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.DateUtil;
 import cn.houno.houniaolvju.utils.MyText2Utils;
+import cn.houno.houniaolvju.utils.PassengerStorage;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
 
@@ -52,7 +59,7 @@ import cn.houno.houniaolvju.utils.StatusBarUtils;
  * 修改时间：2017/1/6 14:09
  * 修改备注：
  */
-public class FillInScenicOrderActivity extends Activity implements PersonsListAdapter.PersonInfoInterface {
+public class FillInScenicOrderActivity extends Activity {
 
     @Bind(R.id.iv_back)
     ImageView mIvBack;
@@ -132,8 +139,10 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
     private int position;
     private String nowData;
     private PersonInfoAdapter madapter;
-    private List<GetScenicPassengerBean.DataBean> touristDataBean;
     //private List<GetScenicPassengerBean.DataBean> touristDataBean;
+    private List<GetScenicPassengerBean.DataBean> mPassnersList=new ArrayList<>();
+    private OptionsPickerView pvOption;
+    private ArrayList<String> list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,7 +168,6 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
 
     private void initData() {
 
-
         isLogined = PrefUtils.getBoolean(mActivity, "isLogined", false);
         // custInfoLimit = Integer.parseInt(intent.getStringExtra("custInfoLimit"));
 
@@ -171,23 +179,21 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
             userid = Constants.PUBLIC_USER_ID;
         }
         Intent intent = getIntent();
-        //custInfoLimit = (intent.getIntExtra("custInfoLimit", 0));
-        custInfoLimit =2;
-
+        custInfoLimit = intent.getIntExtra("custInfoLimit", 0);
+        //custInfoLimit = 6;
         if (custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7) {
             llPersoninfo.setVisibility(View.VISIBLE);
-            llIdcard.setVisibility(View.VISIBLE);
-        } else if (custInfoLimit == 4) {
+        }
+        if (custInfoLimit == 4||custInfoLimit == 6||custInfoLimit == 7) {
             llIdcard.setVisibility(View.VISIBLE);
         }
-
 
         mScenicTitle = intent.getStringExtra("scenicTitle");
         mScenicAddress = intent.getStringExtra("scenicAddress");
         mTicketTitle = intent.getStringExtra("ticketTitle");
         mScenicId = intent.getStringExtra("sid");
         mTicketId = intent.getStringExtra("tid");
-        nowData = intent.getStringExtra("nowData");
+        //nowData = intent.getStringExtra("nowData");
         price = intent.getIntExtra("price", 0);
         //dataPrice=intent.getStringExtra("dataPrice");
         position = intent.getIntExtra("position", 0);
@@ -202,17 +208,53 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
         MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, allPrice + "");
         mCheckDate = DateUtil.getNowTime(DateUtil.DATE_SMALL_STR);
         mCheckWeek = DateUtil.getWeek(mCheckDate);
-        mTvDaysSelector.setText(nowData);
+       // mTvDaysSelector.setText(nowData);
+
+        madapter = new PersonInfoAdapter(mActivity, mPassnersList,intTicketNum);
+        lvPerson.setAdapter(madapter);
+
+
+/*
+        List<GetScenicPassengerBean.DataBean> PassengerList = getPassengerList();
+        if(PassengerList!=null&&PassengerList.size()>0){
+            if (madapter == null) {
+                madapter = new PersonInfoAdapter(this, PassengerList,intTicketNum);
+                //madapter.setCheckInterface(this);
+                lvPerson.setAdapter(madapter);
+
+            }
+
+        }*/
 
 
         // getPersonInfoDataFromServer();
     }
 
-    @OnClick({R.id.iv_back, R.id.iv_home, R.id.tv_days_selector, R.id.btn_jd_tjdd, R.id.iv_number_person})
+/*
+    private List<GetScenicPassengerBean.DataBean> getPassengerList() {
+        List<GetScenicPassengerBean.DataBean> passengerList = PassengerStorage.getInstance().getAllData();
+        List<GetScenicPassengerBean.DataBean> CheckedPassengerList = new ArrayList<>();
+        if (passengerList.size() > 0 && passengerList != null) {
+            for (int i = 0; i < passengerList.size(); i++) {
+                GetScenicPassengerBean.DataBean passengerBean = passengerList.get(i);
+                if (passengerBean.isChoosed()) {
+                    CheckedPassengerList.add(passengerBean);
+                }
+            }
+        }
+        return CheckedPassengerList;
+    }
+*/
+
+    @OnClick({R.id.tv_idcard,R.id.iv_back, R.id.iv_home, R.id.tv_days_selector, R.id.btn_jd_tjdd, R.id.iv_number_person})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
                 finish();
+                break;
+            case R.id.tv_idcard:
+                 showPickerView();
+                 pvOption.show();
                 break;
             case R.id.iv_home:
                 //返回主页面
@@ -223,13 +265,7 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
                 break;
             case R.id.tv_days_selector:
                 Intent date = new Intent();
-                date.putExtra("from", "scenic");
-                date.putExtra("scenicTitle", mScenicTitle);
-                date.putExtra("scenicAddress", mScenicAddress);
-                date.putExtra("ticketTitle", mTicketTitle);
                 date.putExtra("position", position);
-                date.putExtra("price", price);
-                date.putExtra("allprice", allPrice);
                 date.setClass(mActivity, MoreInfoCalendarActivity.class);
                 startActivityForResult(date, 301);
                 break;
@@ -239,10 +275,34 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
             case R.id.iv_number_person:
                 Intent intent1 = new Intent(this, PersonsListActivity.class);
                 intent1.putExtra("persons", intTicketNum);
-                startActivity(intent1);
-                //finish();
+                startActivityForResult(intent1, 666);
                 break;
         }
+    }
+
+    private void showPickerView() {
+
+        list.add("身份证");
+        list.add("护照");
+        list.add("军官证");
+        list.add("港澳通行证");
+        list.add("台胞证");
+
+        pvOption = new OptionsPickerView.Builder(this, new OptionsPickerView.OnOptionsSelectListener() {
+            @Override
+            public void onOptionsSelect(int options1, int options2, int options3, View v) {
+
+                String sex = list.get(options1);
+                tvIdcard.setText(sex);
+            }
+
+        }).setTitleText("请选择证件类型")
+                .setDividerColor(Color.BLACK)
+                .setCancelColor(Color.BLACK)
+                .setContentTextSize(25)
+                .build();
+        pvOption.setPicker(list);
+
     }
 
     private void checkInputAndGetData() {
@@ -286,12 +346,45 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
         RequestParams params = new RequestParams(Constants.SCENIC_ORDER_URL);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("info[productId]", mTicketId);
-        params.addBodyParameter("info[startTime]", "2017-12-06");
+        params.addBodyParameter("info[startTime]", nowData);
         params.addBodyParameter("info[productname]", mTicketTitle);
         params.addBodyParameter("contact[tel]", mEtJdPhone.getText().toString().trim());
         params.addBodyParameter("contact[name]", mEtJdName.getText().toString().trim());
         params.addBodyParameter("info[bookNumber]", mTvReferNum.getText().toString().trim());
         params.addBodyParameter("info[totalprice]", allPrice + "");
+
+          //custInfoLimit=2、3、6、7时,传游客资料表
+        if (custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7) {
+            for(int i=0;i<mPassnersList.size();i++){
+                params.addBodyParameter("touristlist[" + i + "][tel]", mPassnersList.get(i).getPhone());
+                params.addBodyParameter("touristlist[" + i + "][identityNo]", mPassnersList.get(i).getIdentityno());
+                params.addBodyParameter("touristlist[" + i + "][name]", mPassnersList.get(i).getName());
+                params.addBodyParameter("touristlist[" + i + "][identityType]", mPassnersList.get(i).getIdentitytype());
+
+            }
+        }
+
+        //custInfoLimit=4、6、7时,传identityNo和identityType
+        if (custInfoLimit == 4||custInfoLimit == 6||custInfoLimit == 7) {
+            //params.addBodyParameter("contact[identityType]", mPassnersList.get(i).getPhone());
+            params.addBodyParameter("contact[identityNo]",etIdcard.getText().toString().trim());
+            String id = tvIdcard.getText().toString();
+            if(id.equals(list.get(0)))
+            {
+                params.addBodyParameter("contact[identityType]","1");
+
+            }else if(id.equals(1)) {
+                params.addBodyParameter("contact[identityType]","2");
+            }else if(id.equals(2)) {
+                params.addBodyParameter("contact[identityType]","3");
+            }else if(id.equals(3)) {
+                params.addBodyParameter("contact[identityType]","4");
+            }else if(id.equals(1)) {
+                params.addBodyParameter("contact[identityType]","5");
+            }
+        }
+
+
 
 
         x.http().post(params, new Callback.CommonCallback<String>() {
@@ -379,88 +472,6 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
         }, R.id.doSucceed, R.id.doFail);*/
     }
 
-
-   /* private void getPersonInfoDataFromServer() {
-        userid = PrefUtils.getString(mActivity, "userid", "");
-        RequestParams params = new RequestParams(Constants.GET_TOURIST_URL);
-        params.addBodyParameter("userid", userid);
-
-        x.http().post(params, new Callback.CommonCallback<String>() {
-            @Override
-            public void onSuccess(String result) {
-                try {
-
-                    JSONObject obj = new JSONObject(result);
-                    int status = obj.getInt("status");
-
-                    if (status == 0) {
-
-                        parseData(result);
-
-                    } else {
-                        Toast.makeText(mActivity, obj.getString("msg"), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-               *//* pbLoading.setVisibility(View.GONE);
-                tvLoading.setText("加载失败");*//*
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-                //rfvScenicDetail.stopRefresh();
-            }
-        });
-    }
-*/
-   /* private void parseData(String result) {
-
-        Gson gson = new Gson();
-        GetScenicPassengerBean getScenicPassengerBean = gson.fromJson(result, GetScenicPassengerBean.class);
-        touristDataBean = getScenicPassengerBean.getData();
-        Log.i("7878", "result==="+ touristDataBean);
-
-
-        if (madapter == null) {
-            madapter = new PersonInfoAdapter(this, touristDataBean);
-            //madapter.setCheckInterface(this);
-            lvPerson.setAdapter(madapter);
-        } *//*else {
-            madapter.setData(touristDataBean);
-        }*//*
-
-
-
-        // showData(touristDataBean);
-
-
-    }*/
-
-
-    @Override
-    public void CheckPersonIfno(GetScenicPassengerBean.DataBean GetScenicBean) {
-                touristDataBean.add(GetScenicBean);
-        if (madapter == null) {
-            madapter = new PersonInfoAdapter(this, touristDataBean);
-            //madapter.setPersonInfoInterface(this);
-            //madapter.setCheckInterface(this);
-            lvPerson.setAdapter(madapter);
-        }
-
-
-    }
-
-
     private class TicketClick implements View.OnClickListener {
 
         @Override
@@ -489,16 +500,27 @@ public class FillInScenicOrderActivity extends Activity implements PersonsListAd
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if (resultCode == 300 && requestCode == 301) {
-            Bundle extras = data.getExtras();
+           /* Bundle extras = data.getExtras();
             mCheckDate = extras.getString("dateIn");
-            mCheckWeek = extras.getString("dateInWeek");
-            mTvDaysSelector.setText(mCheckDate + " " + mCheckWeek);
+            mCheckWeek = extras.getString("dateInWeek");*/
+            nowData= data.getStringExtra("nowData");
+            mTvDaysSelector.setText(nowData);
 
+        }if (requestCode == 666 && resultCode == RESULT_OK) {
+            mPassnersList= (ArrayList<GetScenicPassengerBean.DataBean>) data.getSerializableExtra("list");
+            madapter.setData(mPassnersList);
         }
     }
+
     @Override
     protected void onResume() {
         super.onResume();
         initData();
     }
+
 }
+
+
+
+
+

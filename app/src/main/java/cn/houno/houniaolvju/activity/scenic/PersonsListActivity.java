@@ -21,7 +21,10 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.DoubleAdder;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,6 +34,7 @@ import cn.houno.houniaolvju.adapter.PersonInfoAdapter;
 import cn.houno.houniaolvju.adapter.PersonsListAdapter;
 import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
 import cn.houno.houniaolvju.global.Constants;
+import cn.houno.houniaolvju.utils.PassengerStorage;
 import cn.houno.houniaolvju.utils.PrefUtils;
 
 public class PersonsListActivity extends AppCompatActivity implements PersonsListAdapter.GetScenicListener, PersonsListAdapter.CheckInterface {
@@ -58,6 +62,8 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
     private int personNum;
     private int variaNum;
     private int checkdeNum=0;
+    private List<GetScenicPassengerBean.DataBean> GetScenicBeanList=new ArrayList<>();
+    private Intent mIntent;
 
 
     @Override
@@ -71,6 +77,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
 
     private void initData() {
         Intent intent = getIntent();
+        mIntent=getIntent();
         personNum = intent.getIntExtra("persons", 0);
         variaNum=personNum;
         PrefUtils.setInt(mActivity, "num", personNum);
@@ -132,7 +139,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
 
 
         if (madapter == null) {
-            madapter = new PersonsListAdapter(this, this, touristDataBean, tvTitlePerson);
+            madapter = new PersonsListAdapter(this, this, touristDataBean,  personNum);
             madapter.setCheckInterface(this);
             addressListv.setAdapter(madapter);
         } else {
@@ -145,6 +152,16 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
 
 
     }
+
+    /*private void getSelectPassengers(){
+        GetScenicBeanList.clear();
+        for(int i=0;i<GetScenicBeanList.size();i++){
+            if(GetScenicBeanList.get(i).isChoosed()){
+                PassengerStorage.getInstance().addData(GetScenicBeanList.get(i));
+            }
+        }
+
+    }*/
 
     /*private void showData(List<GetScenicPassengerBean.DataBean> touristsMessageBeanList) {
         madapter = new PersonsListAdapter(this, this, touristsMessageBeanList);
@@ -160,6 +177,8 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 finish();
                 break;
             case R.id.add_address_btn:
+                mIntent.putExtra("list", (Serializable) GetScenicBeanList);
+                setResult(RESULT_OK, mIntent);
                 finish();
 
                 break;
@@ -187,7 +206,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
     }
 
     @Override
-    public void CheckPersonNum(int position, boolean ischecked) {
+    public void CheckPersonNum(int position, boolean ischecked,GetScenicPassengerBean.DataBean GetScenicBean) {
 
         int newNum = personNum;
 
@@ -196,6 +215,8 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 variaNum--;
                 checkdeNum++;
                 tvTitlePerson.setText("您还需选择" + variaNum + "个出游人（"+checkdeNum+"/" + newNum + "）");
+                GetScenicBean.setChoosed(ischecked);
+                GetScenicBeanList.add(GetScenicBean);
 
             }
 
@@ -205,7 +226,8 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 variaNum++;
                 checkdeNum--;
                 tvTitlePerson.setText("您还需选择" + variaNum + "个出游人（"+checkdeNum+"/" + newNum + "）");
-
+                GetScenicBean.setChoosed(ischecked);
+                PassengerStorage.getInstance().updataData(GetScenicBean);
             }
 
         }

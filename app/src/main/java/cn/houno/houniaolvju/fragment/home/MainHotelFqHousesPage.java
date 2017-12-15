@@ -21,7 +21,7 @@ import cn.houno.houniaolvju.activity.hotel.HotelDetailActivity;
 import cn.houno.houniaolvju.adapter.FqHousesAdapter;
 import cn.houno.houniaolvju.adapter.MainHotelAdapter;
 import cn.houno.houniaolvju.bean.FenQuanListBean;
-import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.FqHousesBean;
+//import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.FqHousesBean;
 import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.MainHotelBean;
 import cn.houno.houniaolvju.view.InnerListView;
 
@@ -42,7 +42,7 @@ public class MainHotelFqHousesPage extends Fragment {
     private InnerListView lvMainPush;
 
     private MainHotelAdapter mMainHotelAdapter;
-    private ArrayList<MainHotelBean> mMainHotelList;
+    private List<MainHotelBean> mMainHotelList;
 
     private FqHousesAdapter mFqHousesAdapter;
     private List<FenQuanListBean.DataBean> mFqHousesList;
@@ -129,15 +129,15 @@ public class MainHotelFqHousesPage extends Fragment {
     }
 
 
-    public void setMainHotelData(ArrayList<MainHotelBean> mainHotelList) {
+    public void setMainHotelData(List<MainHotelBean> mainHotelList) {
         if (mainHotelList != null && mainHotelList.size() != 0) {
             llViewSetVisibility(true);
             mMainHotelList = mainHotelList;
             if (mMainHotelAdapter == null) {
-                mMainHotelAdapter = new MainHotelAdapter(mActivity, mainHotelList);
+                mMainHotelAdapter = new MainHotelAdapter(mActivity, (ArrayList<MainHotelBean>) mainHotelList);
                 lvMainPush.setAdapter(mMainHotelAdapter);
             } else {
-                mMainHotelAdapter.setData(mainHotelList);
+                mMainHotelAdapter.setData((ArrayList<MainHotelBean>) mainHotelList);
             }
         }else {
             llViewSetVisibility(false);

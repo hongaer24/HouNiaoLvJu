@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.shizhefei.view.indicator.IndicatorViewPager;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,10 +79,10 @@ public class HomeHSAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdap
         Bundle args = new Bundle();
         if (position == 0) {
             fragment = mFragments.get(0);
-            args.putSerializable("data", mTgHotelBean);
+            args.putSerializable("data",  mTgHotelBean);
         } else {
             fragment = mFragments.get(1);
-            args.putSerializable("data", mActiScenicBean);
+            args.putSerializable("data",  mActiScenicBean);
         }
         fragment.setArguments(args);
         return fragment;

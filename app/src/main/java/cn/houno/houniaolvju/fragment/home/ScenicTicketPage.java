@@ -83,12 +83,12 @@ public class ScenicTicketPage extends Fragment {
         if (null != data) {
             mView.setVisibility(View.VISIBLE);
             id = data.getId();
-            x.image().bind(ivImg, data.getImg(), DisplayUtil.getImageOptions());
-            tvTitle.setText(data.getTitle());
-            tvStar.setText(data.getStar());
-            tvCate.setText(data.getCate_name());
+            x.image().bind(ivImg, data.getDefaultpic(), DisplayUtil.getImageOptions());
+            tvTitle.setText(data.getScenicname());
+           // tvStar.setText(data.getStar());
+            //tvCate.setText(data.getCate_name());
             tvHits.setText(data.getHits());
-            MyText2Utils.formatYuanPrice(getActivity(), tvPrice, data.getPrice().getWebprice());
+            MyText2Utils.formatYuanPrice(getActivity(), tvPrice, data.getWebprice());
         }else {
             mView.setVisibility(View.GONE);
         }

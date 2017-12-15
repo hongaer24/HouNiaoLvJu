@@ -168,11 +168,14 @@ public class IngOrderAdapter extends BaseAdapter {
                 String payStatus = mList.get(position).getPay_status();
                 String  Status = mList.get(position).getStatus();
 
-                if (TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "0")) {//已支付
+                if (TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "3")) {//已支付
                     holder.tvPayStatus.setText("已支付");
-                } else {
+                } else/* if(TextUtils.equals(payStatus, "0")&&TextUtils.equals(Status, "2"))*/ {
                     holder.tvPayStatus.setText("待支付");
-                }
+                }/*else if(TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "1")||TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "2")){
+                    holder.tvPayStatus.setText("出票失败");
+                }*/
+
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");

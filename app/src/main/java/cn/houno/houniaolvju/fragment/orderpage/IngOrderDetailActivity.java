@@ -2,16 +2,18 @@ package cn.houno.houniaolvju.fragment.orderpage;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.icu.text.StringPrepParseException;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -41,6 +43,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.OrderDetailActivity;
+import cn.houno.houniaolvju.activity.scenic.FillInScenicOrderActivity;
 import cn.houno.houniaolvju.bean.OrderListBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.pay.alipay.PayResult;
@@ -150,6 +153,14 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     TextView tvPayWay;
     @Bind(R.id.tv_order_price)
     TextView tvOrderPrice;
+    @Bind(R.id.tv_order_statu)
+    TextView tvOrderStatu;
+    @Bind(R.id.tv_countdowntime)
+    TextView tvCountdowntime;
+    @Bind(R.id.btn_order_pay)
+    Button btnOrderPay;
+    @Bind(R.id.btn_order_cacel)
+    Button btnOrderCacel;
 
     private int PAY_TYPE = 0;   //支付类型
     private static final int ALI_PAY = 201;   //支付宝
@@ -195,7 +206,8 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     private int mPayStatusInt;
     private int mOrderStatusInt;
     private int mHotelPayfs = 0;
-
+    private IngOrderDetailActivity mActivity;
+    private Integer price;
 
 
     @Override
@@ -205,6 +217,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         setContentView(R.layout.activity_order_datail_ing);
         ButterKnife.bind(this);
         //绑定竖屏
+        mActivity = IngOrderDetailActivity.this;
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         StatusBarUtils.setWindowStatusBarColor(IngOrderDetailActivity.this, R.color.app_theme_green);
         initData();
@@ -323,8 +336,8 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     public void getDataFromServer() {
         Map<String, String> map = new HashMap<>();
         map.put("userid", userid);
-        map.put("orderno",orderNo);
-        map.put("type",  "tuniuscenic");
+        map.put("orderno", orderNo);
+        map.put("type", "tuniuscenic");
       /*  RequestParams params = new RequestParams(Constants.ORDER_DETAIL_URL);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("orderno", orderNo);
@@ -400,6 +413,80 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         }
     };
 
+    private void parserData(String result) {
+        try {
+            JSONObject json = new JSONObject(result);
+            if (json.getInt("status") == 0) {
+                tvLoading.setVisibility(View.GONE);
+                svContent.setVisibility(View.VISIBLE);
+                rlBottomBar.setVisibility(View.VISIBLE);
+
+                //      System.out.println("订单详情json" + json);
+                // mHotelName = json.getJSONObject("data").getJSONObject("detail").getString("title").trim();
+                // mHotelImg = json.getJSONObject("data").getJSONObject("detail").getString("img");
+                productname = json.getJSONObject("data").getString("productname");
+                scenicName = json.getJSONObject("data").getString("scenicName");
+                orderNo = json.getJSONObject("data").getString("orderno");
+                mStatusStr = json.getJSONObject("data").getString("paymentMessage")
+                        + "/" + json.getJSONObject("data").getString("returnMessage");
+
+                mOrderStatusInt = Integer.parseInt(json.getJSONObject("data").getString("status"));
+                mPayStatusInt = Integer.parseInt(json.getJSONObject("data").getString("pay_status"));
+                if ("Acti".equals(type)) {
+                    mRoomCount = json.getJSONObject("data").getString("num");
+                    mCheckInDate = json.getJSONObject("data").getString("checkin");
+                    mTotalPrice = (Double.parseDouble(json.getJSONObject("data").getString("price")) + "");
+                    mCheckName = json.getJSONObject("data").getString("username");
+                    mCheckPhone = json.getJSONObject("data").getString("phone");
+                    mOtherInfo = json.getJSONObject("data").getString("kefumemo");
+                } else if ("tuniuscenic".equalsIgnoreCase(type)) {
+                    //mRoomName = json.getJSONObject("data").getJSONObject("detail").getString("roomname");
+                    mRoomCount = json.getJSONObject("data").getString("booknumber");
+                    mCheckInDate = json.getJSONObject("data").getString("starttime");
+                    mTotalPrice = json.getJSONObject("data").getString("price");
+                    mCheckName = json.getJSONObject("data").getJSONObject("contact").getString("name").trim();
+                    mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
+
+                    // mCheckOutDate = json.getJSONObject("data").getString("checkout");
+                    // mHotelAddress = json.getJSONObject("data").getJSONObject("detail").getString("address").trim();
+                    //mTotalPrice = Double.parseDouble(json.getJSONObject("data").getString("price")) + "";
+                    //mCheckName = json.getJSONObject("data").getString("username");
+                    //mCheckPhone = json.getJSONObject("data").getString("phone");
+                    //mOtherInfo = json.getJSONObject("data").getString("memo");
+                    //iscomment = json.getJSONObject("data").getString("iscomment");
+
+                } else {
+                    mRoomName = json.getJSONObject("data").getJSONObject("detail").getString("roomname");
+                    mRoomCount = json.getJSONObject("data").getString("roomnum");
+                    mCheckInDate = json.getJSONObject("data").getString("checkin");
+                    mCheckOutDate = json.getJSONObject("data").getString("checkout");
+                    if ("hotel".equalsIgnoreCase(type)) {
+                        mHotelday = json.getJSONObject("data").getString("days");
+                    } else {
+                        mHotelday = json.getJSONObject("data").getString("rzdays");
+                    }
+
+                    if ("hotel".equals(type)) {
+                        //酒店支付方式
+                        String payfsStr = json.getJSONObject("data").getJSONObject("detail").getString("payfs");
+                        if (payfsStr != null || !TextUtils.isEmpty(payfsStr)) {
+                            mHotelPayfs = Integer.parseInt(payfsStr);
+                        }
+                    }
+
+                    mHotelAddress = json.getJSONObject("data").getJSONObject("detail").getString("address").trim();
+                    mTotalPrice = (Double.parseDouble(json.getJSONObject("data").getString("price")) + "");
+                    mCheckName = json.getJSONObject("data").getString("username");
+                    mCheckPhone = json.getJSONObject("data").getString("phone");
+                    mOtherInfo = json.getJSONObject("data").getString("memo");
+                }
+            } else {
+                tvLoading.setText("加载失败");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void setText() {
       /*  tvTabTitle.setText(mHotelName);     //图片文字
@@ -422,20 +509,21 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
             tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
             llAddress.setVisibility(View.GONE);
             tvOther.setText("其他需求：" + mOtherInfo);
-        }*/  if ("tuniuscenic".equals(type)) {
+        }*/
+        if ("tuniuscenic".equals(type)) {
             type = "tuniuscenic";
             tvOrdernoTitle.setText(scenicName);
             tvOrderName.setText(productname);
-            tvCount.setText("门票数量：" +mRoomCount + "张");
-            tvOrderTime.setText("出游时间"+ mCheckInDate);
+            tvCount.setText("门票数量：" + mRoomCount + "张");
+            tvOrderTime.setText("出游时间" + mCheckInDate);
             //tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
             //tvAddress.setText(mHotelAddress);
-           // tvOther.setVisibility(View.GONE);
+            // tvOther.setVisibility(View.GONE);
         }
         tvOrdernoNumber.setText(orderNo);
         tvName.setText("取票人：" + mCheckName);
         tvPhone.setText("手机号：" + mCheckPhone);
-        tvOrderPrice.setText("订单总额¥"+mTotalPrice);
+        tvOrderPrice.setText("订单总额¥" + mTotalPrice);
         //tvTotalPrice.setText(Html.fromHtml("订单金额：<font color=\"#009A44\">¥" + mTotalPrice + "</font>"));
 
     }
@@ -492,91 +580,18 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                 break;
         }
 
-        if (mOrderStatusInt == 0 || mOrderStatusInt == 1) {
-            if (mPayStatusInt == 1) {
-                tvRefund.setVisibility(View.VISIBLE);
+        if (mOrderStatusInt == 1) {
+            if (mPayStatusInt == 0) {
+                tvPayStatus.setText("已取消");
+                //tvRefund.setVisibility(View.VISIBLE);
+            } else if (mPayStatusInt == 1) {
+
             }
         }
 
-       tvPayStatus.setText(mStatusStr);
+        //tvPayStatus.setText(mStatusStr);
 
     }
-
-    private void parserData(String result) {
-        try {
-            JSONObject json = new JSONObject(result);
-            if (json.getInt("status") == 0) {
-                tvLoading.setVisibility(View.GONE);
-                svContent.setVisibility(View.VISIBLE);
-                rlBottomBar.setVisibility(View.VISIBLE);
-
-                //      System.out.println("订单详情json" + json);
-               // mHotelName = json.getJSONObject("data").getJSONObject("detail").getString("title").trim();
-               // mHotelImg = json.getJSONObject("data").getJSONObject("detail").getString("img");
-                 productname= json.getJSONObject("data").getString("productname");
-                 scenicName= json.getJSONObject("data").getString("scenicName");
-                 orderNo = json.getJSONObject("data").getString("orderno");
-                 mStatusStr = json.getJSONObject("data").getString("paymentMessage")
-                        + "/" + json.getJSONObject("data").getString("returnMessage");
-
-                mOrderStatusInt = Integer.parseInt(json.getJSONObject("data").getString("status"));
-                mPayStatusInt = Integer.parseInt(json.getJSONObject("data").getString("pay_status"));
-                if ("Acti".equals(type)) {
-                    mRoomCount = json.getJSONObject("data").getString("num");
-                    mCheckInDate = json.getJSONObject("data").getString("checkin");
-                    mTotalPrice = Double.parseDouble(json.getJSONObject("data").getString("price")) + "";
-                    mCheckName = json.getJSONObject("data").getString("username");
-                    mCheckPhone = json.getJSONObject("data").getString("phone");
-                    mOtherInfo = json.getJSONObject("data").getString("kefumemo");
-                } else if ("tuniuscenic".equalsIgnoreCase(type)) {
-                    //mRoomName = json.getJSONObject("data").getJSONObject("detail").getString("roomname");
-                    mRoomCount = json.getJSONObject("data").getString("booknumber");
-                    mCheckInDate = json.getJSONObject("data").getString("starttime");
-                    mTotalPrice= json.getJSONObject("data").getString("price");
-                    mCheckName = json.getJSONObject("data").getJSONObject("contact").getString("name").trim();
-                    mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
-
-                    // mCheckOutDate = json.getJSONObject("data").getString("checkout");
-                   // mHotelAddress = json.getJSONObject("data").getJSONObject("detail").getString("address").trim();
-                    //mTotalPrice = Double.parseDouble(json.getJSONObject("data").getString("price")) + "";
-                    //mCheckName = json.getJSONObject("data").getString("username");
-                    //mCheckPhone = json.getJSONObject("data").getString("phone");
-                    //mOtherInfo = json.getJSONObject("data").getString("memo");
-                    //iscomment = json.getJSONObject("data").getString("iscomment");
-
-                } else {
-                    mRoomName = json.getJSONObject("data").getJSONObject("detail").getString("roomname");
-                    mRoomCount = json.getJSONObject("data").getString("roomnum");
-                    mCheckInDate = json.getJSONObject("data").getString("checkin");
-                    mCheckOutDate = json.getJSONObject("data").getString("checkout");
-                    if ("hotel".equalsIgnoreCase(type)) {
-                        mHotelday = json.getJSONObject("data").getString("days");
-                    } else {
-                        mHotelday = json.getJSONObject("data").getString("rzdays");
-                    }
-
-                    if ("hotel".equals(type)) {
-                        //酒店支付方式
-                        String payfsStr = json.getJSONObject("data").getJSONObject("detail").getString("payfs");
-                        if (payfsStr != null || !TextUtils.isEmpty(payfsStr)) {
-                            mHotelPayfs = Integer.parseInt(payfsStr);
-                        }
-                    }
-
-                    mHotelAddress = json.getJSONObject("data").getJSONObject("detail").getString("address").trim();
-                    mTotalPrice = Double.parseDouble(json.getJSONObject("data").getString("price")) + "";
-                    mCheckName = json.getJSONObject("data").getString("username");
-                    mCheckPhone = json.getJSONObject("data").getString("phone");
-                    mOtherInfo = json.getJSONObject("data").getString("memo");
-                }
-            } else {
-                tvLoading.setText("加载失败");
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     /*
    * 提交订单到服务器,返回标准订单数据然后进行支付
@@ -799,8 +814,8 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     private void cancelOrder() {
         RequestParams params = new RequestParams(Constants.CANCEL_ORDER_URL);
         params.addBodyParameter("userid", userid);
-        params.addBodyParameter("type", type);
-        params.addBodyParameter("id", qxid);
+        params.addBodyParameter("orderno", orderNo);
+        //params.addBodyParameter("id", qxid);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -928,7 +943,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         PrefUtils.setInt(IngOrderDetailActivity.this, "wxpaystatus", -3);
     }
 
-    @OnClick({R.id.iv_back, R.id.tv_cash_pay, R.id.tv_order_pay, R.id.tv_order_cancel, R.id.tv_refund})
+    @OnClick({R.id.btn_order_cacel,R.id.iv_back, R.id.tv_cash_pay, R.id.tv_order_pay, R.id.tv_order_cancel, R.id.tv_refund,R.id.btn_order_pay})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
@@ -946,8 +961,25 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
             case R.id.tv_refund:
                 showApplyRefundDialog();
                 break;
+            case R.id.btn_order_pay:
+                Intent intent = new Intent();
+
+                   //price=Integer.parseInt(mTotalPrice.trim());
+                   intent.putExtra("type", "tuniuscenic");
+                   intent.putExtra("price",mTotalPrice);
+                   intent.putExtra("orderno", orderNo);
+                   intent.putExtra("title", scenicName + " - " + productname);
+                   intent.setClass(mActivity, OrderDetailActivity.class);
+                   startActivity(intent);
+                   break;
+            case R.id.btn_order_cacel:
+                showCancelOrderDialog();
+                break;
+               }
+
+
         }
     }
 
 
-}
+

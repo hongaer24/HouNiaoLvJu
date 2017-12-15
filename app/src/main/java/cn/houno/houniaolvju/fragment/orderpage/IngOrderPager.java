@@ -142,7 +142,7 @@ public class IngOrderPager extends Fragment {
         Map<String, String> map = new HashMap<>();
         map.put("userid", userid);
         map.put("page", page + "");
-        map.put("status", "1");
+        map.put("status", "0");
 
         OkHttpClientManager.postAsync(Constants.MYORDER_URL, map, null, new Handler() {
             @Override
@@ -186,7 +186,7 @@ public class IngOrderPager extends Fragment {
         map.put("page", String.valueOf(page));
         // map.put("page", String.valueOf(page));
         map.put("pagesize", String.valueOf(10));
-        map.put("status", String.valueOf(1));
+        map.put("status", String.valueOf(0));
 
         OkHttpClientManager.postAsync(Constants.MYORDER_URL, map, null, mHandler, R.id.doSucceed, R.id.doFail);
 

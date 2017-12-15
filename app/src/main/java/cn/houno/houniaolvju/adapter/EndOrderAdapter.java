@@ -202,6 +202,8 @@ public class EndOrderAdapter extends BaseAdapter {
         } else {
             if(TextUtils.equals(status, "1")&&TextUtils.equals(pay_status, "0")||TextUtils.equals(status, "10")&&TextUtils.equals(pay_status, "0")){
                 holder.tvPayStatus.setText("已取消");
+            }else if(TextUtils.equals(status, "4")){
+                holder.tvPayStatus.setText("已完成");
             }
            /* if (TextUtils.equals(status, "2")) {
                 holder.tvPayStatus.setText("已取消");

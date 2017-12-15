@@ -16,7 +16,7 @@ public class Constants {
     //首页轮播图数据地址
     public static final String HOME_TOP_PICTURE = "http://apis.houno.cn/getAds";
     //首页拼团酒店、活动酒店、活动景点数据
-    public static final String HOME_INDEX = "http://apis.houno.cn/getIndex";
+    public static final String HOME_INDEX = "http://apis.houno.cn/getIndex.php";
     //首页分权楼盘列表数据
     public static final String HOME_FENQUAN = "http://fqapi.houno.cn/fqlist.php";
     //实时搜索
@@ -141,7 +141,8 @@ public class Constants {
    // public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail.php";
     public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail";
     //取消订单
-    public static final String CANCEL_ORDER_URL = "http://apis.houno.cn/cancelorder.php";
+   // public static final String CANCEL_ORDER_URL = "http://apis.houno.cn/cancelorder.php";
+    public static final String CANCEL_ORDER_URL = "http://apis.houno.cn/hounoscenicOrderCancel ";
 
     //获取城市id接口
     public static final String GET_CITY_ID = "http://apis.houno.cn/getCityId.php";

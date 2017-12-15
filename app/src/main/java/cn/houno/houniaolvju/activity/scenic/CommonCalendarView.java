@@ -16,24 +16,24 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/*
-import com.qiangyu.test.commoncalendarview.R;
-import com.qiangyu.test.commoncalendarview.bean.ProductDatePrice;
-import com.qiangyu.test.commoncalendarview.utils.DateUtils;
-import com.qiangyu.test.commoncalendarview.utils.StringUtils;
-*/
-
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.Bind;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.bean.ScenicDetailBean;
-import cn.houno.houniaolvju.utils.DateUtil;
 import cn.houno.houniaolvju.utils.DateUtils;
 import cn.houno.houniaolvju.utils.StringUtils;
+
+/*
+import com.qiangyu.test.commoncalendarview.R;
+import com.qiangyu.test.commoncalendarview.bean.ProductDatePrice;
+import com.qiangyu.test.commoncalendarview.utils.DateUtils;
+import com.qiangyu.test.commoncalendarview.utils.StringUtils;
+*/
 
 
 /**
@@ -42,11 +42,19 @@ import cn.houno.houniaolvju.utils.StringUtils;
 
 public class CommonCalendarView extends FrameLayout implements View.OnClickListener {
 
+    @Bind(R.id.left_month_btn)
+    ImageButton leftMonthBtn;
+    @Bind(R.id.month_tv)
+    TextView monthTv;
+    @Bind(R.id.right_month_btn)
+    ImageButton rightMonthBtn;
+    @Bind(R.id.viewPager)
+    ViewPager viewPager;
     private ViewPager mViewPager;
     private TextView mMonthTv;
     private Context mContext;
-    private android.widget.ImageButton mLeftMonthBtn;
-    private android.widget.ImageButton mRightMonthBtn;
+    private ImageButton mLeftMonthBtn;
+    private ImageButton mRightMonthBtn;
 
     private SparseArray<GridView> mViewMap = new SparseArray<>();
 
@@ -65,11 +73,11 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
     }
 
     public CommonCalendarView(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public CommonCalendarView(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public CommonCalendarView(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -78,51 +86,49 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
     }
 
 
+    public void init(DatePickerController controller) {
+        if (controller == null) {
+            mController = new DatePickerController() {
+                @Override
+                public int getMaxYear() {
+                    return DateUtils.getToYear() + 1;
+                }
 
+                @Override
+                public void onDayOfMonthSelected(int year, int month, int day) {
+                    Toast.makeText(mContext, String.format("%s-%s-%s", year, StringUtils.leftPad(String.valueOf(month), 2, "0"),
+                            StringUtils.leftPad(String.valueOf(day), 2, "0")), Toast.LENGTH_SHORT).show();
+                }
 
-    public void init(DatePickerController controller){
-        if (controller==null){
-             mController = new DatePickerController() {
-                 @Override
-                 public int getMaxYear() {
-                     return DateUtils.getToYear()+1;
-                 }
+                @Override
+                public void onDayOfMonthAndDataSelected(int year, int month, int day, List obj) {
 
-                 @Override
-                 public void onDayOfMonthSelected(int year, int month, int day) {
-                     Toast.makeText(mContext, String.format("%s-%s-%s", year,StringUtils.leftPad(String.valueOf(month),2,"0"),
-                             StringUtils.leftPad(String.valueOf(day),2,"0")), Toast.LENGTH_SHORT).show();
-                 }
+                }
 
-                 @Override
-                 public void onDayOfMonthAndDataSelected(int year, int month, int day, List obj) {
+                @Override
+                public void showOtherFields(Object obj, View view, int gridItemYear, int gridItemMonth, int gridItemDay) {
 
-                 }
+                }
 
-                 @Override
-                 public void showOtherFields(Object obj, View view, int gridItemYear, int gridItemMonth, int gridItemDay) {
+                @Override
+                public Map<String, List> getDataSource() {
+                    return null;
+                }
 
-                 }
-
-                 @Override
-                 public Map<String, List> getDataSource() {
-                     return null;
-                 }
-
-             };
-        }else{
+            };
+        } else {
             mController = controller;
         }
         this.mYearMonthMap = mController.getDataSource();
         adapter = new CalendarAdapter(mContext);
-        mViewPager.setPageTransformer(true,new DepthPageTransformer());
+        mViewPager.setPageTransformer(true, new DepthPageTransformer());
         mViewPager.setAdapter(adapter);
 
 
-        if (minDate!=null){
-            mMonthTv.setText(String.format("%s年%s月",DateUtils.getYear(minDate), StringUtils.leftPad(String.valueOf(DateUtils.getMonth(minDate)),2,"0")));
-        }else{
-            mMonthTv.setText(String.format("%s年%s月",DateUtils.getToYear(), StringUtils.leftPad(String.valueOf(DateUtils.getToMonth()),2,"0")));
+        if (minDate != null) {
+            mMonthTv.setText(String.format("%s年%s月", DateUtils.getYear(minDate), StringUtils.leftPad(String.valueOf(DateUtils.getMonth(minDate)), 2, "0")));
+        } else {
+            mMonthTv.setText(String.format("%s年%s月", DateUtils.getToYear(), StringUtils.leftPad(String.valueOf(DateUtils.getToMonth()), 2, "0")));
         }
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -146,7 +152,7 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
     @Override
     protected void onFinishInflate() {
         super.onFinishInflate();
-        View view = LayoutInflater.from(mContext).inflate(R.layout.activity_page_calendar_price,this,true);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.activity_page_calendar_price, this, true);
         this.mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
         this.mRightMonthBtn = (ImageButton) view.findViewById(R.id.right_month_btn);
         this.mMonthTv = (TextView) view.findViewById(R.id.month_tv);
@@ -158,12 +164,12 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.left_month_btn:
-                mViewPager.setCurrentItem(mViewPager.getCurrentItem()-1,true);
+                mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1, true);
                 break;
             case R.id.right_month_btn:
-                mViewPager.setCurrentItem(mViewPager.getCurrentItem()+1,true);
+                mViewPager.setCurrentItem(mViewPager.getCurrentItem() + 1, true);
                 break;
         }
     }
@@ -181,12 +187,12 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
         public CalendarAdapter(Context context) {
             inflater = LayoutInflater.from(context);
             mContext = context;
-            if (maxDate!=null){
-                lastMonth = DateUtils.getMonth(maxDate)-1;
+            if (maxDate != null) {
+                lastMonth = DateUtils.getMonth(maxDate) - 1;
             }
-            if (minDate!=null){
+            if (minDate != null) {
                 startYear = DateUtils.getYear(minDate);
-                firstMonth = DateUtils.getMonth(minDate)-1;
+                firstMonth = DateUtils.getMonth(minDate) - 1;
             }
         }
 
@@ -195,21 +201,21 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
         public CharSequence getPageTitle(int position) {
             int year = position / MONTHS_IN_YEAR + startYear + ((firstMonth + (position % MONTHS_IN_YEAR)) / MONTHS_IN_YEAR);
             int month = (firstMonth + (position % MONTHS_IN_YEAR)) % MONTHS_IN_YEAR;
-            return String.format("%s年%s月",year, StringUtils.leftPad(String.valueOf(month+1),2,"0"));
+            return String.format("%s年%s月", year, StringUtils.leftPad(String.valueOf(month + 1), 2, "0"));
         }
 
         @Override
         public int getCount() {
             int maxYear = mController.getMaxYear();
-            int minYear = calendar.get(Calendar.YEAR) ;
-            if (maxDate!=null){
+            int minYear = calendar.get(Calendar.YEAR);
+            if (maxDate != null) {
                 maxYear = DateUtils.getYear(maxDate);
             }
-            if (minDate!=null){
+            if (minDate != null) {
                 minYear = DateUtils.getYear(minDate);
             }
 
-            int itemCount = (maxYear-minYear+1) * MONTHS_IN_YEAR;
+            int itemCount = (maxYear - minYear + 1) * MONTHS_IN_YEAR;
 
             if (firstMonth != -1)
                 itemCount -= firstMonth;
@@ -223,11 +229,11 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             GridView mGridView = mViewMap.get(position);
-            if (mGridView ==null){
+            if (mGridView == null) {
                 mGridView = (GridView) inflater.inflate(R.layout.item_page_month_day, container, false);
-                mViewMap.put(position,mGridView);
+                mViewMap.put(position, mGridView);
             }
-            int year = position / MONTHS_IN_YEAR +  startYear + ((firstMonth + (position % MONTHS_IN_YEAR)) / MONTHS_IN_YEAR);
+            int year = position / MONTHS_IN_YEAR + startYear + ((firstMonth + (position % MONTHS_IN_YEAR)) / MONTHS_IN_YEAR);
             int month = (firstMonth + (position % MONTHS_IN_YEAR)) % MONTHS_IN_YEAR;
             DateBean dateBean = new DateBean(year, month + 1);
             mGridView.setOnItemClickListener(this);
@@ -256,11 +262,11 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
             }
             DateBean bean = gridAdapter.getDateBean();
             List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> list = gridAdapter.getProductDatePriceList();
-            if (mController!=null){
-                if (list!=null&&!list.isEmpty()){
-                    mController.onDayOfMonthAndDataSelected(bean.currentYear,bean.currentMonth,day+1,list);
-                }else{
-                    mController.onDayOfMonthSelected(bean.currentYear,bean.currentMonth,day+1);
+            if (mController != null) {
+                if (list != null && !list.isEmpty()) {
+                    mController.onDayOfMonthAndDataSelected(bean.currentYear, bean.currentMonth, day + 1, list);
+                } else {
+                    mController.onDayOfMonthSelected(bean.currentYear, bean.currentMonth, day + 1);
                 }
             }
         }
@@ -283,7 +289,7 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
 
         public MyGridAdapter(DateBean dateBean) {
             this.mDateBean = dateBean;
-            if (mYearMonthMap!=null){
+            if (mYearMonthMap != null) {
                 this.mProductDatePriceList = mYearMonthMap.get(String.format("%s-%s", dateBean.currentYear, StringUtils.leftPad(dateBean.currentMonth + "", 2, "0")));
             }
             GregorianCalendar c = new GregorianCalendar(dateBean.currentYear, dateBean.currentMonth - 1, 0);
@@ -319,12 +325,12 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            GridViewHolder viewHolder ;
+            GridViewHolder viewHolder;
             if (view == null) {
                 view = LayoutInflater.from(mContext).inflate(R.layout.item_day, viewGroup, false);
                 viewHolder = new GridViewHolder();
-                viewHolder.mTextView = (TextView) view.findViewById(R.id.day_tv);
-                viewHolder.mPriceTv = (TextView) view.findViewById(R.id.price_tv);
+                viewHolder.mTextView = view.findViewById(R.id.day_tv);
+                viewHolder.mPriceTv = view.findViewById(R.id.price_tv);
                 viewHolder.mLineView = view.findViewById(R.id.line_view);
                 view.setTag(viewHolder);
             } else {
@@ -337,17 +343,17 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
             } else {
                 viewHolder.mTextView.setText(String.valueOf(item + 1));
                 viewHolder.mPriceTv.setText("");
-                if (i%7==0||i%7==6){
+                if (i % 7 == 0 || i % 7 == 6) {
                     viewHolder.mTextView.setActivated(true);
-                }else{
+                } else {
                     viewHolder.mTextView.setActivated(false);
                 }
                 if (mProductDatePriceList != null) {
                     viewHolder.mTextView.setEnabled(false);
                     view.setEnabled(false);
                     for (Object obj : mProductDatePriceList) {//用于展示价格等额外的属性
-                        if (mController!=null){
-                            mController.showOtherFields(obj,view,mDateBean.currentYear,mDateBean.currentMonth,item+1);
+                        if (mController != null) {
+                            mController.showOtherFields(obj, view, mDateBean.currentYear, mDateBean.currentMonth, item + 1);
                         }
                     }
                 }
@@ -422,7 +428,7 @@ public class CommonCalendarView extends FrameLayout implements View.OnClickListe
         //展示其它属性(用于扩展数据  日期相等时设置显示效果)
         void showOtherFields(Object obj, View view, int gridItemYear, int gridItemMonth, int gridItemDay);
 
-        Map<String,List> getDataSource();
+        Map<String, List> getDataSource();
     }
 
 }

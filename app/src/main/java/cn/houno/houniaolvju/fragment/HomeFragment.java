@@ -169,7 +169,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private HomeScenicTicketAdapter mScenicAdapter;
     private String mCityId;
     private String mCityName;
-    private ArrayList<MainHotelBean> mainHotel;
+    private List<MainHotelBean> mainHotel;
     private List<FenQuanListBean.DataBean> fqHouses;
     private SlidingMenu slidingMenu;
 
@@ -652,14 +652,14 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                         mLlFlashSale.setVisibility(View.GONE);
                     }
                     //设置酒店拼团、景点门票数据
-                    ArrayList<TgHotelBean> tgHotel = homeIndexDataBean.getData().getTgHotel();
+                   List<TgHotelBean> tgHotel = homeIndexDataBean.getData().getTgHotel();
                     TgHotelBean tgHotelBean;
                     if (tgHotel != null && tgHotel.size() != 0) {
                         tgHotelBean = homeIndexDataBean.getData().getTgHotel().get(0);
                     } else {
                         tgHotelBean = null;
                     }
-                    ArrayList<ActiScenicBean> actiScenic = homeIndexDataBean.getData().getActiScenic();
+                  List<ActiScenicBean> actiScenic = homeIndexDataBean.getData().getActiScenic();
                     ActiScenicBean actiScenicBean;
                     if (actiScenic != null && actiScenic.size() != 0) {
                         actiScenicBean = homeIndexDataBean.getData().getActiScenic().get(0);

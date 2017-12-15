@@ -34,6 +34,7 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
     private int position;
     private Context context;
     private MoreInfoCalendarActivity mActivity;
+    public static final int RESULT_CODE = 300;
     private String mScenicTitle;
     private String mScenicAddress;
     private String mTicketTitle;
@@ -50,13 +51,12 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
         mActivity = MoreInfoCalendarActivity.this;
         initData();
         Intent intent = getIntent();
-
         position=intent.getIntExtra("position",0);
-        mScenicTitle = intent.getStringExtra("scenicTitle");
+       /* mScenicTitle = intent.getStringExtra("scenicTitle");
         mScenicAddress = intent.getStringExtra("scenicAddress");
         mTicketTitle = intent.getStringExtra("ticketTitle");
         price = intent.getIntExtra("price",0);
-        allPrice = intent.getIntExtra(" allPrice",0);
+        allPrice = intent.getIntExtra(" allPrice",0);*/
 
 
       /*  List<ProductDatePrice> mDatePriceList = new ArrayList<>();
@@ -216,13 +216,14 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
 
                         Intent intent1 = new Intent(mActivity, FillInScenicOrderActivity.class);
                         intent1.putExtra("nowData",datePrice.getDepartDate());
-                        intent1.putExtra("scenicTitle",  mScenicTitle);
+                       /* intent1.putExtra("scenicTitle",  mScenicTitle);
                         intent1.putExtra("scenicAddress", mScenicAddress);
                         intent1.putExtra("ticketTitle", mTicketTitle);
                         intent1.putExtra("ticketTitle", mTicketTitle);
                         intent1.putExtra("price", price);
-                        intent1.putExtra("allPrice", allPrice);
-                        startActivity(intent1);
+                        intent1.putExtra("allPrice", allPrice);*/
+                        setResult(RESULT_CODE, intent1);
+                        finish();
 
                        // Toast.makeText(MoreInfoCalendarActivity.this, datePrice.toString(), Toast.LENGTH_SHORT).show();
                     }

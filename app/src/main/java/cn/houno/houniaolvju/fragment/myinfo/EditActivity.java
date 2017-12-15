@@ -154,9 +154,9 @@ public class EditActivity extends Activity implements View.OnClickListener{
         rlqq = (RelativeLayout) findViewById(R.id.rl_bjzl_qq);
         tvqq = (TextView) findViewById(R.id.tv_bjzl_qq);
 
-        userid = PrefUtils.getString(EditActivity.this, "userid", "");
+        // userid = PrefUtils.getString(EditActivity.this, "userid", "");
         //时间选择器
-        tptime = new TimePickerView(EditActivity.this, TimePickerView.Type.YEAR_MONTH_DAY);
+      /*  tptime = new TimePickerView(EditActivity.this, TimePickerView.Type.YEAR_MONTH_DAY);
         //控制时间范围
         tptime.setRange(1900, 2100);
 
@@ -176,7 +176,8 @@ public class EditActivity extends Activity implements View.OnClickListener{
         });
 
     }
-
+*/
+    }
     public static String getTime(Date date) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
         return format.format(date);

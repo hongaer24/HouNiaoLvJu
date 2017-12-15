@@ -133,7 +133,7 @@ public class EndOrderPager extends Fragment {
         RequestParams params = new RequestParams(Constants.MYORDER_URL);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("page", page + "");
-        params.addBodyParameter("status", "0");
+        params.addBodyParameter("status", "1");
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -181,7 +181,7 @@ public class EndOrderPager extends Fragment {
         RequestParams rparams = new RequestParams(Constants.MYORDER_URL);
         rparams.addBodyParameter("userid", userid);
         rparams.addBodyParameter("page", page + "");
-        rparams.addBodyParameter("status", "0");
+        rparams.addBodyParameter("status", "1");
         x.http().post(rparams, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
