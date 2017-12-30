@@ -79,4 +79,7 @@
         "   (1) 请按照证件上的姓名顺序填写。姓与名中间加“/”，如“Smith/Black”，不区分大小写。\n"
         "   (2) 英文姓名不超过26个字符，如姓名过长请使用缩写，乘客的姓氏不能缩写，名可以缩写。"
     </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

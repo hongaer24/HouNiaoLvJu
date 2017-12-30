@@ -17,7 +17,7 @@ public class HomeIndexDataBean implements Serializable {
 
     /**
      * status : 0
-     * data : {"sports":[{"id":"13","img":"http://pic.houno.cn/Uploads/OffActi/20170426/09463158fffbf7d9fdb.jpg","title":"220元限时抢！海口三弦印象·家酒店","market_price":"298.0000","price":"220.0000","ksdate":"2017-04-25","jsdate":"2017-06-30","row_number":"1","now_date":"2017-12-14 17:15:40"}],"tgHotel":[{"id":"25604","cate_id":"1","commentnum":"9","average":"5.0","img":"http://pic.houno.cn/Uploads/Hotel/20170118/170327587f2f5fe3443.jpg","map":"18.7528850000|110.2272510000","lat":"18.7528850000","lng":"110.2272510000","title":"兴隆曼特宁温泉度假酒店","star":"9","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"3","is_wifi":"1","is_network":"1","is_breakfast":"1","is_restaurant":"1","is_more_room":"0","is_big_bed":"1","is_tow_bed":"0","is_park":"1","is_swimming":"1","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"1","is_reception":"0","is_pet":"0","row_number":"1","catename":"酒店","street":"温泉大道","room":{"id":"268385","title":"豪华景观房","area":"56","bed_num":"2","people_num":"2","roomtype":"高级双床房","webprice":"220","marketprice":"0","row_number":"1"},"tg":{"id":"36","rid":"268385","title":"5间团购","num":"5","price":"","discount_money":"30","remark":"","status":"1","addtime":"2017-06-08 09:32:27.000","start_time":"2016-12-07 00:00:00.000","end_time":"2017-11-30 00:00:00.000","mer_id":"103","row_number":"1"}}],"actiScenic":[{"scenicname":"观澜湖新城","id":"1026","scenicid":"3532855","opentime":"10:00-22:00。","scenicaddress":"海南省海口观澜湖新城9栋三楼2304、2305号铺（兰桂坊楼上）反弹蹦床公园。","defaultpic":"http://m.tuniucdn.com/fb2/t1/G1/M00/CE/03/Cii9EVjmGRWIOSJbAAFoJQWDFZwAAJYQgOggZYAAWg9863_w240_h135_c1_t0.jpg","hits":"6063","saleprice":"88.0","webprice":"98.0","row_number":"1"}],"mainHotel":[{"id":"33421","cate_id":"1","commentnum":"0","average":"5.0","img":"http://pic.houno.cn/Uploads/ctrip/5910043/200408000000374gxB4B4_R_550_412.jpg","map":"39.862312|116.413506","lat":"39.8623120","lng":"116.4135060","title":"麗枫酒店（北京南站木樨园店）","star":"4","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"1","is_wifi":"0","is_network":"0","is_breakfast":"0","is_restaurant":"0","is_more_room":"0","is_big_bed":"0","is_tow_bed":"0","is_park":"0","is_swimming":"0","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"0","is_reception":"0","is_pet":"0","row_number":"1","catename":"酒店","street":"东罗园路","room":{"id":"959625","title":"高级大床房（无窗）","area":"20","bed_num":"1","people_num":"2","roomtype":"高级大床房（无窗）","webprice":"456","marketprice":"0","row_number":"1"}}],"mainTours":[{"id":"6753","productname":"<埃及-迪拜10日游>阿航成都直飞，马车巡游卢克索神庙，帆船游香蕉岛，2晚红海，棕榈岛单轨列车，全程WIFI，性价比连游，金字塔，狮身人面像","classbrandname":"常规跟团","price":8599,"img":"http://m.tuniucdn.com/fb2/t1/G1/M00/1A/E5/Cii9EVkeyDaIPFFHABzmDlqfWo0AAKWFwI1HKEAHOYm573_w450_h300_c1_t0.jpg","hits":"859","row_number":"1"},{"id":"7","productname":"<张家界森林公园-天门山-大峡谷-玻璃桥-凤凰古城双飞5日游>直飞张家界、玻璃桥栈道、玻璃桥、回程贴心安排接机、省时省心","classbrandname":"常规跟团","price":3190,"img":"http://m.tuniucdn.com/filebroker/cdn/online/50/29/5029c46d_w450_h300_c1_t0.jpg","hits":"57","row_number":"2"},{"id":"6879","productname":"<北京双高5日半自助游>告别传统跟团，半自助，王府井国贸等著名商圈酒店享自助早餐 ，含长城一日游可加故宫一日游","classbrandname":"半自助","price":2756,"img":"http://m.tuniucdn.com/fb2/t1/G2/M00/4C/0D/Cii-TFfABHSIPA3hAAi6kIZy6ygAABv6gB8yX8ACLqo981_w450_h300_c1_t0.jpg","hits":"53","row_number":"3"}]}
+     * data : {"sports":[{"id":"13","img":"http://pic.houno.cn/Uploads/OffActi/20170426/09463158fffbf7d9fdb.jpg","title":"220元限时抢！海口三弦印象·家酒店","market_price":"298.0000","price":"220.0000","ksdate":"2017-04-25","jsdate":"2017-06-30","row_number":"1","now_date":"2017-12-25 21:18:45"}],"tgHotel":[{"id":"25604","cate_id":"1","commentnum":"9","average":"5.0","img":"http://pic.houno.cn/Uploads/Hotel/20170118/170327587f2f5fe3443.jpg","map":"18.7528850000|110.2272510000","lat":"18.7528850000","lng":"110.2272510000","title":"兴隆曼特宁温泉度假酒店","star":"9","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"3","is_wifi":"1","is_network":"1","is_breakfast":"1","is_restaurant":"1","is_more_room":"0","is_big_bed":"1","is_tow_bed":"0","is_park":"1","is_swimming":"1","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"1","is_reception":"0","is_pet":"0","row_number":"1","catename":"酒店","street":"温泉大道","room":{"id":"268385","title":"豪华景观房","area":"56","bed_num":"2","people_num":"2","roomtype":"高级双床房","webprice":"220","marketprice":"0","row_number":"1"},"tg":{"id":"36","rid":"268385","title":"5间团购","num":"5","price":"","discount_money":"30","remark":"","status":"1","addtime":"2017-06-08 09:32:27.000","start_time":"2016-12-07 00:00:00.000","end_time":"2017-11-30 00:00:00.000","mer_id":"103","row_number":"1"}}],"actiScenic":[],"actiToursScenic":[{"scenicname":"观澜湖新城","id":"1026","scenicid":"3532855","opentime":"10:00-22:00。","scenicaddress":"海南省海口观澜湖新城9栋三楼2304、2305号铺（兰桂坊楼上）反弹蹦床公园。","defaultpic":"http://m.tuniucdn.com/fb2/t1/G1/M00/CE/03/Cii9EVjmGRWIOSJbAAFoJQWDFZwAAJYQgOggZYAAWg9863_w240_h135_c1_t0.jpg","hits":"6997","saleprice":"88.0","webprice":"98.0","row_number":"1"}],"mainHotel":[{"id":"33421","cate_id":"1","commentnum":"0","average":"5.0","img":"http://pic.houno.cn/Uploads/ctrip/5910043/200408000000374gxB4B4_R_550_412.jpg","map":"39.862312|116.413506","lat":"39.8623120","lng":"116.4135060","title":"麗枫酒店（北京南站木樨园店）","star":"4","is_sale":"0","is_recommend":"0","is_hot":"0","waptj":"1","is_wifi":"0","is_network":"0","is_breakfast":"0","is_restaurant":"0","is_more_room":"0","is_big_bed":"0","is_tow_bed":"0","is_park":"0","is_swimming":"0","is_waiter":"0","is_gym":"0","is_meeting":"0","is_business":"0","is_bus":"0","is_newopen":"0","is_reception":"0","is_pet":"0","row_number":"1","catename":"酒店","street":"东罗园路","room":{"id":"959625","title":"高级大床房（无窗）","area":"20","bed_num":"1","people_num":"2","roomtype":"高级大床房（无窗）","webprice":"456","marketprice":"0","row_number":"1"}}],"mainTours":[{"id":"6753","productname":"<埃及-迪拜10日游>阿航成都直飞，马车巡游卢克索神庙，帆船游香蕉岛，2晚红海，棕榈岛单轨列车，全程WIFI，性价比连游，金字塔，狮身人面像","classbrandname":"常规跟团","price":8599,"img":"http://m.tuniucdn.com/fb2/t1/G1/M00/1A/E5/Cii9EVkeyDaIPFFHABzmDlqfWo0AAKWFwI1HKEAHOYm573_w450_h300_c1_t0.jpg","hits":"877","row_number":"1"},{"id":"7","productname":"<张家界森林公园-天门山-大峡谷-玻璃桥-凤凰古城双飞5日游>直飞张家界、玻璃桥栈道、玻璃桥、回程贴心安排接机、省时省心","classbrandname":"常规跟团","price":3190,"img":"http://m.tuniucdn.com/filebroker/cdn/online/50/29/5029c46d_w450_h300_c1_t0.jpg","hits":"74","row_number":"2"},{"id":"5487","productname":"<云南-普洱-西双版纳-丛林亲子派对3飞6日游>小熊猫庄园独栋木屋，菩提岛露天泳池，热带植物园科普，澜沧江快艇，野象谷家庭合影，丛林舞蹈晚宴","classbrandname":"常规跟团","price":3074,"img":"http://m.tuniucdn.com/fb2/t1/G1/M00/C2/2C/Cii9EVjcmQOIXcL2ACEEWXMI5_wAAJOVwMu0LoAIQRx362_w450_h300_c1_t0.jpg","hits":"64","row_number":"3"}]}
      * msg : 数据获取成功
      */
 
@@ -52,7 +52,8 @@ public class HomeIndexDataBean implements Serializable {
     public static class DataBean {
         private List<SportsBean> sports;
         private List<TgHotelBean> tgHotel;
-        private List<ActiScenicBean> actiScenic;
+        private List<?> actiScenic;
+        private List<ActiToursScenicBean> actiToursScenic;
         private List<MainHotelBean> mainHotel;
         private List<MainToursBean> mainTours;
 
@@ -72,12 +73,20 @@ public class HomeIndexDataBean implements Serializable {
             this.tgHotel = tgHotel;
         }
 
-        public List<ActiScenicBean> getActiScenic() {
+        public List<?> getActiScenic() {
             return actiScenic;
         }
 
-        public void setActiScenic(List<ActiScenicBean> actiScenic) {
+        public void setActiScenic(List<?> actiScenic) {
             this.actiScenic = actiScenic;
+        }
+
+        public List<ActiToursScenicBean> getActiToursScenic() {
+            return actiToursScenic;
+        }
+
+        public void setActiToursScenic(List<ActiToursScenicBean> actiToursScenic) {
+            this.actiToursScenic = actiToursScenic;
         }
 
         public List<MainHotelBean> getMainHotel() {
@@ -106,7 +115,7 @@ public class HomeIndexDataBean implements Serializable {
              * ksdate : 2017-04-25
              * jsdate : 2017-06-30
              * row_number : 1
-             * now_date : 2017-12-14 17:15:40
+             * now_date : 2017-12-25 21:18:45
              */
 
             private String id;
@@ -192,7 +201,7 @@ public class HomeIndexDataBean implements Serializable {
             }
         }
 
-        public static class  TgHotelBean implements Serializable {
+        public static class TgHotelBean implements Serializable {
             /**
              * id : 25604
              * cate_id : 1
@@ -557,7 +566,7 @@ public class HomeIndexDataBean implements Serializable {
                 this.tg = tg;
             }
 
-            public static class RoomBean implements Serializable{
+            public static class RoomBean implements Serializable {
                 /**
                  * id : 268385
                  * title : 豪华景观房
@@ -653,7 +662,7 @@ public class HomeIndexDataBean implements Serializable {
                 }
             }
 
-            public static class TgBean implements Serializable{
+            public static class TgBean implements Serializable {
                 /**
                  * id : 36
                  * rid : 268385
@@ -790,7 +799,7 @@ public class HomeIndexDataBean implements Serializable {
             }
         }
 
-        public static class ActiScenicBean implements Serializable {
+        public static class ActiToursScenicBean implements Serializable {
             /**
              * scenicname : 观澜湖新城
              * id : 1026
@@ -798,7 +807,7 @@ public class HomeIndexDataBean implements Serializable {
              * opentime : 10:00-22:00。
              * scenicaddress : 海南省海口观澜湖新城9栋三楼2304、2305号铺（兰桂坊楼上）反弹蹦床公园。
              * defaultpic : http://m.tuniucdn.com/fb2/t1/G1/M00/CE/03/Cii9EVjmGRWIOSJbAAFoJQWDFZwAAJYQgOggZYAAWg9863_w240_h135_c1_t0.jpg
-             * hits : 6063
+             * hits : 6997
              * saleprice : 88.0
              * webprice : 98.0
              * row_number : 1
@@ -1355,7 +1364,7 @@ public class HomeIndexDataBean implements Serializable {
              * classbrandname : 常规跟团
              * price : 8599
              * img : http://m.tuniucdn.com/fb2/t1/G1/M00/1A/E5/Cii9EVkeyDaIPFFHABzmDlqfWo0AAKWFwI1HKEAHOYm573_w450_h300_c1_t0.jpg
-             * hits : 859
+             * hits : 877
              * row_number : 1
              */
 

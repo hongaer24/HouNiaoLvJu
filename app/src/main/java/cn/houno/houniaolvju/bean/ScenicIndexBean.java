@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class ScenicIndexBean {
 
-
     /**
      * status : 0
      * adsdata : [{"type":"image","name":"广告","url":"http://apis.houno.cn#464","img":"http://pic.houno.cn/Uploads/Images/20161021/1715185809dca665410.jpg","ordid":"255","row_number":"1"}]

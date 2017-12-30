@@ -14,7 +14,7 @@ import org.xutils.x;
 
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.scenic.ScenicDetailActivity;
-import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.ActiScenicBean;
+import cn.houno.houniaolvju.bean.HomeIndexDataBean;
 import cn.houno.houniaolvju.utils.DisplayUtil;
 import cn.houno.houniaolvju.utils.MyText2Utils;
 
@@ -65,7 +65,7 @@ public class ScenicTicketPage extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(getActivity(), ScenicDetailActivity.class);
-                intent.putExtra("id", id);
+                intent.putExtra("scenicid", id);
                 startActivity(intent);
             }
         });
@@ -73,21 +73,21 @@ public class ScenicTicketPage extends Fragment {
 
     private void initData() {
         Bundle arguments = getArguments();
-        ActiScenicBean data = (ActiScenicBean) arguments.getSerializable("data");
+        HomeIndexDataBean.DataBean.ActiToursScenicBean data = (HomeIndexDataBean.DataBean.ActiToursScenicBean) arguments.getSerializable("data");
         if (data != null) {
             setPageData(data);
         }
     }
 
-    public void setPageData(ActiScenicBean data) {
+    public void setPageData(HomeIndexDataBean.DataBean.ActiToursScenicBean data) {
         if (null != data) {
             mView.setVisibility(View.VISIBLE);
-            id = data.getId();
+            id = data.getScenicid();
             x.image().bind(ivImg, data.getDefaultpic(), DisplayUtil.getImageOptions());
             tvTitle.setText(data.getScenicname());
-           // tvStar.setText(data.getStar());
+             tvStar.setText(data.getOpentime());
             //tvCate.setText(data.getCate_name());
-            tvHits.setText(data.getHits());
+            tvHits.setText(data.getScenicaddress());
             MyText2Utils.formatYuanPrice(getActivity(), tvPrice, data.getWebprice());
         }else {
             mView.setVisibility(View.GONE);

@@ -74,7 +74,7 @@ public class ScenicDetailBean implements Serializable {
             this.other = other;
         }
 
-        public static class InfoBean {
+        public static class InfoBean implements Serializable {
             /**
              * id : 2569
              * scenicid : 19940
@@ -425,7 +425,8 @@ public class ScenicDetailBean implements Serializable {
                 }
             }
 
-            public static class TicketlistBean implements Serializable {
+            public static class TicketlistBean implements Serializable
+            {
                 /**
                  * productId : 6396069
                  * salePrice : 128.0
@@ -480,7 +481,7 @@ public class ScenicDetailBean implements Serializable {
                     this.ticketlistinfo = ticketlistinfo;
                 }
 
-                public static class TicketlistinfoBean {
+                public static class TicketlistinfoBean implements Serializable{
                     /**
                      * limitnumhigh : 99
                      * advancehour : 16
@@ -816,7 +817,7 @@ public class ScenicDetailBean implements Serializable {
                         this.pricecalendar = pricecalendar;
                     }
 
-                    public static class AdmissionvoucherBean {
+                    public static class AdmissionvoucherBean implements Serializable {
                         /**
                          * digitalCodeLength : 8
                          * smsMessage : 该门票为8位数字码，稍后会发送至您的手机，请您查收并凭数字码前往景区团队窗口换票入园。
@@ -862,7 +863,7 @@ public class ScenicDetailBean implements Serializable {
                         }
                     }
 
-                    public static class PricecalendarBean {
+                    public static class PricecalendarBean implements Serializable {
                         /**
                          * startPrice : 128
                          * salePrice : 128
@@ -921,7 +922,7 @@ public class ScenicDetailBean implements Serializable {
             }
         }
 
-        public static class OtherBean {
+        public static class OtherBean implements Serializable {
             /**
              * scenicname : 海口观澜湖温泉
              * id : 8

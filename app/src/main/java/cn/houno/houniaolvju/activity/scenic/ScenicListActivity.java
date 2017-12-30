@@ -13,11 +13,18 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.andview.refreshview.XRefreshView;
+import com.andview.refreshview.XScrollView;
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
 import com.google.gson.Gson;
 import com.zxl.library.DropDownMenu;
 
@@ -28,17 +35,20 @@ import org.xutils.http.RequestParams;
 import org.xutils.x;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
+import cn.houno.houniaolvju.activity.CitySelectActivity;
 import cn.houno.houniaolvju.adapter.ScenicListAdapter;
 import cn.houno.houniaolvju.bean.ScenicListBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
+import cn.houno.houniaolvju.view.InnerListView;
 
 /**
  * 项目名称：HouNiaoLvJu
@@ -50,14 +60,44 @@ import cn.houno.houniaolvju.utils.StatusBarUtils;
  * 修改备注：
  */
 public class ScenicListActivity extends Activity {
+    /*@Bind(R.id.iv_back)
+    ImageView ivBack;*/
+    @Bind(R.id.ly_top_bar)
+    RelativeLayout lyTopBar;
+    @Bind(R.id.pb_loading)
+    ProgressBar pbLoading;
+    @Bind(R.id.tv_loading)
+    TextView tvLoading;
+    @Bind(R.id.ll_loading)
+    LinearLayout llLoading;
+    @Bind(R.id.tv_city)
+    TextView tvCity;
+    @Bind(R.id.ll_scenic_loc)
+    LinearLayout llScenicLoc;
+    /*  @Bind(R.id.et_search)
+      EditText etSearch;*/
+    @Bind(R.id.lv_scenic_list)
+    InnerListView lvScenicList;
+    @Bind(R.id.sv_scenic_index)
+    XScrollView svScenicIndex;
+    @Bind(R.id.rfv_scenic_index)
+    XRefreshView rfvScenicIndex;
+    @Bind(R.id.ll_content)
+    LinearLayout llContent;
+
+/*
+    @BindView(R.id.iv_back)
+    ImageView ivBack;*/
 
     private ScenicListActivity mActivity;
 
-    private String mCityId = "";
+    //private String mCityId = "";
     private String mType = "";
     private String mKeyword = "";
     private ImageView ivBack;
     private EditText etSearch;
+    private static final int LOC = 1;
+    private static final int INDEX = 2;
 
     private DropDownMenu ddmScenicList;
     private String headers[] = {"分类", "星级", "排序"};
@@ -74,21 +114,30 @@ public class ScenicListActivity extends Activity {
 
     //列表页数
     private int page = 1;
-    private XRefreshView mRefreshView;
-    private ListView mListView;
+    //private XRefreshView mRefreshView;
+    //private ListView mListView;
     private ScenicListAdapter mAdapter;
     private List<ScenicListBean.DataBean> mList = new ArrayList<>();
     private String userid;
+
+    //=================定位相关==============
+    private LocationClient mLocationClient;
+    private MyLocationListener mLocationListener;//定位监听器
+    private double mLatitude = 0;   //纬度
+    private double mLongitude = 0;  //经度
+    private String cityName;
+    private String cityId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenic_list);
         ButterKnife.bind(this);
+        // ButterKnife.bind(this);
         mActivity = ScenicListActivity.this;
         StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
         userid = PrefUtils.getString(mActivity, "userid", "");
-        Log.i("666", "id===== "+userid);
+        Log.i("666", "id===== " + userid);
         initView();
         initData();
         initEvent();
@@ -97,22 +146,36 @@ public class ScenicListActivity extends Activity {
     private void initView() {
         ivBack = (ImageView) findViewById(R.id.iv_back);
         etSearch = (EditText) findViewById(R.id.et_search);
-        ddmScenicList = (DropDownMenu) findViewById(R.id.ddm_scenic_list);
+        // ddmScenicList = (DropDownMenu) findViewById(R.id.ddm_scenic_list);
     }
 
     private void initData() {
+
+        //初始化定位
+        mLocationClient = new LocationClient(this);
+        mLocationListener = new MyLocationListener();
+        mLocationClient.registerLocationListener(mLocationListener);
+        LocationClientOption option = new LocationClientOption();
+        option.setCoorType("bd09ll");   // 设置坐标类型
+        option.setIsNeedAddress(true);
+        option.setOpenGps(true);
+        option.setScanSpan(1000);
+        mLocationClient.setLocOption(option);
+
         Intent intent = getIntent();
         mKeyword = intent.getStringExtra("keyword");
         cate = intent.getIntExtra("cate", 0);
         cates = intent.getStringArrayExtra("cates");
         if (TextUtils.isEmpty(mKeyword)) {
-            mCityId = intent.getStringExtra("cityid");
+            cityId = intent.getStringExtra("cityid");
             mType = intent.getStringExtra("type");
         } else {
             etSearch.setText(mKeyword);
         }
-        initContentView();
-        mRefreshView.startRefresh();
+        getMyLoc();
+        //getDataFromServer(INDEX);
+        // initContentView();
+        rfvScenicIndex.startRefresh();
     }
 
     private void initEvent() {
@@ -124,10 +187,10 @@ public class ScenicListActivity extends Activity {
             }
         });
 
-        mRefreshView.setXRefreshViewListener(new XRefreshView.XRefreshViewListener() {
+        rfvScenicIndex.setXRefreshViewListener(new XRefreshView.XRefreshViewListener() {
             @Override
             public void onRefresh() {
-                getDataFromServer();
+                getDataFromServer(INDEX);
             }
 
             @Override
@@ -157,7 +220,7 @@ public class ScenicListActivity extends Activity {
                     Toast.makeText(mActivity, "请输入关键字", Toast.LENGTH_SHORT).show();
                 } else {
                     etSearch.clearFocus();
-                    getDataFromServer();
+                    getDataFromServer(INDEX);
                 }
                 return true;
             }
@@ -183,7 +246,7 @@ public class ScenicListActivity extends Activity {
         /*
         * 取消编辑框焦点
         * */
-        mListView.setOnTouchListener(new View.OnTouchListener() {
+        lvScenicList.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (etSearch.isFocused()) {
@@ -193,7 +256,7 @@ public class ScenicListActivity extends Activity {
             }
         });
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvScenicList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
@@ -204,18 +267,25 @@ public class ScenicListActivity extends Activity {
         });
     }
 
-    private void initContentView() {
-        View contentView = getLayoutInflater().inflate(R.layout.layout_sceniclist_contentview, null);
+    /*
+* 获取当前定位
+* */
+    private void getMyLoc() {
+        mLocationClient.start();    //开始定位
+    }
+
+  /*  private void initContentView() {
+       // View contentView = getLayoutInflater().inflate(R.layout.layout_sceniclist_contentview, null);
         mRefreshView = (XRefreshView) contentView.findViewById(R.id.rfv_scenic_list);
         mRefreshView.setPullLoadEnable(true);
         mListView = (ListView) contentView.findViewById(R.id.lv_content);
-        ddmScenicList.setDropDownMenu(Arrays.asList(headers), initViewData(), contentView);
+        //ddmScenicList.setDropDownMenu(Arrays.asList(headers), initViewData(), contentView);
 
         mAdapter = new ScenicListAdapter(this);
         mListView.setAdapter(mAdapter);
-
+        getDataFromServer();
         //该监听回调只监听默认类型，如果是自定义view请自行设置，参照demo
-        ddmScenicList.addMenuSelectListener(new DropDownMenu.OnDefultMenuSelectListener() {
+      *//*  ddmScenicList.addMenuSelectListener(new DropDownMenu.OnDefultMenuSelectListener() {
             @Override
             public void onSelectDefaultMenu(int index, int pos, String clickstr) {
                 //index:点击的tab索引，pos：单项菜单中点击的位置索引，clickstr：点击位置的字符串
@@ -246,35 +316,58 @@ public class ScenicListActivity extends Activity {
 
                 getDataFromServer();
             }
-        });
-    }
+        });*//*
+    }*/
 
-    private void getDataFromServer() {
-        mRefreshView.setPullLoadEnable(true);
-        RequestParams params = new RequestParams(Constants.SCENIC_LIST);
-        params.addBodyParameter("city", mCityId);
-        params.addBodyParameter("keyword", etSearch.getText().toString().trim());
-       // params.addBodyParameter("cate", cate + "");
-        //params.addBodyParameter("xji", star + "");
-        params.addBodyParameter("UserID",userid );
-        params.addBodyParameter("sort", sort + "");
-        params.addBodyParameter("p", page + "");
-        //params.addBodyParameter("type", mType);
+    private void getDataFromServer(final int type) {
+        RequestParams params = null;
+        rfvScenicIndex.setPullLoadEnable(true);
 
-
+        if (type == LOC) {
+            params = new RequestParams(Constants.GET_CITY_ID);
+            params.addBodyParameter("lat", String.valueOf(mLatitude));
+            params.addBodyParameter("lng", String.valueOf(mLongitude));
+        } else if (type == INDEX) {
+            params = new RequestParams(Constants.SCENIC_LIST);
+            params.addBodyParameter("city", cityId);
+            params.addBodyParameter("keyword", etSearch.getText().toString().trim());
+            // params.addBodyParameter("cate", cate + "");
+            //params.addBodyParameter("xji", star + "");
+            params.addBodyParameter("UserID", userid);
+            params.addBodyParameter("sort", sort + "");
+            params.addBodyParameter("p", page + "");
+            //params.addBodyParameter("type", mType);
+        }
 
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
+                if (type == INDEX) {
+                    rfvScenicIndex.stopRefresh();
+                    llContent.setVisibility(View.VISIBLE);
+                    llLoading.setVisibility(View.GONE);
+                }
                 page = 1;
                 try {
-                    Log.i("666", "id===== "+result);
+                    Log.i("666", "id===== " + result);
                     JSONObject obj = new JSONObject(result);
                     int status = obj.getInt("status");
                     if (status == 0) {
-                        parseData(result, false);
+                        if (type == LOC) {
+                            //定位获取城市ID
+                            cityId = obj.getJSONObject("data").getString("id");
+                            //根据城市id获取城市景点信息
+                            cityName = obj.getJSONObject("data").getString("name");
+                            tvCity.setText(cityName);
+                            //mTvScenicCity.setText(cityName + "景点");
+                            getIndexScenic();
+                        } else if (type == INDEX) {
+                            parseData(result, false);
+                        }
+
+
                     } else {
-                        mRefreshView.setPullLoadEnable(false);
+                        rfvScenicIndex.setPullLoadEnable(false);
                         Toast.makeText(mActivity, obj.getString("msg"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
@@ -294,7 +387,7 @@ public class ScenicListActivity extends Activity {
 
             @Override
             public void onFinished() {
-                mRefreshView.stopRefresh();
+                rfvScenicIndex.stopRefresh();
             }
         });
     }
@@ -302,7 +395,7 @@ public class ScenicListActivity extends Activity {
     private void getMoreDataFromServer() {
         page++;
         RequestParams params = new RequestParams(Constants.SCENIC_LIST);
-        params.addBodyParameter("city", mCityId);
+        params.addBodyParameter("city", cityId);
         params.addBodyParameter("keyword", etSearch.getText().toString().trim());
         params.addBodyParameter("cate", cate + "");
         params.addBodyParameter("xji", star + "");
@@ -317,7 +410,7 @@ public class ScenicListActivity extends Activity {
                     if (status == 0) {
                         parseData(result, true);
                     } else {
-                        mRefreshView.setPullLoadEnable(false);
+                        rfvScenicIndex.setPullLoadEnable(false);
                         Toast.makeText(mActivity, obj.getString("msg"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
@@ -337,11 +430,39 @@ public class ScenicListActivity extends Activity {
 
             @Override
             public void onFinished() {
-                mRefreshView.stopLoadMore();
+                rfvScenicIndex.stopLoadMore();
             }
         });
     }
 
+    @OnClick({R.id.iv_back,R.id.ll_scenic_loc })
+    public void onClick(View view) {
+        Intent intent = new Intent();
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.ll_scenic_loc:
+                intent.setClass(mActivity, CitySelectActivity.class);
+                startActivityForResult(intent, 302);
+                break;
+
+
+           /* case R.id.ll_city_scenic:
+                intent.putExtra("cates", mCates);
+                intent.putExtra("cityid", cityId);
+                intent.setClass(mActivity, ScenicListActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.ll_surrounding_city:
+                intent.putExtra("cates", mCates);
+                intent.putExtra("cityid", cityId);
+                intent.putExtra("type", "ambitus");
+                intent.setClass(mActivity, ScenicListActivity.class);
+                startActivity(intent);
+                break;*/
+        }
+    }
     /*
  * 解析处理数据
  * */
@@ -355,12 +476,62 @@ public class ScenicListActivity extends Activity {
         }
         if (mAdapter == null) {
             mAdapter = new ScenicListAdapter(this);
-            mListView.setAdapter(mAdapter);
+            lvScenicList.setAdapter(mAdapter);
         } else {
             mAdapter.setDatas(mList);
         }
     }
 
+    /*
+    * 定位监听器
+    * */
+    private class MyLocationListener implements BDLocationListener {
+        @Override
+        public void onReceiveLocation(BDLocation bdLocation) {
+            if (bdLocation == null) {
+                return;
+            }
+            //定位回调
+            mLatitude = bdLocation.getLatitude();   //经度
+            mLongitude = bdLocation.getLongitude(); //维度
+            System.out.println(
+                    "mLatitude:" + mLatitude + ",mLongitude:" + mLongitude
+            );
+
+            if (mLatitude != 0 && mLongitude != 0) {
+                getDataFromServer(LOC);
+                if (mLocationClient.isStarted()) {
+                    mLocationClient.stop();
+                }
+            }
+
+        }
+
+    }
+
+    /*
+  * 根据城市Id获取城市景点信息
+  * */
+    private void getIndexScenic() {
+        if (llLoading.getVisibility() == View.VISIBLE) {
+            tvLoading.setText("正在获取" + cityName + "景点信息...");
+        }
+        getDataFromServer(INDEX);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK && requestCode == 302) {
+            Bundle bundle = data.getBundleExtra("bundle"); //city即为回传的值
+            cityName = bundle.getString("city");
+            cityId = bundle.getString("cityId");
+            Log.d("889", "onActivityResult: ====" + cityId);
+            tvCity.setText(cityName);
+            //mTvScenicCity.setText(cityName + "景点");
+            //getScenicTop();
+            getIndexScenic();
+        }
+    }
 
     private List<HashMap<String, Object>> initViewData() {
         List<HashMap<String, Object>> viewDatas = new ArrayList<>();

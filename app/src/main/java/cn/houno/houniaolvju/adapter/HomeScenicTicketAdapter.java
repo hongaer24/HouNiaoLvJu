@@ -11,9 +11,12 @@ import android.widget.TextView;
 import org.xutils.x;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import cn.houno.houniaolvju.MainActivity;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.bean.HomeRcmdScenicBean.DataBean;
+import cn.houno.houniaolvju.bean.ScenicIndexBean;
 import cn.houno.houniaolvju.utils.DisplayUtil;
 import cn.houno.houniaolvju.utils.MyText2Utils;
 
@@ -29,15 +32,21 @@ import cn.houno.houniaolvju.utils.MyText2Utils;
 public class HomeScenicTicketAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
-    private ArrayList<DataBean> mDatas;
+    private List<ScenicIndexBean.LocalBean> mDatas;
 
-    public HomeScenicTicketAdapter(Context context, ArrayList<DataBean> datas) {
+    public HomeScenicTicketAdapter(Context context, List<ScenicIndexBean.LocalBean>  datas) {
         mDatas = datas;
         mContext = context;
         mInflater = LayoutInflater.from(context);
     }
 
-    public void setDatas(ArrayList<DataBean> datas) {
+   /* public HomeScenicTicketAdapter(Context context, ArrayList<DataBean> datas) {
+        mDatas = datas;
+        mContext = context;
+        mInflater = LayoutInflater.from(context);
+    }*/
+
+    public void setDatas(List<ScenicIndexBean.LocalBean> datas) {
         mDatas = datas;
         notifyDataSetChanged();
     }
@@ -72,10 +81,10 @@ public class HomeScenicTicketAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        x.image().bind(viewHolder.ivImg, mDatas.get(position).getImg(), DisplayUtil.getImageOptions());
-        viewHolder.tvTitle.setText(mDatas.get(position).getTitle().trim());
-        viewHolder.tvAddress.setText(mDatas.get(position).getAddress().trim());
-        MyText2Utils.formatYuanPrice(mContext, viewHolder.tvPrice, mDatas.get(position).getPrice().getWebprice());
+        x.image().bind(viewHolder.ivImg, mDatas.get(position).getDefaultpic(), DisplayUtil.getImageOptions());
+        viewHolder.tvTitle.setText(mDatas.get(position).getScenicname().trim());
+        viewHolder.tvAddress.setText(mDatas.get(position).getScenicaddress().trim());
+        MyText2Utils.formatYuanPrice(mContext, viewHolder.tvPrice, mDatas.get(position).getWebprice());
         return convertView;
     }
 

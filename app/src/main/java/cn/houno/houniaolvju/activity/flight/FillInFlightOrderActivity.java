@@ -486,10 +486,15 @@ public class FillInFlightOrderActivity extends Activity {
         }
 
         params.addBodyParameter("segment[flightNo]", mFlightsBean.getFlightNo());
+
         params.addBodyParameter("segment[departCityCode]", mFlightsBean.getSeatItems().get(0).getDepartCityIataCode());
+        //params.addBodyParameter("segment[depCode]", mFlightsBean.getSeatItems().get(0).getDepartCityIataCode());
+
         params.addBodyParameter("segment[arriveCityCode]", mFlightsBean.getSeatItems().get(0).getArriveCityIataCode());
+        //params.addBodyParameter("segment[arrCode]", mFlightsBean.getSeatItems().get(0).getArriveCityIataCode());
         params.addBodyParameter("segment[seatClass]", mSeatItemsBean.getSeatCode());
-        params.addBodyParameter("segment[departDate]", mDepDate);
+         params.addBodyParameter("segment[departDate]", mDepDate);
+         //params.addBodyParameter("segment[depDate]", mDepDate);
         params.addBodyParameter("segment[depTime]", mFlightsBean.getDepTime());
         params.addBodyParameter("segment[arrTime]", mFlightsBean.getArriTime());
         params.addBodyParameter("segment[planeModel]", mFlightsBean.getPlaneType());
@@ -497,8 +502,10 @@ public class FillInFlightOrderActivity extends Activity {
         params.addBodyParameter("info[airportTax]", mFlightsBean.getAirportTax() + "");
         params.addBodyParameter("info[totalPrice]", mTotalPrice + "");
         params.addBodyParameter("info[solutionId]", mSeatItemsBean.getSolutionId() + "");
-        params.addBodyParameter("info[name]", etLinkman.getText().toString().trim());
+         params.addBodyParameter("info[name]", etLinkman.getText().toString().trim());
         params.addBodyParameter("info[tel]", etPhone.getText().toString().trim());
+        //params.addBodyParameter("info[linkmobile]", etPhone.getText().toString().trim());
+
         params.addBodyParameter("info[depName]", mDepCity.getAreaname());
         params.addBodyParameter("info[arrName]", mArrCity.getAreaname());
         params.addBodyParameter("info[seatMsg]", mSeatItemsBean.getSeatMsg());
@@ -592,11 +599,11 @@ public class FillInFlightOrderActivity extends Activity {
         }
     }
 
-    @Override
+  /*  @Override
     protected void onStop() {
         super.onStop();
         if (mProgressDialog.isShowing()) {
             mProgressDialog.dismiss();
         }
-    }
+    }*/
 }

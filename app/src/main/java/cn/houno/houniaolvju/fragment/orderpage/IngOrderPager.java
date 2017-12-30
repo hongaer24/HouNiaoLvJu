@@ -57,6 +57,7 @@ public class IngOrderPager extends Fragment {
     @Bind(R.id.ll_no_order)
     LinearLayout llNoOrder;
 
+
     private MainActivity mActivity;
 
     private String userid;
@@ -64,6 +65,7 @@ public class IngOrderPager extends Fragment {
     private IngOrderAdapter ingListAdapter;
 
     public static boolean refresh = false;
+    private String info;
 
     @Nullable
     @Override
@@ -109,15 +111,25 @@ public class IngOrderPager extends Fragment {
 
 
                 Intent intent = new Intent();
+                String type = mIngOrderList.get(position).getType();
+                String address=mIngOrderList.get(position).getDetail().getAddress();
+                String addTime=mIngOrderList.get(position).getAdd_time();
+
 
                 intent.putExtra("data", (Serializable) mIngOrderList.get(position));
-                String type = mIngOrderList.get(position).getType();
+                intent.putExtra("address", address);
+                intent.putExtra("addtime", addTime);
+
                 if (TextUtils.equals(type, "Flight")) {
                     intent.setClass(mActivity, FlightOrderActivity.class);
                 } else if (TextUtils.equals(type, "Train")) {
                     intent.putExtra("orderno", mIngOrderList.get(position).getOrderno());
                     intent.setClass(mActivity, TrainOrderDetailActivity.class);
-                } else {
+                } else if (TextUtils.equals(type, "")) {
+                    intent.putExtra("orderno", mIngOrderList.get(position).getOrderno());
+                    intent.setClass(mActivity, TrainOrderDetailActivity.class);
+                }
+                else {
                     intent.setClass(mActivity, IngOrderDetailActivity.class);
                 }
                 startActivity(intent);
@@ -128,6 +140,10 @@ public class IngOrderPager extends Fragment {
 
 
     private void initData() {
+
+    /*    info = PrefUtils.getString(mActivity, "info", "");
+        wvScenicDetailInfo.loadDataWithBaseURL(null,    info, "text/html", "utf-8", null);*/
+
 
     }
 
@@ -158,7 +174,7 @@ public class IngOrderPager extends Fragment {
                             if (status == 1) {
                                 //Toast.makeText(mActivity, "没有订单...", Toast.LENGTH_SHORT).show();
                                 rfvIngOrder.setVisibility(View.GONE);
-                                llNoOrder.setVisibility(View.VISIBLE);
+                               // llNoOrder.setVisibility(View.VISIBLE);
                             } else if (status == 0) {
                                 llNoOrder.setVisibility(View.GONE);
                                 rfvIngOrder.setVisibility(View.VISIBLE);
@@ -226,6 +242,7 @@ public class IngOrderPager extends Fragment {
             OrderListBean orderListBean = gson.fromJson(result, OrderListBean.class);
             if (!isMore) {
                 mIngOrderList = orderListBean.getData();
+
             } else {
                 mIngOrderList.addAll(orderListBean.getData());
             }
@@ -239,6 +256,8 @@ public class IngOrderPager extends Fragment {
         } else {
             ingListAdapter.setData(mIngOrderList);
         }
+       // info = PrefUtils.getString(mActivity, "info", "");
+        //wvScenicDetailInfo.loadDataWithBaseURL(null,    info, "text/html", "utf-8", null);
 
     }
 

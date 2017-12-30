@@ -100,6 +100,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="120dp"
         android:orientation="horizontal"
+
         >
 
         <ProgressBar
@@ -109,7 +110,6 @@
             android:layout_height="20dp"
             android:indeterminateTint="#009A44"
             android:indeterminateTintMode="src_atop"
-
             tools:targetApi="lollipop"/>
 
         <TextView
@@ -204,13 +204,12 @@
                         android:id="@+id/siv_home_hs"
                         android:layout_width="match_parent"
                         android:layout_height="45dp"
-
                         />
 
                     <android.support.v4.view.ViewPager
                         android:id="@+id/vp_home_hs"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp" />
+                        android:layout_height="122dp" />
 
                     <View
                         android:layout_width="match_parent"

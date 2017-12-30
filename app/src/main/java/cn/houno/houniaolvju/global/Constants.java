@@ -46,7 +46,8 @@ public class Constants {
     //活动多间成团列表
     public static final String ACTI_HOTEL_TG_LIST = "http://apis.houno.cn/actihoteltglist";
     //活动景点列表
-    public static final String ACTI_SCENIC_LIST = "http://apis.houno.cn/actisceniclist";
+    //public static final String ACTI_SCENIC_LIST = "http://apis.houno.cn/actisceniclist";
+    public static final String ACTI_SCENIC_LIST = "http://apis.houno.cn/getActtourssceniclist.php";
     //活动特价酒店列表
     public static final String ACTI_SPC_HOTEL_LIST = "http://apis.houno.cn/actihotellist";
     //限时抢购列表(post p页数)
@@ -136,9 +137,10 @@ public class Constants {
     //版本地址（安装包）
     public static final String VERSION_URL = "http://webapi.houno.cn/hounoandroid";
     //我的订单
-    public static final String MYORDER_URL = "http://apis.houno.cn/myorder.php";
+    public static final String MYORDER_URL = "http://apis.houno.cn/myneworder.php";
     //订单详细
    // public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail.php";
+    //public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail";
     public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail";
     //取消订单
    // public static final String CANCEL_ORDER_URL = "http://apis.houno.cn/cancelorder.php";

@@ -15,6 +15,7 @@ import org.xutils.x;
 import java.util.List;
 
 import cn.houno.houniaolvju.R;
+import cn.houno.houniaolvju.bean.ScenicListBean;
 import cn.houno.houniaolvju.bean.ScenicListBean.DataBean;
 import cn.houno.houniaolvju.utils.DisplayUtil;
 import cn.houno.houniaolvju.utils.MyText2Utils;
@@ -31,14 +32,14 @@ import cn.houno.houniaolvju.utils.MyText2Utils;
 public class ScenicListAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
-    private List<DataBean> mDatas;
+    private List<ScenicListBean.DataBean> mDatas;
 
     public ScenicListAdapter(Context context) {
         mContext = context;
         mInflater = LayoutInflater.from(context);
     }
 
-    public void setDatas(List<DataBean> datas) {
+    public void setDatas(List<ScenicListBean.DataBean> datas) {
         mDatas = datas;
         Log.i("777", "datas===== "+  mDatas.toString());
         notifyDataSetChanged();
@@ -69,8 +70,8 @@ public class ScenicListAdapter extends BaseAdapter {
             viewHolder = new ViewHolder();
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tv_scenic_title);
             viewHolder.tvPrice = (TextView) convertView.findViewById(R.id.tv_scenic_price);
-           // viewHolder.tvCate = (TextView) convertView.findViewById(R.id.tv_scenic_cate);
-            //viewHolder.tvStar = (TextView) convertView.findViewById(R.id.tv_scenic_star);
+            viewHolder.tvCate = (TextView) convertView.findViewById(R.id.tv_scenic_cate);
+            viewHolder.tvStar = (TextView) convertView.findViewById(R.id.tv_scenic_star);
             viewHolder.tvHits = (TextView) convertView.findViewById(R.id.tv_scenic_hits);
             viewHolder.ivImg = (ImageView) convertView.findViewById(R.id.iv_scenic_img);
 
@@ -80,11 +81,11 @@ public class ScenicListAdapter extends BaseAdapter {
         }
         viewHolder.tvTitle.setText(mDatas.get(position).getScenicname());
        // Log.i("777", "datas===== "+  mDatas.get(position).getTitle());
-        //viewHolder.tvCate.setText(mDatas.get(position).getCate_name());
-        viewHolder.tvHits.setText(mDatas.get(position).getHits());
-        //viewHolder.tvStar.setText(mDatas.get(position).getStar());
-        if (mDatas.get(position).getWebprice() != null && !TextUtils.isEmpty(mDatas.get(position).getWebprice())) {
-            MyText2Utils.formatQiPrice(mContext, viewHolder.tvPrice, mDatas.get(position).getWebprice());
+        //viewHolder.tvCate.setText(mDatas.get(position).getOpentime());
+        viewHolder.tvHits.setText(mDatas.get(position).getScenicaddress());
+        viewHolder.tvStar.setText(mDatas.get(position).getOpentime());
+        if (mDatas.get(position).getSaleprice() != null && !TextUtils.isEmpty(mDatas.get(position).getSaleprice() )) {
+            MyText2Utils.formatQiPrice(mContext, viewHolder.tvPrice, mDatas.get(position).getSaleprice() );
         } else {
             viewHolder.tvPrice.setText("暂无价格");
         }

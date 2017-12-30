@@ -13,33 +13,15 @@ import java.util.List;
  */
 public class ScenicListBean {
 
+
     /**
      * status : 0
-     * count : 1739
-     * data : [{"id":"50","title":"蜈支洲岛","img":"http://pic.houno.cn/Uploads/Scenic/20161009/12025057f9c16a4ecbd.jpg","cate_id":"7","city":"445","hits":"8","address":"海南省三亚市海棠区林旺镇后海村蜈支洲岛","sell":"0","star":"2A以下景区","dianzang":"0","ziying":"1","webprice":"300.00","row_number":"1","cityname":"海棠湾","cate_name":"岛屿潜水","favorite":0},{"id":"80","title":"成都欢乐谷","img":"http://pic.houno.cn/Uploads/Scenic/20161017/1606345804868aef1fb.png","cate_id":"3","city":"97","hits":"17","address":"四川省成都市金牛区西华大道16号","sell":"0","star":"2A以下景区","dianzang":"0","ziying":"1","webprice":"215.00","row_number":"2","cityname":"成都","cate_name":"主题乐园","favorite":0},{"id":"99","title":" 张家界宝峰湖","img":"http://pic.houno.cn/Uploads/Scenic/20161018/1349005805b7cceace3.jpg","cate_id":"1","city":"394","hits":"9","address":"湖南省张家界市武陵源区索溪镇宝峰路8号","sell":"0","star":"2A以下景区","dianzang":"0","ziying":"1","webprice":"85.00","row_number":"3","cityname":"张家界","cate_name":"自然风景","favorite":0},{"id":"150","title":"高淳老街","img":"http://pic.houno.cn/Uploads/Scenic/20161019/1135315806ea03a9b30.jpg","cate_id":"2","city":"317","hits":"1","address":"","sell":"0","star":"4A级景区","dianzang":"0","ziying":"1","webprice":"25.00","row_number":"4","cityname":"南京","cate_name":"人文古迹","favorite":0},{"id":"180","title":"南湾猴岛","img":"http://pic.houno.cn/Uploads/Scenic/20161203/15073358426f3582d54.jpg","cate_id":"1","city":"441","hits":"4","address":"     海南省陵水县南约14公里的南湾半岛","sell":"0","star":"4A级景区","dianzang":"0","ziying":"1","webprice":"143.00","row_number":"5","cityname":"陵水","cate_name":"自然风景","favorite":0},{"id":"199","title":"何园","img":"http://pic.houno.cn/Uploads/Scenic/20161019/1657005807355cb6f2f.jpg","cate_id":"1","city":"329","hits":"2","address":"江苏省扬州市广陵区徐凝门街66号","sell":"0","star":"4A级景区","dianzang":"0","ziying":"1","webprice":"40.00","row_number":"6","cityname":"扬州","cate_name":"自然风景","favorite":0},{"id":"250","title":"锦里沟","img":"http://pic.houno.cn/Uploads/Scenic/20161020/141527580860ff27b9b.jpg","cate_id":"2","city":"383","hits":"5","address":"湖北省武汉市黄陂区蔡店乡道士冲村 ","sell":"0","star":"2A以下景区","dianzang":"0","ziying":"1","webprice":"38.00","row_number":"7","cityname":"武汉","cate_name":"人文古迹","favorite":0},{"id":"280","title":" 神农谷国家森林公园","img":"http://pic.houno.cn/Uploads/Scenic/20161020/164807580884c7a3bca.jpg","cate_id":"13","city":"453","hits":"7","address":"湖南省株洲市炎陵县 ","sell":"0","star":"2A以下景区","dianzang":"0","ziying":"1","webprice":"64.00","row_number":"8","cityname":"株洲","cate_name":"园林","favorite":0},{"id":"299","title":" 袁家寨子","img":"http://pic.houno.cn/Uploads/Scenic/20161021/09314758097003b52a9.jpg","cate_id":"2","city":"394","hits":"14","address":"湖南省张家界市武陵源区陵源风景名胜区内","sell":"0","star":"2A以下景区","dianzang":"0","ziying":"1","webprice":"200.00","row_number":"9","cityname":"张家界","cate_name":"人文古迹","favorite":0},{"id":"350","title":"自贡燊海井","img":"http://pic.houno.cn/Uploads/Scenic/20161022/141108580b02fcb2a23.jpg","cate_id":"2","city":"100","hits":"3","address":"     自贡市大安区大安街道大高路社区大安街262号","sell":"0","star":"2A以下景区","dianzang":"0","ziying":"1","webprice":"17.00","row_number":"10","cityname":"自贡","cate_name":"人文古迹","favorite":0}]
+     * count : 9
+     * data : [{"scenicname":"海口观澜湖度假区","id":"3603","scenicid":"789243","opentime":"五大洲矿温泉： 亚洲、大洋洲区：13:00-24:00； 欧洲区：13:00-22:00； 中东、美洲区：17:00-23:00 （各区域时间以园区开放为准）, 福星闯天关主题乐园营业时间：8:00-24:00, 户外泳池/懒人河：8:00--19:00。","scenicaddress":"海南省海口市观澜湖大道1号。","defaultpic":"http://m.tuniucdn.com/filebroker/cdn/olb/bf/a2/bfa282df3968ff14b62cb025dbe6f622_w240_h135_c1_t0.jpg","hits":"6955","saleprice":"128.0","webprice":"198.0","row_number":"1","favorite":0},{"scenicname":"观澜湖水上乐园","id":"4118","scenicid":"1801183","opentime":"8：00-22：00","scenicaddress":"海南省海口市观澜湖大道1号","defaultpic":"http://m.tuniucdn.com/filebroker/cdn/olb/75/db/75db290a71d203ef8c7ffc8d021b7420_w240_h135_c1_t0.jpg","hits":"6955","saleprice":"100.0","webprice":"150.0","row_number":"2","favorite":0},{"scenicname":"观澜湖华谊冯小刚电影公社","id":"1933","scenicid":"1799896","opentime":"9:00-19:00。","scenicaddress":"海南省海口市观澜湖大道（西线高速往观澜湖温泉1.8公里处）。","defaultpic":"http://m.tuniucdn.com/filebroker/cdn/olb/f5/5a/f55af960ef266798e8ffd02a98bbf9e8_w240_h135_c1_t0.jpg","hits":"6955","saleprice":"128.0","webprice":"148.0","row_number":"3","favorite":0},{"scenicname":"海口观澜湖温泉","id":"8","scenicid":"1833530","opentime":"13:00-23:00(五大洲矿温泉中东区开放时间)  17:00-23:00(五大洲矿温泉美洲区开放时间)  8:00-22:00(五大洲矿温泉欧洲区开放时间)  13:00-24:00(五大洲矿温泉亚洲及大洋洲区开放时间)  8:00-22:00(水上乐园冰海冒险、懒人河丛林漂流、欧洲区沙滩冲浪开放时间)","scenicaddress":"海南省海口市龙华区龙桥镇观澜湖大道1号海口观澜湖旅游度假区","defaultpic":"http://m.tuniucdn.com/fb2/t1/G1/M00/1D/1F/Cii9EFZULQCIYHWlAA4HNoKCAjwAAAmdwEqm7MADgdO109.png","hits":"7046","saleprice":"100.0","webprice":"105.0","row_number":"4","favorite":0},{"scenicname":"观澜湖新城","id":"1026","scenicid":"3532855","opentime":"10:00-22:00。","scenicaddress":"海南省海口观澜湖新城9栋三楼2304、2305号铺（兰桂坊楼上）反弹蹦床公园。","defaultpic":"http://m.tuniucdn.com/fb2/t1/G1/M00/CE/03/Cii9EVjmGRWIOSJbAAFoJQWDFZwAAJYQgOggZYAAWg9863_w240_h135_c1_t0.jpg","hits":"7046","saleprice":"88.0","webprice":"98.0","row_number":"5","favorite":0},{"scenicname":"海口泰迪熊博物馆","id":"605","scenicid":"3089612","opentime":"10:00-19:00（周一-周五）,10:00-21:00(周六-周日)。","scenicaddress":"观澜湖新城东区皇后大道。","defaultpic":"http://m.tuniucdn.com/fb2/t1/G2/M00/0C/FA/Cii-T1gue-OIP1PVAAGL0k_5A20AAEhpQP5-NQAAYvq658_w240_h135_c1_t0.jpg","hits":"7046","saleprice":"75.0","webprice":"90.0","row_number":"6","favorite":0},{"scenicname":"海南热带野生动植物园","id":"2569","scenicid":"19940","opentime":"8:00-18:00。","scenicaddress":"海南省海口市秀英区东山镇（海榆中线27公里处）。","defaultpic":"http://m.tuniucdn.com/filebroker/cdn/olb/ed/95/ed95936ef2c3abc93e29897bc703af2a_w240_h135_c1_t0.jpg","hits":"6955","saleprice":"55.0","webprice":"64.0","row_number":"7","favorite":0},{"scenicname":"海口火山口地质公园","id":"2092","scenicid":"51259","opentime":"8:00-18:00。","scenicaddress":"海南省海口市石山镇火山群世界地质公园。","defaultpic":"http://m.tuniucdn.com/fb2/t1/G2/M00/63/CA/Cii-TFjeIZSIbKXJAAGreb2Wq78AAI7vgPsEWkAAauR186_w240_h135_c1_t0.jpg","hits":"6955","saleprice":"30.0","webprice":"30.0","row_number":"8","favorite":0},{"scenicname":"海口五公祠","id":"3565","scenicid":"416","opentime":"8:00-18:00。","scenicaddress":"海南省海口市琼山区海府路169号。","defaultpic":"http://m.tuniucdn.com/filebroker/cdn/snc/dc/9e/dc9eabdd12580e58957bb6a52e434e1b_w240_h135_c1_t0.jpg","hits":"6955","saleprice":"15.0","webprice":"17.0","row_number":"9","favorite":0}]
      */
 
     private int status;
     private String count;
-    /**
-     * id : 50
-     * title : 蜈支洲岛
-     * img : http://pic.houno.cn/Uploads/Scenic/20161009/12025057f9c16a4ecbd.jpg
-     * cate_id : 7
-     * city : 445
-     * hits : 8
-     * address : 海南省三亚市海棠区林旺镇后海村蜈支洲岛
-     * sell : 0
-     * star : 2A以下景区
-     * dianzang : 0
-     * ziying : 1
-     * webprice : 300.00
-     * row_number : 1
-     * cityname : 海棠湾
-     * cate_name : 岛屿潜水
-     * favorite : 0
-     */
-
     private List<DataBean> data;
 
     public int getStatus() {
@@ -67,65 +49,78 @@ public class ScenicListBean {
     }
 
     public static class DataBean {
-        //id
-        private String scenicid;
-        //原title
+        /**
+         * scenicname : 海口观澜湖度假区
+         * id : 3603
+         * scenicid : 789243
+         * opentime : 五大洲矿温泉： 亚洲、大洋洲区：13:00-24:00； 欧洲区：13:00-22:00； 中东、美洲区：17:00-23:00 （各区域时间以园区开放为准）, 福星闯天关主题乐园营业时间：8:00-24:00, 户外泳池/懒人河：8:00--19:00。
+         * scenicaddress : 海南省海口市观澜湖大道1号。
+         * defaultpic : http://m.tuniucdn.com/filebroker/cdn/olb/bf/a2/bfa282df3968ff14b62cb025dbe6f622_w240_h135_c1_t0.jpg
+         * hits : 6955
+         * saleprice : 128.0
+         * webprice : 198.0
+         * row_number : 1
+         * favorite : 0
+         */
+
         private String scenicname;
-         //img
-        private String defaultpic;
-        private String cate_id;
-        private String city;
-        private String hits;
-        //address
+        private String id;
+        private String scenicid;
+        private String opentime;
         private String scenicaddress;
-        private String sell;
-        private String star;
-        private String dianzang;
-        private String ziying;
+        private String defaultpic;
+        private String hits;
+        private String saleprice;
         private String webprice;
         private String row_number;
-        private String cityname;
-        private String cate_name;
         private int favorite;
-
-        public String getScenicid() {
-            return scenicid;
-        }
-
-        public void setId(String id) {
-            this.scenicid = id;
-        }
 
         public String getScenicname() {
             return scenicname;
         }
 
-        public void setTitle(String title) {
-            this.scenicname = title;
+        public void setScenicname(String scenicname) {
+            this.scenicname = scenicname;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getScenicid() {
+            return scenicid;
+        }
+
+        public void setScenicid(String scenicid) {
+            this.scenicid = scenicid;
+        }
+
+        public String getOpentime() {
+            return opentime;
+        }
+
+        public void setOpentime(String opentime) {
+            this.opentime = opentime;
+        }
+
+        public String getScenicaddress() {
+            return scenicaddress;
+        }
+
+        public void setScenicaddress(String scenicaddress) {
+            this.scenicaddress = scenicaddress;
         }
 
         public String getDefaultpic() {
-            return  defaultpic;
+            return defaultpic;
         }
 
-        public void setDefaultpic(String img) {
-            this. defaultpic = img;
-        }
-
-        public String getCate_id() {
-            return cate_id;
-        }
-
-        public void setCate_id(String cate_id) {
-            this.cate_id = cate_id;
-        }
-
-        public String getCity() {
-            return city;
-        }
-
-        public void setCity(String city) {
-            this.city = city;
+        public void setDefaultpic(String defaultpic) {
+            this.defaultpic = defaultpic;
         }
 
         public String getHits() {
@@ -136,44 +131,12 @@ public class ScenicListBean {
             this.hits = hits;
         }
 
-        public String getScenicaddress() {
-            return scenicaddress;
+        public String getSaleprice() {
+            return saleprice;
         }
 
-        public void setScenicaddress(String address) {
-            this.scenicaddress = address;
-        }
-
-        public String getSell() {
-            return sell;
-        }
-
-        public void setSell(String sell) {
-            this.sell = sell;
-        }
-
-        public String getStar() {
-            return star;
-        }
-
-        public void setStar(String star) {
-            this.star = star;
-        }
-
-        public String getDianzang() {
-            return dianzang;
-        }
-
-        public void setDianzang(String dianzang) {
-            this.dianzang = dianzang;
-        }
-
-        public String getZiying() {
-            return ziying;
-        }
-
-        public void setZiying(String ziying) {
-            this.ziying = ziying;
+        public void setSaleprice(String saleprice) {
+            this.saleprice = saleprice;
         }
 
         public String getWebprice() {
@@ -190,22 +153,6 @@ public class ScenicListBean {
 
         public void setRow_number(String row_number) {
             this.row_number = row_number;
-        }
-
-        public String getCityname() {
-            return cityname;
-        }
-
-        public void setCityname(String cityname) {
-            this.cityname = cityname;
-        }
-
-        public String getCate_name() {
-            return cate_name;
-        }
-
-        public void setCate_name(String cate_name) {
-            this.cate_name = cate_name;
         }
 
         public int getFavorite() {

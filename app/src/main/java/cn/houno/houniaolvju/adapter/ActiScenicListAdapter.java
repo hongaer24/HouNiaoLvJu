@@ -81,12 +81,12 @@ public class ActiScenicListAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-        x.image().bind(viewHolder.ivImg, mList.get(position).getImg(), DisplayUtil.getImageOptions());
-        viewHolder.tvTitle.setText(mList.get(position).getTitle());
-        viewHolder.tvStar.setText(mList.get(position).getStar());
-        viewHolder.tvCate.setText(mList.get(position).getCate_name());
-        viewHolder.tvHits.setText(mList.get(position).getHits());
-        MyText2Utils.formatYuanPrice(mContext, viewHolder.tvPrice, mList.get(position).getPrice().getWebprice());
+        x.image().bind(viewHolder.ivImg, mList.get(position).getDefaultpic(), DisplayUtil.getImageOptions());
+        viewHolder.tvTitle.setText(mList.get(position).getScenicname());
+        viewHolder.tvStar.setText(mList.get(position).getOpentime());
+        //viewHolder.tvCate.setText(mList.get(position).getCate_name());
+        viewHolder.tvHits.setText(mList.get(position).getScenicaddress());
+        MyText2Utils.formatYuanPrice(mContext, viewHolder.tvPrice, mList.get(position).getSaleprice());
         return convertView;
     }
 

@@ -7,32 +7,33 @@
               android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/ly_top_bar"
-        android:layout_width="match_parent"
+    android:id="@+id/ly_top_bar"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    android:layout_alignParentTop="true"
+    android:background="@color/app_theme_green"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="45dp"
         android:layout_height="45dp"
-        android:layout_alignParentTop="true"
-        android:background="@color/app_theme_green"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:orientation="horizontal">
+        android:layout_marginTop="10dp"
+        android:layout_alignParentLeft="true"
+        android:padding="10dp"
+        android:src="@drawable/icon_back"/>
 
-        <ImageView
-            android:id="@+id/iv_back"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_alignParentLeft="true"
-            android:padding="10dp"
-            android:src="@drawable/icon_back"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="景点门票"
+        android:textColor="#ffffff"
+        android:textSize="18sp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="景点门票"
-            android:textColor="#ffffff"
-            android:textSize="18sp"/>
-
-    </RelativeLayout>
+</RelativeLayout>
 
 
     <RelativeLayout
@@ -151,10 +152,10 @@
                         <com.jude.rollviewpager.RollPagerView
                             android:id="@+id/rpv_scenic"
                             android:layout_width="match_parent"
-                            android:layout_height="150dp"
+                            android:layout_height="200dp"
                             app:rollviewpager_play_delay="3000"/>
 
-                        <LinearLayout
+                      <!--  <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:background="#ffffff"
@@ -207,25 +208,25 @@
                                     android:text="周边城市"
                                     android:textColor="#7bc730"/>
                             </LinearLayout>
-                        </LinearLayout>
+                        </LinearLayout>-->
 
-
+<!--
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1px"
-                            android:background="#dddddd"/>
-
+                            android:background="#dddddd"/>-->
+<!--
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="10dp"
-                            android:background="#f5f5f5"/>
-
+                            android:background="#f5f5f5"/>-->
+<!--
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="1px"
-                            android:background="#dddddd"/>
+                            android:background="#dddddd"/>-->
 
-
+<!--
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
@@ -260,9 +261,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
-                            android:background="#ffffff"/>
+                            android:background="#ffffff"/>-->
 
-                        <View
+                       <!-- <View
                             android:layout_width="match_parent"
                             android:layout_height="1px"
                             android:background="#dddddd"/>
@@ -270,11 +271,11 @@
                         <View
                             android:layout_width="match_parent"
                             android:layout_height="10dp"
-                            android:background="#f5f5f5"/>
+                            android:background="#f5f5f5"/>-->
 
                         <View
                             android:layout_width="match_parent"
-                            android:layout_height="1px"
+                            android:layout_height="5px"
                             android:background="#dddddd"/>
 
                         <LinearLayout
@@ -283,7 +284,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="50dp"
                                 android:background="#ffffff"
@@ -303,9 +304,33 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="10dp"
                                     android:text="本地景点"
-                                    android:textSize="16sp"
+                                    android:textSize="17sp"
                                     android:textColor="@color/black_txt"/>
-                            </LinearLayout>
+
+
+                                <TextView
+                                    android:id="@+id/tv_more_scenic"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="6dp"
+                                    android:text="更多景点"
+                                    android:textSize="16sp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:drawableRight="@drawable/icon_go"
+                                    android:drawableEnd="@drawable/icon_go"
+
+                                    android:textColor="@color/app_theme_green"/>
+                              <!--  <ImageView
+                                    android:layout_width="45dp"
+                                    android:layout_height="45dp"
+                                    android:padding="15dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_alignParentRight="true"
+                                    android:src="@drawable/icon_go"
+                                   />-->
+                            </RelativeLayout>
 
                             <View
                                 android:layout_width="match_parent"
@@ -317,7 +342,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="#ffffff"/>
-
+<!--
 
                             <View
                                 android:layout_width="match_parent"
@@ -332,10 +357,10 @@
                             <View
                                 android:layout_width="match_parent"
                                 android:layout_height="1px"
-                                android:background="#dddddd"/>
+                                android:background="#dddddd"/>-->
                         </LinearLayout>
 
-                        <LinearLayout
+                      <!--  <LinearLayout
                             android:id="@+id/ll_scenic_like"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -376,7 +401,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:numColumns="2"/>
-                        </LinearLayout>
+                        </LinearLayout>-->
                     </LinearLayout>
                 </com.andview.refreshview.XScrollView>
 

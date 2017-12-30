@@ -78,7 +78,7 @@ public class EndOrderAdapter extends BaseAdapter {
             holder.tvCheckDate.setText(depTime);
             holder.ivOrderType.setImageResource(R.drawable.label_order_train);
             holder.tvOrderType.setText("火车票");
-
+            holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
 
             String depName = mList.get(position).getDetail().getFrom_station_name();
             String arrName = mList.get(position).getDetail().getTo_station_name();
@@ -98,6 +98,7 @@ public class EndOrderAdapter extends BaseAdapter {
             holder.tvCheckDateTxt.setText("出发时间：");
             holder.ivOrderType.setImageResource(R.drawable.label_order_flight);
             holder.tvOrderType.setText("机票");
+            holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
 
             String depName = mList.get(position).getDetail().getDepname();
             String arrName = mList.get(position).getDetail().getArrname();
@@ -147,6 +148,7 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
+                holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
                 holder.tvOrderno.setText(mList.get(position).getOrderno());
                 String checkIn = mList.get(position).getCheckin();
                 holder.tvCheckDate.setText(checkIn);

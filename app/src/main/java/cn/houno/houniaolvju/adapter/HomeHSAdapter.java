@@ -13,13 +13,10 @@ import com.shizhefei.view.indicator.IndicatorViewPager;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 import cn.houno.houniaolvju.R;
-import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.ActiScenicBean;
+import cn.houno.houniaolvju.bean.HomeIndexDataBean;
 import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.TgHotelBean;
-import cn.houno.houniaolvju.fragment.home.HotelBulkPage;
-import cn.houno.houniaolvju.fragment.home.ScenicTicketPage;
 
 /**
  * 项目名称：Houniaolvju
@@ -36,11 +33,11 @@ public class HomeHSAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdap
     private LayoutInflater inflate;
     private String[] tabList = new String[]{"酒店拼团", "景点门票"};
     private TgHotelBean mTgHotelBean;
-    private ActiScenicBean mActiScenicBean;
+    private HomeIndexDataBean.DataBean.ActiToursScenicBean mActiScenicBean;
     private ArrayList<Fragment> mFragments;
 
     public HomeHSAdapter(Context context, FragmentManager fragmentManager,
-                         ArrayList<Fragment> fragments, TgHotelBean tgHotelBean, ActiScenicBean actiScenicBean) {
+                         ArrayList<Fragment> fragments, TgHotelBean tgHotelBean, HomeIndexDataBean.DataBean.ActiToursScenicBean actiScenicBean) {
         super(fragmentManager);
         this.context = context;
         mTgHotelBean = tgHotelBean;
@@ -82,7 +79,7 @@ public class HomeHSAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdap
             args.putSerializable("data",  mTgHotelBean);
         } else {
             fragment = mFragments.get(1);
-            args.putSerializable("data",  mActiScenicBean);
+            args.putSerializable("data", (Serializable) mActiScenicBean);
         }
         fragment.setArguments(args);
         return fragment;

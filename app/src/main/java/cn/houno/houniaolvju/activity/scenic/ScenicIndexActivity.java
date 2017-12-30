@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -54,7 +52,6 @@ import cn.houno.houniaolvju.bean.ScenicCateBean;
 import cn.houno.houniaolvju.bean.ScenicIndexBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
-import cn.houno.houniaolvju.view.InnerGridView;
 import cn.houno.houniaolvju.view.InnerListView;
 
 /**
@@ -83,12 +80,12 @@ public class ScenicIndexActivity extends Activity {
     EditText mEtScenicSearch;
     @Bind(R.id.rpv_scenic)
     RollPagerView mRpvScenic;
-    @Bind(R.id.ll_city_scenic)
+    /*@Bind(R.id.ll_city_scenic)
     LinearLayout mLlCityScenic;
     @Bind(R.id.ll_surrounding_city)
     LinearLayout mLlSurroundingCity;
     @Bind(R.id.rcv_scenic_index)
-    RecyclerView mRcvScenicCate;
+    RecyclerView mRcvScenicCate;*/
     @Bind(R.id.ll_content)
     LinearLayout mLlContent;
     @Bind(R.id.sv_scenic_index)
@@ -99,14 +96,18 @@ public class ScenicIndexActivity extends Activity {
     TextView mTvCity;
     @Bind(R.id.ll_scenic_local)
     LinearLayout mLlScenicLocal;
-    @Bind(R.id.ll_scenic_like)
-    LinearLayout mLlScenicLike;
-    @Bind(R.id.tv_scenic_city)
-    TextView mTvScenicCity;
+    /* @Bind(R.id.ll_scenic_like)
+     LinearLayout mLlScenicLike;*/
+   /* @Bind(R.id.tv_scenic_city)
+    TextView mTvScenicCity;*/
     @Bind(R.id.lv_local_scenic)
     InnerListView mLvLocalScenic;
-    @Bind(R.id.gv_like)
-    InnerGridView mGvLike;
+    @Bind(R.id.tv_more_scenic)
+    TextView tvMoreScenic;
+   /* @Bind(R.id.ll_content)
+    LinearLayout llContent;*/
+   /* @Bind(R.id.gv_like)
+    InnerGridView mGvLike;*/
 
     private ScenicIndexActivity mActivity;
 
@@ -131,7 +132,7 @@ public class ScenicIndexActivity extends Activity {
     private List<ScenicCateBean.DataBean> mCateList = new ArrayList<>();
     private ScenicCateAdapter mCateAdapter;
     //=================本地景点=================
-    private List<ScenicIndexBean.LocalBean> mLocalList = new ArrayList<>();
+    private List<ScenicIndexBean.MainBean> mLocalList = new ArrayList<>();
     private ScenicLocalAdapter mLocalAdapter;
 
     //=================猜你喜欢=================
@@ -174,11 +175,12 @@ public class ScenicIndexActivity extends Activity {
         mTopPicAdapter = new TopPicAdapter(mRpvScenic);
         mRpvScenic.setAdapter(mTopPicAdapter);
 
-        //特色主题
+
+    /*    //特色主题
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mActivity, 2);
         gridLayoutManager.setOrientation(GridLayoutManager.HORIZONTAL);
         mRcvScenicCate.setHasFixedSize(true);
-        mRcvScenicCate.setLayoutManager(gridLayoutManager);
+        mRcvScenicCate.setLayoutManager(gridLayoutManager);*/
 
         getMyLoc();
         getScenicTop();
@@ -190,7 +192,7 @@ public class ScenicIndexActivity extends Activity {
         mRfvScenicIndex.setXRefreshViewListener(new XRefreshView.XRefreshViewListener() {
             @Override
             public void onRefresh() {
-               // getMyLoc();
+                // getMyLoc();
                 getScenicTop();
                 getCate();
                 getIndexScenic();
@@ -219,7 +221,7 @@ public class ScenicIndexActivity extends Activity {
                 String sUrl = topUrl.get(position);
                 //url拆分出id
                 String id = sUrl.split("/id/")[1].split(".p")[0];
-                intent.putExtra("id", id);
+                intent.putExtra("scenicid", "464");
                 intent.setClass(mActivity, ScenicDetailActivity.class);
                 startActivity(intent);
             }
@@ -236,7 +238,7 @@ public class ScenicIndexActivity extends Activity {
             }
         });
 
-        mGvLike.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+       /* mGvLike.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
@@ -245,7 +247,7 @@ public class ScenicIndexActivity extends Activity {
                 startActivity(intent);
             }
         });
-
+*/
         mEtScenicSearch.setOnKeyListener(new View.OnKeyListener() {// 输入完后按键盘上的搜索键
 
             public boolean onKey(View v, int keyCode, KeyEvent event) {
@@ -256,9 +258,9 @@ public class ScenicIndexActivity extends Activity {
                                 getCurrentFocus().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
                         // 搜索关键字
                         Intent intent = new Intent();
-                        intent.putExtra("keyword",mEtScenicSearch.getText().toString().trim());
+                        intent.putExtra("keyword", mEtScenicSearch.getText().toString().trim());
                         intent.putExtra("cates", mCates);
-                        intent.setClass(mActivity,ScenicListActivity.class);
+                        intent.setClass(mActivity, ScenicListActivity.class);
                         startActivity(intent);
                     }
                 }
@@ -307,14 +309,14 @@ public class ScenicIndexActivity extends Activity {
                             //根据城市id获取城市景点信息
                             cityName = obj.getJSONObject("data").getString("name");
                             mTvCity.setText(cityName);
-                            mTvScenicCity.setText(cityName + "景点");
+                            //mTvScenicCity.setText(cityName + "景点");
                             getIndexScenic();
                         } else if (type == TOP) {
                             //轮播图
                             int length = obj.getJSONArray("data").length();
                             topImagesList.clear();
                             topUrl.clear();
-                            for (int i = 0; i < length; i++) {
+                            for (int i = 0; i < 1; i++) {
                                 topImagesList.add(obj.getJSONArray("data").getJSONObject(i).getString("img"));
                                 topUrl.add(obj.getJSONArray("data").getJSONObject(i).getString("url"));
                             }
@@ -377,7 +379,7 @@ public class ScenicIndexActivity extends Activity {
 
         if (mCateAdapter == null) {
             mCateAdapter = new ScenicCateAdapter(mActivity, mCateList);
-            mRcvScenicCate.setAdapter(mCateAdapter);
+            //mRcvScenicCate.setAdapter(mCateAdapter);
         } else {
             mCateAdapter.setData(mCateList);
         }
@@ -387,7 +389,7 @@ public class ScenicIndexActivity extends Activity {
             public void onItemClick(View v, int position) {
                 Log.e("eee", "点击" + position);
                 Intent intent = new Intent();
-                intent.putExtra("cate", position+1);    //这里+1是因为分类最全面加了全部 0：全部
+                intent.putExtra("cate", position + 1);    //这里+1是因为分类最全面加了全部 0：全部
                 intent.putExtra("cates", mCates);
                 intent.putExtra("cityid", cityId);
                 intent.setClass(mActivity, ScenicListActivity.class);
@@ -408,9 +410,9 @@ public class ScenicIndexActivity extends Activity {
             System.out.println(scenicBean.toString());
             //当地景点
             mLocalList.clear();
-            if (scenicBean.getLocal().size() != 0) {
+            if (scenicBean.getMain().size() != 0) {
                 mLlScenicLocal.setVisibility(View.VISIBLE);
-                mLocalList = scenicBean.getLocal();
+                mLocalList = scenicBean.getMain();
             } else {
                 mLlScenicLocal.setVisibility(View.GONE);
             }
@@ -423,14 +425,14 @@ public class ScenicIndexActivity extends Activity {
             //猜你喜欢
             mLikeList.clear();
             if (scenicBean.getMain().size() != 0) {
-                mLlScenicLike.setVisibility(View.VISIBLE);
+                //mLlScenicLike.setVisibility(View.VISIBLE);
                 mLikeList = scenicBean.getMain();
             } else {
-                mLlScenicLike.setVisibility(View.GONE);
+                //mLlScenicLike.setVisibility(View.GONE);
             }
             if (mLikeAdapter == null) {
                 mLikeAdapter = new ScenicLikeAdapter(mActivity, mLikeList);
-                mGvLike.setAdapter(mLikeAdapter);
+                //mGvLike.setAdapter(mLikeAdapter);
             } else {
                 mLikeAdapter.setData(mLikeList);
             }
@@ -465,7 +467,7 @@ public class ScenicIndexActivity extends Activity {
         getDataFromServer(CATE);
     }
 
-    @OnClick({R.id.iv_back, R.id.ll_scenic_loc, R.id.et_scenic_search, R.id.ll_city_scenic, R.id.ll_surrounding_city})
+    @OnClick({R.id.iv_back, R.id.ll_scenic_loc, R.id.et_scenic_search,R.id.tv_more_scenic/*, R.id.ll_city_scenic, R.id.ll_surrounding_city*/})
     public void onClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
@@ -478,7 +480,15 @@ public class ScenicIndexActivity extends Activity {
                 break;
             case R.id.et_scenic_search:
                 break;
-            case R.id.ll_city_scenic:
+            case R.id.tv_more_scenic:
+
+                //intent.putExtra("cate", position + 1);    //这里+1是因为分类最全面加了全部 0：全部
+                intent.putExtra("cates", mCates);
+                intent.putExtra("cityid", cityId);
+                intent.setClass(mActivity, ScenicListActivity.class);
+                startActivity(intent);
+                break;
+           /* case R.id.ll_city_scenic:
                 intent.putExtra("cates", mCates);
                 intent.putExtra("cityid", cityId);
                 intent.setClass(mActivity, ScenicListActivity.class);
@@ -490,7 +500,7 @@ public class ScenicIndexActivity extends Activity {
                 intent.putExtra("type", "ambitus");
                 intent.setClass(mActivity, ScenicListActivity.class);
                 startActivity(intent);
-                break;
+                break;*/
         }
     }
 
@@ -527,8 +537,9 @@ public class ScenicIndexActivity extends Activity {
             Bundle bundle = data.getBundleExtra("bundle"); //city即为回传的值
             cityName = bundle.getString("city");
             cityId = bundle.getString("cityId");
+            Log.d("888", "onActivityResult: ===="+cityId);
             mTvCity.setText(cityName);
-            mTvScenicCity.setText(cityName + "景点");
+            //mTvScenicCity.setText(cityName + "景点");
             getScenicTop();
             getIndexScenic();
         }

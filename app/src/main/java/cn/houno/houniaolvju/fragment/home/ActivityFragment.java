@@ -145,7 +145,7 @@ public class ActivityFragment extends Fragment {
                     intent.setClass(getActivity(), HotelDetailActivity.class);
                     startActivity(intent);
                 } else if (TAG == SCENIC) {
-                    intent.putExtra("id", mScenicList.get(position).getId());
+                    intent.putExtra("scenicid", mScenicList.get(position).getScenicid());
                     intent.setClass(getActivity(), ScenicDetailActivity.class);
                     startActivity(intent);
                 }

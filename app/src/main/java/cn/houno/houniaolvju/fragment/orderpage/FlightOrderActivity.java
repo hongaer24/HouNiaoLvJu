@@ -228,6 +228,9 @@ public class FlightOrderActivity extends Activity {
             params.put("userid", mUserid);
             params.put("orderno", mOrderno);
             params.put("type", mType);
+            Log.d("222", "userid===="+mUserid+"\n"+
+                                    "orderno==="+mOrderno+"\n"+
+                                     "type======"+ mType);
             connectUrl = Constants.ORDER_DETAIL_URL;
         }
         System.out.println("userid=" + mUserid + "&orderno=" + mOrderno + "&type=" + mType);

@@ -8,10 +8,10 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.Html;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -49,6 +49,7 @@ import cn.houno.houniaolvju.pay.alipay.PayResult;
 import cn.houno.houniaolvju.utils.OkHttpClientManager;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
+import cn.houno.houniaolvju.view.Border2TextView;
 import cn.houno.houniaolvju.view.CustomDialog;
 
 /**
@@ -118,24 +119,24 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     ImageView ivBack;
     @Bind(R.id.rl_top_bar)
     RelativeLayout rlTopBar;
-    @Bind(R.id.tv_order_type)
-    TextView tvOrderType;
-    @Bind(R.id.tv_orderno_number)
+    /*  @Bind(R.id.tv_order_type)
+      TextView tvOrderType;*/
+/*    @Bind(R.id.tv_orderno_number)
     TextView tvOrdernoNumber;
     @Bind(R.id.tv_pay_status)
-    TextView tvPayStatus;
+    TextView tvPayStatus;*/
     @Bind(R.id.tv_orderno_title)
     TextView tvOrdernoTitle;
-    @Bind(R.id.iv_number_person)
-    ImageView ivNumberPerson;
+    /*   @Bind(R.id.iv_number_person)
+       ImageView ivNumberPerson;*/
     @Bind(R.id.tv_order_name)
     TextView tvOrderName;
     @Bind(R.id.tv_order_time)
     TextView tvOrderTime;
     @Bind(R.id.tv_count)
     TextView tvCount;
-    @Bind(R.id.tv_use_way)
-    TextView tvUseWay;
+    /*  @Bind(R.id.tv_use_way)
+      TextView tvUseWay;*/
     @Bind(R.id.tv_rule)
     TextView tvRule;
     @Bind(R.id.tv_order_person_info)
@@ -152,21 +153,54 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     TextView tvPayWay;
     @Bind(R.id.tv_order_price)
     TextView tvOrderPrice;
-    @Bind(R.id.tv_order_statu)
+
+  /*  @Bind(R.id.tv_order_statu)
     TextView tvOrderStatu;
+    @Bind(R.id.tv_status)
+    TextView tvStatu;
     @Bind(R.id.tv_countdowntime)
     TextView tvCountdowntime;
     @Bind(R.id.btn_order_pay)
     Button btnOrderPay;
     @Bind(R.id.btn_order_cacel)
-    Button btnOrderCacel;
+    Button btnOrderCacel;*/
+/*
+    @Bind(R.id.pb_loading)
+    ProgressBar pbLoading;
+    @Bind(R.id.tv_loading)
+    TextView tvLoading;
+    @Bind(R.id.ll_loading)
+    LinearLayout llLoading;*/
 
+    @Bind(R.id.tv_return_message)
+    TextView tvReturnMessage;
+    @Bind(R.id.tv_order_title_txt)
+    TextView tvOrderTitleTxt;
+    @Bind(R.id.tv_address)
+    TextView tvAddress;
+    @Bind(R.id.tv_pay)
+    Border2TextView tvPay;
+    @Bind(R.id.tv_order_cancel)
+    Border2TextView tvOrderCancel;
+    @Bind(R.id.tv_return_ticket)
+    Border2TextView tvReturnTicket;
+    @Bind(R.id.tv_custom_phone)
+    TextView tvCustomPhone;
+    @Bind(R.id.tv_order_number)
+    TextView tvOrderNumber;
+    @Bind(R.id.ll_detail_content)
+    LinearLayout llDetailContent;
     @Bind(R.id.pb_loading)
     ProgressBar pbLoading;
     @Bind(R.id.tv_loading)
     TextView tvLoading;
     @Bind(R.id.ll_loading)
     LinearLayout llLoading;
+    @Bind(R.id.ll_others)
+    LinearLayout llOthers;
+ /*   @Bind(R.id.sv_order_detail)
+    ScrollView svOrderDetail;*/
+
 
     private int PAY_TYPE = 0;   //支付类型
     private static final int ALI_PAY = 201;   //支付宝
@@ -214,13 +248,16 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     private int mHotelPayfs = 0;
     private IngOrderDetailActivity mActivity;
     private Integer price;
+    private String title;
+    private String address;
+    private String addTime;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_order_datail_ing);
+        setContentView(R.layout.activity_order_datail_ing2);
         ButterKnife.bind(this);
         //绑定竖屏
         mActivity = IngOrderDetailActivity.this;
@@ -332,9 +369,12 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         userid = PrefUtils.getString(IngOrderDetailActivity.this, "userid", "");
         Intent intent = getIntent();
         OrderListBean.DataBean dataBean = (OrderListBean.DataBean) intent.getSerializableExtra("data");
+        address=  intent.getStringExtra("address");
+        addTime=  intent.getStringExtra("addtime");
+
         orderNo = dataBean.getOrderno();
         qxid = dataBean.getId();
-        type = "tuniuscenic";
+        type = dataBean.getType();
         getDataFromServer();
 
     }
@@ -343,7 +383,13 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         Map<String, String> map = new HashMap<>();
         map.put("userid", userid);
         map.put("orderno", orderNo);
-        map.put("type", "tuniuscenic");
+        if(type.equals("toursscenic")){
+            type="tuniuscenic";
+        }
+        map.put("type", type);
+        Log.i("66", "getDataFromServer:=== "+map);
+        Log.i("66", "getDataFromServer:=== "+Constants.ORDER_DETAIL_URL);
+
       /*  RequestParams params = new RequestParams(Constants.ORDER_DETAIL_URL);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("orderno", orderNo);
@@ -406,6 +452,8 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
             super.handleMessage(msg);
             switch (msg.what) {
                 case R.id.doSucceed:
+                    llLoading.setVisibility(View.GONE);
+                    llDetailContent.setVisibility(View.VISIBLE);
                     String result = msg.obj.toString();
                     parserData(result);
                     System.out.println("订单详情" + result);
@@ -413,7 +461,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                     setStatus();
                     break;
                 case R.id.doFail:
-                    //tvLoading.setText("加载失败");
+                    tvLoading.setText("加载失败");
                     break;
             }
         }
@@ -425,15 +473,14 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
             if (json.getInt("status") == 0) {
                 //tvLoading.setVisibility(View.GONE);
                 svContent.setVisibility(View.VISIBLE);
-                llLoading.setVisibility(View.GONE);
+                //llLoading.setVisibility(View.GONE);
 
                 //rlBottomBar.setVisibility(View.VISIBLE);
 
                 //      System.out.println("订单详情json" + json);
                 // mHotelName = json.getJSONObject("data").getJSONObject("detail").getString("title").trim();
                 // mHotelImg = json.getJSONObject("data").getJSONObject("detail").getString("img");
-                productname = json.getJSONObject("data").getString("productname");
-                scenicName = json.getJSONObject("data").getString("scenicName");
+
                 orderNo = json.getJSONObject("data").getString("orderno");
                 mStatusStr = json.getJSONObject("data").getString("paymentMessage")
                         + "/" + json.getJSONObject("data").getString("returnMessage");
@@ -441,19 +488,26 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                 mOrderStatusInt = Integer.parseInt(json.getJSONObject("data").getString("status"));
                 mPayStatusInt = Integer.parseInt(json.getJSONObject("data").getString("pay_status"));
                 if ("Acti".equals(type)) {
+                    title= json.getJSONObject("data").getJSONObject("detail").getString("title");
+                    mRoomName = json.getJSONObject("data").getString("info");
                     mRoomCount = json.getJSONObject("data").getString("num");
                     mCheckInDate = json.getJSONObject("data").getString("checkin");
                     mTotalPrice = (Double.parseDouble(json.getJSONObject("data").getString("price")) + "");
                     mCheckName = json.getJSONObject("data").getString("username");
                     mCheckPhone = json.getJSONObject("data").getString("phone");
-                    mOtherInfo = json.getJSONObject("data").getString("kefumemo");
+                    //mOtherInfo = json.getJSONObject("data").getString("kefumemo");
                 } else if ("tuniuscenic".equalsIgnoreCase(type)) {
                     //mRoomName = json.getJSONObject("data").getJSONObject("detail").getString("roomname");
+                    productname = json.getJSONObject("data").getString("productname");
+                    scenicName = json.getJSONObject("data").getString("scenicName");
                     mRoomCount = json.getJSONObject("data").getString("booknumber");
                     mCheckInDate = json.getJSONObject("data").getString("starttime");
                     mTotalPrice = json.getJSONObject("data").getString("price");
                     mCheckName = json.getJSONObject("data").getJSONObject("contact").getString("name").trim();
                     mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
+                    //address = json.getJSONObject("data").getString("scenicaddress");
+
+                    //mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
 
                     // mCheckOutDate = json.getJSONObject("data").getString("checkout");
                     // mHotelAddress = json.getJSONObject("data").getJSONObject("detail").getString("address").trim();
@@ -463,7 +517,8 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                     //mOtherInfo = json.getJSONObject("data").getString("memo");
                     //iscomment = json.getJSONObject("data").getString("iscomment");
 
-                } else {
+                } else if("hotel".equals(type)) {
+                    title= json.getJSONObject("data").getJSONObject("detail").getString("title");
                     mRoomName = json.getJSONObject("data").getJSONObject("detail").getString("roomname");
                     mRoomCount = json.getJSONObject("data").getString("roomnum");
                     mCheckInDate = json.getJSONObject("data").getString("checkin");
@@ -501,36 +556,47 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         x.image().bind(ivTabImg, mHotelImg);    //图片
         tvOrderNo.setText("订单编号：" + orderNo);     //订单编号*/
 
-      /*  if ("hotel".equals(type) || "ydhotel".equals(type) || "groupon".equals(type)) {
-            tvOrderTitle.setText("房源名称：" + mRoomName);
+        if ("hotel".equals(type) || "ydhotel".equals(type) || "groupon".equals(type)) {
+            tvOrdernoTitle.setText( mRoomName);
+            tvOrderName.setText(title);
             tvCount.setText("预订房间：" + mRoomCount + "间");
-
-            tvTime.setText(Html.fromHtml("住宿时间：<font color=\"#009A44\">" + mCheckInDate
+            tvOrderTime.setText(Html.fromHtml("住宿时间：<font color=\"#009A44\">" + mCheckInDate
                     + "</font>至<font color=\"#009A44\">" + mCheckOutDate + "</font> 共<font color=\"#009A44\">"
                     + mHotelday + "</font>天"));
-            tvAddressTxt.setText("地　　址：");
-            tvAddress.setText(mHotelAddress);
-            tvOther.setText("其他需求：" + mOtherInfo);
+            //tvAddressTxt.setText("地　　址：");
+            tvAddress.setText("地址:  "+  mHotelAddress);
+            tvName.setText("入住人姓名：" + mCheckName);
+            tvPhone.setText("手机号：" + mCheckPhone);
+            llOthers.setVisibility(View.GONE);
+            //tvOther.setText("其他需求：" + mOtherInfo);
         } else if ("Acti".equals(type)) {
-            tvOrderTitle.setText("活动名称：" + mHotelName);
-            tvCount.setText("参加人数：" + mRoomCount + "人");
-            tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
-            llAddress.setVisibility(View.GONE);
-            tvOther.setText("其他需求：" + mOtherInfo);
-        }*/
+            tvOrdernoTitle.setText(title);
+            tvOrderName.setText(mRoomName);
+            tvCount.setText("预订房间：" +mRoomCount + "间");
+           /* tvOrderTime.setText(Html.fromHtml("住宿时间：<font color=\"#009A44\">" + mCheckInDate
+                    + "</font>至<font color=\"#009A44\">" + mCheckOutDate + "</font> 共<font color=\"#009A44\">"
+                    + mHotelday + "</font>天"));*/
+            tvOrderTime.setText("住宿时间： "+mCheckInDate);
+            //tvAddressTxt.setText("地　　址：");
+            //tvAddress.setText("地址"+ mHotelAddress);
+            tvName.setText("入住人姓名：" + mCheckName);
+            tvPhone.setText("手机号：" + mCheckPhone);
+            llOthers.setVisibility(View.GONE);
+        }
         if ("tuniuscenic".equals(type)) {
-            type = "tuniuscenic";
+            //type = "tuniuscenic";
             tvOrdernoTitle.setText(scenicName);
             tvOrderName.setText(productname);
             tvCount.setText("门票数量：" + mRoomCount + "张");
             tvOrderTime.setText("出游时间" + mCheckInDate);
             //tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
-            //tvAddress.setText(mHotelAddress);
+            tvAddress.setText(address);
             // tvOther.setVisibility(View.GONE);
+            tvName.setText("取票人：" + mCheckName);
+            tvPhone.setText("手机号：" + mCheckPhone);
+
         }
-        tvOrdernoNumber.setText(orderNo);
-        tvName.setText("取票人：" + mCheckName);
-        tvPhone.setText("手机号：" + mCheckPhone);
+        tvOrderNumber.setText(orderNo);
         tvOrderPrice.setText("订单总额¥" + mTotalPrice);
         //tvTotalPrice.setText(Html.fromHtml("订单金额：<font color=\"#009A44\">¥" + mTotalPrice + "</font>"));
 
@@ -587,17 +653,19 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                 //"拒单";
                 break;
         }
+        if (mOrderStatusInt == 2 && mPayStatusInt == 0||mOrderStatusInt == 0 && mPayStatusInt == 0) {
+            tvReturnMessage.setText("待支付");
+            tvOrderCancel.setVisibility(View.VISIBLE);
+            tvPay.setVisibility(View.VISIBLE);
+            //tvOrderStatu.setText("待支付");
+        } else if (mOrderStatusInt == 3 && mPayStatusInt == 1) {
+            tvReturnMessage.setText("出票中");
+            // tvOrderStatu.setText("出票中");
+            //tvOrderStatu.setText("正在出票，请耐心等待");
+        }/*else if(mOrderStatusInt==4&&mPayStatusInt==1){
+            tvOrderStatu.setText("出票");
+        }*/
 
-        if (mOrderStatusInt == 1) {
-            if (mPayStatusInt == 0) {
-                tvPayStatus.setText("已取消");
-                //tvRefund.setVisibility(View.VISIBLE);
-            } else if (mPayStatusInt == 1) {
-
-            }
-        }
-
-        //tvPayStatus.setText(mStatusStr);
 
     }
 
@@ -951,25 +1019,25 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         PrefUtils.setInt(IngOrderDetailActivity.this, "wxpaystatus", -3);
     }
 
-    @OnClick({R.id.btn_order_cacel, R.id.iv_back, R.id.btn_order_pay})
+    @OnClick({R.id.iv_back, R.id.tv_pay_way, R.id.tv_order_price, R.id.tv_pay, R.id.tv_order_cancel})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
-          /*  case R.id.tv_cash_pay:
+       /*     case R.id.tv_cash_pay:
                 showPayWithMoneyDialog();
-                break;
-            case R.id.tv_order_pay:
+          /*      break;*//*
+            case R.id.R.id.tv_pay:
                 showPayDialogs();
                 break;*/
             case R.id.tv_order_cancel:
                 showCancelOrderDialog();
                 break;
-            case R.id.tv_refund:
+          /*  case R.id.tv_refund:
                 showApplyRefundDialog();
-                break;
-            case R.id.btn_order_pay:
+                break;*/
+            case R.id.tv_pay:
                 Intent intent = new Intent();
 
                 //price=Integer.parseInt(mTotalPrice.trim());
@@ -981,9 +1049,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
                 startActivity(intent);
 
                 break;
-            case R.id.btn_order_cacel:
-                showCancelOrderDialog();
-                break;
+
         }
 
 

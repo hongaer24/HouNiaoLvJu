@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
+/*apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'*/
 dependencies {
+    implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
 }
 android {
     compileSdkVersion 26
@@ -43,7 +47,9 @@ android {
         testCompile 'junit:junit:4.12'
         compile 'com.android.support:appcompat-v7:23.4.0'
         compile 'com.android.support:design:23.4.0'
-        compile 'com.jakewharton:butterknife:7.0.0'
+         compile 'com.jakewharton:butterknife:7.0.0'
+        //compile 'com.jakewharton:butterknife:8.8.1'
+        //annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
         compile project(':rollviewpager')
         compile 'org.xutils:xutils:3.3.38'
         //okHttp
@@ -77,5 +83,6 @@ android {
         compile project(':barCodeTest')
         compile project(':xrefreshview')
         compile project(':PhotoPicker')
+
     }
 }

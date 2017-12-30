@@ -153,6 +153,10 @@ public class IngOrderAdapter extends BaseAdapter {
             holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
             String checkIn = mList.get(position).getCheckin();
             holder.tvCheckDate.setText(checkIn);
+            holder.tvOrderno.setText(mList.get(position).getOrderno());
+            if(mList.get(position).getPrice()!=null){
+                holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice().trim());
+            }
         } else {
             holder.llOrderProject.setVisibility(View.VISIBLE);
             holder.llOrderNumber.setVisibility(View.VISIBLE);
@@ -169,18 +173,18 @@ public class IngOrderAdapter extends BaseAdapter {
                 String  Status = mList.get(position).getStatus();
 
                 if (TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "3")) {//已支付
-                    holder.tvPayStatus.setText("已支付");
-                } else/* if(TextUtils.equals(payStatus, "0")&&TextUtils.equals(Status, "2"))*/ {
+                    holder.tvPayStatus.setText("出票中");
+                } else if(TextUtils.equals(payStatus, "0")&&TextUtils.equals(Status, "2")) {
                     holder.tvPayStatus.setText("待支付");
-                }/*else if(TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "1")||TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "2")){
+                }else if(TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "1")||TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "2")){
                     holder.tvPayStatus.setText("出票失败");
-                }*/
+                }
 
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
                 if(mList.get(position).getPrice()!=null){
-                    holder.tvOrderPrice.setText(mList.get(position).getPrice().trim());
+                    holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice().trim());
                 }
                 holder.tvOrderno.setText(mList.get(position).getOrderno());
                 String checkIn = mList.get(position).getCheckin();

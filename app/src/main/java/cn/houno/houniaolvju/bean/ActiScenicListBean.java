@@ -16,83 +16,14 @@ public class ActiScenicListBean {
 
     /**
      * status : 0
-     * countInfo : {"total":"2","totalpage":1}
-     * data : [{"id":"291","cate_id":"2","title":"吴承恩故居","short_title":"吴承恩故居","en_title":"","ziying":"1","star":"4A级景区","hits":"1","sell":"0","dianzang":"0","telphone":"","fax":"","price_area":"1","provinceid":"","city":"334","province":"188","city_id":"0","areaid":"","address":"江苏省淮安市淮安区河下古镇打铜巷12号","map":"33.533969|119.145088","opendate":"8:00-18:00","outset":"郑州","feature":"","inpolicy":"","add_time":"1476954664","introduction":"","policy":"","taxinfo":"","cancelpolicy":"","bookinginfo":"<p>免票政策<\/p><p>残疾人凭证免费，现役军人、烈士家属凭证免费，1.1米以下儿童免费，必须一名购票成人陪同。<\/p><p>优惠政策<\/p><p>60周岁以上老年人凭有效身份证购老人票；1.2米以上儿童购儿童票；<\/p><p>重要说明<\/p><p>所有门票均提供发票，在景区现场支付的订单，您需在取票时向景区索要发票，离开景区后将无法提供，敬请谅解。<\/p><p><br/><\/p>","orderinfo":"<p>1.在不能满足设备安全运行的恶劣天气，无法抗拒的自然灾害情况下（如雷电、雨雪、冰雹、大雾、暴雨、台风等），景区部分项目将临时关闭或部分关闭，表演会取消或部分取消。<\/p><p>2.严禁倒票，一经发现，相关电子门票作废，入园现场将不予承认，候鸟旅居网将不予退费并将相关账号、手机号列入黑名单。请广大用户选择候鸟官方网站或官方合作渠道购买，维护自身权益不被侵犯。<\/p><p>3.景区活动内容如有变动，以当日公告为准。景区所有项目均会定期进行日检、周检、月检和年度检修，相关检修工作可能会造成部分项目运行时间的延迟或暂停对游客开放，详情以景区现场公告为准。<\/p><p>4.如需开具旅游发票(仅限支付给候鸟的订单用户)，请与客服专员确定发票内容与抬头及准确的发票邮寄地址，我司在收到邮寄地址信息后向您寄送发票；为避免因发生不可抗力或意外事项致实际消费额与发票开具的相应数额不符，建议您在游玩归来后两个月内索领取发票。具体特殊景区请以产品说明为准。<\/p><p>5.为保障您的出游安全，候鸟建议您订购在线支付产品时选购相关旅游保险。<\/p><p><br/><\/p>","info":"<p>您需要知道的\u201d吴承恩故居\u201c<\/p><p>吴承恩故居简介<\/p><p>吴承恩故居景区是国家AAAA级景区，江苏省重点文物保护单位，全球首部立体电视剧《吴承恩与西游记》的拍摄基地。故居本体、吴承恩生平陈列厅、玄奘纪念堂、美猴王世家艺术馆、六小龄童工作室五个部分共同组成了国内唯一综合展示西游记文化和纪念吴承恩的场所。占地15000平方米，建筑面积3800平方米，为明代风格的古典园林建筑群。 吴承恩故居位于江苏省淮安市淮安区河下古镇打铜巷内，交通便利，紧临京沪、宁连、徐淮盐等高速公路；<\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954717226261.jpg\" title=\"1476954717226261.jpg\" alt=\"3.jpg\" style=\"width:100%;height:auto\" height=\"533\" width=\"871\"/><\/p><p>吴承恩故居<\/p><p>中国明代著名小说家，中国古典文学名著、神话小说《西游记》的作者，世界文化名人吴承恩的故居。<\/p><p>吴承恩故居<\/p><p>旧宅揽胜迹：萧湖、长淮、邗沟水；故居接芳邻：枚亭、梁祠、钓鱼台。<\/p><p>吴承恩故居<\/p><p>吴承恩故居现为淮安市文物保护单位。<\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954700616903.jpg\" title=\"1476954700616903.jpg\" alt=\"5.jpg\" style=\"width:100%;height:auto\" height=\"365\" width=\"873\"/><\/p>","img":"http://pic.houno.cn/Uploads/Scenic/20161020/17110458088a288bc04.jpg","wap_img":"http://pic.houno.cn/Uploads/Scenic/20161020/17110458088a288c7bc.jpg","status":"1","online":"1","bigimg":"","morepic":"1","hottj":"0","citytj":"2","cattj":"0","payfs":"0","commentnum":"0","average":".0","mer_id":"0","admin":"admin               ","edit_time":"1482128735","lat":"33.5339690","lng":"119.1450880","imgcreate":"","price_area2":"","wapzj":"0","wapjc":"0","wapzt":"0","waphd":"","isrec":"","hdtuij":"1","row_number":"1","price":{"webprice":"20","marketprice":"20","price":"0","userprice":"0","stock":"500","row_number":"1"},"cityname":"淮安","cate_name":"人文古迹"},{"id":"289","cate_id":"1","title":"太极峡","short_title":"太极峡","en_title":"","ziying":"1","star":"4A级景区","hits":"1","sell":"0","dianzang":"0","telphone":"","fax":"","price_area":"1","provinceid":"","city":"386","province":"382","city_id":"0","areaid":"","address":"湖北省十堰丹江口市石鼓镇","map":"32.751004|111.387967","opendate":"8:00-18:00 ","outset":"郑州","feature":"","inpolicy":"","add_time":"1476954591","introduction":"","policy":"","taxinfo":"","cancelpolicy":"","bookinginfo":"<p>免票政策<\/p><p><br/><\/p><p>a. 1.2米（含）以下的儿童免票。\r\nb. 70周岁（含）以上的老人（凭有效身份证或老年证）免票。\r\nc. 现役军人（凭有效证件）免费。（不包括预备役军官证、军人保障卡、军队驾驶证）\r\nd. 现役伤残军人（凭2014版新军残证）免费。\r\ne. 持导游证的带团导游（凭全国导游证）免费。\r\nf. 中国摄影家协会会员（凭有效证件和有效身份证）免费。\r\ng. 记者（凭国际广电总局颁发且通过年审的记者证和本人有效身份证）免费。\r\n* 以上信息仅供参考，具体以景区当日信息为准。<\/p><p><br/><\/p><p>优惠政策<\/p><p><br/><\/p><p>a. 1.2米（不含）～1.4米（含）的儿童享半价门票优惠。\r\nb. 60周岁（含）～70周岁（不含）的老人（凭有效身份证或老年证）享半价门票优惠。\r\n* 以上信息仅供参考，具体以景区当日信息为准。<\/p><p><br/><\/p>","orderinfo":"<p>温馨提示<br/><br/>1.在不能满足设备安全运行的恶劣天气，无法抗拒的自然灾害情况下（如雷电、雨雪、冰雹、大雾、暴雨、台风等），景区部分项目将临时关闭或部分关闭，表演会取消或部分取消。<br/><br/>2.严禁倒票，一经发现，相关电子门票作废，入园现场将不予承认，候鸟旅居网将不予退费并将相关账号、手机号列入黑名单。请广大用户选择官方网站或官方合作渠道购买，维护自身权益不被侵犯。<br/><br/>3.景区活动内容如有变动，以当日公告为准。景区所有项目均会定期进行日检、周检、月检和年度检修，相关检修工作可能会造成部分项目运行时间的延迟或暂停对游客开放，详情以景区现场公告为准。<br/><br/>4.如需开具旅游发票(仅限支付给候鸟旅居的订单用户)，请与客服专员确定发票内容与抬头及准确的发票邮寄地址，我司在收到邮寄地址信息后向您寄送发票；为避免因发生不可抗力或意外事项致实际消费额与发票开具的相应数额不符，建议您在游玩归来后两个月内索领取发票。具体特殊景区请以产品说明为准。<br/><br/>5.为保障您的出游安全，建议您订购在线支付产品时选购相关旅游保险。<\/p>","info":"<p>您需要知道的\u201d太极峡\u201c<\/p><p><br/><\/p><p>山水自然景观，形态各异的丹霞地貌景观<\/p><p>被列为\u201c湖北省丹霞地貌地质公园\u201d<\/p><p>两座山峰相环相绕，形成的天然立体太极图<\/p><p>两山之间相绕形成的S型的峡谷，峡谷幽深，拥有着独特的自然风貌<\/p><p><br/><\/p><p>太极峡简介<\/p><p>\r\n\t\t\t\t国家AAAA级旅游景区、湖北省地质公园\u2014\u2014丹江太极峡景区位于丹江口市石鼓镇，距丹江口城区约38公里，位于汉水北岸。省道丹郧公路横贯东西，东南濒临一碧万顷的亚洲大人工湖、南水北调中线工程调水源头\u2014\u2014丹江口水库。\t\t\t\t\r\n\t\t\t\t\t<\/p><p>太极峡景区<\/p><p><br/><\/p><p>太极峡景区位于十堰丹江口市石鼓镇，距丹江口市城区约45公里，位于汉水北岸。省道丹郧公路横贯东西，东南濒临一碧万顷的亚洲*大人工湖\u2014\u2014南水北调中线工程调水源头丹江口水库，西南与国内外著名的风景名胜区、道教圣地武当山一水之隔。<\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954708159647.jpg\" title=\"1476954708159647.jpg\" height=\"411\" width=\"597\" style=\"width:100%;height:auto\"/><\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954708927248.jpg\" title=\"1476954708927248.jpg\" style=\"width:100%;height:auto\"/><\/p><p>太极峡景区<\/p><p><br/><\/p><p>历史上由陕西、河南通往武当山朝山进香的古神道就从这里经过，故，石鼓镇又名罗店，即驿道上的一处骡马店、客栈；东北与河南中原四大名刹之一的香严寺不足十公里；西北耸立着鄂豫两省分水岭秦巴山系余脉的太白岩。<\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954723129043.jpg\" title=\"1476954723129043.jpg\" style=\"width:100%;height:auto\"/><\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954723818034.jpg\" title=\"1476954723818034.jpg\" style=\"width:100%;height:auto\"/><\/p><p>太极峡风景区<\/p><p><br/><\/p><p>在38平方公里的青山秀水间，重峦叠嶂，群峰连绵，山壑纵横，景色迷人。特殊的地理位置，奇异的山水风光，淳朴的风土人情，使太极峡景区魅力非凡。<\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954746781457.jpg\" title=\"1476954746781457.jpg\" style=\"width:100%;height:auto\"/><\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954746700213.jpg\" title=\"1476954746700213.jpg\" style=\"width:100%;height:auto\"/><\/p><p>太极峡风景区<\/p><p><br/><\/p><p>太极峡景区面积38平方公里，主要景点与遗址有：太极峡、龙登龙山、盘龙洞、娘娘洞、九龙桥、九龙湖、打败岭、板倒井、挡贼口、大马槽等，具有丰富的旅游观光、度假休闲和探险、科考、写生、怀古资源。<\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954762799272.jpg\" title=\"1476954762799272.jpg\" style=\"width:100%;height:auto\"/><\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954762139887.jpg\" title=\"1476954762139887.jpg\" style=\"width:100%;height:auto\"/><\/p><p>太极峡风景区<\/p><p><br/><\/p><p>这里有刘秀胜王莽、逐步建立东汉王朝的神奇故事和自然之谜，同时这里是水库淹没的楚国始都丹阳城所在地，又位于丹阳西郊和洛阳到均州的神（绎）道旁，留下了孔子、屈原、刘秀、王莽、张仲景、欧阳修和本地（丹阳）出生的范蠡、范缜、强华等历史名人的足迹。<\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954777747462.jpg\" title=\"1476954777747462.jpg\" style=\"width:100%;height:auto\"/><\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954777943127.jpg\" title=\"1476954777943127.jpg\" style=\"width:100%;height:auto\"/><\/p><p>太极峡风景区<\/p><p><br/><\/p><p>在太极峡景区，你会发现道教文化和佛教文化在这里共存，黄河文明和长江文明在这里融合。当你走进太极峡景区，就走进了一个太极文化的天然博物馆。太极峡里那妙不可言的文化元素，会让你对大自然一个全新的认知。所以，你一旦来到太极峡，所体验到的绝不是青山绿水的陶冶，更是涤荡心灵的精神享受。<\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954794417365.jpg\" title=\"1476954794417365.jpg\" style=\"width:100%;height:auto\"/><\/p><p><img src=\"http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954794122649.jpg\" title=\"1476954794122649.jpg\" style=\"width:100%;height:auto\"/><\/p><p><br/><\/p>","img":"http://pic.houno.cn/Uploads/Scenic/20161020/170951580889df21fd4.jpg","wap_img":"http://pic.houno.cn/Uploads/Scenic/20161020/170951580889df271dd.jpg","status":"1","online":"1","bigimg":"","morepic":"1","hottj":"0","citytj":"0","cattj":"0","payfs":"0","commentnum":"0","average":".0","mer_id":"0","admin":"admin               ","edit_time":"1482128700","lat":"32.7510040","lng":"111.3879670","imgcreate":"","price_area2":"","wapzj":"0","wapjc":"0","wapzt":"0","waphd":"","isrec":"","hdtuij":"1","row_number":"2","price":{"webprice":"45","marketprice":"45","price":"0","userprice":"0","stock":"500","row_number":"1"},"cityname":"十堰","cate_name":"自然风景"}]
+     * countInfo : {"total":"7","totalpage":1}
+     * data : [{"id":"1794","scenicid":"788171","scenicname":"三亚千古情","booknotice":"[{\"key\":\"openTime\",\"name\":\"\\u666f\\u533a\\u5f00\\u653e\\u65f6\\u95f4\",\"value\":\"\\u4e09\\u4e9a\\u5343\\u53e4\\u60c5\\u666f\\u533a\\uff1a12:00-21:30\\uff0c\\u4e09\\u4e9a\\u5b8b\\u57ce\\u5f69\\u8272\\u52a8\\u7269\\u56ed\\uff1a11:00-18:00\\uff1b\\u4e09\\u4e9a\\u5b8b\\u57ce\\u51b0\\u96ea\\u4e16\\u754c\\uff1a11:00-21:00\\uff1b\\u4e09\\u4e9a\\u5b8b\\u57ce\\u6d6a\\u6d6a\\u6d6a\\u6c34\\u516c\\u56ed\\uff1a11:00-21:00\\u3002<div><br><\\/div><div><font color=\\\"#ff0000\\\"><b>\\u60a8\\u597d\\uff0c\\u4e09\\u4e9a\\u5343\\u53e4\\u60c510\\u6708\\u4efd\\u573a\\u6b2110\\u67081\\u65e5 14:00 17:00 20:00\\uff1b10\\u67082\\u65e5 14:00 16:00 18:00 20:30;10\\u67083\\u65e5 14:00 15:30 17:00 18:30 20:30;10\\u67084\\u65e5 14:00 15:30 17:00 18:30 20:30;10\\u67085\\u65e5 14:00 15:30 17:00 18:30 20:30;10\\u67086\\u65e5 14:00 16:00 18:00 20:00\\uff1b10\\u67087\\u65e5 14:00 17:00 20:00;10\\u67088\\u65e5 14:00 17:00 20:00;\\uff08\\u6700\\u7ec8\\u573a\\u6b21\\u4ee5\\u63d0\\u524d\\u4e00\\u5929\\u4e3a\\u51c6\\uff0c\\u8c22\\u8c22\\uff01\\uff09<\\/b><\\/font><\\/div>\"},{\"key\":\"bookTime\",\"name\":\"\\u63d0\\u524d\\u9884\\u8ba2\\u65f6\\u95f4\",\"value\":\"<b><\\/b><span style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\">\\u2605\\u2605\\u2605\\u2605\\u4e09\\u4e9a\\u9884\\u8ba2\\u89c4\\u5219\\uff1a\\u666f\\u533a\\u8981\\u6c42\\u5ba2\\u4eba\\u9700\\u8981\\u5728\\u5165\\u56ed\\u524d2\\u5c0f\\u65f6\\u9884\\u8ba2\\uff0c\\u4e0d\\u662f\\u6f14\\u51fa\\u5f00\\u6f14\\u524d2\\u5c0f\\u65f6\\u9884\\u8ba2\\uff0c\\u4e5f\\u5c31\\u662f\\u666f\\u533a\\u4f1a\\u6839\\u636e\\u5ba2\\u4eba\\u4e0b\\u5355\\u65f6\\u95f4\\u5224\\u5b9a\\u4e0d\\u6ee1\\u8db32\\u5c0f\\u65f6\\uff0c\\u4e0d\\u4e88\\u4ee5\\u5165\\u56ed\\uff0c\\u8bf7\\u60a8\\u5408\\u7406\\u5b89\\u6392\\u9884\\u5b9a\\u548c\\u51fa\\u6e38\\u65f6\\u95f4\\uff01\\u2605\\u2605\\u2605<\\/span><div><br><div><font color=\\\"#ff0000\\\"><b><\\/b><\\/font><div>\\u2605\\u4e13\\u9879\\u4ea7\\u54c1\\u4f7f\\u7528\\u8bf4\\u660e\\uff1a\\u8bf7\\u70b9\\u51fb\\u95e8\\u7968\\uff0c\\u4ee5\\u95e8\\u7968\\u4e0b\\u65b9\\u7684\\u4ea7\\u54c1\\u8bf4\\u660e\\u4e3a\\u51c6<\\/div><\\/div><\\/div>\"},{\"key\":\"getTicketType\",\"name\":\"\\u53d6\\u7968\\u65b9\\u5f0f\",\"value\":\"<div>\\u9884\\u5b9a\\u6210\\u529f\\u6ee12\\u5c0f\\u65f6\\u540e\\uff0c\\u76f4\\u63a5\\u5237\\u8eab\\u4efd\\u8bc1\\u5165\\u56ed\\uff08<font color=\\\"#ff0000\\\">\\u6d3b\\u52a8\\u7968\\u79cd\\u53d6\\u7968\\u65b9\\u5f0f\\u4e0d\\u540c\\uff0c\\u8be6\\u7ec6\\u8bf7\\u89c1\\u5177\\u4f53\\u4ea7\\u54c1<\\/font>\\uff09<\\/div><div><br><\\/div><div><br><\\/div>\"},{\"key\":\"admission\",\"name\":\"\\u5165\\u56ed\\u51ed\\u8bc1\",\"value\":\"\\u9884\\u5b9a\\u6210\\u529f\\u6ee12\\u5c0f\\u65f6\\u540e\\uff0c\\u76f4\\u63a5\\u5237\\u8eab\\u4efd\\u8bc1\\u5165\\u56ed<div><br><div>\\u2605\\u4e13\\u9879\\u4ea7\\u54c1\\u4f7f\\u7528\\u8bf4\\u660e\\uff1a\\u8bf7\\u70b9\\u51fb\\u95e8\\u7968\\uff0c\\u4ee5\\u95e8\\u7968\\u4e0b\\u65b9\\u7684\\u4ea7\\u54c1\\u8bf4\\u660e\\u4e3a\\u51c6\\uff08\\u8bf7\\u5173\\u95ed\\u624b\\u673a\\u77ed\\u4fe1\\u62e6\\u622a\\u8f6f\\u4ef6\\uff0c\\u4ee5\\u514d\\u803d\\u8bef\\u4f60\\u7684\\u884c\\u7a0b\\uff09<\\/div><\\/div>\"},{\"key\":\"specialPeople\",\"name\":\"\\u7279\\u6b8a\\u4eba\\u7fa4\\u653f\\u7b56\",\"value\":\"<div>A\\u3001\\u514d\\u8d39\\u653f\\u7b56\\uff1a1.2m\\uff08\\u4e0d\\u542b\\uff09\\u4ee5\\u4e0b\\u513f\\u7ae5\\u514d\\u7968\\uff0c\\u4f46\\u4e0d\\u5360\\u7528\\u6f14\\u51fa\\u5e2d\\u4f4d<\\/div><div>B\\u3001\\u4f18\\u60e0\\u653f\\u7b56\\uff1a1.2\\u7c73\\uff08\\u542b\\uff09-1.5\\u7c73\\uff08\\u4e0d\\u542b1.5\\u7c73\\uff09\\u7684\\u513f\\u7ae5\\u3001\\u73b0\\u5f79\\u519b\\u4eba\\u3001\\u6b8b\\u75be\\u4eba\\u300130\\u5e74\\u6559\\u9f84\\u6301\\u6709\\u8363\\u8a89\\u8bc1\\u4e66\\u7684\\u6559\\u5e08\\u300165\\u5468\\u5c81\\u4ee5\\u4e0a\\u7684\\u8001\\u4eba\\u51ed\\u672c\\u4eba\\u6709\\u6548\\u8bc1\\u4ef6\\u53ef\\u5728\\u666f\\u533a\\u8d2d\\u4e70\\u4f18\\u60e0\\u7968<\\/div><div>\\u2605\\u4e13\\u9879\\u4ea7\\u54c1\\uff1a\\u666f\\u533a\\u4f18\\u60e0\\u653f\\u7b56\\u95e8\\u7968\\uff0c\\u9700\\u5230\\u666f\\u533a\\u81ea\\u884c\\u8d2d\\u4e70\\uff0c\\u8be6\\u60c5\\u89c1\\u666f\\u533a\\u516c\\u544a<\\/div>\"},{\"key\":\"costDetail\",\"name\":\"\\u8d39\\u7528\\u8bf4\\u660e\",\"value\":\"\\u666f\\u533a\\u5b9e\\u884c\\u4e00\\u7968\\u5236\\uff0c\\u5185\\u5bb9\\u5305\\u542b\\u5927\\u578b\\u6b4c\\u821e\\u300a\\u4e09\\u4e9a\\u5343\\u53e4\\u60c5\\u300b\\u6f14\\u51fa\\u3001\\u5d16\\u5dde\\u53e4\\u57ce\\u3001\\u5927\\u8c61\\u8c37\\u3001\\u6d77\\u76d7\\u5927\\u6218\\u3001\\u79d1\\u6280\\u6e38\\u4e50\\u9986\\u3001\\u9ece\\u6751\\u3001\\u82d7\\u5be8\\u3001\\u5c71\\u4e0a\\u82b1\\u9ece\\u3001\\u6930\\u6797\\u6e7e\\u3001\\u5357\\u6d77\\u5973\\u795e\\u5e7f\\u573a\\u3001\\u4e09\\u89d2\\u6885\\u6d77\\u9c9c\\u5927\\u6392\\u6863\\u3001\\u6995\\u6811\\u4e0b\\u9152\\u5427\\u3001\\u56fe\\u817e\\u5927\\u9053\\u3001\\u60c5\\u4eba\\u8c37\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t            \\u3001\\u706b\\u628a\\u5e7f\\u573a\\u3001\\u738b\\u8005\\u4e4b\\u57ce\\u3001\\u4e09\\u4e9a\\u540d\\u4eba\\u5c71\\u3001\\u513f\\u7ae5\\u6e38\\u4e50\\u533a\\u3001\\u7b49\\u6570\\u5341\\u4e2a\\u4e3b\\u9898\\u533a\\u3002<br><br>\\u2605\\u4e13\\u9879\\u4ea7\\u54c1\\u8d39\\u7528\\u8bf4\\u660e\\uff1a\\u8bf7\\u70b9\\u51fb\\u95e8\\u7968\\uff0c\\u4ee5\\u95e8\\u7968\\u7684\\u201c\\u9884\\u5b9a\\u987b\\u77e5\\u3001\\u5176\\u4ed6\\u8bf4\\u660e\\u201d\\u4e3a\\u51c6\"},{\"key\":\"bookNotice\",\"name\":\"\\u9884\\u8ba2\\u63d0\\u9192\",\"value\":\"1\\u3001\\u8bf7\\u4e0b\\u5355\\u9884\\u5b9a\\u65f6\\u52a1\\u5fc5\\u586b\\u5199\\u771f\\u5b9e\\u59d3\\u540d\\uff0c\\u907f\\u514d\\u65e0\\u6cd5\\u53d6\\u7968\\u548c\\u987a\\u5229\\u5165\\u56ed\\uff01<div>2\\u3001\\u53d6\\u7968\\u4ee5\\u6536\\u5230\\u7684\\u77ed\\u4fe1\\u901a\\u77e5\\u4e3a\\u51c6\\uff0c\\u8eab\\u4efd\\u8bc1\\u4ef6\\u8bf7\\u968f\\u8eab\\u643a\\u5e26\\u3002<\\/div><div>3\\u3001\\u516c\\u56ed\\u89c4\\u5b9a\\uff1a\\u56e0\\u5929\\u6c14\\u539f\\u56e0\\u5bfc\\u81f4\\u90e8\\u5206\\u573a\\u9986\\u505c\\u6f14\\u4e0d\\u4e88\\u9000\\u7968\\u3002\\u4e09\\u4e9a\\u5343\\u53e4\\u60c5\\u7684\\u6f14\\u51fa\\u662f\\u5728\\u5ba4\\u5185\\uff0c\\u4e0d\\u53d7\\u5929\\u6c14\\u5f71\\u54cd\\uff0c\\u90e8\\u5206\\u9732\\u5929\\u7684\\u6c11\\u4fd7\\u8868\\u6f14\\uff0c\\u4f1a\\u56e0\\u4e3a\\u5929\\u6c14\\u7684\\u5f71\\u54cd\\u9002\\u65f6\\u5f00\\u6f14\\u3002<\\/div><span style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\">\\u2605\\u2605\\u2605\\u2605\\u4e09\\u4e9a\\u9884\\u8ba2\\u89c4\\u5219\\uff1a\\u666f\\u533a\\u8981\\u6c42\\u5ba2\\u4eba\\u9700\\u8981\\u5728\\u5165\\u56ed\\u524d2\\u5c0f\\u65f6\\u9884\\u8ba2\\uff0c\\u4e0d\\u662f\\u6f14\\u51fa\\u5f00\\u6f14\\u524d2\\u5c0f\\u65f6\\u9884\\u8ba2\\uff0c\\u4e5f\\u5c31\\u662f\\u666f\\u533a\\u4f1a\\u6839\\u636e\\u5ba2\\u4eba\\u4e0b\\u5355\\u65f6\\u95f4\\u5224\\u5b9a\\u4e0d\\u6ee1\\u8db32\\u5c0f\\u65f6\\uff0c\\u4e0d\\u4e88\\u4ee5\\u5165\\u56ed\\uff0c\\u8bf7\\u60a8\\u5408\\u7406\\u5b89\\u6392\\u9884\\u5b9a\\u548c\\u51fa\\u6e38\\u65f6\\u95f4\\uff01\\u2605\\u2605\\u2605<br><\\/span><div><b>17:00\\u573a\\u6b21\\u8868\\u6f14\\u5efa\\u8bae\\u5f53\\u5929\\u572814:30\\u70b9\\u524d\\u9884\\u5b9a\\uff0c20:00\\u573a\\u6b21\\u8868\\u6f14\\u5efa\\u8bae\\u5f53\\u5929\\u572817:30\\u70b9\\u524d\\u9884\\u5b9a\\u3002<\\/b><font color=\\\"#ff0000\\\"><b><br><\\/b><\\/font><div><br><div>\\n\\t\\t\\t\\t\\t<span style=\\\"font-weight: bold;\\\">\\u2605\\u2605\\u5e26\\u6709\\u9a74\\u5988\\u5988\\u6807\\u8bc6\\u7684\\u95e8\\u7968\\u4ea7\\u54c1\\u8bf7\\u6309\\u7167\\u5982\\u4e0b\\u53d6\\u7968\\u65b9\\u5f0f\\u64cd\\u4f5c\\u8c22\\u8c22\\uff01\\u2605\\u2605<br>&lt;\\u4e09\\u4e9a\\u5343\\u53e4\\u60c5\\u95e8\\u7968 \\u8d35\\u5bbe\\u5e2d\\uff0820:00--21:00\\uff09\\u573a\\u6b21 \\u95e8\\u7968&gt;\\uff1a<\\/span>\\u5f53\\u65e5\\u9884\\u8ba2\\u4e0d\\u505a\\u4efb\\u4f55\\u66f4\\u6539\\u6216\\u53d6\\u6d88\\uff0c\\u671b\\u5404\\u4f4d\\u987e\\u5ba2\\u8c05\\u89e3\\uff01\\u5f53\\u65e5\\u9884\\u8ba2\\u8bf7\\u81f3\\u5c11\\u63d0\\u524d2\\u5c0f\\u65f6\\u8d2d\\u4e70\\uff0c\\u56e02\\u5c0f\\u65f6\\u9884\\u5b9a\\u7b49\\u5f85\\u65f6\\u95f4\\u9020\\u6210\\u7684\\u63d0\\u524d\\u5230  \\u8fbe\\u666f\\u533a\\uff0c\\u65e0\\u6cd5\\u53d6\\u7968\\u5165\\u56ed\\u7684\\u60c5\\u51b5\\uff0c\\u6211\\u53f8\\u5c06\\u4e0d\\u627f\\u62c5\\u76f8\\u5173\\u8d23\\u4efb\\uff1b\\n\\u5165\\u56ed\\u9650\\u5236\\uff1a\\u8bf7\\u5728\\u5165\\u56ed\\u5f53\\u5929\\u768420\\u70b930\\u5206\\u4ee5\\u524d\\u5165\\u56ed\\uff1b\\u53d6\\u7968\\u65f6\\u95f4\\uff1a15\\uff1a00\\uff5e20\\uff1a30<br>\\n\\t\\t\\t\\t\\t<span style=\\\"font-weight: bold;\\\">&lt;\\u4e09\\u4e9a\\u5343\\u53e4\\u60c5\\u8d35\\u5bbe\\u5e2d\\uff0817:00--18:00\\uff09\\u573a\\u6b21\\u95e8\\u7968&gt;\\uff1a<\\/span>\\u5f53\\u65e5\\u9884\\u8ba2\\u4e0d\\u505a\\u4efb\\u4f55\\u66f4\\u6539\\u6216\\u53d6\\u6d88\\uff0c\\u671b\\u5404\\u4f4d\\u987e\\u5ba2\\u8c05\\u89e3\\uff01\\u53d6\\u7968\\u65f6\\u95f4\\uff1a15\\uff1a30\\uff5e18\\uff1a30\\uff1b\\u6709\\u6548\\u671f\\u9650\\uff1a\\uff08\\u6709\\u6548\\u671f\\u5185\\uff0c\\u4ec5\\u9650\\u5165\\u56ed1\\u6b21\\uff09\\u6307\\u5b9a\\u6e38\\u73a9\\u65e5\\u5f53\\u5929\\u5185\\u6709\\u6548\\uff1b\\u5f53\\u65e5\\u9884\\u8ba2\\u8bf7\\u81f3\\u5c11\\u63d0\\u524d2\\u5c0f\\u65f6\\u8d2d\\u4e70\\uff0c\\u56e02\\u5c0f\\u65f6\\u9884\\u5b9a\\u7b49\\u5f85\\u65f6\\u95f4\\u9020\\u6210\\u7684\\u63d0\\u524d\\u5230  \\u8fbe\\u666f\\u533a\\uff0c\\u65e0\\u6cd5\\u53d6\\u7968\\u5165\\u56ed\\u7684\\u60c5\\u51b5\\uff0c\\u6211\\u53f8\\u5c06\\u4e0d\\u627f\\u62c5\\u76f8\\u5173\\u8d23\\u4efb\\uff1b\\n                                                                                        <\\/div><\\/div><\\/div><div>\\u2605\\u4e13\\u9879\\u4ea7\\u54c1\\u4f7f\\u7528\\u8bf4\\u660e\\uff1a\\u8bf7\\u70b9\\u51fb\\u95e8\\u7968\\uff0c\\u4ee5\\u95e8\\u7968\\u4e0b\\u65b9\\u7684\\u4ea7\\u54c1\\u8bf4\\u660e\\u4e3a\\u51c6<\\/div>\"},{\"key\":\"notice\",\"name\":\"\\u6e29\\u99a8\\u63d0\\u9192\",\"value\":\"\\n<span style=\\\"color: rgb(0, 0, 255);\\\"><span style=\\\"color: rgb(0, 0, 0);\\\"><\\/span><\\/span><span style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\">\\u2605\\u2605\\u2605\\u2605\\u4e09\\u4e9a\\u9884\\u8ba2\\u89c4\\u5219\\uff1a\\u666f\\u533a\\u8981\\u6c42\\u5ba2\\u4eba\\u9700\\u8981\\u5728\\u5165\\u56ed\\u524d1\\u5c0f\\u65f6\\u9884\\u8ba2\\uff0c\\u4e0d\\u662f\\u6f14\\u51fa\\u5f00\\u6f14\\u524d1\\u5c0f\\u65f6\\u9884\\u8ba2\\uff0c\\u4e5f\\u5c31\\u662f\\u666f\\u533a\\u4f1a\\u6839\\u636e\\u5ba2\\u4eba\\u4e0b\\u5355\\u65f6\\u95f4\\u5224\\u5b9a\\u4e0d\\u6ee1\\u8db31\\u5c0f\\u65f6\\uff0c\\u4e0d\\u4e88\\u4ee5\\u5165\\u56ed\\uff0c\\u8bf7\\u60a8\\u5408\\u7406\\u5b89\\u6392\\u9884\\u5b9a\\u548c\\u51fa\\u6e38\\u65f6\\u95f4\\uff01\\u2605\\u2605\\u2605<\\/span><br style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\"><span style=\\\"font-weight: bold; color: rgb(0, 0, 255);\\\"><\\/span><span style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\"><\\/span><div>\\u2605\\u4e13\\u9879\\u4ea7\\u54c1\\u4f7f\\u7528\\u8bf4\\u660e\\uff1a\\u8bf7\\u70b9\\u51fb\\u95e8\\u7968\\uff0c\\u4ee5\\u95e8\\u7968\\u4e0b\\u65b9\\u7684\\u4ea7\\u54c1\\u8bf4\\u660e\\u4e3a\\u51c6<\\/div>\"},{\"key\":\"invoice\",\"name\":\"\\u53d1\\u7968\\u8bf4\\u660e\",\"value\":\"\\u9884\\u5b9a\\u8be5\\u666f\\u533a\\u95e8\\u7968\\uff0c\\u6211\\u53f8\\u63d0\\u4f9b\\u53d1\\u7968\\u3002<div>\\u2605\\u4e13\\u9879\\u4ea7\\u54c1\\uff1a\\u5982\\u9700\\u53d1\\u7968\\uff0c\\u8bf7\\u81f4\\u7535\\u9014\\u725b\\u5ba2\\u670d<\\/div>\"},{\"key\":\"change\",\"name\":\"\\u9000\\u6539\\u89c4\\u5219\",\"value\":\"<span style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\"><span style=\\\"color: rgb(0, 0, 255);\\\"><\\/span><span style=\\\"font-weight: bold;\\\">\\u3010\\u9014\\u725b\\u4ea7\\u54c1\\u3011<\\/span>\\u95e8\\u7968\\u4e00\\u7ecf\\u652f\\u4ed8\\uff0c\\u5982\\u9700\\u66f4\\u6539\\u51fa\\u6e38\\u65e5\\u671f\\uff0c\\u8bf7\\u5728\\u6f14\\u51fa\\u524d2\\u5c0f\\u65f6\\u81f4\\u7535\\u5ba2\\u670d\\u8fdb\\u884c\\u5904\\u7406\\uff0c\\u6bcf\\u4e2a\\u8ba2\\u5355\\u4ec5\\u9650\\u6539\\u671f\\u4e00\\u6b21\\uff0c\\u8fc7\\u671f\\u6982\\u4e0d\\u9000\\u6b3e\\u548c\\u6539\\u671f\\uff01\\u4ea7\\u54c1\\u652f\\u6301\\u6574\\u5355\\u9000\\u6b3e\\uff0c\\u4e0d\\u652f\\u6301\\u90e8\\u5206\\u9000\\u6b3e\\uff0c\\u7ed9\\u60a8\\u5e26\\u6765\\u7684\\u4e0d\\u4fbf\\u656c\\u8bf7\\u8c05\\u89e3\\u3002<\\/span><span style=\\\"font-weight: bold;\\\">\\u5957\\u7968\\u4f7f\\u7528\\u5176\\u4e2d\\u4e00\\u9879\\u5176\\u4f59\\u4e0d\\u9000<\\/span>\\uff01<br><b><font color=\\\"#ff0000\\\">\\u4e09\\u4e9a\\u6d6a\\u6d6a\\u6d6a\\u6c34\\u516c\\u56ed\\u5355\\u95e8\\u7968\\uff0c\\u5f53\\u592918\\u70b9\\u4e4b\\u524d\\u53ef\\u4ee5\\u7533\\u8bf7\\u9000\\u7968\\uff0c\\u8fc7\\u70b9\\u4e0d\\u9000\\u4e0d\\u6539\\uff01<\\/font><\\/b><br><div>\\u2605\\u4e13\\u9879\\u4ea7\\u54c1\\uff0c\\u8bf7\\u70b9\\u51fb\\u95e8\\u7968\\u2018\\u9884\\u5b9a\\u2019\\uff0c\\u4ee5\\u9884\\u5b9a\\u9875\\u9762\\u4ea7\\u54c1\\u8bf4\\u660e\\u4e2d\\u7684\\u9000\\u6539\\u8bf4\\u660e\\u4e3a\\u51c6\\u3002\\u3010\\u4e0d\\u9000\\u4e0d\\u6539\\u7684\\u4ea7\\u54c1\\uff0c\\u6055\\u65e0\\u6cd5\\u9000\\u8fd8\\u7968\\u6b3e\\uff0c\\u8bf7\\u614e\\u91cd\\u9884\\u5b9a\\u3002\\u4e13\\u9879\\u4ea7\\u54c1\\u4e0d\\u652f\\u6301\\u90e8\\u5206\\u9000\\u7968\\uff0c\\u4e0d\\u652f\\u6301\\u6539\\u671f\\uff0c\\u5ba1\\u6838\\u5468\\u671f3\\u4e2a\\u5de5\\u4f5c\\u65e5\\u4f1a\\u901a\\u77e5\\u60a8\\u9000\\u7968\\u65f6\\u95f4\\u8282\\u70b9\\uff0c\\u8bf7\\u60a8\\u8010\\u5fc3\\u7b49\\u5f85\\u3011\\u5982\\u6709\\u7591\\u95ee\\u8bf7\\u54a8\\u8be2\\u9014\\u725b\\u5ba2\\u670d\\uff01<\\/div>\"},{\"key\":\"specialInfo\",\"name\":\"\\u7279\\u6b8a\\u4fe1\\u606f\",\"value\":\"<span style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\"><\\/span>\\u516c\\u4ea4\\u51fa\\u884c\\u4e58\\u57507\\u8def\\u5185\\u73af\\u30017\\u8def\\u5916\\u73af\\u30019\\u8def\\u300127\\u8def\\u5728\\u4e1c\\u5cb8\\u6751\\u4e0b\\u8f66\\u6b65\\u884c260\\u7c73\\u53ef\\u5230<div>\\u3010\\u63d0\\u793a\\u8bf4\\u660e\\u3011\\u56e0\\u77ed\\u4fe1\\u95ee\\u9898\\uff0c\\u7535\\u4fe1\\u53f7\\u7801\\u53ef\\u80fd\\u65e0\\u6cd5\\u63a5\\u53d7\\u5230\\u7cfb\\u7edf\\u53d1\\u9001\\u51fa\\u7684\\u77ed\\u4fe1\\uff0c\\u4e3a\\u4e86\\u4e0d\\u7ed9\\u60a8\\u7684\\u51fa\\u884c\\u5e26\\u6765\\u4e0d\\u4fbf\\uff0c\\u6211\\u4eec\\u5efa\\u8bae\\u60a8\\u4f7f\\u7528\\u79fb\\u52a8\\u6216\\u8005\\u8054\\u901a\\u7684\\u53f7\\u7801\\u9884\\u8ba2\\uff0c\\u5e76\\u5173\\u95ed\\u624b\\u673a\\u77ed\\u4fe1\\u62e6\\u622a\\u8f6f\\u4ef6\\uff0c\\u5e26\\u6765\\u4e0d\\u4fbf\\uff0c\\u656c\\u8bf7\\u8c05\\u89e3\\uff01<\\/div>\"}]","city":"9","cityname":"三亚","province":"6","provincename":"海南","glocation":"18.252762,109.511437","blocation":"18.258499,109.517998","opentime":"三亚千古情景区：12:00\u201421:30, 三亚宋城冰雪世界：11:00\u201421:00, 三亚宋城彩色动物园：11:00\u201418:00, 三亚宋城浪浪浪水公园：11:00\u201421:00。","scenicaddress":"海南省三亚市迎宾路333号。","defaultpic":"http://m.tuniucdn.com/filebroker/cdn/snc/6e/f4/6ef4b0648699b5bb499c253f17ab8e4e_w240_h135_c1_t0.jpg","scenicdescription":"<div class=\"feature-content\"><p style=\"margin-top:auto;margin-bottom:auto;\">三亚千古情景区掩映在茂密的森林和鲜花丛中，有三亚千古情、崖州古城、大象谷、科技游乐馆、椰林湾、南海女神广场、小吃广场、图腾大道、情人谷、泼水广场、王者之城、名人山、儿童游乐区、云曼酒店等数十个主题区。<br /><\/p><p style=\"margin-top:auto;margin-bottom:auto;\">三亚千古情景区内一年四季活动不断，有黎族三月三、泼水节、比基尼狂欢节、沙滩音乐节、啤酒节、冰雪节等活动，深受游客欢迎，是三亚夜游的理想目的地。<\/p><p><img  src=\"https://dimg02.c-ctrip.com/images/tg/720/545/968/5e5955a62e5c4f62a66bc554ceb1f0bd_C_422_236.jpg\" alt=\"千古情14.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/tg/783/822/818/be48d2c3cd054260b3fae71f48595ddd_C_422_236.jpg\" alt=\"千古情19.jpg\" /><\/p><p>预演厅\u2014\u2014三亚千古情景区<\/p><p>三亚千古情景区掩映在茂密的原始森林和鲜花丛中，有三亚千古情、崖州古城、大象谷、科技游乐馆、椰林湾、南海女神广场、小吃广场、榕树下酒吧、图腾大道、情人谷、火把广场、王者之城、三亚名人山、儿童游乐区、云曼酒店等数十个主题区。景区内一年四季活动不断，有黎族三月三、泼水节、比基尼狂欢节、沙滩音乐节、啤酒节、泥浆\u201c泡\u201d妞节、冰雪节等活动。<\/p><p><img  src=\"https://dimg02.c-ctrip.com/images/tg/703/259/327/fc5f86768e714f26b2a0deab9159c8f2_C_422_236.jpg\" alt=\"千古情16.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/tg/654/075/373/61845265b8894e778e3e0dbc204b2547_C_422_236.jpg\" alt=\"千古情12.jpg\" /><\/p><p>原汁原味的黎村苗寨<\/p><p>黎族、苗族是三亚两大少数民族。黎族的\u201c打柴舞\u201d与苗族的\u201c芦笙\u201d，更是一座城市的文化封面。黎族和苗族一般生活在海南岛的中部和南部山区，黎村苗寨是海南黎苗民俗风情的缩影。而这些真正的黎村苗寨大多交通不便，山高路远，因此对于一般的游人想来三亚体会地道的黎苗风情和民俗文化，可谓遥不可及。<\/p><p><img  src=\"https://dimg02.c-ctrip.com/images/tg/931/452/199/f15d7280cc17446fa084ea894597bd31_C_422_236.jpg\" alt=\"千古情9.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/tg/198/489/553/35f06156bbcf4823b940a62112bda63b_C_422_236.jpg\" alt=\"千古情1.jpg\" /><\/p><p>穿越的崖州古城<\/p><p>梦回崖州古城，穿越千年历史。崖州古城是海南岛四大州城之一，作为中国最南的古城，\u201c炎州此去更无城\u201d这一古人的诗句歌咏了此城独特的地理位置。在三亚千古情景区内用高科技与民俗手段向游客重现了一个繁荣富庶、墨香雅风的崖州古城。<\/p><p><img  src=\"https://dimg02.c-ctrip.com/images/tg/609/159/988/c443cd1375fe4dd7b220ea89261f7a07_C_422_236.jpg\" alt=\"千古情20.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/tg/740/255/735/abf06547c8754faba1a8f4ceec7d503a_C_422_236.jpg\" alt=\"千古情6.jpg\" /><\/p><p>高科技的游乐馆<\/p><p>景区内的高科技游乐馆包含了暴风眼、海角沉船听音室、魅影空间、神秘街、居士府、天涯鬼域六大科技游乐设施。高科技的应用令游客体验到各种模拟的真实场景。<\/p><p>由于三亚经常会受到台风侵袭，\u201c暴风眼\u201d设施采用仿真模型道具，虚实结合，配合声效、风、水、雾、光电系统，再现台风来袭时的逼真场景，让游客身临其境的见证大自然的威力。<\/p><p><img  src=\"https://dimg02.c-ctrip.com/images/tg/603/286/055/b8149cc946874dc5b5976b19e55a626e_C_422_236.jpg\" alt=\"千古情5.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/tg/356/334/907/c5b6abb8d3f74a57806fb5d937a7c6ce_C_422_236.jpg\" alt=\"千古情11.jpg\" /><\/p><p>亲爱的游客朋友们，欢迎光临三亚冰雪世界。三亚冰雪世界由北欧乡村小镇和冰雪馆构成，冰雪馆内为极寒气候，包含滑冰道、滑雪场、冰雕观赏区、戏雪区等主题区。<\/p><p><img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g4/M02/16/37/CggYHVXJtNGAS4UvAAdgueEZNbM017_C_422_236.jpg\" alt=\"三亚冰雪世界冰雪馆 (3)\" /> <img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g4/M01/16/89/CggYHlXJtOSAI8rqAAX32KMiOoI046_C_422_236.jpg\" alt=\"三亚冰雪世界冰雪馆 (5)\" /><\/p><\/div><p><br /><\/p>","recommend":"原汁原味的黎村苗寨，体验千古情的震撼与辉煌。##一场无法用语言和文字定义的演出，立足于三亚长达一万年的恢弘历史长卷。##火山石铺就的图腾大道带您进入三亚千古情景区的神秘旅程。","trafficbus":"<p>市内可乘坐7路、9路、23路公交车，东岸村站下车后步行200米到三亚千古情景区。 &nbsp; &nbsp;<br /><\/p>","distickets":"a:2:{i:0;a:4:{s:9:\"productId\";s:7:\"6406567\";s:9:\"salePrice\";s:5:\"220.0\";s:8:\"webPrice\";s:3:\"280\";s:11:\"productName\";s:101:\"<三亚千古情17:00演出门票>【当天提前1小时预定】请严格按照网络价250元售卖\";}i:1;a:4:{s:9:\"productId\";s:7:\"6406571\";s:9:\"salePrice\";s:5:\"220.0\";s:8:\"webPrice\";s:3:\"280\";s:11:\"productName\";s:101:\"<三亚千古情20:00演出门票>【当天提前1小时预定】请严格按照网络价250元售卖\";}}","ticketlist":"a:29:{i:0;a:4:{s:9:\"productId\";s:7:\"5763834\";s:9:\"salePrice\";s:5:\"250.0\";s:8:\"webPrice\";s:3:\"280\";s:11:\"productName\";s:65:\"<三亚千古情17:00演出门票>【当天提前1小时预定】\";}i:1;a:4:{s:9:\"productId\";s:7:\"5763885\";s:9:\"salePrice\";s:5:\"250.0\";s:8:\"webPrice\";s:3:\"280\";s:11:\"productName\";s:65:\"<三亚千古情20:00演出门票>【当天提前1小时预定】\";}i:2;a:4:{s:9:\"productId\";s:7:\"6049599\";s:9:\"salePrice\";s:5:\"120.0\";s:8:\"webPrice\";s:3:\"150\";s:11:\"productName\";s:48:\"<三亚浪浪浪水公园>请提前1小时预订\";}i:3;a:4:{s:9:\"productId\";s:7:\"6150140\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:78:\"<三亚千古情 冰雪世界17点场次套票>【当天提前1小时预订】\";}i:4;a:4:{s:9:\"productId\";s:7:\"6150146\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:78:\"<三亚千古情 冰雪世界20点场次套票>【当天提前1小时预定】\";}i:5;a:4:{s:9:\"productId\";s:7:\"6150223\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:75:\"<三亚千古情 动物园17点场次套票>【当天提前1小时预定】\";}i:6;a:4:{s:9:\"productId\";s:7:\"6150233\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:88:\"<三亚千古情 动物园 冰雪世界17点场次套票>【当天提前1小时预定】\";}i:7;a:4:{s:9:\"productId\";s:7:\"6150367\";s:9:\"salePrice\";s:5:\"200.0\";s:8:\"webPrice\";s:3:\"230\";s:11:\"productName\";s:58:\"<三亚浪浪浪水公园 动物园>请提前1小时预定\";}i:8;a:4:{s:9:\"productId\";s:7:\"6150369\";s:9:\"salePrice\";s:5:\"200.0\";s:8:\"webPrice\";s:3:\"230\";s:11:\"productName\";s:61:\"<三亚浪浪浪水公园 冰雪世界>请提前1小时预订\";}i:9;a:4:{s:9:\"productId\";s:7:\"6150370\";s:9:\"salePrice\";s:5:\"280.0\";s:8:\"webPrice\";s:3:\"310\";s:11:\"productName\";s:71:\"<三亚浪浪浪水公园 动物园 冰雪世界>请提前1小时预订\";}i:10;a:4:{s:9:\"productId\";s:7:\"6278576\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:78:\"<三亚千古情 冰雪世界14点场次套票>【当天提前1小时预订】\";}i:11;a:4:{s:9:\"productId\";s:7:\"6278577\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:75:\"<三亚千古情 动物园14点场次套票>【当天提前1小时预定】\";}i:12;a:4:{s:9:\"productId\";s:7:\"6278579\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:88:\"<三亚千古情 动物园 冰雪世界14点场次套票>【当天提前1小时预定】\";}i:13;a:4:{s:9:\"productId\";s:7:\"6285164\";s:9:\"salePrice\";s:5:\"250.0\";s:8:\"webPrice\";s:3:\"280\";s:11:\"productName\";s:65:\"<三亚千古情14:00演出门票>【当天提前1小时预定】\";}i:14;a:4:{s:9:\"productId\";s:7:\"6299912\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:75:\"<三亚千古情 动物园20点场次套票>【当天提前1小时预定】\";}i:15;a:4:{s:9:\"productId\";s:7:\"6299915\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:88:\"<三亚千古情 动物园 冰雪世界20点场次套票>【当天提前1小时预定】\";}i:16;a:4:{s:9:\"productId\";s:7:\"6312240\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:75:\"<三亚千古情 水公园14点场次套票>【当天提前1小时预定】\";}i:17;a:4:{s:9:\"productId\";s:7:\"6312241\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:75:\"<三亚千古情 水公园17点场次套票>【当天提前1小时预定】\";}i:18;a:4:{s:9:\"productId\";s:7:\"6312242\";s:9:\"salePrice\";s:5:\"320.0\";s:8:\"webPrice\";s:3:\"340\";s:11:\"productName\";s:75:\"<三亚千古情 水公园20点场次套票>【当天提前1小时预定】\";}i:19;a:4:{s:9:\"productId\";s:7:\"6312251\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:85:\"<三亚千古情 动物园 水公园14点场次套票>【当天提前1小时预定】\";}i:20;a:4:{s:9:\"productId\";s:7:\"6312252\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:85:\"<三亚千古情 动物园 水公园17点场次套票>【当天提前1小时预定】\";}i:21;a:4:{s:9:\"productId\";s:7:\"6312253\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:85:\"<三亚千古情 动物园 水公园20点场次套票>【当天提前1小时预定】\";}i:22;a:4:{s:9:\"productId\";s:7:\"6312255\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:88:\"<三亚千古情 冰雪世界 水公园14点场次套票>【当天提前1小时预定】\";}i:23;a:4:{s:9:\"productId\";s:7:\"6312256\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:88:\"<三亚千古情 冰雪世界 水公园17点场次套票>【当天提前1小时预定】\";}i:24;a:4:{s:9:\"productId\";s:7:\"6312257\";s:9:\"salePrice\";s:5:\"370.0\";s:8:\"webPrice\";s:3:\"400\";s:11:\"productName\";s:88:\"<三亚千古情 冰雪世界 水公园20点场次套票>【当天提前1小时预定】\";}i:25;a:4:{s:9:\"productId\";s:7:\"6312259\";s:9:\"salePrice\";s:5:\"430.0\";s:8:\"webPrice\";s:3:\"460\";s:11:\"productName\";s:98:\"<三亚千古情 动物园 冰雪世界 水公园14点场次套票>【当天提前1小时预定】\";}i:26;a:4:{s:9:\"productId\";s:7:\"6312260\";s:9:\"salePrice\";s:5:\"430.0\";s:8:\"webPrice\";s:3:\"460\";s:11:\"productName\";s:98:\"<三亚千古情 动物园 冰雪世界 水公园17点场次套票>【当天提前1小时预定】\";}i:27;a:4:{s:9:\"productId\";s:7:\"6312261\";s:9:\"salePrice\";s:5:\"430.0\";s:8:\"webPrice\";s:3:\"460\";s:11:\"productName\";s:98:\"<三亚千古情 动物园 冰雪世界 水公园20点场次套票>【当天提前1小时预定】\";}i:28;a:4:{s:9:\"productId\";s:7:\"6352705\";s:9:\"salePrice\";s:5:\"368.0\";s:8:\"webPrice\";s:3:\"465\";s:11:\"productName\";s:99:\"<三亚千古情贵宾席（贵宾票14:00场次） 呀诺达热带雨林（门票 游览车票）>\";}}","updateid":"1","status":"1","updatetime":"2017-10-20 17:37:12.000","citytj":"0","wapzj":"0","wapjc":"0","hdtuij":"1","online":"1","saleprice":"120.0","webprice":"150.0","hits":"6898","row_number":"1"},{"id":"1026","scenicid":"3532855","scenicname":"观澜湖新城","booknotice":"[{\"key\":\"openTime\",\"name\":\"\\u666f\\u533a\\u5f00\\u653e\\u65f6\\u95f4\",\"value\":\"10:00-22:00\\u3002\"},{\"key\":\"bookTime\",\"name\":\"\\u63d0\\u524d\\u9884\\u8ba2\\u65f6\\u95f4\",\"value\":\"\\u60a8\\u6700\\u665a\\u8981\\u5728\\u5f53\\u592920:00\\u524d\\u4e0b\\u5355\\uff0c\\u8bf7\\u5c3d\\u65e9\\u9884\\u8ba2\\uff0c\\u4ee5\\u514d\\u803d\\u8bef\\u884c\\u7a0b\\u3002\"},{\"key\":\"getTicketType\",\"name\":\"\\u53d6\\u7968\\u65b9\\u5f0f\",\"value\":\"\\u8d2d\\u4e70\\u6210\\u529f\\u540e\\u51ed\\u624b\\u673a\\u63a5\\u6536\\u5230\\u7684\\u7535\\u5b50\\u7801\\u6216\\u4e8c\\u7ef4\\u7801\\u81f3\\u53cd\\u5f39\\u8e66\\u5e8a\\u516c\\u56ed\\u524d\\u53f0\\u62a5\\u201c\\u9526\\u79c0\\u901a\\u201d\\u9a8c\\u8bc1\\u5165\\u56ed\\u3002\"},{\"key\":\"admission\",\"name\":\"\\u5165\\u56ed\\u51ed\\u8bc1\",\"value\":\"\\u51ed\\u624b\\u673a\\u63a5\\u6536\\u5230\\u7684\\u7535\\u5b50\\u7801\\u6216\\u4e8c\\u7ef4\\u7801\\u3002\"},{\"key\":\"specialPeople\",\"name\":\"\\u7279\\u6b8a\\u4eba\\u7fa4\\u653f\\u7b56\",\"value\":\"\\u666f\\u533a\\u7edf\\u4e00\\u552e\\u7968\\uff0c\\u6682\\u65e0\\u4f18\\u60e0\\u653f\\u7b56\\u3002 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;\"},{\"key\":\"costDetail\",\"name\":\"\\u8d39\\u7528\\u8bf4\\u660e\",\"value\":\"\\u8bf7\\u70b9\\u51fb\\u95e8\\u7968\\uff0c\\u4ee5\\u95e8\\u7968\\u7684\\u201c\\u9884\\u5b9a\\u987b\\u77e5\\u3001\\u5176\\u4ed6\\u8bf4\\u660e\\u201d\\u4e3a\\u51c6\\u3002\"},{\"key\":\"bookNotice\",\"name\":\"\\u9884\\u8ba2\\u63d0\\u9192\",\"value\":\"\\u4e3a\\u4fdd\\u8bc1\\u53d6\\u7968\\u3001\\u5165\\u56ed\\u987a\\u5229\\uff0c\\u9884\\u8ba2\\u65f6\\u8bf7\\u52a1\\u5fc5\\u586b\\u5199\\u771f\\u5b9e\\u59d3\\u540d\\u3001\\u624b\\u673a\\u53f7\\u7801\\u7b49\\u4fe1\\u606f\\u3002\"},{\"key\":\"notice\",\"name\":\"\\u6e29\\u99a8\\u63d0\\u9192\",\"value\":\"\\u8bf7\\u4fdd\\u6301\\u624b\\u673a\\u53f7\\u7545\\u901a\\u53ca\\u5173\\u6ce8\\u53d6\\u7968\\u77ed\\u4fe1\\u662f\\u5426\\u88ab\\u5f52\\u5230\\u5783\\u573e\\u77ed\\u4fe1\\u6216360\\u7b49\\u8f6f\\u4ef6\\u62e6\\u622a\\uff0c\\u5982\\u672a\\u6536\\u5230\\u77ed\\u4fe1\\u8bf7\\u8054\\u7cfb\\u5ba2\\u670d\\u91cd\\u53d1\\u3002\"},{\"key\":\"invoice\",\"name\":\"\\u53d1\\u7968\\u8bf4\\u660e\",\"value\":\"\\u5982\\u9700\\u53d1\\u7968\\uff0c\\u8054\\u7cfb\\u9014\\u725b\\u5ba2\\u670d\\uff0c4007-999-999\"},{\"key\":\"change\",\"name\":\"\\u9000\\u6539\\u89c4\\u5219\",\"value\":\"\\u8be5\\u4ea7\\u54c1\\u652f\\u6301\\u968f\\u65f6\\u9000\\u3002\\u7ecf\\u6838\\u5b9e\\u5982\\u672a\\u53d6\\u7968\\uff0c\\u53ef\\u514d\\u8d39\\u53d6\\u6d88\\u3002\\u5982\\u9700\\u6539\\u671f\\uff0c\\u8bf7\\u7533\\u8bf7\\u53d6\\u6d88\\u540e\\u91cd\\u65b0\\u9884\\u8ba2\\u3002 &nbsp;\"},{\"key\":\"specialInfo\",\"name\":\"\\u7279\\u6b8a\\u4fe1\\u606f\",\"value\":\"\\u3010\\u63d0\\u793a\\u8bf4\\u660e\\u3011\\u56e0\\u77ed\\u4fe1\\u95ee\\u9898\\uff0c\\u7535\\u4fe1\\u53f7\\u7801\\u53ef\\u80fd\\u65e0\\u6cd5\\u63a5\\u53d7\\u5230\\u7cfb\\u7edf\\u53d1\\u9001\\u51fa\\u7684\\u77ed\\u4fe1\\uff0c\\u4e3a\\u4e86\\u4e0d\\u7ed9\\u60a8\\u7684\\u51fa\\u884c\\u5e26\\u6765\\u4e0d\\u4fbf\\uff0c\\u6211\\u4eec\\u5efa\\u8bae\\u60a8\\u4f7f\\u7528\\u79fb\\u52a8\\u6216\\u8005\\u8054\\u901a\\u7684\\u53f7\\u7801\\u9884\\u8ba2\\uff0c\\u5e76\\u5173\\u95ed\\u624b\\u673a\\u77ed\\u4fe1\\u62e6\\u622a\\u8f6f\\u4ef6\\uff0c\\u5e26\\u6765\\u4e0d\\u4fbf\\uff0c\\u656c\\u8bf7\\u8c05\\u89e3\\uff01\"}]","city":"8","cityname":"海口","province":"6","provincename":"海南","glocation":"0.000000,0.000000","blocation":"19.918629,110.325500","opentime":"10:00-22:00。","scenicaddress":"海南省海口观澜湖新城9栋三楼2304、2305号铺（兰桂坊楼上）反弹蹦床公园。","defaultpic":"http://m.tuniucdn.com/fb2/t1/G1/M00/CE/03/Cii9EVjmGRWIOSJbAAFoJQWDFZwAAJYQgOggZYAAWg9863_w240_h135_c1_t0.jpg","scenicdescription":"<div class=\"feature-content\"><p>海口观澜湖新城是集娱乐、购物、休闲、餐饮及文化于一体的世界级大型综合项目，有各种文化娱乐项目，包括狂野水世界丶石矿湖水秀丶兰桂坊酒吧街等等，其娱乐项目既满足家庭娱乐，又带有极限刺激，为游客带来不同程度的游乐体验，适合所有年龄段的人群。<\/p><p><img src=\"https://dimg01.c-ctrip.com/images/100a0d0000006yjye5000_C_422_236.jpg\" alt=\"观澜湖新城\"  /> <img  src=\"https://dimg08.c-ctrip.com/images/100d0d0000006yirv30F6_C_422_236.jpg\" alt=\"观澜湖新城\" /><\/p><p>位于中国海南省海口市火山区。由于与夏威夷处于同一纬度，拥有与之相近的热带气候及景致，海南有着\u201c东方夏威夷\u201d的美誉。<\/p><p><img  src=\"https://dimg05.c-ctrip.com/images/100o0d0000006yjy72336_C_422_236.jpg\" alt=\"观澜湖新城\" /> <img  src=\"https://dimg09.c-ctrip.com/images/100w0d0000006yjia90BB_C_422_236.jpg\" alt=\"观澜湖新城\" /><\/p><p>观澜湖新城娱乐业态占地面积约为34,620㎡，约占总面积27%；餐饮业态商业面积约为21,431㎡，占总面积17%；零售业态商业面积约为73,177㎡，占总面积56%。多元化的业态组合将为顾客带来多元化、国际化的娱乐、餐饮及购物体验。<\/p><p><img  src=\"https://dimg09.c-ctrip.com/images/100r0d0000006yj6pA220_C_422_236.jpg\" alt=\"观澜湖新城\" /> <img src=\"https://dimg06.c-ctrip.com/images/100e0d0000006ykf42727_C_422_236.jpg\" alt=\"观澜湖新城\"  /><\/p><\/div><p><br /><\/p>","recommend":"为游客带来不同程度的游乐体验，适合所有年龄段的人群。##娱乐项目既满足家庭娱乐，又带有极限刺激。##海南有着\u201c东方夏威夷\u201d的美誉。##多元化的业态组合将为顾客带来多元化、国际化的娱乐、餐饮及购物体验。","trafficbus":"<p>乘坐公交车K2、K3兰桂坊站下车。<br /><\/p>","distickets":"N;","ticketlist":"a:2:{i:0;a:4:{s:9:\"productId\";s:7:\"6326540\";s:9:\"salePrice\";s:5:\"108.0\";s:8:\"webPrice\";s:3:\"128\";s:11:\"productName\";s:64:\"<观澜湖新城反弹蹦床公园>周末亲子票（1大1小）\";}i:1;a:4:{s:9:\"productId\";s:7:\"6326542\";s:9:\"salePrice\";s:4:\"88.0\";s:8:\"webPrice\";s:4:\"98.0\";s:11:\"productName\";s:64:\"<观澜湖新城反弹蹦床公园>平日亲子票（1大1小）\";}}","updateid":"2","status":"1","updatetime":"2017-10-20 17:54:40.000","citytj":"1","wapzj":"1","wapjc":"0","hdtuij":"1","online":"1","saleprice":"88.0","webprice":"98.0","hits":"6989","row_number":"2"},{"id":"1832","scenicid":"20037","scenicname":"南山文化旅游区","booknotice":"[{\"key\":\"openTime\",\"name\":\"\\u666f\\u533a\\u5f00\\u653e\\u65f6\\u95f4\",\"value\":\"\\u666f\\u533a\\u5f00\\u653e\\u65f6\\u95f4\\uff1a8:00-17:30\\uff1b<div>\\u5357\\u5c71\\u95e8\\u7968 \\u7f18\\u8d77\\u697c\\u7d20\\u658b\\u7968\\u5f53\\u592911\\u70b9\\u524d\\u53ef\\u4ee5\\u9884\\u5b9a\\uff1b<\\/div><div>\\u5357\\u5c71\\u95e8\\u7968 \\u7535\\u74f6\\u8f66\\u7968\\u548c\\u5357\\u5c71\\u5927\\u95e8\\u7968\\u5f53\\u592913\\u70b9\\u524d\\u53ef\\u4ee5\\u9884\\u5b9a\\uff1b<br><span style=\\\"font-weight: bold;\\\"><br><\\/span><span style=\\\"color: rgb(255, 0, 0);\\\">\\u2605\\u2605\\u2605\\u4e00\\u5f20\\u8eab\\u4efd\\u8bc1\\u62161\\u4e2a\\u7535\\u8bdd\\u53f7\\u7801\\u9650\\u8d2d3\\u5f20\\u5357\\u5c71\\u95e8\\u7968\\uff0c\\u4e00\\u5929\\u53ea\\u80fd\\u8d2d\\u4e70\\u4e00\\u6b21\\u7968\\uff0c\\u5982\\u60a8\\u5df2\\u7ecf\\u5728\\u5176\\u4ed6\\u7f51\\u7edc\\u5e73\\u53f0\\u9884\\u8ba2\\u4e86\\u8be5\\u666f\\u533a\\u7535\\u5b50\\u7968\\uff0c\\u5219\\u65e0\\u6cd5\\u5728\\u9014\\u725b\\u7f51\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5728\\u9014\\u725b\\u7f51\\u5148\\u9884\\u8ba2\\u7968\\u540e\\u4ea6\\u65e0\\u6cd5\\u5728\\u5176\\u4ed6\\u5e73\\u53f0\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5982\\u56e0\\u6b64\\u95ee\\u9898\\u5bfc\\u81f4\\u8ba2\\u5355\\u65e0\\u6548\\uff0c\\u9014\\u725b\\u6982\\u4e0d\\u8d1f\\u8d23\\uff0c\\u8bf7\\u60a8\\u8c05\\u89e3\\uff01\\u2605\\u2605<\\/span><br><span style=\\\"color: rgb(255, 0, 0); font-size: 12px;\\\">\\u666f\\u533a10.1--\\u6b21\\u5e744.30\\u5b9e\\u73b0\\u65fa\\u5b63\\u4ef7\\u683c\\u653f\\u7b56\\uff0c\\u5177\\u4f53\\u8bf7\\u4ee5\\u4e0b\\u5355\\u9884\\u8ba2\\u9875\\u9762\\u4ef7\\u683c\\u4e3a\\u51c6\\u3002<\\/span><\\/div>\"},{\"key\":\"bookTime\",\"name\":\"\\u63d0\\u524d\\u9884\\u8ba2\\u65f6\\u95f4\",\"value\":\"<div><div><span style=\\\"color: rgb(255, 0, 0);\\\"><span style=\\\"color: rgb(0, 0, 0);\\\">\\u6240\\u6709\\u7968\\u79cd\\uff0c\\u8bf7\\u63d0\\u524d2\\u5c0f\\u65f6\\u4e0b\\u5355\\uff08\\u5fc5\\u987b\\u6ee12\\u5c0f\\u65f6\\u624d\\u53ef\\u626b\\u7801\\uff0c\\u5426\\u5219\\u663e\\u793a\\u4fe1\\u606f\\u65e0\\u6548\\uff0c\\u4e0d\\u4ee3\\u8868\\u65e0\\u6b64\\u9884\\u8ba2\\uff09\\u3002\\u4e00\\u7ec4\\u8ba2\\u5355\\u591a\\u5f20\\u7968\\u7684\\uff0c\\u6e38\\u5ba2\\u987b\\u7ad9\\u4e00\\u8d77\\u6392\\u961f\\u626b\\u7801\\u5165\\u56ed\\uff0c\\u4e0d\\u53ef\\u9694\\u5f00\\u6216\\u5206\\u65f6\\u95f4\\u6bb5\\u5165\\u56ed\\u3002\\uff08\\u5982\\u8d2d\\u4e70\\u6210\\u529f10\\u5206\\u949f\\u5185\\u672a\\u6536\\u5230\\u77ed\\u4fe1\\uff0c\\u8bf7\\u8054\\u7cfb\\u5ba2\\u670d\\uff09<br>\\u3010&lt;\\u4e09\\u4e9a\\uff08\\u5357\\u5c71\\u6587\\u5316\\u65c5\\u6e38\\u533a\\uff09\\u5357\\u5c71\\u5bfa \\u666f\\u533a\\u5927\\u95e8\\u7968\\u4e13\\u9879&gt;\\u53d6\\u7968\\u65f6\\u95f48:30-11:00\\uff0c\\u6bcf\\u534a\\u5c0f\\u65f6\\u5165\\u56ed\\u4e00\\u6b21&nbsp; \\u6b64\\u7968\\u79cd\\u4e0d\\u9700\\u8981\\u7b49\\u4e24\\u5c0f\\u65f6\\uff0c\\u53ea\\u9700\\u8981\\u7edf\\u4e00\\u5165\\u56ed\\u3011<\\/span><\\/span><span style=\\\"font-size: 12px;\\\"><\\/span><\\/div><\\/div><div><span style=\\\"font-size: 12px;\\\"><b>\\u9884\\u5b9a\\u95e8\\u7968\\u65f6\\u8bf7\\u5173\\u95ed\\u624b\\u673a\\u7684\\u77ed\\u4fe1\\u62e6\\u622a\\u529f\\u80fd\\uff0c\\u5982\\u56e0\\u77ed\\u4fe1\\u62e6\\u622a\\u6ca1\\u6709\\u6536\\u5230\\u5165\\u56ed\\u4fe1\\u606f\\u800c\\u5bfc\\u81f4\\u65e0\\u6cd5\\u5165\\u56ed\\uff0c\\u6211\\u53f8\\u4e0d\\u627f\\u62c5\\u8d23\\u4efb\\u3002<br><\\/b><\\/span><\\/div><div><span style=\\\"font-size: 12px;\\\"><b><br><\\/b><\\/span><\\/div>\"},{\"key\":\"getTicketType\",\"name\":\"\\u53d6\\u7968\\u65b9\\u5f0f\",\"value\":\"1.\\u3010\\u8bf7\\u63d0\\u524d2\\u5c0f\\u65f6\\u9884\\u8ba2\\u3011\\u7968\\u79cd\\uff0c\\u53d6\\u7968\\u65b9\\u5f0f\\u8bf7\\u4ee5\\u5177\\u4f53\\u7684\\u4ea7\\u54c1\\u8bf4\\u660e\\u4e3a\\u51c6\\uff01<div><div><div>2.<b>&lt;\\u4e09\\u4e9a\\uff08\\u5357\\u5c71\\u6587\\u5316\\u65c5\\u6e38\\u533a\\uff09\\u5357\\u5c71\\u5bfa \\u666f\\u533a\\u5927\\u95e8\\u7968\\u4e13\\u9879&gt;\\u53d6\\u7968\\u65f6\\u95f48:30-11:00\\uff0c\\u6bcf\\u534a\\u5c0f\\u65f6\\u5165\\u56ed\\u4e00\\u6b21<\\/b>\\uff1a\\u5165\\u56ed\\u65b9\\u5f0f\\u7edf\\u4e00\\u5165\\u56ed\\u95e8\\u7968\\uff0c\\u53d6\\u7968\\u65f6\\u95f48:30-11:00\\uff0c\\u6bcf\\u9694\\u534a\\u5c0f\\u65f6\\u5165\\u56ed\\u4e00\\u6b21\\u8d85\\u8fc7\\u65f6\\u95f4\\u65e0\\u6cd5\\u53d6\\u7968\\u5165\\u56ed\\uff0c\\u8bf7\\u91cd\\u89c6\\u5165\\u56ed\\u65f6\\u95f4\\uff0c\\u5728\\u6e38\\u5ba2\\u4e2d\\u5fc3\\u524d\\u8fdb10\\u7c73\\u5de6\\u624b\\u8fb9\\u4f5b\\u9640\\u9986\\u793c\\u4f5b\\u4e2d\\u5fc3\\u54a8\\u8be2\\u53f0\\u627e\\u5de5\\u4f5c\\u4eba\\u5458\\u6838\\u5bf9\\u4fe1\\u606f\\u96c6\\u5408\\u8fdb\\u56ed,\\u7d27\\u6025\\u8054\\u7cfb\\u4eba\\u5f20\\u5148\\u751f\\uff1a18078971842\\u3002<b><br><\\/b><\\/div><\\/div><div><br><\\/div><\\/div>\"},{\"key\":\"admission\",\"name\":\"\\u5165\\u56ed\\u51ed\\u8bc1\",\"value\":\"1.\\u3010\\u6240\\u6709\\u5957\\u7968\\u3011\\uff1a\\u51ed12\\u4f4d\\u9a8c\\u8bc1\\u7801 \\u8eab\\u4efd\\u8bc1\\u52306,7\\u53f7\\u7a97\\u53e3\\u53d6\\u7968\\u5165\\u56ed\\u3002<div>2.\\u3010\\u5357\\u5c71\\u5bfa\\u5355\\u95e8\\u7968\\u3011\\uff1a\\u5355\\u95e8\\u7968\\u51ed\\u4e8c\\u7ef4\\u7801\\u626b\\u95f8\\u673a\\u76f4\\u63a5\\u5165\\u56ed\\u3002<\\/div><div><b><font color=\\\"#0000ff\\\">\\u4e00\\u5f20\\u8eab\\u4efd\\u8bc1\\u62161\\u4e2a\\u7535\\u8bdd\\u53f7\\u7801\\u9650\\u8d2d3\\u5f20\\u5357\\u5c71\\u95e8\\u7968\\uff0c\\u4e00\\u5929\\u53ea\\u80fd\\u8d2d\\u4e70\\u4e00\\u6b21\\u7968\\uff0c\\u5982\\u60a8\\u5df2\\u7ecf\\u5728\\u5176\\u4ed6\\u7f51\\u7edc\\u5e73\\u53f0\\u9884\\u8ba2\\u4e86\\u8be5\\u666f\\u533a\\u7535\\u5b50\\u7968\\uff0c\\u5219\\u65e0\\u6cd5\\u5728\\u9014\\u725b\\u7f51\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5728\\u9014\\u725b\\u7f51\\u5148\\u9884\\u8ba2\\u7968\\u540e\\u4ea6\\u65e0\\u6cd5\\u5728\\u5176\\u4ed6\\u5e73\\u53f0\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5982\\u56e0\\u6b64\\u95ee\\u9898\\u5bfc\\u81f4\\u8ba2\\u5355\\u65e0\\u6548\\uff0c\\u9014\\u725b\\u6982\\u4e0d\\u8d1f\\u8d23\\uff0c\\u8bf7\\u60a8\\u8c05\\u89e3\\uff01\\u2605\\u2605<br><\\/font><\\/b><\\/div><div><b><font color=\\\"#0000ff\\\"><br><\\/font><\\/b><\\/div><div><b><font color=\\\"#0000ff\\\"><br><\\/font><\\/b><\\/div><div><b>2017.6.24\\u65e5\\u8d77\\u5357\\u5c71\\u666f\\u533a\\u6b63\\u5f0f\\u5f00\\u59cb\\u5b9e\\u540d\\u5165\\u56ed\\uff0c\\u7968\\u53e3\\u4f1a\\u6709\\u666f\\u533a\\u5de5\\u4f5c\\u4eba\\u5458\\u9010\\u4e00\\u6838\\u5bf9\\u6e38\\u5ba2\\u8eab\\u4efd\\u4fe1\\u606f\\uff0c\\u8bf7\\u5404\\u5206\\u9500\\u5546\\u52a1\\u5fc5\\u63d0\\u9192\\u51fa\\u884c\\u7684\\u6e38\\u5ba2\\u968f\\u8eab\\u643a\\u5e26\\u8eab\\u4efd\\u8bc1\\uff0c\\u5982\\u56e0\\u9057\\u5fd8\\u643a\\u5e26\\u8eab\\u4efd\\u8bc1\\u5bfc\\u81f4\\u65e0\\u6cd5\\u5165\\u56ed\\uff0c\\u6211\\u5e73\\u53f0\\u5c06\\u65e0\\u6cd5\\u5411\\u666f\\u533a\\u534f\\u8c03\\u5165\\u56ed\\uff0c\\u8bf7\\u5404\\u4f4d\\u8c05\\u89e3\\u3002<\\/b><\\/div>\"},{\"key\":\"specialPeople\",\"name\":\"\\u7279\\u6b8a\\u4eba\\u7fa4\\u653f\\u7b56\",\"value\":\"A.\\u514d\\u7968\\u653f\\u7b56\\uff1a\\u8eab\\u9ad81.2\\u7c73\\uff08\\u4e0d\\u542b\\uff09\\u4ee5\\u4e0b\\u513f\\u7ae5\\u514d\\u666f\\u533a\\u5927\\u95e8\\u7968\\uff1b<div>70\\u5468\\u5c81\\uff08\\u542b70\\u5468\\u5c81\\uff09\\u4ee5\\u4e0a\\u8001\\u4eba\\u6301\\u8001\\u5e74\\u8bc1\\u6216\\u8eab\\u4efd\\u8bc1\\u514d\\u8d39\\uff1b<\\/div><div>\\u73b0\\u5f79\\u519b\\u4eba\\u6301\\u519b\\u5b98\\u8bc1\\u514d\\u8d39\\uff1b<\\/div><div>\\u519b\\u961f\\u8b66\\u5b98\\u3001\\u519b\\u961f\\u6587\\u804c\\u5e72\\u90e8\\u3001\\u58eb\\u5175\\u8bc1\\u3001\\u519b\\u4eba\\u79bb\\u9000\\u4f11\\u3001\\u9769\\u547d\\u4f24\\u6b8b\\u519b\\u4eba\\u3001\\u519b\\u8b66\\u9662\\u6821\\u5b66\\u5458\\u3001\\u79bb\\u4f11\\u5e72\\u90e8\\uff08\\u51ed\\u8001\\u5e72\\u90e8\\u79bb\\u4f11\\u8bc1\\uff09\\u3001\\u6b8b\\u75be\\u4eba\\u6301\\u6b8b\\u75be\\u8bc1\\u3001\\u8bb0\\u8005\\u51ed\\u65b0\\u95fb\\u603b\\u7f72\\u9881\\u53d1\\u7684\\u8bb0\\u8005\\u8bc1\\u514d\\u8d39\\u3002<div>B.\\u4f18\\u60e0\\u653f\\u7b56\\uff1a\\u8eab\\u9ad81.2\\uff08\\u542b\\uff09--1.4\\u7c73\\uff08\\u542b\\uff09\\u4e4b\\u95f4\\u513f\\u7ae5\\u8d2d\\u666f\\u533a\\u4f18\\u60e0\\u7968\\uff1b<\\/div><div>60\\uff08\\u542b\\uff09-70\\uff08\\u4e0d\\u542b\\uff09\\u5468\\u5c81\\u6301\\u8001\\u5e74\\u8bc1\\u6216\\u8eab\\u4efd\\u8bc1\\u8d2d\\u666f\\u533a\\u4f18\\u60e0\\u7968\\uff1b<\\/div><div>18\\u5c81\\uff08\\u542b\\uff09\\u4ee5\\u4e0b\\u6301\\u8eab\\u4efd\\u8bc1\\u7684\\u4ee5\\u53ca\\u6301\\u5b66\\u751f\\u8bc1\\u7684\\u5728\\u666f\\u533a\\u76f4\\u63a5\\u8d2d\\u4e70\\u4f18\\u60e0\\u7968\\uff1b<\\/div><div>\\u8eab\\u9ad81.2\\u7c73\\uff08\\u4e0d\\u542b\\uff09\\u4ee5\\u4e0b\\u513f\\u7ae5\\u8d2d\\u76f8\\u5e94\\u7684\\u8f66\\u4f4d\\u8d39\\uff08\\u4e0a\\u8ff0\\u4f18\\u60e0\\u653f\\u7b56\\uff0c\\u9700\\u5230\\u666f\\u533a\\u81ea\\u884c\\u8d2d\\u4e70\\uff0c\\u5177\\u4f53\\u4f18\\u60e0\\u4eba\\u7fa4\\u4ee5\\u73b0\\u573a\\u516c\\u544a\\u4e3a\\u51c6\\uff09\\u3002<br><span style=\\\"color: rgb(255, 0, 0);\\\"><\\/span><div><br><\\/div><\\/div><\\/div>\"},{\"key\":\"costDetail\",\"name\":\"\\u8d39\\u7528\\u8bf4\\u660e\",\"value\":\"\\u8bf7\\u60a8\\u8be6\\u7ec6\\u9605\\u8bfb\\u5404\\u4ea7\\u54c1\\u4ea7\\u54c1\\u540d\\u79f0\\u548c\\u5176\\u4ed6\\u8bf4\\u660e\\u5e76\\u4e14\\u6839\\u636e\\u9700\\u8981\\u8fdb\\u884c\\u524d\\u53f0\\u9884\\u5b9a\\uff0c\\u5982\\u6709\\u7591\\u95ee\\u8bf7\\u62e8\\u6253\\u5ba2\\u670d\\u70ed\\u7ebf\\u3002<br><br><div><br><\\/div>\"},{\"key\":\"bookNotice\",\"name\":\"\\u9884\\u8ba2\\u63d0\\u9192\",\"value\":\"<div><b><font color=\\\"#0000ff\\\">\\u8bf7\\u63d0\\u524d2\\u5c0f\\u65f6\\u9884\\u8ba2<\\/font><\\/b><\\/div><div><span style=\\\"color: rgb(255, 0, 0); font-weight: bold; font-size: 12px;\\\">\\u4e00\\u5f20\\u8eab\\u4efd\\u8bc1\\u62161\\u4e2a\\u7535\\u8bdd\\u53f7\\u7801\\u9650\\u8d2d3\\u5f20\\u5357\\u5c71\\u95e8\\u7968\\uff0c\\u4e00\\u5929\\u53ea\\u80fd\\u8d2d\\u4e70\\u4e00\\u6b21\\u7968\\uff0c\\u5982\\u60a8\\u5df2\\u7ecf\\u5728\\u5176\\u4ed6\\u7f51\\u7edc\\u5e73\\u53f0\\u9884\\u8ba2\\u4e86\\u8be5\\u666f\\u533a\\u7535\\u5b50\\u7968\\uff0c\\u5219\\u65e0\\u6cd5\\u5728\\u9014\\u725b\\u7f51\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5728\\u9014\\u725b\\u7f51\\u5148\\u9884\\u8ba2\\u7968\\u540e\\u4ea6\\u65e0\\u6cd5\\u5728\\u5176\\u4ed6\\u5e73\\u53f0\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5982\\u56e0\\u6b64\\u95ee\\u9898\\u5bfc\\u81f4\\u8ba2\\u5355\\u65e0\\u6548\\uff0c\\u9014\\u725b\\u6982\\u4e0d\\u8d1f\\u8d23\\uff0c\\u8bf7\\u60a8\\u8c05\\u89e3\\uff01\\u2605\\u2605<br><\\/span><\\/div><div><span style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\"><br><br><\\/span><\\/div>\"},{\"key\":\"notice\",\"name\":\"\\u6e29\\u99a8\\u63d0\\u9192\",\"value\":\"1. \\u7279\\u6b8a\\u4eba\\u7fa4\\u9884\\u8ba2\\u6807\\u51c6\\u4ec5\\u4f9b\\u53c2\\u8003\\uff0c\\u51fa\\u6e38\\u5f53\\u5929\\u8bf7\\u643a\\u5e26\\u597d\\u4f18\\u60e0\\u8bc1\\u4ef6\\u539f\\u4ef6\\uff0c\\u6309\\u7167\\u666f\\u533a\\u5b9e\\u9645\\u653f\\u7b56\\u8d2d\\u7968\\u6e38\\u89c8\\u3002\\n<br>2. \\u65c5\\u9014\\u884c\\u8f66\\u8bf7\\u6ce8\\u610f\\u5b89\\u5168\\uff0c\\u81ea\\u9a7e\\u6e38\\u7ebf\\u8def\\u4ec5\\u4f9b\\u53c2\\u8003\\uff0c\\u8bf7\\u6ce8\\u610f\\u6307\\u8def\\u724c\\u5411\\u5bfc\\u3002\\n<br>3. \\u4e3a\\u4e86\\u60a8\\u7684\\u8eab\\u4f53\\u5065\\u5eb7\\uff0c\\u6e38\\u5ba2\\u5fc5\\u987b\\u4fdd\\u8bc1\\u81ea\\u8eab\\u8eab\\u4f53\\u5065\\u5eb7\\u826f\\u597d\\u7684\\u524d\\u63d0\\u4e0b\\u6d4f\\u89c8\\u666f\\u533a\\uff0c\\u4e0d\\u5f97\\u6b3a\\u9a97\\u9690\\u7792\\uff0c\\u5426\\u5219\\u82e5\\u56e0\\u6e38\\u5ba2\\u8eab\\u4f53\\u4e0d\\u9002\\u800c\\u53d1\\u751f\\u4efb\\u4f55\\u610f\\u5916\\uff0c\\u672c\\u7ad9\\u4e0d\\u627f\\u62c5\\u4efb\\u4f55\\u8d23\\u4efb\\u3002\\n<br>4. \\u51fa\\u6e38\\u65f6\\u8bf7\\u52a1\\u5fc5\\u5e26\\u597d\\u8eab\\u4efd\\u8bc1\\u4ef6\\uff0c\\u9884\\u8ba2\\u65f6\\uff0c\\u53d6\\u7968\\u4eba\\u59d3\\u540d\\u9700\\u4e0e\\u8eab\\u4efd\\u8bc1\\u4e0a\\u59d3\\u540d\\u4e00\\u81f4\\uff0c\\u53d6\\u7968\\u65f6\\u987b\\u51fa\\u793a\\u8eab\\u4efd\\u8bc1\\u3002<br>5.<span style=\\\"color: rgb(255, 0, 0); font-weight: bold;\\\">\\u2605\\u2605\\u2605\\u4e00\\u5f20\\u8eab\\u4efd\\u8bc1\\u62161\\u4e2a\\u7535\\u8bdd\\u53f7\\u7801\\u9650\\u8d2d3\\u5f20\\u5357\\u5c71\\u95e8\\u7968\\uff0c\\u4e00\\u5929\\u53ea\\u80fd\\u8d2d\\u4e70\\u4e00\\u6b21\\u7968\\uff0c\\u5982\\u60a8\\u5df2\\u7ecf\\u5728\\u5176\\u4ed6\\u7f51\\u7edc\\u5e73\\u53f0\\u9884\\u8ba2\\u4e86\\u8be5\\u666f\\u533a\\u7535\\u5b50\\u7968\\uff0c\\u5219\\u65e0\\u6cd5\\u5728\\u9014\\u725b\\u7f51\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5728\\u9014\\u725b\\u7f51\\u5148\\u9884\\u8ba2\\u7968\\u540e\\u4ea6\\u65e0\\u6cd5\\u5728\\u5176\\u4ed6\\u5e73\\u53f0\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5982\\u56e0\\u6b64\\u95ee\\u9898\\u5bfc\\u81f4\\u8ba2\\u5355\\u65e0\\u6548\\uff0c\\u9014\\u725b\\u6982\\u4e0d\\u8d1f\\u8d23\\uff0c\\u8bf7\\u60a8\\u8c05\\u89e3\\uff01\\u2605\\u2605<\\/span>\"},{\"key\":\"invoice\",\"name\":\"\\u53d1\\u7968\\u8bf4\\u660e\",\"value\":\"\\u5982\\u9700\\u53d1\\u7968\\uff0c\\u8054\\u7cfb\\u9014\\u725b\\u5ba2\\u670d\\uff0c4007-999-999.<br>\"},{\"key\":\"change\",\"name\":\"\\u9000\\u6539\\u89c4\\u5219\",\"value\":\"<span style=\\\"font-weight: bold; color: rgb(0, 0, 255);\\\"><\\/span><div><div><div><div><b>\\uff081\\uff09\\u4e00\\u4e2a\\u8ba2\\u5355\\u53ea\\u80fd\\u5168\\u53d6\\u6216\\u5168\\u9000\\uff0c\\u4e0d\\u53ef\\u5206\\u5f00\\u53d6\\u7968\\uff0c\\u4e0d\\u53ef\\u90e8\\u5206\\u6d88\\u8d39\\u90e8\\u5206\\u9000\\u6b3e\\u4ee5\\u53ca\\u4e0d\\u80fd\\u6539\\u671f\\uff0c\\u5982\\u9700\\u53d8\\u66f4\\u4fe1\\u606f\\uff0c\\u5fc5\\u987b\\u53d6\\u6d88\\u91cd\\u65b0\\u4e0b\\u5355\\uff0c\\u9884\\u5b9a\\u65f6\\u95f4\\u6309\\u6700\\u65b0\\u4e0b\\u5355\\u65f6\\u95f4\\u8ba1\\u7b97\\uff1b\\n<br>\\uff082\\uff09\\u7535\\u5b50\\u7801\\u672a\\u9a8c\\u8bc1\\u4f7f\\u7528\\u53ef\\u7533\\u8bf7\\u9000\\u6b3e\\uff0c\\u5df2\\u9a8c\\u8bc1\\u7684\\u7535\\u5b50\\u7801\\u4e0d\\u505a\\u9000\\u6b3e\\u53ca\\u6539\\u671f\\u5904\\u7406\\u3002<br>\\uff083\\uff09\\u7533\\u8bf7\\u9000\\u6b3e\\u5c06\\u57285\\u4e2a\\u5de5\\u4f5c\\u65e5\\u5185\\u9000\\u5230\\u8d26\\u6237\\u3002<br><\\/b><\\/div><div><br><\\/div><\\/div><\\/div><\\/div>\"},{\"key\":\"specialInfo\",\"name\":\"\\u7279\\u6b8a\\u4fe1\\u606f\",\"value\":\"\\u2605\\u2605\\u2605\\u4e00\\u5f20\\u8eab\\u4efd\\u8bc1\\u62161\\u4e2a\\u7535\\u8bdd\\u53f7\\u7801\\u9650\\u8d2d3\\u5f20\\u5357\\u5c71\\u95e8\\u7968\\uff0c\\u4e00\\u5929\\u53ea\\u80fd\\u8d2d\\u4e70\\u4e00\\u6b21\\u7968\\uff0c\\u5982\\u60a8\\u5df2\\u7ecf\\u5728\\u5176\\u4ed6\\u7f51\\u7edc\\u5e73\\u53f0\\u9884\\u8ba2\\u4e86\\u8be5\\u666f\\u533a\\u7535\\u5b50\\u7968\\uff0c\\u5219\\u65e0\\u6cd5\\u5728\\u9014\\u725b\\u7f51\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5728\\u9014\\u725b\\u7f51\\u5148\\u9884\\u8ba2\\u7968\\u540e\\u4ea6\\u65e0\\u6cd5\\u5728\\u5176\\u4ed6\\u5e73\\u53f0\\u9884\\u8ba2\\u6210\\u529f\\uff0c\\u5982\\u56e0\\u6b64\\u95ee\\u9898\\u5bfc\\u81f4\\u8ba2\\u5355\\u65e0\\u6548\\uff0c\\u9014\\u725b\\u6982\\u4e0d\\u8d1f\\u8d23\\uff0c\\u8bf7\\u60a8\\u8c05\\u89e3\\uff01\\u2605\\u2605\"}]","city":"9","cityname":"三亚","province":"6","provincename":"海南","glocation":"18.310117,109.209538","blocation":"18.316299,109.216003","opentime":"08:00-18:00","scenicaddress":"海南省三亚市三亚旅游区南山风景区","defaultpic":"http://m.tuniucdn.com/filebroker/cdn/olb/73/a7/73a7e290c9b5f2048b2e0fc459811b7d_w240_h135_c1_t0.png","scenicdescription":"<p>南山历来被称为吉祥福泽之地。据佛教经典记载，救苦救难的观音菩萨为了救度芸芸众生，发了十二大愿，其中第二愿即是\u201c常居南海愿\u201d。唐代著名大和尚鉴真法师为弘扬佛法五次东渡日本未果，第五次漂流到南山，在此居住一年半之久并建造佛寺，传法布道，随后第六次东渡日本终获成功。日本第一位遣唐僧空海和尚也在此登陆中国，驻足传法。中国传扬千古的名句\u201c福如东海，寿比南山\u201d则更道出了南山与福寿文化的悠久渊源。<\/p><p><img src=\"https://dimg07.c-ctrip.com/images/fd/tg/g4/M03/6F/BA/CggYHlY7KpCAWp1bAAHlk6k49I8012_C_422_236.jpg\"  /> <img src=\"https://dimg02.c-ctrip.com/images/fd/tg/g3/M0A/74/E7/CggYG1Y8YCGAfYzmAAFWLStBNnc850_C_422_236.jpg\"  alt=\"_mg_6834\" /><\/p><p>南山文化旅游区是依托南山独特的山海天然形胜和丰富的历史文化渊源开发建设的全国罕见的超大型生态和文化景区，是建国以来中央政府批准兴建的最大的佛教文化主题旅游区，是国家首批AAAAA景区。<span>南山文化旅游区生态恢复与保护规划面积50平方公里，其中海域面积10平方公里，组织实施佛教文化苑、天竺圣迹、福寿天地、神话雕塑、大门景观区以及酒店、度假村等项目。 &nbsp; 其中南山佛教文化苑于一九九五年动工兴建、一九九八年建成开放，目前已形成一寺（南山寺）、一苑（南山海上观音苑）、两园（慈航普渡园、吉祥如意园）、一谷（长寿谷）、一湾（小月湾）的旅游景观群。<\/span><\/p><p><img src=\"https://dimg01.c-ctrip.com/images/fd/tg/g3/M03/68/87/CggYGVY7KtaAcBwmAALk5CRdKgE589_C_422_236.jpg\"  /> <img  src=\"https://dimg02.c-ctrip.com/images/100m080000003gstd2823_C_422_236.jpg\" alt=\"108米南山海上观音圣像\" /><\/p><p>还有辑入世界吉尼斯大全的国宝 \u201c金玉观世音\u201d和世界上规模最大、工艺精湛的室内三十三观音群像；体现中华古钟文化的梵钟苑；更有举世瞩目的伫立在南海之滨的108米高\u201c南山海上观音\u201d，\u201c一体化三尊\u201d，造型挺拔，气势恢宏，高越天下。<span>这项被誉为\u201c世界级、世纪级\u201d的佛教造像工程历时六年，已于2005年4月24日（佛历三月十六）举行了举世瞩目、千载一时的盛大开光大典。 南山之美，南山之奇，已被越来越多的人们关注。在这里，人们既能领略热带滨海阳光、碧海、沙滩、鲜花、绿树的美景，更能获得佛教文化带来的心灵慰籍，体味回归自然、天人合一的乐趣。<\/span> &nbsp; <\/p><p><img src=\"https://dimg03.c-ctrip.com/images/fd/tg/g3/M0A/66/01/CggYGlY8YBmAUh2ZAAGfSuDKOxw588_C_422_236.jpg\"  alt=\"_mg_2654\" /> <img  src=\"https://dimg08.c-ctrip.com/images/fd/tg/g3/M06/0D/6F/CggYGVZmqPeAD4e_AAHuan86Ft8971_C_422_236.jpg\" alt=\"_mg_2946 x\" /><\/p><p style=\"text-align:center;\"><br /><\/p><p style=\"text-indent:28px;\"><span style=\"font-family:宋体;\"><\/span><\/p>","recommend":"南山，面朝南海，坐落在中国唯一的热带滨海城市。##中国传扬千古的名句\u201c福如东海，寿比南山\u201d则道出了南山与福寿文化的悠久渊源。##既观赏到得以恢复的良好生态环境，又可以感受生态建设与环境保护给人类所带来的福音。","trafficbus":"1. 亚龙湾\u2014天涯海角巴士，在南山下车。2. 亚龙湾\u2014大小洞天巴士，在南山下车。","distickets":"a:5:{i:0;a:4:{s:9:\"productId\";s:7:\"6449359\";s:9:\"salePrice\";s:5:\"138.0\";s:8:\"webPrice\";s:3:\"145\";s:11:\"productName\";s:24:\"<（旺季） 成人票>\";}i:1;a:4:{s:9:\"productId\";s:7:\"6449360\";s:9:\"salePrice\";s:5:\"168.0\";s:8:\"webPrice\";s:3:\"175\";s:11:\"productName\";s:42:\"<（旺季）门票 电瓶车 - 成人票>\";}i:2;a:4:{s:9:\"productId\";s:7:\"6449362\";s:9:\"salePrice\";s:5:\"211.0\";s:8:\"webPrice\";s:3:\"223\";s:11:\"productName\";s:48:\"<（旺季）门票 缘起楼素斋 - 成人票>\";}i:3;a:4:{s:9:\"productId\";s:7:\"6449363\";s:9:\"salePrice\";s:5:\"241.0\";s:8:\"webPrice\";s:3:\"253\";s:11:\"productName\";s:58:\"<（旺季）门票 电瓶车 缘起楼素斋 - 成人票>\";}i:4;a:4:{s:9:\"productId\";s:7:\"6460120\";s:9:\"salePrice\";s:4:\"10.0\";s:8:\"webPrice\";s:2:\"15\";s:11:\"productName\";s:93:\"<南山文化旅游区电子导游可离线版\u2014手机智能语音导览(含21个讲解点)>\";}}","ticketlist":"a:10:{i:0;a:4:{s:9:\"productId\";s:7:\"6087483\";s:9:\"salePrice\";s:5:\"138.0\";s:8:\"webPrice\";s:3:\"145\";s:11:\"productName\";s:130:\"<南山寺门票>【请提前2小时预订】（凭本人身份证和手机接收到的8位数电子码直接前往景区验证）\";}i:1;a:4:{s:9:\"productId\";s:7:\"6087498\";s:9:\"salePrice\";s:5:\"168.0\";s:8:\"webPrice\";s:3:\"175\";s:11:\"productName\";s:143:\"<南山门票 电瓶车套票>【请提前2小时预订】（凭本人身份证和手机接收到的8位数电子码直接前往景区验证）\";}i:2;a:4:{s:9:\"productId\";s:7:\"6087508\";s:9:\"salePrice\";s:5:\"211.0\";s:8:\"webPrice\";s:3:\"223\";s:11:\"productName\";s:156:\"<南山门票 素斋 （缘起楼）套票>【请提前2小时预订】（凭本人身份证和手机接收到的8位数电子码直接前往景区验证）\";}i:3;a:4:{s:9:\"productId\";s:7:\"6087517\";s:9:\"salePrice\";s:5:\"241.0\";s:8:\"webPrice\";s:3:\"253\";s:11:\"productName\";s:163:\"<南山寺 素斋 （缘起楼） 电瓶车套票>【请提前2小时预订】（凭本人身份证和手机接收到的8位数电子码直接前往景区验证）\";}i:4;a:4:{s:9:\"productId\";s:7:\"6442185\";s:9:\"salePrice\";s:5:\"138.0\";s:8:\"webPrice\";s:3:\"145\";s:11:\"productName\";s:131:\"<三亚南山寺门票（含三十三观音堂免费抄经书、赠矿泉水）（赠50元海鲜加工券 爆炒螺一盘）专项>\";}i:5;a:4:{s:9:\"productId\";s:7:\"6442186\";s:9:\"salePrice\";s:5:\"211.0\";s:8:\"webPrice\";s:3:\"223\";s:11:\"productName\";s:126:\"<三亚南山寺门票 缘起楼素斋（含三十三观音堂免费抄经书、赠矿泉水）（需携带身份证）专项>\";}i:6;a:4:{s:9:\"productId\";s:7:\"6442187\";s:9:\"salePrice\";s:5:\"241.0\";s:8:\"webPrice\";s:3:\"253\";s:11:\"productName\";s:137:\"<三亚南山寺门票 电瓶车 缘起楼素斋门票（三十三观音堂免费抄经书 赠矿泉水）（需携带身份证）专项>\";}i:7;a:4:{s:9:\"productId\";s:7:\"6442188\";s:9:\"salePrice\";s:5:\"168.0\";s:8:\"webPrice\";s:3:\"175\";s:11:\"productName\";s:115:\"<三亚南山寺门票 电瓶车（三十三观音堂免费抄经书 赠矿泉水）（需携带身份证）专项>\";}i:8;a:4:{s:9:\"productId\";s:7:\"6449276\";s:9:\"salePrice\";s:4:\"90.0\";s:8:\"webPrice\";s:2:\"90\";s:11:\"productName\";s:127:\"<三亚海上观光巴士（鹿回头公共码头-南山观音苑码头船票）（9:30发船）（不含景区门票）专项>\";}i:9;a:4:{s:9:\"productId\";s:7:\"6449277\";s:9:\"salePrice\";s:4:\"90.0\";s:8:\"webPrice\";s:2:\"90\";s:11:\"productName\";s:128:\"<三亚海上观光巴士（鹿回头公共码头-南山观音苑码头船票）（15:30发船）（不含景区门票）专项>\";}}","updateid":"1","status":"1","updatetime":"2017-10-20 17:37:29.000","citytj":"0","wapzj":"0","wapjc":"0","hdtuij":"1","online":"1","saleprice":"90.0","webprice":"90.0","hits":"6898","row_number":"3"},{"id":"1827","scenicid":"37855","scenicname":"西溪湿地旅游区","booknotice":"","city":"294","cityname":"杭州","province":"189","provincename":"浙江","glocation":"30.268017,120.066402","blocation":"30.273701,120.072998","opentime":"8:30-17:30（16:00停止售票，游客禁入园）","scenicaddress":"杭州市西湖区天目山路延伸段518号周家村主入口","defaultpic":"http://m.tuniucdn.com/filebroker/cdn/olb/bb/ec/bbec7d80ef955015222368d8ef1be376_w240_h135_c1_t0.png","scenicdescription":"","recommend":"","trafficbus":"<pre id=\"line525\">1、南京、镇江、无锡、湖州方向游客：\r\n宁杭高速方向至西溪\u2014\u2014宁杭高速至杭州绕城西线，绕11B留下出口往天目山路市区方向直行1公里即到。\r\n2、上海、苏州、嘉兴方向游客：\r\n沪杭高速方向至西溪\u2014\u2014沪杭高速至杭州绕城北线，然后转绕城西线，绕11B留下出口下，往天目山路市区方向直行1公里即到。\r\n3、金华、衢州方向游客：\r\n杭、金、衢高速方向至西溪\u2014\u2014杭、金、衢高速至杭州绕城南线，转绕城西线，绕11B留下出口下，往天目山路市区方向直行1公里即到。\r\n4、宁波、绍兴方向：\r\n杭甬高速方向至西溪\u2014\u2014沪杭甬高速至杭州艮山东路出口，然后转天目山路往留下方向，即到。\r\n5、黄山、临安方向：\r\n杭徽高速方向至西溪\u2014\u2014杭徽高速11B留下出口往天目山路市区方向直行1公里即到。\r\n6、富阳、千岛湖方向：\r\n杭千高速方向至西溪\u2014\u2014杭千高速至杭州绕城西线，绕11B留下出口往天目山路市区方向直行1公里即到。<\/pre><h3 class=\"mb10\"><br /><\/h3>","distickets":"N;","ticketlist":"a:12:{i:0;a:4:{s:9:\"productId\";s:7:\"5893300\";s:9:\"salePrice\";s:5:\"120.0\";s:8:\"webPrice\";s:3:\"140\";s:11:\"productName\";s:103:\"<西溪国家湿地东区门票＋电瓶船票【预定后二小时生效  刷身份证入园】专项>\";}i:1;a:4:{s:9:\"productId\";s:7:\"5893328\";s:9:\"salePrice\";s:4:\"70.0\";s:8:\"webPrice\";s:2:\"80\";s:11:\"productName\";s:88:\"<西溪国家湿地东区门票【预定后二小时生效  刷身份证入园】专项>\";}i:2;a:4:{s:9:\"productId\";s:7:\"6256275\";s:9:\"salePrice\";s:5:\"445.0\";s:8:\"webPrice\";s:3:\"470\";s:11:\"productName\";s:102:\"<【2人行 独立包船】西溪湿地东区门票 摇橹船2小时（13:00班） 船茶套餐专项>\";}i:3;a:4:{s:9:\"productId\";s:7:\"6256277\";s:9:\"salePrice\";s:5:\"445.0\";s:8:\"webPrice\";s:3:\"470\";s:11:\"productName\";s:102:\"<【2人行 独立包船】西溪湿地东区门票 摇橹船2小时（10:00班） 船茶套餐专项>\";}i:4;a:4:{s:9:\"productId\";s:7:\"6256309\";s:9:\"salePrice\";s:5:\"625.0\";s:8:\"webPrice\";s:3:\"660\";s:11:\"productName\";s:102:\"<【3人行 独立包船】西溪湿地东区门票 摇橹船2小时（10:00班） 船茶套餐专项>\";}i:5;a:4:{s:9:\"productId\";s:7:\"6256310\";s:9:\"salePrice\";s:5:\"625.0\";s:8:\"webPrice\";s:3:\"660\";s:11:\"productName\";s:102:\"<【3人行 独立包船】西溪湿地东区门票 摇橹船2小时（13:00班） 船茶套餐专项>\";}i:6;a:4:{s:9:\"productId\";s:7:\"6256311\";s:9:\"salePrice\";s:5:\"795.0\";s:8:\"webPrice\";s:3:\"850\";s:11:\"productName\";s:102:\"<【5人行 独立包船】西溪湿地东区门票 摇橹船2小时（10:00班） 船茶套餐专项>\";}i:7;a:4:{s:9:\"productId\";s:7:\"6256312\";s:9:\"salePrice\";s:5:\"795.0\";s:8:\"webPrice\";s:3:\"850\";s:11:\"productName\";s:102:\"<【5人行 独立包船】西溪湿地东区门票 摇橹船2小时（13:00班） 船茶套餐专项>\";}i:8;a:4:{s:9:\"productId\";s:7:\"6269211\";s:9:\"salePrice\";s:5:\"625.0\";s:8:\"webPrice\";s:3:\"660\";s:11:\"productName\";s:102:\"<【4人行 独立包船】西溪湿地东区门票 摇橹船2小时（10:00班） 船茶套餐专项>\";}i:9;a:4:{s:9:\"productId\";s:7:\"6269212\";s:9:\"salePrice\";s:5:\"625.0\";s:8:\"webPrice\";s:3:\"660\";s:11:\"productName\";s:102:\"<【4人行 独立包船】西溪湿地东区门票 摇橹船2小时（13:00班） 船茶套餐专项>\";}i:10;a:4:{s:9:\"productId\";s:7:\"6269213\";s:9:\"salePrice\";s:5:\"795.0\";s:8:\"webPrice\";s:3:\"850\";s:11:\"productName\";s:102:\"<【6人行 独立包船】西溪湿地东区门票 摇橹船2小时（10:00班） 船茶套餐专项>\";}i:11;a:4:{s:9:\"productId\";s:7:\"6269214\";s:9:\"salePrice\";s:5:\"795.0\";s:8:\"webPrice\";s:3:\"850\";s:11:\"productName\";s:102:\"<【6人行 独立包船】西溪湿地东区门票 摇橹船2小时（13:00班） 船茶套餐专项>\";}}","updateid":"1","status":"1","updatetime":"2017-10-20 17:37:27.000","citytj":"0","wapzj":"0","wapjc":"0","hdtuij":"1","online":"1","saleprice":"70.0","webprice":"80.0","hits":"6898","row_number":"4"},{"id":"1309","scenicid":"3715057","scenicname":"南湾猴岛一号沙滩","booknotice":"","city":"0","cityname":"陵水黎族自治县","province":"6","provincename":"海南","glocation":"0.000000,0.000000","blocation":"18.582166,110.205721","opentime":"8:00-17:00","scenicaddress":"陵水县新村镇南湾猴岛(南湾半岛西南部滨海区域）","defaultpic":"http://m.tuniucdn.com/fb2/t1/G3/M00/20/F3/Cii_LllWFxaIHdSpAAEBFUBvjisAACGKQLoFu8AAQEt598_w240_h135_c1_t0.jpg","scenicdescription":"<div class=\"feature-content\"><p>景区位于中国海南省陵水县南约14公里的南湾半岛西南部滨海区域，西与清水湾度假区相邻，南与蜈支洲岛隔海相望。一号沙滩海岸线全长5.9公里，是海南岛东海岸线最长的，保护最好的绝美沙滩。这里是海南十大浪漫景区之一，是一片最原始、最生态、最静谧、最情怀的绝美之地。<\/p><p><img src=\"https://dimg06.c-ctrip.com/images/100h0g00000088pcl88F3_C_422_236.jpg\" alt=\"一号沙滩\"  /><span> <\/span><img src=\"https://dimg09.c-ctrip.com/images/10060g000000886bzF4A4_C_422_236.jpg\" alt=\"一号沙滩\"  /><\/p><p>南海湾有富含钛锆等贵重金属的黑沙滩，有疍家人祈福延寿的疍家禁地\u2014\u2014海龟乐园、疍家青年的爱情宣誓地\u2014\u2014海枯石烂、疍家妇女守望亲人归来的望海台，还有二战时期臭名昭著的日本帝国海军海神敢死队留下的战争铁证\u2014\u2014藏艇洞、幽深玄妙的海底牧场。<\/p><p><img src=\"https://dimg07.c-ctrip.com/images/100e0g000000887crA9F6_C_422_236.jpg\" alt=\"一号沙滩\"  /> <img src=\"https://dimg01.c-ctrip.com/images/10040g0000008870w6732_C_422_236.jpg\" alt=\"一号沙滩\"  /><\/p><p>在南湾猴岛一号沙滩的最深处，拐过一个美丽的小山包，映入您眼帘的会是一幅由湛蓝的海水与洁白的沙滩所组成的一个半月形的美丽画面，长达1.1公里的海岸线和纵深达280米的美丽沙滩、绵延不绝的椰林构建了一个宛如世外桃源般的私属沙滩领地，有人说，这里是上帝遗落在人间的天堂一隅。作家冯唐说：\u201c这里是中国最美的无人沙滩\u201d，这就是七彩沙滩。在这里，我们用近五十艘大小不一的各式古船和近百张七彩的沙滩椅、太阳伞将整个沙滩装点得既原滋原味又浪漫多姿，这里宴船、禅船、宝船等各项服务设施造型奇特而功能齐备，还可以以一价全包的方式体验沙滩摩托车、海上自行车、海上三轮车、疍家射箭、浮潜体验、独木舟、思维车等十几项各式海上及沙滩游乐项目，您更可以与您的亲人、您的爱人、您的朋友在海南这最后一片静美的私属沙滩上发呆、呢喃、畅想\u2026\u2026这片堪称海南最纯粹的海滩上，没有人声鼎沸，没有熙熙攘攘，有的只是彻彻底底的、伴着海风、枕着涛声入眠的清静与浪漫\u2026\u2026这里还有绝美的山海景观神鳌探海和情人崖，让您在徜徉之余还能一探大自然的造化神奇。 七彩沙滩是海南十大浪漫景区之一。该项目实行限量入园，每天入园人数限制在500人，游客入园最好提前预约。<\/p><p><img src=\"https://dimg02.c-ctrip.com/images/100u0g000000886jjD0F9_C_422_236.jpg\" alt=\"一号沙滩\"  /> <img src=\"https://dimg03.c-ctrip.com/images/100w0g000000886gx33D5_C_422_236.jpg\" alt=\"一号沙滩\"  /><\/p><p>让我们去海边露营吧！在南湾猴岛生态旅游区的滨海地带，沿着神秘、恢弘的海上街市\u2014\u2014疍人渔排往西南方向一拐，就有着一条长达5.5公里的沙滩海岸线,这里怪石嶙峋、山花烂漫，一条柔美、性感的七彩沙滩依偎着碧蓝碧蓝的南中国海。这儿，正是我们的露营地，南湾猴岛一号沙滩。找一个阳光正好的日子，告别冰冷的都市森林，约上三五知己，在这里一起踩着浪花，数星星。南湾猴岛一号沙滩诚意推出\u201c一号沙滩户外露营悠闲特别之旅\u201d，为您和您的朋友营造无限亲近大自然的机会。这片堪称海南最纯粹的海滩，没有人声鼎沸，没有熙熙攘攘，有的只是彻彻底底的、伴着海风、枕着涛声入眠的清静与浪漫\u2026\u2026<\/p><p><img  src=\"https://dimg08.c-ctrip.com/images/100u0g000000886jiC156_C_422_236.jpg\" alt=\"一号沙滩\" /> <img  src=\"https://dimg07.c-ctrip.com/images/100b0g000000888gcBA5C_C_422_236.jpg\" alt=\"一号沙滩\" /><\/p><\/div><p><br /><\/p>","recommend":"","trafficbus":"","distickets":"N;","ticketlist":"a:4:{i:0;a:4:{s:9:\"productId\";s:7:\"6376200\";s:9:\"salePrice\";s:4:\"68.0\";s:8:\"webPrice\";s:2:\"96\";s:11:\"productName\";s:88:\"<一号沙滩（南海湾）成人票（含门票 过海轮渡 往返游览车）专项>\";}i:1;a:4:{s:9:\"productId\";s:7:\"6376201\";s:9:\"salePrice\";s:5:\"398.0\";s:8:\"webPrice\";s:3:\"498\";s:11:\"productName\";s:50:\"<七彩沙滩滨海户外露营成人套票专项>\";}i:2;a:4:{s:9:\"productId\";s:7:\"6376204\";s:9:\"salePrice\";s:4:\"30.0\";s:8:\"webPrice\";s:2:\"48\";s:11:\"productName\";s:88:\"<一号沙滩（南海湾）儿童票（含门票 过海轮渡 往返游览车）专项>\";}i:3;a:4:{s:9:\"productId\";s:7:\"6376207\";s:9:\"salePrice\";s:5:\"168.0\";s:8:\"webPrice\";s:3:\"268\";s:11:\"productName\";s:44:\"<七彩沙滩海天盛筵儿童套票专项>\";}}","updateid":"2","status":"1","updatetime":"2017-10-20 17:55:53.000","citytj":"3","wapzj":"0","wapjc":"0","hdtuij":"1","online":"1","saleprice":"30.0","webprice":"48.0","hits":"6989","row_number":"5"},{"id":"2092","scenicid":"51259","scenicname":"海口火山口地质公园","booknotice":"[{\"key\":\"openTime\",\"name\":\"\\u666f\\u533a\\u5f00\\u653e\\u65f6\\u95f4\",\"value\":\"8:00-18:00\\u3002\"},{\"key\":\"bookTime\",\"name\":\"\\u63d0\\u524d\\u9884\\u8ba2\\u65f6\\u95f4\",\"value\":\"\\u60a8\\u6700\\u665a\\u8981\\u5728\\u5f53\\u592915:00\\u524d\\u4e0b\\u5355\\uff0c\\u8bf7\\u5c3d\\u65e9\\u9884\\u8ba2\\uff0c\\u4ee5\\u514d\\u803d\\u8bef\\u884c\\u7a0b\\u3002\"},{\"key\":\"getTicketType\",\"name\":\"\\u53d6\\u7968\\u65b9\\u5f0f\",\"value\":\"\\u51ed\\u8d2d\\u7968\\u786e\\u8ba4\\u77ed\\u4fe1 \\u59d3\\u540d \\u624b\\u673a\\u53f7\\u5728\\u666f\\u533a\\u56e2\\u961f\\u552e\\u7968\\u7a97\\u53e3\\u9a8c\\u8bc1\\u5165\\u56ed\\u3002\"},{\"key\":\"admission\",\"name\":\"\\u5165\\u56ed\\u51ed\\u8bc1\",\"value\":\"\\u8d2d\\u7968\\u786e\\u8ba4\\u77ed\\u4fe1 \\u59d3\\u540d \\u624b\\u673a\\u53f7\\u3002\"},{\"key\":\"specialPeople\",\"name\":\"\\u7279\\u6b8a\\u4eba\\u7fa4\\u653f\\u7b56\",\"value\":\"\\u514d\\u7968\\u653f\\u7b56\\uff1a1\\u3001\\u53ef\\u514d\\u8d39\\u643a\\u5e261\\u540d1.2\\u7c73\\uff08\\u4e0d\\u542b\\uff09\\u4ee5\\u4e0b\\u513f\\u7ae5\\uff08\\u513f\\u7ae5\\u8eab\\u9ad8\\u4ee5\\u666f\\u533a\\u6807\\u5c3a\\u4e3a\\u51c6\\uff09\\u3002 2\\u300170\\u5c81\\uff08\\u542b\\uff09\\u4ee5\\u4e0a\\u7684\\u8001\\u4eba\\uff08\\u51ed\\u8eab\\u4efd\\u8bc1\\uff09\\u53ef\\u514d\\u8d39\\u5165\\u56ed\\u3002\\u4f18\\u60e0\\u653f\\u7b56\\uff1a1\\u30011.2\\u7c73\\uff08\\u542b\\uff09-1.4\\u7c73\\uff08\\u542b\\uff09\\u53ef\\u4eab\\u53d75\\u6298\\u95e8\\u7968\\u4f18\\u60e0\\uff08\\u513f\\u7ae5\\u8eab\\u9ad8\\u4ee5\\u666f\\u533a\\u6807\\u5c3a\\u4e3a\\u51c6\\uff09\\uff0c1.4\\u7c73\\uff08\\u4e0d\\u542b\\uff09\\u4ee5\\u4e0a\\u513f\\u7ae5\\u6309\\u6210\\u4eba\\u6536\\u8d39\\u30022\\u3001\\u6709\\u8001\\u4eba\\u8bc1\\u7684\\u8001\\u4eba\\uff0c\\u621660\\u5c81\\uff08\\u542b\\uff09\\u81f369\\u5c81\\uff08\\u542b\\uff09\\u7684\\u8001\\u4eba\\uff08\\u51ed\\u8eab\\u4efd\\u8bc1\\uff09\\uff0c\\u53ef\\u4eab\\u53d75\\u6298\\u95e8\\u7968\\u4f18\\u60e0\\u30023\\u3001\\u6d77\\u5357\\u672c\\u5730\\u5c45\\u6c11\\u51ed\\u8eab\\u4efd\\u8bc1\\u53ef\\u4eab\\u53d7\\u95e8\\u7968\\u4f18\\u60e0\\u3002\\n4\\u3001\\u5b66\\u751f\\u51ed\\u5b66\\u751f\\u8bc1\\u53ef\\u4eab\\u53d7\\u95e8\\u7968\\u4f18\\u60e0\\u3002\\u4ee5\\u4e0a\\u4f18\\u60e0\\u4eba\\u7fa4\\u5efa\\u8bae\\u81ea\\u884c\\u5230\\u666f\\u533a\\u8d2d\\u7968\\u3002 \\u4ee5\\u4e0a\\u4fe1\\u606f\\u4ec5\\u4f9b\\u53c2\\u8003\\uff0c\\u5177\\u4f53\\u4fe1\\u606f\\u8bf7\\u4ee5\\u666f\\u533a\\u5f53\\u5929\\u62ab\\u9732\\u4e3a\\u51c6\\u3002&nbsp;\"},{\"key\":\"costDetail\",\"name\":\"\\u8d39\\u7528\\u8bf4\\u660e\",\"value\":\"\\u6d77\\u53e3\\u706b\\u5c71\\u53e3\\u5730\\u8d28\\u516c\\u56ed\\u666f\\u533a\\u9996\\u9053\\u95e8\\u7968\\u3002\"},{\"key\":\"bookNotice\",\"name\":\"\\u9884\\u8ba2\\u63d0\\u9192\",\"value\":\"1\\uff0e\\u8bf7\\u4e0b\\u5355\\u9884\\u5b9a\\u65f6\\u52a1\\u5fc5\\u586b\\u5199\\u771f\\u5b9e\\u59d3\\u540d\\u548c\\u8bc1\\u4ef6\\u53f7\\u7801\\uff0c\\u907f\\u514d\\u65e0\\u6cd5\\u53d6\\u7968\\u548c\\u987a\\u5229\\u5165\\u56ed\\uff01\\n<br>2\\uff0e\\u8eab\\u4efd\\u8bc1\\u4ef6\\u5fc5\\u987b\\u968f\\u8eab\\u643a\\u5e26\\u3002\\n<br>3\\uff0e\\u516c\\u56ed\\u89c4\\u5b9a\\uff1a\\u56e0\\u5929\\u6c14\\u539f\\u56e0\\u5bfc\\u81f4\\u90e8\\u5206\\u573a\\u9986\\u505c\\u6f14\\u4e0d\\u4e88\\u9000\\u7968\\u3002\\n<div><br><\\/div>\"},{\"key\":\"notice\",\"name\":\"\\u6e29\\u99a8\\u63d0\\u9192\",\"value\":\"\\uff081\\uff09\\u5728\\u4e0d\\u80fd\\u6ee1\\u8db3\\u8bbe\\u5907\\u5b89\\u5168\\u8fd0\\u884c\\u7684\\u6076\\u52a3\\u5929\\u6c14\\uff0c\\u65e0\\u6cd5\\u6297\\u62d2\\u7684\\u81ea\\u7136\\u707e\\u5bb3\\u60c5\\u51b5\\u4e0b\\uff08\\u5982\\u96f7\\u7535\\u3001\\u96e8\\u96ea\\u3001\\u51b0\\u96f9\\u3001\\u5927\\u96fe\\u3001\\u66b4\\u96e8\\u3001\\u53f0\\u98ce\\u7b49\\uff09\\uff0c\\u666f\\u533a\\u90e8\\u5206\\u9879\\u76ee\\u5c06\\u4e34\\u65f6\\u5173\\u95ed\\u6216\\u90e8\\u5206\\u5173\\u95ed\\uff0c\\u8868\\u6f14\\u4f1a\\u53d6\\u6d88\\u6216\\u90e8\\u5206\\u53d6\\u6d88\\uff1b<div>\\uff082\\uff09\\u666f\\u533a\\u6d3b\\u52a8\\u5185\\u5bb9\\u5982\\u6709\\u53d8\\u52a8\\uff0c\\u4ee5\\u5f53\\u65e5\\u516c\\u544a\\u4e3a\\u51c6\\u3002\\u666f\\u533a\\u6240\\u6709\\u9879\\u76ee\\u5747\\u4f1a\\u5b9a\\u671f\\u8fdb\\u884c\\u65e5\\u68c0\\u3001\\u5468\\u68c0\\u3001\\u6708\\u68c0\\u548c\\u5e74\\u5ea6\\u68c0\\u4fee\\uff0c\\u76f8<div>\\u5173\\u68c0\\u4fee\\u5de5\\u4f5c\\u53ef\\u80fd\\u4f1a\\u9020\\u6210\\u90e8\\u5206\\u9879\\u76ee\\u8fd0\\u884c\\u65f6\\u95f4\\u7684\\u5ef6\\u8fdf\\u6216\\u6682\\u505c\\u5bf9\\u6e38\\u5ba2\\u5f00\\u653e\\uff0c\\u8be6\\u60c5\\u4ee5\\u666f\\u533a\\u73b0\\u573a\\u516c\\u544a\\u4e3a\\u51c6\\uff1b<\\/div><div>\\uff083\\uff09\\u6d77\\u53e3\\u5e02\\u77f3\\u5c71\\u9547\\u706b\\u5c71\\u7fa4\\u4e16\\u754c\\u5730\\u8d28\\u516c\\u56ed\\uff0c\\u8ddd\\u5e02\\u533a\\u4ec515\\u516c\\u91cc\\uff0c\\u897f\\u7ebf\\u9ad8\\u901f\\u516c\\u8def\\u8f6c\\u7eff\\u8272\\u957f\\u5eca\\u53ef\\u8fbe\\uff0c\\u7ed5\\u57ce\\u9ad8\\u901f\\u516c\\u8def\\u7a7f\\u8fc7\\u56ed\\u533a\\u3002<\\/div><\\/div>\"},{\"key\":\"invoice\",\"name\":\"\\u53d1\\u7968\\u8bf4\\u660e\",\"value\":\"\\u5982\\u9700\\u53d1\\u7968\\uff0c\\u8054\\u7cfb\\u9014\\u725b\\u5ba2\\u670d\\uff0c4007-999-999\"},{\"key\":\"change\",\"name\":\"\\u9000\\u6539\\u89c4\\u5219\",\"value\":\"\\u8be5\\u4ea7\\u54c1\\u652f\\u6301\\u968f\\u65f6\\u9000\\u3002\\u7ecf\\u6838\\u5b9e\\u5982\\u672a\\u53d6\\u7968\\uff0c\\u53ef\\u514d\\u8d39\\u53d6\\u6d88\\u30021\\u4e2a\\u8ba2\\u5355\\u591a\\u5f20\\u7968\\uff0c\\u4e0d\\u652f\\u6301\\u90e8\\u5206\\u9000\\u3002\\u5982\\u9700\\u6539\\u671f\\uff0c\\u8bf7\\u7533\\u8bf7\\u53d6\\u6d88\\u540e\\u91cd\\u65b0\\u9884\\u8ba2\\u3002\"},{\"key\":\"specialInfo\",\"name\":\"\\u7279\\u6b8a\\u4fe1\\u606f\",\"value\":\"\\u3010\\u63d0\\u793a\\u8bf4\\u660e\\u3011\\u56e0\\u77ed\\u4fe1\\u95ee\\u9898\\uff0c\\u7535\\u4fe1\\u53f7\\u7801\\u53ef\\u80fd\\u65e0\\u6cd5\\u63a5\\u53d7\\u5230\\u7cfb\\u7edf\\u53d1\\u9001\\u51fa\\u7684\\u77ed\\u4fe1\\uff0c\\u4e3a\\u4e86\\u4e0d\\u7ed9\\u60a8\\u7684\\u51fa\\u884c\\u5e26\\u6765\\u4e0d\\u4fbf\\uff0c\\u6211\\u4eec\\u5efa\\u8bae\\u60a8\\u4f7f\\u7528\\u79fb\\u52a8\\u6216\\u8005\\u8054\\u901a\\u7684\\u53f7\\u7801\\u9884\\u8ba2\\uff0c\\u5e76\\u5173\\u95ed\\u624b\\u673a\\u77ed\\u4fe1\\u62e6\\u622a\\u8f6f\\u4ef6\\uff0c\\u5e26\\u6765\\u4e0d\\u4fbf\\uff0c\\u656c\\u8bf7\\u8c05\\u89e3\\uff01\"}]","city":"8","cityname":"海口","province":"6","provincename":"海南","glocation":"0.000000,0.000000","blocation":"19.931249,110.225955","opentime":"8:00-18:00。","scenicaddress":"海南省海口市石山镇火山群世界地质公园。","defaultpic":"http://m.tuniucdn.com/fb2/t1/G2/M00/63/CA/Cii-TFjeIZSIbKXJAAGreb2Wq78AAI7vgPsEWkAAauR186_w240_h135_c1_t0.jpg","scenicdescription":"<div class=\"feature-content\"><div>海口石山火山群世界地质公园位于海口市西南石山镇，距市区仅15公里，西线高速公路转绿色长廊可达，绕城高速公路穿过园区。属地堑一裂谷型基性火山活动地质遗迹，也是中国为数不多的全新世（距今1万年）火山喷发活动的休眠火山群之一，具有科考、科研、科普和旅游观赏价值。4A级景区，世界地质公园，国家地质公园。<\/div><div><img  src=\"https://dimg02.c-ctrip.com/images/tg/858/099/871/11a2bca3b889436c879bf35d84f50c80_C_422_236.jpg\" alt=\"7.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g1/M06/2D/FF/CghzfVV_t6mACiPRAANuEWerSAs368_C_422_236.jpg\" alt=\"蜥蜴.jpg\" /><\/div><div>据地质学家考证，琼北火山喷发于新生代早第三纪，最后一次喷发是第四纪全新世，距今约1万3千年前。历经万年沧海，大地变迁，这里还保存了36座环杯锥状火山口地貌遗址，其中马鞍岭火山口海拔222.8米，乃琼北最高峰之一。<\/div><div><img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g1/M04/2D/FC/CghzfVV_t5mAPw1JAAUbQ89_oHw217_C_422_236.jpg\" alt=\"dsc05079.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g2/M08/36/D4/Cghzf1V_t0OAN5SZAAbhD9yg-8I830_C_422_236.jpg\" alt=\"dsc04933.jpg\" /><\/div><div>公园距离海口市约15公里，面积为108平方公里。其拥有的海口火山群是世界罕见的第四纪火山群，距今约1万年，火山锥多达40座，熔岩隧道30多条。火山类型之多样，熔岩景观之丰富，熔岩隧道之神奇，实为罕见的火山奇观。万年前的火山，千年火山文化和热带生态景观相融合，构成了以热带城市火山生态与文化为内涵的地质公园。<\/div><div><img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g2/M02/36/ED/Cghzf1V_t7CAbuqBAAUBAvi431s785_C_422_236.jpg\" alt=\"雨林栈道.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g1/M00/0B/F1/CghzflV_t0iAWBdHAAO5QRL0260283_C_422_236.jpg\" alt=\"dsc04958.jpg\" /><\/div><div>地质遗迹主体为40座火山构成的第四纪火山群。火山类型齐全、多样，几乎涵盖了玄武质火山喷发的各类火山，既有岩浆喷发而成的碎屑锥、熔岩锥、混合锥，又有岩浆与地下水相互作用形成的玛珥火山，火山地质景观极为丰富。熔岩隧道有30多条，最长到2000余米，其内部形态与景观丰富、奇妙，为国内外所罕见。<\/div><p><img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g2/M09/36/D9/Cghzf1V_t1yAWs5QAASg2mZl_9Q766_C_422_236.jpg\" alt=\"dsc05018.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g2/M03/37/0A/CghzgFV_t5-AIbgTAARA6tBNbJs567_C_422_236.jpg\" alt=\"风水地.jpg\" /><\/p><p>园区在火山锥、火山口及玄武岩台地上发育热带雨林为代表生态群落植物有1200多种，果园与火山景观融为一体，为热带城市火山生态的杰出代表。园区内保存有千百年来人们利用玄武岩所建的古村落、石屋、石塔和各种生产、生活器具，记载了人与石相伴的火山文化脉络，被称为中华火山文化之经典。园区总面积108平方公里。主要景点有马鞍岭、双池岭、仙人洞、罗京盘等。<\/p><p><img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g1/M02/38/9A/CghzfVUc1lSAPngEAAih0BDIPPE046_C_422_236.jpg\" alt=\"熔岩流.jpg\" /> <img  src=\"https://dimg02.c-ctrip.com/images/fd/tg/g1/M08/2E/B1/CghzfFV_tzOABoEEAAXO-Pvabmc319_C_422_236.jpg\" alt=\"dsc04917.jpg\" /><\/p><\/div><br />","recommend":"1996年承办了\u201c世界旅游日\u201d主会场活动。##被评为\u201c海南省优秀旅游景点\u201d、\u201c海南省十佳景区\u201d、国家AAAA级景区。##青少年科普教育基地、地球活动日的重要场所。##火山类型之多样，熔岩景观之丰富，熔岩隧道之神奇，实为罕见的火山奇观。","trafficbus":"从市内坐往秀英方向的7，16，24路公交车到秀英大道海坡市场站下车（1元／人）改乘秀英--石山的中巴车（4元／人）（火山口公园站下车即可）。<br />","distickets":"N;","ticketlist":"a:5:{i:0;a:4:{s:9:\"productId\";s:7:\"5893194\";s:9:\"salePrice\";s:4:\"48.0\";s:8:\"webPrice\";s:2:\"60\";s:11:\"productName\";s:65:\"<【火山遗迹】海南火山口国家地质公园门票专项>\";}i:1;a:4:{s:9:\"productId\";s:7:\"6065078\";s:9:\"salePrice\";s:4:\"40.0\";s:8:\"webPrice\";s:2:\"50\";s:11:\"productName\";s:60:\"<海口火山群世界地质公园门票>提前2小时预订\";}i:2;a:4:{s:9:\"productId\";s:7:\"6435322\";s:9:\"salePrice\";s:4:\"88.0\";s:8:\"webPrice\";s:2:\"88\";s:11:\"productName\";s:64:\"<海南火山口国家地质公园亲子票（1大1小）专项>\";}i:3;a:4:{s:9:\"productId\";s:7:\"6435323\";s:9:\"salePrice\";s:4:\"30.0\";s:8:\"webPrice\";s:2:\"30\";s:11:\"productName\";s:50:\"<海南火山口国家地质公园学生票专项>\";}i:4;a:4:{s:9:\"productId\";s:7:\"6435324\";s:9:\"salePrice\";s:4:\"92.0\";s:8:\"webPrice\";s:3:\"100\";s:11:\"productName\";s:50:\"<海南火山口国家地质公园双人票专项>\";}}","updateid":"1","status":"1","updatetime":"2017-10-20 17:39:03.000","citytj":"0","wapzj":"0","wapjc":"1","hdtuij":"1","online":"1","saleprice":"30.0","webprice":"30.0","hits":"6898","row_number":"6"},{"id":"1563","scenicid":"3094931","scenicname":"多河文化谷","booknotice":"[{\"key\":\"openTime\",\"name\":\"\\u666f\\u533a\\u5f00\\u653e\\u65f6\\u95f4\",\"value\":\"08:00\\uff0d17:00\"},{\"key\":\"bookTime\",\"name\":\"\\u63d0\\u524d\\u9884\\u8ba2\\u65f6\\u95f4\",\"value\":\"\\u60a8\\u6700\\u665a\\u8981\\u5728\\u5f53\\u592916:00\\u524d\\u4e0b\\u5355\\uff0c\\u8bf7\\u5c3d\\u65e9\\u9884\\u8ba2\\uff0c\\u4ee5\\u514d\\u803d\\u8bef\\u884c\\u7a0b\\u3002\"},{\"key\":\"getTicketType\",\"name\":\"\\u53d6\\u7968\\u65b9\\u5f0f\",\"value\":\"\\u8bf7\\u60a8\\u51ed\\u9884\\u8ba2\\u6210\\u529f\\u77ed\\u4fe1\\uff0c\\u81f3\\u666f\\u533a\\u552e\\u7968\\u5385\\u6362\\u53d6\\u95e8\\u7968\\u5165\\u56ed\"},{\"key\":\"admission\",\"name\":\"\\u5165\\u56ed\\u51ed\\u8bc1\",\"value\":\"\\u624b\\u673a\\u77ed\\u4fe1\"},{\"key\":\"specialPeople\",\"name\":\"\\u7279\\u6b8a\\u4eba\\u7fa4\\u653f\\u7b56\",\"value\":\"1.\\u514d\\u7968\\u4eba\\u7fa4\\uff1a\\u513f\\u7ae51.2\\u7c73\\u4ee5\\u4e0b(\\u4e0d\\u542b1.2\\u7c73\\uff09\\u514d\\u7968\\u3002<br>2.\\u4f18\\u60e0\\u4eba\\u7fa4\\uff1a1.2\\u7c73\\u2264\\u8eab\\u9ad8\\u22641.4\\u7c73 \\u4e4b\\u95f4\\u513f\\u7ae5\\u300160\\u5c81\\u4ee5\\u4e0a\\uff08\\u542b60\\u5c81\\uff09\\u8001\\u4eba\\u51ed\\u76f8\\u5173\\u8bc1\\u4ef6\\u4eab\\u53d7\\u4f18\\u60e0\\u4ef7\\u3002<br>3.\\u4ee5\\u4e0a\\u4fe1\\u606f\\u4ec5\\u4f9b\\u53c2\\u8003\\uff0c\\u5177\\u4f53\\u4fe1\\u606f\\u8bf7\\u4ee5\\u666f\\u533a\\u5f53\\u5929\\u62ab\\u9732\\u4e3a\\u51c6\\u3002 \\n                \"},{\"key\":\"costDetail\",\"name\":\"\\u8d39\\u7528\\u8bf4\\u660e\",\"value\":\"\\u8be6\\u7ec6\\u8bf7\\u53c2\\u89c1\\u5177\\u4f53\\u4ea7\\u54c1\"},{\"key\":\"bookNotice\",\"name\":\"\\u9884\\u8ba2\\u63d0\\u9192\",\"value\":\"\\u4e3a\\u4fdd\\u8bc1\\u53d6\\u7968\\u3001\\u5165\\u56ed\\u987a\\u5229\\uff0c\\u9884\\u8ba2\\u65f6\\u8bf7\\u52a1\\u5fc5\\u586b\\u5199\\u771f\\u5b9e\\u59d3\\u540d\\u3001\\u624b\\u673a\\u53f7\\u7801\\u7b49\\u4fe1\\u606f\\u3002\"},{\"key\":\"notice\",\"name\":\"\\u6e29\\u99a8\\u63d0\\u9192\",\"value\":\"\\u4e3a\\u4fdd\\u8bc1\\u53d6\\u7968\\u3001\\u5165\\u56ed\\u987a\\u5229\\uff0c\\u9884\\u8ba2\\u65f6\\u8bf7\\u52a1\\u5fc5\\u586b\\u5199\\u771f\\u5b9e\\u59d3\\u540d\\u3001\\u624b\\u673a\\u53f7\\u7801\\u7b49\\u4fe1\\u606f\\u3002\"},{\"key\":\"invoice\",\"name\":\"\\u53d1\\u7968\\u8bf4\\u660e\",\"value\":\"\\u6211\\u53f8\\u63d0\\u4f9b\\u53d1\\u7968\"},{\"key\":\"change\",\"name\":\"\\u9000\\u6539\\u89c4\\u5219\",\"value\":\"\\u8be5\\u4ea7\\u54c1\\u652f\\u6301\\u968f\\u65f6\\u9000\\u3002\\u5982\\u9700\\u9000\\u8ba2\\uff0c\\u8bf7\\u767b\\u5f55\\u9014\\u725b\\u8d26\\u6237\\u7533\\u8bf7\\u53d6\\u6d88\\uff0c\\u7ecf\\u6838\\u5b9e\\u672a\\u4f7f\\u7528\\uff0c\\u53ef\\u514d\\u8d39\\u53d6\\u6d88\\u3002\"},{\"key\":\"specialInfo\",\"name\":\"\\u7279\\u6b8a\\u4fe1\\u606f\",\"value\":\"&nbsp;\"}]","city":"174","cityname":"琼海","province":"6","provincename":"海南","glocation":"0.000000,0.000000","blocation":"0.000000,0.000000","opentime":"","scenicaddress":"","defaultpic":"http://m.tuniucdn.com/fb2/t1/G1/M00/8F/07/Cii9EFiz3viIfIprAAJ0cXyMDjEAAIBhwCUmuoAAnSJ047_w240_h135_c1_t0.jpg","scenicdescription":"<p><span style=\"font-family:微软雅黑, &#39;microsoft yahei&#39;;\">琼海多河文化谷景区位于琼海兴海南路勇敢村(琼海市区往博鳌方向老路)，景区按国家旅游局3A级标准耗巨资建造，占地面积160余亩，景区始建于1986年，曾被评为为《2011年度海南10家特色景区》、《海南千里环岛文化示范点》,景区是海南一家以海南母亲河万泉河本土文化的主题景区。<br /><img src=\"http://m.tuniucdn.com/fb2/t1/G1/M00/8F/07/Cii9EFiz3viIfIprAAJ0cXyMDjEAAIBhwCUmuoAAnSJ047_w800_h0_c0_t0.jpg\"  border=\"0\" height=\"600\" hspace=\"0\" vspace=\"0\" width=\"800\" /><br /><span style=\"font-family:微软雅黑, &#39;microsoft yahei&#39;;\">多河是万泉河的历史名称，景区通过红色人文文化、绿色生态文化、蓝色海洋文化来诠释海南母亲河\u2014\u2014多河文化 景区共分为三大类内容 1了解多河御名为万泉河的历史由来，追寻600多年前多河河畔发生的一段传奇美丽的爱情故事-----万泉河之母青梅与元文宗的故事 2在农居博览馆领略参观万泉河沿岸特色民居、传统农耕文化、丰富的华侨文化，在蓝色博物馆鉴赏万泉河的奇石文化，感悟奇妙人生。追寻万泉河的儿女琼海潭门渔民的文化，探寻古代海上丝绸之路的辉煌，揭开南中西沙四大群岛的秘密。 3体验参与极具海南本土民俗特色代表\u2014\u2014传承1300多年的军坡节民俗文化，感受吃军坡、行军坡、闹军坡的神秘体验之旅！<\/span><br /><img src=\"http://m.tuniucdn.com/fb2/t1/G1/M00/8F/07/Cii9EViz3vqIWSN1AALvlLYEnKcAAIBhwDivz0AAu-s871_w800_h0_c0_t0.jpg\"  border=\"0\" height=\"600\" hspace=\"0\" vspace=\"0\" width=\"800\" /><br /><img src=\"http://m.tuniucdn.com/fb2/t1/G1/M00/8F/07/Cii9EFiz3v2IC1qWAAMVHAkHmogAAIBhwFANokAAxU0209_w800_h0_c0_t0.jpg\"  border=\"0\" height=\"600\" hspace=\"0\" vspace=\"0\" width=\"800\" /><br /><img src=\"http://m.tuniucdn.com/fb2/t1/G1/M00/8F/07/Cii-U1iz3vuIMTc0AAP30I0dfS4AAIBhwEpw0oAA_fo268_w800_h0_c0_t0.jpg\"  border=\"0\" height=\"600\" hspace=\"0\" vspace=\"0\" width=\"800\" /><br /><br /><\/span><br /><\/p>","recommend":"品尝海南养生传统小吃的唯一景区##体验千年海南非物资文化遗产军坡节的独家景区##关于全面诠释海南母亲河万泉河文化的独家景区","trafficbus":"","distickets":"N;","ticketlist":"a:2:{i:0;a:4:{s:9:\"productId\";s:7:\"6440345\";s:9:\"salePrice\";s:4:\"10.0\";s:8:\"webPrice\";s:2:\"15\";s:11:\"productName\";s:29:\"<多河文化谷成人门票>\";}i:1;a:4:{s:9:\"productId\";s:7:\"6440348\";s:9:\"salePrice\";s:4:\"30.0\";s:8:\"webPrice\";s:2:\"35\";s:11:\"productName\";s:35:\"<多河文化谷公道餐厅门票>\";}}","updateid":"2","status":"1","updatetime":"2017-10-20 17:56:56.000","citytj":"3","wapzj":"0","wapjc":"0","hdtuij":"1","online":"1","saleprice":"10.0","webprice":"15.0","hits":"6989","row_number":"7"}]
      * msg : 数据获取成功
      */
 
     private int status;
-    /**
-     * total : 2
-     * totalpage : 1
-     */
-
     private CountInfoBean countInfo;
     private String msg;
-    /**
-     * id : 291
-     * cate_id : 2
-     * title : 吴承恩故居
-     * short_title : 吴承恩故居
-     * en_title :
-     * ziying : 1
-     * star : 4A级景区
-     * hits : 1
-     * sell : 0
-     * dianzang : 0
-     * telphone :
-     * fax :
-     * price_area : 1
-     * provinceid :
-     * city : 334
-     * province : 188
-     * city_id : 0
-     * areaid :
-     * address : 江苏省淮安市淮安区河下古镇打铜巷12号
-     * map : 33.533969|119.145088
-     * opendate : 8:00-18:00
-     * outset : 郑州
-     * feature :
-     * inpolicy :
-     * add_time : 1476954664
-     * introduction :
-     * policy :
-     * taxinfo :
-     * cancelpolicy :
-     * bookinginfo : <p>免票政策</p><p>残疾人凭证免费，现役军人、烈士家属凭证免费，1.1米以下儿童免费，必须一名购票成人陪同。</p><p>优惠政策</p><p>60周岁以上老年人凭有效身份证购老人票；1.2米以上儿童购儿童票；</p><p>重要说明</p><p>所有门票均提供发票，在景区现场支付的订单，您需在取票时向景区索要发票，离开景区后将无法提供，敬请谅解。</p><p><br/></p>
-     * orderinfo : <p>1.在不能满足设备安全运行的恶劣天气，无法抗拒的自然灾害情况下（如雷电、雨雪、冰雹、大雾、暴雨、台风等），景区部分项目将临时关闭或部分关闭，表演会取消或部分取消。</p><p>2.严禁倒票，一经发现，相关电子门票作废，入园现场将不予承认，候鸟旅居网将不予退费并将相关账号、手机号列入黑名单。请广大用户选择候鸟官方网站或官方合作渠道购买，维护自身权益不被侵犯。</p><p>3.景区活动内容如有变动，以当日公告为准。景区所有项目均会定期进行日检、周检、月检和年度检修，相关检修工作可能会造成部分项目运行时间的延迟或暂停对游客开放，详情以景区现场公告为准。</p><p>4.如需开具旅游发票(仅限支付给候鸟的订单用户)，请与客服专员确定发票内容与抬头及准确的发票邮寄地址，我司在收到邮寄地址信息后向您寄送发票；为避免因发生不可抗力或意外事项致实际消费额与发票开具的相应数额不符，建议您在游玩归来后两个月内索领取发票。具体特殊景区请以产品说明为准。</p><p>5.为保障您的出游安全，候鸟建议您订购在线支付产品时选购相关旅游保险。</p><p><br/></p>
-     * info : <p>您需要知道的”吴承恩故居“</p><p>吴承恩故居简介</p><p>吴承恩故居景区是国家AAAA级景区，江苏省重点文物保护单位，全球首部立体电视剧《吴承恩与西游记》的拍摄基地。故居本体、吴承恩生平陈列厅、玄奘纪念堂、美猴王世家艺术馆、六小龄童工作室五个部分共同组成了国内唯一综合展示西游记文化和纪念吴承恩的场所。占地15000平方米，建筑面积3800平方米，为明代风格的古典园林建筑群。 吴承恩故居位于江苏省淮安市淮安区河下古镇打铜巷内，交通便利，紧临京沪、宁连、徐淮盐等高速公路；</p><p><img src="http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954717226261.jpg" title="1476954717226261.jpg" alt="3.jpg" style="width:100%;height:auto" height="533" width="871"/></p><p>吴承恩故居</p><p>中国明代著名小说家，中国古典文学名著、神话小说《西游记》的作者，世界文化名人吴承恩的故居。</p><p>吴承恩故居</p><p>旧宅揽胜迹：萧湖、长淮、邗沟水；故居接芳邻：枚亭、梁祠、钓鱼台。</p><p>吴承恩故居</p><p>吴承恩故居现为淮安市文物保护单位。</p><p><img src="http://pic.houno.cn/ueditor/php/upload/image/20161020/1476954700616903.jpg" title="1476954700616903.jpg" alt="5.jpg" style="width:100%;height:auto" height="365" width="873"/></p>
-     * img : http://pic.houno.cn/Uploads/Scenic/20161020/17110458088a288bc04.jpg
-     * wap_img : http://pic.houno.cn/Uploads/Scenic/20161020/17110458088a288c7bc.jpg
-     * status : 1
-     * online : 1
-     * bigimg :
-     * morepic : 1
-     * hottj : 0
-     * citytj : 2
-     * cattj : 0
-     * payfs : 0
-     * commentnum : 0
-     * average : .0
-     * mer_id : 0
-     * admin : admin
-     * edit_time : 1482128735
-     * lat : 33.5339690
-     * lng : 119.1450880
-     * imgcreate :
-     * price_area2 :
-     * wapzj : 0
-     * wapjc : 0
-     * wapzt : 0
-     * waphd :
-     * isrec :
-     * hdtuij : 1
-     * row_number : 1
-     * price : {"webprice":"20","marketprice":"20","price":"0","userprice":"0","stock":"500","row_number":"1"}
-     * cityname : 淮安
-     * cate_name : 人文古迹
-     */
-
     private List<DataBean> data;
 
     public int getStatus() {
@@ -128,6 +59,11 @@ public class ActiScenicListBean {
     }
 
     public static class CountInfoBean {
+        /**
+         * total : 7
+         * totalpage : 1
+         */
+
         private String total;
         private int totalpage;
 
@@ -149,76 +85,69 @@ public class ActiScenicListBean {
     }
 
     public static class DataBean {
-        private String id;
-        private String cate_id;
-        private String title;
-        private String short_title;
-        private String en_title;
-        private String ziying;
-        private String star;
-        private String hits;
-        private String sell;
-        private String dianzang;
-        private String telphone;
-        private String fax;
-        private String price_area;
-        private String provinceid;
-        private String city;
-        private String province;
-        private String city_id;
-        private String areaid;
-        private String address;
-        private String map;
-        private String opendate;
-        private String outset;
-        private String feature;
-        private String inpolicy;
-        private String add_time;
-        private String introduction;
-        private String policy;
-        private String taxinfo;
-        private String cancelpolicy;
-        private String bookinginfo;
-        private String orderinfo;
-        private String info;
-        private String img;
-        private String wap_img;
-        private String status;
-        private String online;
-        private String bigimg;
-        private String morepic;
-        private String hottj;
-        private String citytj;
-        private String cattj;
-        private String payfs;
-        private String commentnum;
-        private String average;
-        private String mer_id;
-        private String admin;
-        private String edit_time;
-        private String lat;
-        private String lng;
-        private String imgcreate;
-        private String price_area2;
-        private String wapzj;
-        private String wapjc;
-        private String wapzt;
-        private String waphd;
-        private String isrec;
-        private String hdtuij;
-        private String row_number;
         /**
-         * webprice : 20
-         * marketprice : 20
-         * price : 0
-         * userprice : 0
-         * stock : 500
+         * id : 1794
+         * scenicid : 788171
+         * scenicname : 三亚千古情
+         * booknotice : [{"key":"openTime","name":"\u666f\u533a\u5f00\u653e\u65f6\u95f4","value":"\u4e09\u4e9a\u5343\u53e4\u60c5\u666f\u533a\uff1a12:00-21:30\uff0c\u4e09\u4e9a\u5b8b\u57ce\u5f69\u8272\u52a8\u7269\u56ed\uff1a11:00-18:00\uff1b\u4e09\u4e9a\u5b8b\u57ce\u51b0\u96ea\u4e16\u754c\uff1a11:00-21:00\uff1b\u4e09\u4e9a\u5b8b\u57ce\u6d6a\u6d6a\u6d6a\u6c34\u516c\u56ed\uff1a11:00-21:00\u3002<div><br><\/div><div><font color=\"#ff0000\"><b>\u60a8\u597d\uff0c\u4e09\u4e9a\u5343\u53e4\u60c510\u6708\u4efd\u573a\u6b2110\u67081\u65e5 14:00 17:00 20:00\uff1b10\u67082\u65e5 14:00 16:00 18:00 20:30;10\u67083\u65e5 14:00 15:30 17:00 18:30 20:30;10\u67084\u65e5 14:00 15:30 17:00 18:30 20:30;10\u67085\u65e5 14:00 15:30 17:00 18:30 20:30;10\u67086\u65e5 14:00 16:00 18:00 20:00\uff1b10\u67087\u65e5 14:00 17:00 20:00;10\u67088\u65e5 14:00 17:00 20:00;\uff08\u6700\u7ec8\u573a\u6b21\u4ee5\u63d0\u524d\u4e00\u5929\u4e3a\u51c6\uff0c\u8c22\u8c22\uff01\uff09<\/b><\/font><\/div>"},{"key":"bookTime","name":"\u63d0\u524d\u9884\u8ba2\u65f6\u95f4","value":"<b><\/b><span style=\"color: rgb(255, 0, 0); font-weight: bold;\">\u2605\u2605\u2605\u2605\u4e09\u4e9a\u9884\u8ba2\u89c4\u5219\uff1a\u666f\u533a\u8981\u6c42\u5ba2\u4eba\u9700\u8981\u5728\u5165\u56ed\u524d2\u5c0f\u65f6\u9884\u8ba2\uff0c\u4e0d\u662f\u6f14\u51fa\u5f00\u6f14\u524d2\u5c0f\u65f6\u9884\u8ba2\uff0c\u4e5f\u5c31\u662f\u666f\u533a\u4f1a\u6839\u636e\u5ba2\u4eba\u4e0b\u5355\u65f6\u95f4\u5224\u5b9a\u4e0d\u6ee1\u8db32\u5c0f\u65f6\uff0c\u4e0d\u4e88\u4ee5\u5165\u56ed\uff0c\u8bf7\u60a8\u5408\u7406\u5b89\u6392\u9884\u5b9a\u548c\u51fa\u6e38\u65f6\u95f4\uff01\u2605\u2605\u2605<\/span><div><br><div><font color=\"#ff0000\"><b><\/b><\/font><div>\u2605\u4e13\u9879\u4ea7\u54c1\u4f7f\u7528\u8bf4\u660e\uff1a\u8bf7\u70b9\u51fb\u95e8\u7968\uff0c\u4ee5\u95e8\u7968\u4e0b\u65b9\u7684\u4ea7\u54c1\u8bf4\u660e\u4e3a\u51c6<\/div><\/div><\/div>"},{"key":"getTicketType","name":"\u53d6\u7968\u65b9\u5f0f","value":"<div>\u9884\u5b9a\u6210\u529f\u6ee12\u5c0f\u65f6\u540e\uff0c\u76f4\u63a5\u5237\u8eab\u4efd\u8bc1\u5165\u56ed\uff08<font color=\"#ff0000\">\u6d3b\u52a8\u7968\u79cd\u53d6\u7968\u65b9\u5f0f\u4e0d\u540c\uff0c\u8be6\u7ec6\u8bf7\u89c1\u5177\u4f53\u4ea7\u54c1<\/font>\uff09<\/div><div><br><\/div><div><br><\/div>"},{"key":"admission","name":"\u5165\u56ed\u51ed\u8bc1","value":"\u9884\u5b9a\u6210\u529f\u6ee12\u5c0f\u65f6\u540e\uff0c\u76f4\u63a5\u5237\u8eab\u4efd\u8bc1\u5165\u56ed<div><br><div>\u2605\u4e13\u9879\u4ea7\u54c1\u4f7f\u7528\u8bf4\u660e\uff1a\u8bf7\u70b9\u51fb\u95e8\u7968\uff0c\u4ee5\u95e8\u7968\u4e0b\u65b9\u7684\u4ea7\u54c1\u8bf4\u660e\u4e3a\u51c6\uff08\u8bf7\u5173\u95ed\u624b\u673a\u77ed\u4fe1\u62e6\u622a\u8f6f\u4ef6\uff0c\u4ee5\u514d\u803d\u8bef\u4f60\u7684\u884c\u7a0b\uff09<\/div><\/div>"},{"key":"specialPeople","name":"\u7279\u6b8a\u4eba\u7fa4\u653f\u7b56","value":"<div>A\u3001\u514d\u8d39\u653f\u7b56\uff1a1.2m\uff08\u4e0d\u542b\uff09\u4ee5\u4e0b\u513f\u7ae5\u514d\u7968\uff0c\u4f46\u4e0d\u5360\u7528\u6f14\u51fa\u5e2d\u4f4d<\/div><div>B\u3001\u4f18\u60e0\u653f\u7b56\uff1a1.2\u7c73\uff08\u542b\uff09-1.5\u7c73\uff08\u4e0d\u542b1.5\u7c73\uff09\u7684\u513f\u7ae5\u3001\u73b0\u5f79\u519b\u4eba\u3001\u6b8b\u75be\u4eba\u300130\u5e74\u6559\u9f84\u6301\u6709\u8363\u8a89\u8bc1\u4e66\u7684\u6559\u5e08\u300165\u5468\u5c81\u4ee5\u4e0a\u7684\u8001\u4eba\u51ed\u672c\u4eba\u6709\u6548\u8bc1\u4ef6\u53ef\u5728\u666f\u533a\u8d2d\u4e70\u4f18\u60e0\u7968<\/div><div>\u2605\u4e13\u9879\u4ea7\u54c1\uff1a\u666f\u533a\u4f18\u60e0\u653f\u7b56\u95e8\u7968\uff0c\u9700\u5230\u666f\u533a\u81ea\u884c\u8d2d\u4e70\uff0c\u8be6\u60c5\u89c1\u666f\u533a\u516c\u544a<\/div>"},{"key":"costDetail","name":"\u8d39\u7528\u8bf4\u660e","value":"\u666f\u533a\u5b9e\u884c\u4e00\u7968\u5236\uff0c\u5185\u5bb9\u5305\u542b\u5927\u578b\u6b4c\u821e\u300a\u4e09\u4e9a\u5343\u53e4\u60c5\u300b\u6f14\u51fa\u3001\u5d16\u5dde\u53e4\u57ce\u3001\u5927\u8c61\u8c37\u3001\u6d77\u76d7\u5927\u6218\u3001\u79d1\u6280\u6e38\u4e50\u9986\u3001\u9ece\u6751\u3001\u82d7\u5be8\u3001\u5c71\u4e0a\u82b1\u9ece\u3001\u6930\u6797\u6e7e\u3001\u5357\u6d77\u5973\u795e\u5e7f\u573a\u3001\u4e09\u89d2\u6885\u6d77\u9c9c\u5927\u6392\u6863\u3001\u6995\u6811\u4e0b\u9152\u5427\u3001\u56fe\u817e\u5927\u9053\u3001\u60c5\u4eba\u8c37\t\t\t\t\t\t\t\t\t\t\t            \u3001\u706b\u628a\u5e7f\u573a\u3001\u738b\u8005\u4e4b\u57ce\u3001\u4e09\u4e9a\u540d\u4eba\u5c71\u3001\u513f\u7ae5\u6e38\u4e50\u533a\u3001\u7b49\u6570\u5341\u4e2a\u4e3b\u9898\u533a\u3002<br><br>\u2605\u4e13\u9879\u4ea7\u54c1\u8d39\u7528\u8bf4\u660e\uff1a\u8bf7\u70b9\u51fb\u95e8\u7968\uff0c\u4ee5\u95e8\u7968\u7684\u201c\u9884\u5b9a\u987b\u77e5\u3001\u5176\u4ed6\u8bf4\u660e\u201d\u4e3a\u51c6"},{"key":"bookNotice","name":"\u9884\u8ba2\u63d0\u9192","value":"1\u3001\u8bf7\u4e0b\u5355\u9884\u5b9a\u65f6\u52a1\u5fc5\u586b\u5199\u771f\u5b9e\u59d3\u540d\uff0c\u907f\u514d\u65e0\u6cd5\u53d6\u7968\u548c\u987a\u5229\u5165\u56ed\uff01<div>2\u3001\u53d6\u7968\u4ee5\u6536\u5230\u7684\u77ed\u4fe1\u901a\u77e5\u4e3a\u51c6\uff0c\u8eab\u4efd\u8bc1\u4ef6\u8bf7\u968f\u8eab\u643a\u5e26\u3002<\/div><div>3\u3001\u516c\u56ed\u89c4\u5b9a\uff1a\u56e0\u5929\u6c14\u539f\u56e0\u5bfc\u81f4\u90e8\u5206\u573a\u9986\u505c\u6f14\u4e0d\u4e88\u9000\u7968\u3002\u4e09\u4e9a\u5343\u53e4\u60c5\u7684\u6f14\u51fa\u662f\u5728\u5ba4\u5185\uff0c\u4e0d\u53d7\u5929\u6c14\u5f71\u54cd\uff0c\u90e8\u5206\u9732\u5929\u7684\u6c11\u4fd7\u8868\u6f14\uff0c\u4f1a\u56e0\u4e3a\u5929\u6c14\u7684\u5f71\u54cd\u9002\u65f6\u5f00\u6f14\u3002<\/div><span style=\"color: rgb(255, 0, 0); font-weight: bold;\">\u2605\u2605\u2605\u2605\u4e09\u4e9a\u9884\u8ba2\u89c4\u5219\uff1a\u666f\u533a\u8981\u6c42\u5ba2\u4eba\u9700\u8981\u5728\u5165\u56ed\u524d2\u5c0f\u65f6\u9884\u8ba2\uff0c\u4e0d\u662f\u6f14\u51fa\u5f00\u6f14\u524d2\u5c0f\u65f6\u9884\u8ba2\uff0c\u4e5f\u5c31\u662f\u666f\u533a\u4f1a\u6839\u636e\u5ba2\u4eba\u4e0b\u5355\u65f6\u95f4\u5224\u5b9a\u4e0d\u6ee1\u8db32\u5c0f\u65f6\uff0c\u4e0d\u4e88\u4ee5\u5165\u56ed\uff0c\u8bf7\u60a8\u5408\u7406\u5b89\u6392\u9884\u5b9a\u548c\u51fa\u6e38\u65f6\u95f4\uff01\u2605\u2605\u2605<br><\/span><div><b>17:00\u573a\u6b21\u8868\u6f14\u5efa\u8bae\u5f53\u5929\u572814:30\u70b9\u524d\u9884\u5b9a\uff0c20:00\u573a\u6b21\u8868\u6f14\u5efa\u8bae\u5f53\u5929\u572817:30\u70b9\u524d\u9884\u5b9a\u3002<\/b><font color=\"#ff0000\"><b><br><\/b><\/font><div><br><div>\n\t\t\t\t\t<span style=\"font-weight: bold;\">\u2605\u2605\u5e26\u6709\u9a74\u5988\u5988\u6807\u8bc6\u7684\u95e8\u7968\u4ea7\u54c1\u8bf7\u6309\u7167\u5982\u4e0b\u53d6\u7968\u65b9\u5f0f\u64cd\u4f5c\u8c22\u8c22\uff01\u2605\u2605<br>&lt;\u4e09\u4e9a\u5343\u53e4\u60c5\u95e8\u7968 \u8d35\u5bbe\u5e2d\uff0820:00--21:00\uff09\u573a\u6b21 \u95e8\u7968&gt;\uff1a<\/span>\u5f53\u65e5\u9884\u8ba2\u4e0d\u505a\u4efb\u4f55\u66f4\u6539\u6216\u53d6\u6d88\uff0c\u671b\u5404\u4f4d\u987e\u5ba2\u8c05\u89e3\uff01\u5f53\u65e5\u9884\u8ba2\u8bf7\u81f3\u5c11\u63d0\u524d2\u5c0f\u65f6\u8d2d\u4e70\uff0c\u56e02\u5c0f\u65f6\u9884\u5b9a\u7b49\u5f85\u65f6\u95f4\u9020\u6210\u7684\u63d0\u524d\u5230  \u8fbe\u666f\u533a\uff0c\u65e0\u6cd5\u53d6\u7968\u5165\u56ed\u7684\u60c5\u51b5\uff0c\u6211\u53f8\u5c06\u4e0d\u627f\u62c5\u76f8\u5173\u8d23\u4efb\uff1b\n\u5165\u56ed\u9650\u5236\uff1a\u8bf7\u5728\u5165\u56ed\u5f53\u5929\u768420\u70b930\u5206\u4ee5\u524d\u5165\u56ed\uff1b\u53d6\u7968\u65f6\u95f4\uff1a15\uff1a00\uff5e20\uff1a30<br>\n\t\t\t\t\t<span style=\"font-weight: bold;\">&lt;\u4e09\u4e9a\u5343\u53e4\u60c5\u8d35\u5bbe\u5e2d\uff0817:00--18:00\uff09\u573a\u6b21\u95e8\u7968&gt;\uff1a<\/span>\u5f53\u65e5\u9884\u8ba2\u4e0d\u505a\u4efb\u4f55\u66f4\u6539\u6216\u53d6\u6d88\uff0c\u671b\u5404\u4f4d\u987e\u5ba2\u8c05\u89e3\uff01\u53d6\u7968\u65f6\u95f4\uff1a15\uff1a30\uff5e18\uff1a30\uff1b\u6709\u6548\u671f\u9650\uff1a\uff08\u6709\u6548\u671f\u5185\uff0c\u4ec5\u9650\u5165\u56ed1\u6b21\uff09\u6307\u5b9a\u6e38\u73a9\u65e5\u5f53\u5929\u5185\u6709\u6548\uff1b\u5f53\u65e5\u9884\u8ba2\u8bf7\u81f3\u5c11\u63d0\u524d2\u5c0f\u65f6\u8d2d\u4e70\uff0c\u56e02\u5c0f\u65f6\u9884\u5b9a\u7b49\u5f85\u65f6\u95f4\u9020\u6210\u7684\u63d0\u524d\u5230  \u8fbe\u666f\u533a\uff0c\u65e0\u6cd5\u53d6\u7968\u5165\u56ed\u7684\u60c5\u51b5\uff0c\u6211\u53f8\u5c06\u4e0d\u627f\u62c5\u76f8\u5173\u8d23\u4efb\uff1b\n                                                                                        <\/div><\/div><\/div><div>\u2605\u4e13\u9879\u4ea7\u54c1\u4f7f\u7528\u8bf4\u660e\uff1a\u8bf7\u70b9\u51fb\u95e8\u7968\uff0c\u4ee5\u95e8\u7968\u4e0b\u65b9\u7684\u4ea7\u54c1\u8bf4\u660e\u4e3a\u51c6<\/div>"},{"key":"notice","name":"\u6e29\u99a8\u63d0\u9192","value":"\n<span style=\"color: rgb(0, 0, 255);\"><span style=\"color: rgb(0, 0, 0);\"><\/span><\/span><span style=\"color: rgb(255, 0, 0); font-weight: bold;\">\u2605\u2605\u2605\u2605\u4e09\u4e9a\u9884\u8ba2\u89c4\u5219\uff1a\u666f\u533a\u8981\u6c42\u5ba2\u4eba\u9700\u8981\u5728\u5165\u56ed\u524d1\u5c0f\u65f6\u9884\u8ba2\uff0c\u4e0d\u662f\u6f14\u51fa\u5f00\u6f14\u524d1\u5c0f\u65f6\u9884\u8ba2\uff0c\u4e5f\u5c31\u662f\u666f\u533a\u4f1a\u6839\u636e\u5ba2\u4eba\u4e0b\u5355\u65f6\u95f4\u5224\u5b9a\u4e0d\u6ee1\u8db31\u5c0f\u65f6\uff0c\u4e0d\u4e88\u4ee5\u5165\u56ed\uff0c\u8bf7\u60a8\u5408\u7406\u5b89\u6392\u9884\u5b9a\u548c\u51fa\u6e38\u65f6\u95f4\uff01\u2605\u2605\u2605<\/span><br style=\"color: rgb(255, 0, 0); font-weight: bold;\"><span style=\"font-weight: bold; color: rgb(0, 0, 255);\"><\/span><span style=\"color: rgb(255, 0, 0); font-weight: bold;\"><\/span><div>\u2605\u4e13\u9879\u4ea7\u54c1\u4f7f\u7528\u8bf4\u660e\uff1a\u8bf7\u70b9\u51fb\u95e8\u7968\uff0c\u4ee5\u95e8\u7968\u4e0b\u65b9\u7684\u4ea7\u54c1\u8bf4\u660e\u4e3a\u51c6<\/div>"},{"key":"invoice","name":"\u53d1\u7968\u8bf4\u660e","value":"\u9884\u5b9a\u8be5\u666f\u533a\u95e8\u7968\uff0c\u6211\u53f8\u63d0\u4f9b\u53d1\u7968\u3002<div>\u2605\u4e13\u9879\u4ea7\u54c1\uff1a\u5982\u9700\u53d1\u7968\uff0c\u8bf7\u81f4\u7535\u9014\u725b\u5ba2\u670d<\/div>"},{"key":"change","name":"\u9000\u6539\u89c4\u5219","value":"<span style=\"color: rgb(255, 0, 0); font-weight: bold;\"><span style=\"color: rgb(0, 0, 255);\"><\/span><span style=\"font-weight: bold;\">\u3010\u9014\u725b\u4ea7\u54c1\u3011<\/span>\u95e8\u7968\u4e00\u7ecf\u652f\u4ed8\uff0c\u5982\u9700\u66f4\u6539\u51fa\u6e38\u65e5\u671f\uff0c\u8bf7\u5728\u6f14\u51fa\u524d2\u5c0f\u65f6\u81f4\u7535\u5ba2\u670d\u8fdb\u884c\u5904\u7406\uff0c\u6bcf\u4e2a\u8ba2\u5355\u4ec5\u9650\u6539\u671f\u4e00\u6b21\uff0c\u8fc7\u671f\u6982\u4e0d\u9000\u6b3e\u548c\u6539\u671f\uff01\u4ea7\u54c1\u652f\u6301\u6574\u5355\u9000\u6b3e\uff0c\u4e0d\u652f\u6301\u90e8\u5206\u9000\u6b3e\uff0c\u7ed9\u60a8\u5e26\u6765\u7684\u4e0d\u4fbf\u656c\u8bf7\u8c05\u89e3\u3002<\/span><span style=\"font-weight: bold;\">\u5957\u7968\u4f7f\u7528\u5176\u4e2d\u4e00\u9879\u5176\u4f59\u4e0d\u9000<\/span>\uff01<br><b><font color=\"#ff0000\">\u4e09\u4e9a\u6d6a\u6d6a\u6d6a\u6c34\u516c\u56ed\u5355\u95e8\u7968\uff0c\u5f53\u592918\u70b9\u4e4b\u524d\u53ef\u4ee5\u7533\u8bf7\u9000\u7968\uff0c\u8fc7\u70b9\u4e0d\u9000\u4e0d\u6539\uff01<\/font><\/b><br><div>\u2605\u4e13\u9879\u4ea7\u54c1\uff0c\u8bf7\u70b9\u51fb\u95e8\u7968\u2018\u9884\u5b9a\u2019\uff0c\u4ee5\u9884\u5b9a\u9875\u9762\u4ea7\u54c1\u8bf4\u660e\u4e2d\u7684\u9000\u6539\u8bf4\u660e\u4e3a\u51c6\u3002\u3010\u4e0d\u9000\u4e0d\u6539\u7684\u4ea7\u54c1\uff0c\u6055\u65e0\u6cd5\u9000\u8fd8\u7968\u6b3e\uff0c\u8bf7\u614e\u91cd\u9884\u5b9a\u3002\u4e13\u9879\u4ea7\u54c1\u4e0d\u652f\u6301\u90e8\u5206\u9000\u7968\uff0c\u4e0d\u652f\u6301\u6539\u671f\uff0c\u5ba1\u6838\u5468\u671f3\u4e2a\u5de5\u4f5c\u65e5\u4f1a\u901a\u77e5\u60a8\u9000\u7968\u65f6\u95f4\u8282\u70b9\uff0c\u8bf7\u60a8\u8010\u5fc3\u7b49\u5f85\u3011\u5982\u6709\u7591\u95ee\u8bf7\u54a8\u8be2\u9014\u725b\u5ba2\u670d\uff01<\/div>"},{"key":"specialInfo","name":"\u7279\u6b8a\u4fe1\u606f","value":"<span style=\"color: rgb(255, 0, 0); font-weight: bold;\"><\/span>\u516c\u4ea4\u51fa\u884c\u4e58\u57507\u8def\u5185\u73af\u30017\u8def\u5916\u73af\u30019\u8def\u300127\u8def\u5728\u4e1c\u5cb8\u6751\u4e0b\u8f66\u6b65\u884c260\u7c73\u53ef\u5230<div>\u3010\u63d0\u793a\u8bf4\u660e\u3011\u56e0\u77ed\u4fe1\u95ee\u9898\uff0c\u7535\u4fe1\u53f7\u7801\u53ef\u80fd\u65e0\u6cd5\u63a5\u53d7\u5230\u7cfb\u7edf\u53d1\u9001\u51fa\u7684\u77ed\u4fe1\uff0c\u4e3a\u4e86\u4e0d\u7ed9\u60a8\u7684\u51fa\u884c\u5e26\u6765\u4e0d\u4fbf\uff0c\u6211\u4eec\u5efa\u8bae\u60a8\u4f7f\u7528\u79fb\u52a8\u6216\u8005\u8054\u901a\u7684\u53f7\u7801\u9884\u8ba2\uff0c\u5e76\u5173\u95ed\u624b\u673a\u77ed\u4fe1\u62e6\u622a\u8f6f\u4ef6\uff0c\u5e26\u6765\u4e0d\u4fbf\uff0c\u656c\u8bf7\u8c05\u89e3\uff01<\/div>"}]
+         * city : 9
+         * cityname : 三亚
+         * province : 6
+         * provincename : 海南
+         * glocation : 18.252762,109.511437
+         * blocation : 18.258499,109.517998
+         * opentime : 三亚千古情景区：12:00—21:30, 三亚宋城冰雪世界：11:00—21:00, 三亚宋城彩色动物园：11:00—18:00, 三亚宋城浪浪浪水公园：11:00—21:00。
+         * scenicaddress : 海南省三亚市迎宾路333号。
+         * defaultpic : http://m.tuniucdn.com/filebroker/cdn/snc/6e/f4/6ef4b0648699b5bb499c253f17ab8e4e_w240_h135_c1_t0.jpg
+         * scenicdescription : <div class="feature-content"><p style="margin-top:auto;margin-bottom:auto;">三亚千古情景区掩映在茂密的森林和鲜花丛中，有三亚千古情、崖州古城、大象谷、科技游乐馆、椰林湾、南海女神广场、小吃广场、图腾大道、情人谷、泼水广场、王者之城、名人山、儿童游乐区、云曼酒店等数十个主题区。<br /></p><p style="margin-top:auto;margin-bottom:auto;">三亚千古情景区内一年四季活动不断，有黎族三月三、泼水节、比基尼狂欢节、沙滩音乐节、啤酒节、冰雪节等活动，深受游客欢迎，是三亚夜游的理想目的地。</p><p><img  src="https://dimg02.c-ctrip.com/images/tg/720/545/968/5e5955a62e5c4f62a66bc554ceb1f0bd_C_422_236.jpg" alt="千古情14.jpg" /> <img  src="https://dimg02.c-ctrip.com/images/tg/783/822/818/be48d2c3cd054260b3fae71f48595ddd_C_422_236.jpg" alt="千古情19.jpg" /></p><p>预演厅——三亚千古情景区</p><p>三亚千古情景区掩映在茂密的原始森林和鲜花丛中，有三亚千古情、崖州古城、大象谷、科技游乐馆、椰林湾、南海女神广场、小吃广场、榕树下酒吧、图腾大道、情人谷、火把广场、王者之城、三亚名人山、儿童游乐区、云曼酒店等数十个主题区。景区内一年四季活动不断，有黎族三月三、泼水节、比基尼狂欢节、沙滩音乐节、啤酒节、泥浆“泡”妞节、冰雪节等活动。</p><p><img  src="https://dimg02.c-ctrip.com/images/tg/703/259/327/fc5f86768e714f26b2a0deab9159c8f2_C_422_236.jpg" alt="千古情16.jpg" /> <img  src="https://dimg02.c-ctrip.com/images/tg/654/075/373/61845265b8894e778e3e0dbc204b2547_C_422_236.jpg" alt="千古情12.jpg" /></p><p>原汁原味的黎村苗寨</p><p>黎族、苗族是三亚两大少数民族。黎族的“打柴舞”与苗族的“芦笙”，更是一座城市的文化封面。黎族和苗族一般生活在海南岛的中部和南部山区，黎村苗寨是海南黎苗民俗风情的缩影。而这些真正的黎村苗寨大多交通不便，山高路远，因此对于一般的游人想来三亚体会地道的黎苗风情和民俗文化，可谓遥不可及。</p><p><img  src="https://dimg02.c-ctrip.com/images/tg/931/452/199/f15d7280cc17446fa084ea894597bd31_C_422_236.jpg" alt="千古情9.jpg" /> <img  src="https://dimg02.c-ctrip.com/images/tg/198/489/553/35f06156bbcf4823b940a62112bda63b_C_422_236.jpg" alt="千古情1.jpg" /></p><p>穿越的崖州古城</p><p>梦回崖州古城，穿越千年历史。崖州古城是海南岛四大州城之一，作为中国最南的古城，“炎州此去更无城”这一古人的诗句歌咏了此城独特的地理位置。在三亚千古情景区内用高科技与民俗手段向游客重现了一个繁荣富庶、墨香雅风的崖州古城。</p><p><img  src="https://dimg02.c-ctrip.com/images/tg/609/159/988/c443cd1375fe4dd7b220ea89261f7a07_C_422_236.jpg" alt="千古情20.jpg" /> <img  src="https://dimg02.c-ctrip.com/images/tg/740/255/735/abf06547c8754faba1a8f4ceec7d503a_C_422_236.jpg" alt="千古情6.jpg" /></p><p>高科技的游乐馆</p><p>景区内的高科技游乐馆包含了暴风眼、海角沉船听音室、魅影空间、神秘街、居士府、天涯鬼域六大科技游乐设施。高科技的应用令游客体验到各种模拟的真实场景。</p><p>由于三亚经常会受到台风侵袭，“暴风眼”设施采用仿真模型道具，虚实结合，配合声效、风、水、雾、光电系统，再现台风来袭时的逼真场景，让游客身临其境的见证大自然的威力。</p><p><img  src="https://dimg02.c-ctrip.com/images/tg/603/286/055/b8149cc946874dc5b5976b19e55a626e_C_422_236.jpg" alt="千古情5.jpg" /> <img  src="https://dimg02.c-ctrip.com/images/tg/356/334/907/c5b6abb8d3f74a57806fb5d937a7c6ce_C_422_236.jpg" alt="千古情11.jpg" /></p><p>亲爱的游客朋友们，欢迎光临三亚冰雪世界。三亚冰雪世界由北欧乡村小镇和冰雪馆构成，冰雪馆内为极寒气候，包含滑冰道、滑雪场、冰雕观赏区、戏雪区等主题区。</p><p><img  src="https://dimg02.c-ctrip.com/images/fd/tg/g4/M02/16/37/CggYHVXJtNGAS4UvAAdgueEZNbM017_C_422_236.jpg" alt="三亚冰雪世界冰雪馆 (3)" /> <img  src="https://dimg02.c-ctrip.com/images/fd/tg/g4/M01/16/89/CggYHlXJtOSAI8rqAAX32KMiOoI046_C_422_236.jpg" alt="三亚冰雪世界冰雪馆 (5)" /></p></div><p><br /></p>
+         * recommend : 原汁原味的黎村苗寨，体验千古情的震撼与辉煌。##一场无法用语言和文字定义的演出，立足于三亚长达一万年的恢弘历史长卷。##火山石铺就的图腾大道带您进入三亚千古情景区的神秘旅程。
+         * trafficbus : <p>市内可乘坐7路、9路、23路公交车，东岸村站下车后步行200米到三亚千古情景区。 &nbsp; &nbsp;<br /></p>
+         * distickets : a:2:{i:0;a:4:{s:9:"productId";s:7:"6406567";s:9:"salePrice";s:5:"220.0";s:8:"webPrice";s:3:"280";s:11:"productName";s:101:"<三亚千古情17:00演出门票>【当天提前1小时预定】请严格按照网络价250元售卖";}i:1;a:4:{s:9:"productId";s:7:"6406571";s:9:"salePrice";s:5:"220.0";s:8:"webPrice";s:3:"280";s:11:"productName";s:101:"<三亚千古情20:00演出门票>【当天提前1小时预定】请严格按照网络价250元售卖";}}
+         * ticketlist : a:29:{i:0;a:4:{s:9:"productId";s:7:"5763834";s:9:"salePrice";s:5:"250.0";s:8:"webPrice";s:3:"280";s:11:"productName";s:65:"<三亚千古情17:00演出门票>【当天提前1小时预定】";}i:1;a:4:{s:9:"productId";s:7:"5763885";s:9:"salePrice";s:5:"250.0";s:8:"webPrice";s:3:"280";s:11:"productName";s:65:"<三亚千古情20:00演出门票>【当天提前1小时预定】";}i:2;a:4:{s:9:"productId";s:7:"6049599";s:9:"salePrice";s:5:"120.0";s:8:"webPrice";s:3:"150";s:11:"productName";s:48:"<三亚浪浪浪水公园>请提前1小时预订";}i:3;a:4:{s:9:"productId";s:7:"6150140";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:78:"<三亚千古情 冰雪世界17点场次套票>【当天提前1小时预订】";}i:4;a:4:{s:9:"productId";s:7:"6150146";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:78:"<三亚千古情 冰雪世界20点场次套票>【当天提前1小时预定】";}i:5;a:4:{s:9:"productId";s:7:"6150223";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:75:"<三亚千古情 动物园17点场次套票>【当天提前1小时预定】";}i:6;a:4:{s:9:"productId";s:7:"6150233";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:88:"<三亚千古情 动物园 冰雪世界17点场次套票>【当天提前1小时预定】";}i:7;a:4:{s:9:"productId";s:7:"6150367";s:9:"salePrice";s:5:"200.0";s:8:"webPrice";s:3:"230";s:11:"productName";s:58:"<三亚浪浪浪水公园 动物园>请提前1小时预定";}i:8;a:4:{s:9:"productId";s:7:"6150369";s:9:"salePrice";s:5:"200.0";s:8:"webPrice";s:3:"230";s:11:"productName";s:61:"<三亚浪浪浪水公园 冰雪世界>请提前1小时预订";}i:9;a:4:{s:9:"productId";s:7:"6150370";s:9:"salePrice";s:5:"280.0";s:8:"webPrice";s:3:"310";s:11:"productName";s:71:"<三亚浪浪浪水公园 动物园 冰雪世界>请提前1小时预订";}i:10;a:4:{s:9:"productId";s:7:"6278576";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:78:"<三亚千古情 冰雪世界14点场次套票>【当天提前1小时预订】";}i:11;a:4:{s:9:"productId";s:7:"6278577";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:75:"<三亚千古情 动物园14点场次套票>【当天提前1小时预定】";}i:12;a:4:{s:9:"productId";s:7:"6278579";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:88:"<三亚千古情 动物园 冰雪世界14点场次套票>【当天提前1小时预定】";}i:13;a:4:{s:9:"productId";s:7:"6285164";s:9:"salePrice";s:5:"250.0";s:8:"webPrice";s:3:"280";s:11:"productName";s:65:"<三亚千古情14:00演出门票>【当天提前1小时预定】";}i:14;a:4:{s:9:"productId";s:7:"6299912";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:75:"<三亚千古情 动物园20点场次套票>【当天提前1小时预定】";}i:15;a:4:{s:9:"productId";s:7:"6299915";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:88:"<三亚千古情 动物园 冰雪世界20点场次套票>【当天提前1小时预定】";}i:16;a:4:{s:9:"productId";s:7:"6312240";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:75:"<三亚千古情 水公园14点场次套票>【当天提前1小时预定】";}i:17;a:4:{s:9:"productId";s:7:"6312241";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:75:"<三亚千古情 水公园17点场次套票>【当天提前1小时预定】";}i:18;a:4:{s:9:"productId";s:7:"6312242";s:9:"salePrice";s:5:"320.0";s:8:"webPrice";s:3:"340";s:11:"productName";s:75:"<三亚千古情 水公园20点场次套票>【当天提前1小时预定】";}i:19;a:4:{s:9:"productId";s:7:"6312251";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:85:"<三亚千古情 动物园 水公园14点场次套票>【当天提前1小时预定】";}i:20;a:4:{s:9:"productId";s:7:"6312252";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:85:"<三亚千古情 动物园 水公园17点场次套票>【当天提前1小时预定】";}i:21;a:4:{s:9:"productId";s:7:"6312253";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:85:"<三亚千古情 动物园 水公园20点场次套票>【当天提前1小时预定】";}i:22;a:4:{s:9:"productId";s:7:"6312255";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:88:"<三亚千古情 冰雪世界 水公园14点场次套票>【当天提前1小时预定】";}i:23;a:4:{s:9:"productId";s:7:"6312256";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:88:"<三亚千古情 冰雪世界 水公园17点场次套票>【当天提前1小时预定】";}i:24;a:4:{s:9:"productId";s:7:"6312257";s:9:"salePrice";s:5:"370.0";s:8:"webPrice";s:3:"400";s:11:"productName";s:88:"<三亚千古情 冰雪世界 水公园20点场次套票>【当天提前1小时预定】";}i:25;a:4:{s:9:"productId";s:7:"6312259";s:9:"salePrice";s:5:"430.0";s:8:"webPrice";s:3:"460";s:11:"productName";s:98:"<三亚千古情 动物园 冰雪世界 水公园14点场次套票>【当天提前1小时预定】";}i:26;a:4:{s:9:"productId";s:7:"6312260";s:9:"salePrice";s:5:"430.0";s:8:"webPrice";s:3:"460";s:11:"productName";s:98:"<三亚千古情 动物园 冰雪世界 水公园17点场次套票>【当天提前1小时预定】";}i:27;a:4:{s:9:"productId";s:7:"6312261";s:9:"salePrice";s:5:"430.0";s:8:"webPrice";s:3:"460";s:11:"productName";s:98:"<三亚千古情 动物园 冰雪世界 水公园20点场次套票>【当天提前1小时预定】";}i:28;a:4:{s:9:"productId";s:7:"6352705";s:9:"salePrice";s:5:"368.0";s:8:"webPrice";s:3:"465";s:11:"productName";s:99:"<三亚千古情贵宾席（贵宾票14:00场次） 呀诺达热带雨林（门票 游览车票）>";}}
+         * updateid : 1
+         * status : 1
+         * updatetime : 2017-10-20 17:37:12.000
+         * citytj : 0
+         * wapzj : 0
+         * wapjc : 0
+         * hdtuij : 1
+         * online : 1
+         * saleprice : 120.0
+         * webprice : 150.0
+         * hits : 6898
          * row_number : 1
          */
 
-        private PriceBean price;
+        private String id;
+        private String scenicid;
+        private String scenicname;
+        private String booknotice;
+        private String city;
         private String cityname;
-        private String cate_name;
+        private String province;
+        private String provincename;
+        private String glocation;
+        private String blocation;
+        private String opentime;
+        private String scenicaddress;
+        private String defaultpic;
+        private String scenicdescription;
+        private String recommend;
+        private String trafficbus;
+        private String distickets;
+        private String ticketlist;
+        private String updateid;
+        private String status;
+        private String updatetime;
+        private String citytj;
+        private String wapzj;
+        private String wapjc;
+        private String hdtuij;
+        private String online;
+        private String saleprice;
+        private String webprice;
+        private String hits;
+        private String row_number;
 
         public String getId() {
             return id;
@@ -228,108 +157,28 @@ public class ActiScenicListBean {
             this.id = id;
         }
 
-        public String getCate_id() {
-            return cate_id;
+        public String getScenicid() {
+            return scenicid;
         }
 
-        public void setCate_id(String cate_id) {
-            this.cate_id = cate_id;
+        public void setScenicid(String scenicid) {
+            this.scenicid = scenicid;
         }
 
-        public String getTitle() {
-            return title;
+        public String getScenicname() {
+            return scenicname;
         }
 
-        public void setTitle(String title) {
-            this.title = title;
+        public void setScenicname(String scenicname) {
+            this.scenicname = scenicname;
         }
 
-        public String getShort_title() {
-            return short_title;
+        public String getBooknotice() {
+            return booknotice;
         }
 
-        public void setShort_title(String short_title) {
-            this.short_title = short_title;
-        }
-
-        public String getEn_title() {
-            return en_title;
-        }
-
-        public void setEn_title(String en_title) {
-            this.en_title = en_title;
-        }
-
-        public String getZiying() {
-            return ziying;
-        }
-
-        public void setZiying(String ziying) {
-            this.ziying = ziying;
-        }
-
-        public String getStar() {
-            return star;
-        }
-
-        public void setStar(String star) {
-            this.star = star;
-        }
-
-        public String getHits() {
-            return hits;
-        }
-
-        public void setHits(String hits) {
-            this.hits = hits;
-        }
-
-        public String getSell() {
-            return sell;
-        }
-
-        public void setSell(String sell) {
-            this.sell = sell;
-        }
-
-        public String getDianzang() {
-            return dianzang;
-        }
-
-        public void setDianzang(String dianzang) {
-            this.dianzang = dianzang;
-        }
-
-        public String getTelphone() {
-            return telphone;
-        }
-
-        public void setTelphone(String telphone) {
-            this.telphone = telphone;
-        }
-
-        public String getFax() {
-            return fax;
-        }
-
-        public void setFax(String fax) {
-            this.fax = fax;
-        }
-
-        public String getPrice_area() {
-            return price_area;
-        }
-
-        public void setPrice_area(String price_area) {
-            this.price_area = price_area;
-        }
-
-        public String getProvinceid() {
-            return provinceid;
-        }
-
-        public void setProvinceid(String provinceid) {
-            this.provinceid = provinceid;
+        public void setBooknotice(String booknotice) {
+            this.booknotice = booknotice;
         }
 
         public String getCity() {
@@ -340,6 +189,14 @@ public class ActiScenicListBean {
             this.city = city;
         }
 
+        public String getCityname() {
+            return cityname;
+        }
+
+        public void setCityname(String cityname) {
+            this.cityname = cityname;
+        }
+
         public String getProvince() {
             return province;
         }
@@ -348,148 +205,100 @@ public class ActiScenicListBean {
             this.province = province;
         }
 
-        public String getCity_id() {
-            return city_id;
+        public String getProvincename() {
+            return provincename;
         }
 
-        public void setCity_id(String city_id) {
-            this.city_id = city_id;
+        public void setProvincename(String provincename) {
+            this.provincename = provincename;
         }
 
-        public String getAreaid() {
-            return areaid;
+        public String getGlocation() {
+            return glocation;
         }
 
-        public void setAreaid(String areaid) {
-            this.areaid = areaid;
+        public void setGlocation(String glocation) {
+            this.glocation = glocation;
         }
 
-        public String getAddress() {
-            return address;
+        public String getBlocation() {
+            return blocation;
         }
 
-        public void setAddress(String address) {
-            this.address = address;
+        public void setBlocation(String blocation) {
+            this.blocation = blocation;
         }
 
-        public String getMap() {
-            return map;
+        public String getOpentime() {
+            return opentime;
         }
 
-        public void setMap(String map) {
-            this.map = map;
+        public void setOpentime(String opentime) {
+            this.opentime = opentime;
         }
 
-        public String getOpendate() {
-            return opendate;
+        public String getScenicaddress() {
+            return scenicaddress;
         }
 
-        public void setOpendate(String opendate) {
-            this.opendate = opendate;
+        public void setScenicaddress(String scenicaddress) {
+            this.scenicaddress = scenicaddress;
         }
 
-        public String getOutset() {
-            return outset;
+        public String getDefaultpic() {
+            return defaultpic;
         }
 
-        public void setOutset(String outset) {
-            this.outset = outset;
+        public void setDefaultpic(String defaultpic) {
+            this.defaultpic = defaultpic;
         }
 
-        public String getFeature() {
-            return feature;
+        public String getScenicdescription() {
+            return scenicdescription;
         }
 
-        public void setFeature(String feature) {
-            this.feature = feature;
+        public void setScenicdescription(String scenicdescription) {
+            this.scenicdescription = scenicdescription;
         }
 
-        public String getInpolicy() {
-            return inpolicy;
+        public String getRecommend() {
+            return recommend;
         }
 
-        public void setInpolicy(String inpolicy) {
-            this.inpolicy = inpolicy;
+        public void setRecommend(String recommend) {
+            this.recommend = recommend;
         }
 
-        public String getAdd_time() {
-            return add_time;
+        public String getTrafficbus() {
+            return trafficbus;
         }
 
-        public void setAdd_time(String add_time) {
-            this.add_time = add_time;
+        public void setTrafficbus(String trafficbus) {
+            this.trafficbus = trafficbus;
         }
 
-        public String getIntroduction() {
-            return introduction;
+        public String getDistickets() {
+            return distickets;
         }
 
-        public void setIntroduction(String introduction) {
-            this.introduction = introduction;
+        public void setDistickets(String distickets) {
+            this.distickets = distickets;
         }
 
-        public String getPolicy() {
-            return policy;
+        public String getTicketlist() {
+            return ticketlist;
         }
 
-        public void setPolicy(String policy) {
-            this.policy = policy;
+        public void setTicketlist(String ticketlist) {
+            this.ticketlist = ticketlist;
         }
 
-        public String getTaxinfo() {
-            return taxinfo;
+        public String getUpdateid() {
+            return updateid;
         }
 
-        public void setTaxinfo(String taxinfo) {
-            this.taxinfo = taxinfo;
-        }
-
-        public String getCancelpolicy() {
-            return cancelpolicy;
-        }
-
-        public void setCancelpolicy(String cancelpolicy) {
-            this.cancelpolicy = cancelpolicy;
-        }
-
-        public String getBookinginfo() {
-            return bookinginfo;
-        }
-
-        public void setBookinginfo(String bookinginfo) {
-            this.bookinginfo = bookinginfo;
-        }
-
-        public String getOrderinfo() {
-            return orderinfo;
-        }
-
-        public void setOrderinfo(String orderinfo) {
-            this.orderinfo = orderinfo;
-        }
-
-        public String getInfo() {
-            return info;
-        }
-
-        public void setInfo(String info) {
-            this.info = info;
-        }
-
-        public String getImg() {
-            return img;
-        }
-
-        public void setImg(String img) {
-            this.img = img;
-        }
-
-        public String getWap_img() {
-            return wap_img;
-        }
-
-        public void setWap_img(String wap_img) {
-            this.wap_img = wap_img;
+        public void setUpdateid(String updateid) {
+            this.updateid = updateid;
         }
 
         public String getStatus() {
@@ -500,36 +309,12 @@ public class ActiScenicListBean {
             this.status = status;
         }
 
-        public String getOnline() {
-            return online;
+        public String getUpdatetime() {
+            return updatetime;
         }
 
-        public void setOnline(String online) {
-            this.online = online;
-        }
-
-        public String getBigimg() {
-            return bigimg;
-        }
-
-        public void setBigimg(String bigimg) {
-            this.bigimg = bigimg;
-        }
-
-        public String getMorepic() {
-            return morepic;
-        }
-
-        public void setMorepic(String morepic) {
-            this.morepic = morepic;
-        }
-
-        public String getHottj() {
-            return hottj;
-        }
-
-        public void setHottj(String hottj) {
-            this.hottj = hottj;
+        public void setUpdatetime(String updatetime) {
+            this.updatetime = updatetime;
         }
 
         public String getCitytj() {
@@ -538,94 +323,6 @@ public class ActiScenicListBean {
 
         public void setCitytj(String citytj) {
             this.citytj = citytj;
-        }
-
-        public String getCattj() {
-            return cattj;
-        }
-
-        public void setCattj(String cattj) {
-            this.cattj = cattj;
-        }
-
-        public String getPayfs() {
-            return payfs;
-        }
-
-        public void setPayfs(String payfs) {
-            this.payfs = payfs;
-        }
-
-        public String getCommentnum() {
-            return commentnum;
-        }
-
-        public void setCommentnum(String commentnum) {
-            this.commentnum = commentnum;
-        }
-
-        public String getAverage() {
-            return average;
-        }
-
-        public void setAverage(String average) {
-            this.average = average;
-        }
-
-        public String getMer_id() {
-            return mer_id;
-        }
-
-        public void setMer_id(String mer_id) {
-            this.mer_id = mer_id;
-        }
-
-        public String getAdmin() {
-            return admin;
-        }
-
-        public void setAdmin(String admin) {
-            this.admin = admin;
-        }
-
-        public String getEdit_time() {
-            return edit_time;
-        }
-
-        public void setEdit_time(String edit_time) {
-            this.edit_time = edit_time;
-        }
-
-        public String getLat() {
-            return lat;
-        }
-
-        public void setLat(String lat) {
-            this.lat = lat;
-        }
-
-        public String getLng() {
-            return lng;
-        }
-
-        public void setLng(String lng) {
-            this.lng = lng;
-        }
-
-        public String getImgcreate() {
-            return imgcreate;
-        }
-
-        public void setImgcreate(String imgcreate) {
-            this.imgcreate = imgcreate;
-        }
-
-        public String getPrice_area2() {
-            return price_area2;
-        }
-
-        public void setPrice_area2(String price_area2) {
-            this.price_area2 = price_area2;
         }
 
         public String getWapzj() {
@@ -644,30 +341,6 @@ public class ActiScenicListBean {
             this.wapjc = wapjc;
         }
 
-        public String getWapzt() {
-            return wapzt;
-        }
-
-        public void setWapzt(String wapzt) {
-            this.wapzt = wapzt;
-        }
-
-        public String getWaphd() {
-            return waphd;
-        }
-
-        public void setWaphd(String waphd) {
-            this.waphd = waphd;
-        }
-
-        public String getIsrec() {
-            return isrec;
-        }
-
-        public void setIsrec(String isrec) {
-            this.isrec = isrec;
-        }
-
         public String getHdtuij() {
             return hdtuij;
         }
@@ -676,93 +349,44 @@ public class ActiScenicListBean {
             this.hdtuij = hdtuij;
         }
 
+        public String getOnline() {
+            return online;
+        }
+
+        public void setOnline(String online) {
+            this.online = online;
+        }
+
+        public String getSaleprice() {
+            return saleprice;
+        }
+
+        public void setSaleprice(String saleprice) {
+            this.saleprice = saleprice;
+        }
+
+        public String getWebprice() {
+            return webprice;
+        }
+
+        public void setWebprice(String webprice) {
+            this.webprice = webprice;
+        }
+
+        public String getHits() {
+            return hits;
+        }
+
+        public void setHits(String hits) {
+            this.hits = hits;
+        }
+
         public String getRow_number() {
             return row_number;
         }
 
         public void setRow_number(String row_number) {
             this.row_number = row_number;
-        }
-
-        public PriceBean getPrice() {
-            return price;
-        }
-
-        public void setPrice(PriceBean price) {
-            this.price = price;
-        }
-
-        public String getCityname() {
-            return cityname;
-        }
-
-        public void setCityname(String cityname) {
-            this.cityname = cityname;
-        }
-
-        public String getCate_name() {
-            return cate_name;
-        }
-
-        public void setCate_name(String cate_name) {
-            this.cate_name = cate_name;
-        }
-
-        public static class PriceBean {
-            private String webprice;
-            private String marketprice;
-            private String price;
-            private String userprice;
-            private String stock;
-            private String row_number;
-
-            public String getWebprice() {
-                return webprice;
-            }
-
-            public void setWebprice(String webprice) {
-                this.webprice = webprice;
-            }
-
-            public String getMarketprice() {
-                return marketprice;
-            }
-
-            public void setMarketprice(String marketprice) {
-                this.marketprice = marketprice;
-            }
-
-            public String getPrice() {
-                return price;
-            }
-
-            public void setPrice(String price) {
-                this.price = price;
-            }
-
-            public String getUserprice() {
-                return userprice;
-            }
-
-            public void setUserprice(String userprice) {
-                this.userprice = userprice;
-            }
-
-            public String getStock() {
-                return stock;
-            }
-
-            public void setStock(String stock) {
-                this.stock = stock;
-            }
-
-            public String getRow_number() {
-                return row_number;
-            }
-
-            public void setRow_number(String row_number) {
-                this.row_number = row_number;
-            }
         }
     }
 }

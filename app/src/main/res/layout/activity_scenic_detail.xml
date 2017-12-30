@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <RelativeLayout
         android:id="@+id/rl_scenic_roll"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/ll_loading"
@@ -18,8 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="120dp"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
             <ProgressBar
                 android:id="@+id/pb_loading"
@@ -29,37 +29,38 @@
                 android:indeterminateTint="#009A44"
                 android:indeterminateTintMode="src_atop"
 
-                tools:targetApi="lollipop"/>
+                tools:targetApi="lollipop" />
 
             <TextView
                 android:id="@+id/tv_loading"
-                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
                 android:gravity="center_vertical"
-                android:text="数据加载中..."/>
+                android:text="数据加载中..." />
 
         </LinearLayout>
 
-        <com.andview.refreshview.XRefreshView
+      <!--  <com.andview.refreshview.XRefreshView
             android:id="@+id/rfv_scenic_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone">-->
 
             <cn.houno.houniaolvju.view.GradationScrollView
                 android:id="@+id/sv_scenic"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
                 <!--内容区域-->
                 <LinearLayout
                     android:id="@+id/ll_content"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#ffffff"
-                    android:orientation="vertical"
-                    >
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
@@ -71,7 +72,7 @@
                             android:layout_height="match_parent"
                             app:rollviewpager_hint_gravity="right"
                             app:rollviewpager_hint_paddingRight="10dp"
-                            app:rollviewpager_play_delay="3000"/>
+                            app:rollviewpager_play_delay="3000" />
 
                         <TextView
                             android:id="@+id/tv_order_title_txt"
@@ -81,7 +82,7 @@
                             android:background="@color/btm_txt"
                             android:padding="5dp"
                             android:textColor="#ffffff"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
                     </RelativeLayout>
 
                     <LinearLayout
@@ -94,32 +95,32 @@
                             android:layout_width="45dp"
                             android:layout_height="45dp"
                             android:padding="10dp"
-                            android:src="@drawable/icon_scenic_time"/>
+                            android:src="@drawable/icon_scenic_time" />
 
                         <TextView
                             android:id="@+id/tv_time"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:maxLines="2"
                             android:ellipsize="end"
+                            android:maxLines="2"
                             android:paddingBottom="5dp"
                             android:paddingTop="5dp"
                             android:textColor="@color/black_txt"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:layout_width="45dp"
                             android:layout_height="45dp"
                             android:padding="15dp"
-                            android:src="@drawable/icon_go"/>
+                            android:src="@drawable/icon_go" />
                     </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1px"
                         android:layout_marginLeft="45dp"
-                        android:background="#dddddd"/>
+                        android:background="#dddddd" />
 
                     <LinearLayout
                         android:id="@+id/ll_scenic_address"
@@ -132,7 +133,7 @@
                             android:layout_width="45dp"
                             android:layout_height="45dp"
                             android:padding="11dp"
-                            android:src="@drawable/icon_scenic_loc"/>
+                            android:src="@drawable/icon_scenic_loc" />
 
                         <TextView
                             android:id="@+id/tv_address"
@@ -142,319 +143,349 @@
                             android:paddingBottom="5dp"
                             android:paddingTop="5dp"
                             android:textColor="@color/black_txt"
-                            android:textSize="16sp"/>
+                            android:textSize="16sp" />
 
                         <ImageView
                             android:layout_width="45dp"
                             android:layout_height="45dp"
                             android:padding="15dp"
-                            android:src="@drawable/icon_go"/>
+                            android:src="@drawable/icon_go" />
                     </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="#dddddd"/>
+                        android:layout_height="20px"
+                        android:layout_marginTop="10dp"
+                        android:background="#dddddd" />
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:background="@color/detail_space"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="#dddddd"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                    <!--    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="10dp"
+                            android:background="@color/detail_space"/>
 
                         <View
-                            android:layout_width="2dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="15dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
-                            android:background="#7bc730"/>
+                            android:layout_width="match_parent"
+                            android:layout_height="1px"
+                            android:background="#dddddd"/>-->
+                    <!--
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="45dp"
+                                            android:gravity="center_vertical"
+                                            android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:text="门票预订"
-                            android:textColor="@color/black_txt"
-                            android:textSize="16sp"/>
-                    </LinearLayout>
+                                            <View
+                                                android:layout_width="2dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_marginBottom="15dp"
+                                                android:layout_marginLeft="10dp"
+                                                android:layout_marginTop="15dp"
+                                                android:background="#7bc730"/>
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:paddingLeft="10dp"
+                                                android:text="门票预订"
+                                                android:textColor="@color/black_txt"
+                                                android:textSize="16sp"/>
+                                        </LinearLayout>-->
+
+                    <com.shizhefei.view.indicator.ScrollIndicatorView
+                        android:id="@+id/siv_home_hs"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp" />
+
+                    <cn.houno.houniaolvju.view.CustomViewPager
+                        android:id="@+id/vp_home_hs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1px"
-                        android:background="#dddddd"/>
+                        android:layout_marginTop="10dp"
+                        android:background="#dddddd" />                                                                       <!--       <LinearLayout
+                    android:id="@+id/rg_top_bar"
+                    android:orientation="horizontal"
+                    android:layout_below="@+id/rl_order_ddlb"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp">
 
-                    <cn.houno.houniaolvju.view.InnerListView
-                        android:id="@+id/lv_ticket"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:id="@+id/rb_ddlb_ing"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="进行中"
+                        android:textColor="#505050"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/rb_ddlb_end"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="已结束"
+                        android:textColor="#505050"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
 
                     <View
+                        android:id="@+id/view_lan"
+                        android:layout_below="@+id/rg_top_bar"
                         android:layout_width="match_parent"
                         android:layout_height="1px"
-                        android:background="#dddddd"/>
+                        android:background="@android:color/darker_gray"/>
 
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:background="@color/detail_space"/>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="#dddddd"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
-
-                        <View
-                            android:layout_width="2dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="15dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
-                            android:background="#7bc730"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:text="景点详情"
-                            android:textColor="@color/black_txt"
-                            android:textSize="16sp"/>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="#dddddd"/>
-
-                    <LinearLayout
+                    <cn.houno.houniaolvju.view.NoScrollViewPager
+                        android:layout_below="@+id/view_lan"
+                        android:id="@+id/no_vp_order"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        />   -->
+                    " />
 
-                        <LinearLayout
-                            android:id="@+id/ll_webview_book"
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
 
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="10dp"
-                                android:src="@drawable/icon_scenic_book"/>
+                    <!--  <View
+                          android:layout_width="match_parent"
+                          android:layout_height="1px"
+                          android:background="#dddddd"/>-->
 
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="预订说明"
-                                android:textColor="@color/black_txt"/>
+                    <!-- <cn.houno.houniaolvju.view.InnerListView
+                         android:id="@+id/lv_ticket"
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"/>-->
+                    <!--
 
-                            <TextView
-                                android:id="@+id/tv_detail_book"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:gravity="center"
-                                android:text="—"
-                                android:textColor="@color/app_light_green"
-                                android:textSize="20sp"/>
-                        </LinearLayout>
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1px"
+                                            android:background="#dddddd"/>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1px"
-                            android:layout_marginLeft="10dp"
-                            android:background="#dddddd"/>
 
-                        <WebView
-                            android:id="@+id/wv_scenic_detail_book"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="10dp"
+                                            android:background="@color/detail_space"/>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1px"
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1px"
+                                            android:background="#dddddd"/>
+                    -->
 
-                            android:background="#dddddd"/>
+                    <!--  <LinearLayout
+                          android:layout_width="match_parent"
+                          android:layout_height="45dp"
+                          android:gravity="center_vertical"
+                          android:orientation="horizontal">
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp"
-                            android:background="@color/detail_space"/>
+                          <View
+                              android:layout_width="2dp"
+                              android:layout_height="match_parent"
+                              android:layout_marginBottom="15dp"
+                              android:layout_marginLeft="10dp"
+                              android:layout_marginTop="15dp"
+                              android:background="#7bc730"/>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1px"
-                            android:background="#dddddd"/>
-
-                        <LinearLayout
-                            android:id="@+id/ll_webview_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="40dp"
-                                android:padding="11dp"
-                                android:src="@drawable/icon_scenic_info"/>
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="景点资料"
-                                android:textColor="@color/black_txt"/>
-
-                            <TextView
-                                android:id="@+id/tv_detail_info"
-                                android:layout_width="45dp"
-                                android:layout_height="45dp"
-                                android:gravity="center"
-                                android:text="—"
-                                android:textColor="@color/app_light_green"
-                                android:textSize="20sp"/>
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1px"
-                            android:layout_marginLeft="10dp"
-                            android:background="#dddddd"/>
-
-                        <WebView
-                            android:id="@+id/wv_scenic_detail_info"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
-                    </LinearLayout>
+                          <TextView
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:paddingLeft="10dp"
+                              android:text="景点详情"
+                              android:textColor="@color/black_txt"
+                              android:textSize="16sp"/>
+                      </LinearLayout>-->
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1px"
-                        android:background="#dddddd"/>
+                        android:background="#dddddd" />
+                    <!--
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:background="@color/detail_space"/>
+                                            <LinearLayout
+                                                android:id="@+id/ll_webview_book"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="45dp"
+                                                android:gravity="center_vertical"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:padding="10dp"
+                                                    android:src="@drawable/icon_scenic_book"/>
+
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="1"
+                                                    android:text="预订说明"
+                                                    android:textColor="@color/black_txt"/>
+
+                                                <TextView
+                                                    android:id="@+id/tv_detail_book"
+                                                    android:layout_width="45dp"
+                                                    android:layout_height="45dp"
+                                                    android:gravity="center"
+                                                    android:text="—"
+                                                    android:textColor="@color/app_light_green"
+                                                    android:textSize="20sp"/>
+                                            </LinearLayout>
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1px"
+                                                android:layout_marginLeft="10dp"
+                                                android:background="#dddddd"/>
+
+                                            <WebView
+                                                android:id="@+id/wv_scenic_detail_book"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"/>
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1px"
+
+                                                android:background="#dddddd"/>
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="10dp"
+                                                android:background="@color/detail_space"/>
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1px"
+                                                android:background="#dddddd"/>
+
+                                            <LinearLayout
+                                                android:id="@+id/ll_webview_info"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="45dp"
+                                                android:gravity="center_vertical"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:padding="11dp"
+                                                    android:src="@drawable/icon_scenic_info"/>
+
+                                                <TextView
+                                                    android:layout_width="0dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_weight="1"
+                                                    android:text="景点资料"
+                                                    android:textColor="@color/black_txt"/>
+
+                                                <TextView
+                                                    android:id="@+id/tv_detail_info"
+                                                    android:layout_width="45dp"
+                                                    android:layout_height="45dp"
+                                                    android:gravity="center"
+                                                    android:text="—"
+                                                    android:textColor="@color/app_light_green"
+                                                    android:textSize="20sp"/>
+                                            </LinearLayout>
+
+                                            <View
+                                                android:layout_width="match_parent"
+                                                android:layout_height="1px"
+                                                android:layout_marginLeft="10dp"
+                                                android:background="#dddddd"/>
+
+                                            <WebView
+                                                android:id="@+id/wv_scenic_detail_info"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"/>
+                                        </LinearLayout>-->
+                    <!--
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="1px"
+                                            android:background="#dddddd"/>
+
+                                        <View
+                                            android:layout_width="match_parent"
+                                            android:layout_height="10dp"
+                                            android:background="@color/detail_space"/>-->
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1px"
-                        android:background="#dddddd"/>
+                        android:background="#dddddd" />
 
-                    <LinearLayout
-                        android:id="@+id/ll_comment"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                    <!--   <LinearLayout
+                           android:id="@+id/ll_comment"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="vertical">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="45dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
+                           <LinearLayout
+                               android:layout_width="match_parent"
+                               android:layout_height="45dp"
+                               android:gravity="center_vertical"
+                               android:orientation="horizontal">
 
-                            <View
-                                android:layout_width="2dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginBottom="15dp"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginTop="15dp"
-                                android:background="#7bc730"/>
+                               <View
+                                   android:layout_width="2dp"
+                                   android:layout_height="match_parent"
+                                   android:layout_marginBottom="15dp"
+                                   android:layout_marginLeft="10dp"
+                                   android:layout_marginTop="15dp"
+                                   android:background="#7bc730"/>
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="10dp"
-                                android:text="用户评论"
-                                android:textColor="@color/black_txt"
-                                android:textSize="16sp"/>
-                        </LinearLayout>
+                               <TextView
+                                   android:layout_width="wrap_content"
+                                   android:layout_height="wrap_content"
+                                   android:paddingLeft="10dp"
+                                   android:text="用户评论"
+                                   android:textColor="@color/black_txt"
+                                   android:textSize="16sp"/>
+                           </LinearLayout>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1px"
-                            android:background="#dddddd"/>
+                           <View
+                               android:layout_width="match_parent"
+                               android:layout_height="1px"
+                               android:background="#dddddd"/>
 
-                        <cn.houno.houniaolvju.view.InnerListView
-                            android:id="@+id/lv_scenic_comment"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                           <cn.houno.houniaolvju.view.InnerListView
+                               android:id="@+id/lv_scenic_comment"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"/>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1px"
-                            android:background="#dddddd"/>
+                           <View
+                               android:layout_width="match_parent"
+                               android:layout_height="1px"
+                               android:background="#dddddd"/>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="10dp"
-                            android:background="@color/detail_space"/>
+                           <View
+                               android:layout_width="match_parent"
+                               android:layout_height="10dp"
+                               android:background="@color/detail_space"/>
 
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1px"
-                            android:background="#dddddd"/>
-                    </LinearLayout>
+                           <View
+                               android:layout_width="match_parent"
+                               android:layout_height="1px"
+                               android:background="#dddddd"/>
+                       </LinearLayout>-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:gravity="center_vertical"
-                        android:orientation="horizontal">
 
-                        <View
-                            android:layout_width="2dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="15dp"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
-                            android:background="#7bc730"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:text="相似景点"
-                            android:textColor="@color/black_txt"
-                            android:textSize="16sp"/>
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1px"
-                        android:background="#dddddd"/>
-
-                    <cn.houno.houniaolvju.view.InnerGridView
-                        android:id="@+id/gv_scenic_other"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:numColumns="2"/>
                 </LinearLayout>
             </cn.houno.houniaolvju.view.GradationScrollView>
 
 
-        </com.andview.refreshview.XRefreshView>
+      <!--  </com.andview.refreshview.XRefreshView>-->
     </RelativeLayout>
 
     <RelativeLayout
@@ -471,20 +502,20 @@
             android:layout_height="35dp"
             android:background="@drawable/shape_circular_btm"
             android:padding="5dp"
-            android:src="@drawable/icon_back"/>
+            android:src="@drawable/icon_back" />
 
         <TextView
             android:id="@+id/tv_topbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:padding="5dp"
-            android:text="标题栏"
-            android:singleLine="true"
-            android:maxLines="1"
             android:ellipsize="end"
-            android:textSize="18sp"
-            android:textColor="#00000000"/>
+            android:maxLines="1"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:text="标题栏"
+            android:textColor="#00000000"
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/iv_share"
@@ -494,8 +525,8 @@
             android:background="@drawable/shape_circular_btm"
             android:clickable="false"
             android:padding="7dp"
-            android:visibility="gone"
-            android:src="@drawable/icon_share"/>
+            android:src="@drawable/icon_share"
+            android:visibility="gone" />
     </RelativeLayout>
 
 </RelativeLayout>

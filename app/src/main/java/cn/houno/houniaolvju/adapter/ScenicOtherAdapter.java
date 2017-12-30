@@ -13,7 +13,7 @@ import org.xutils.x;
 import java.util.List;
 
 import cn.houno.houniaolvju.R;
-import cn.houno.houniaolvju.bean.ScenicDetailBean.DataBean.OtherBean;
+import cn.houno.houniaolvju.bean.ScenicDetailBean;
 import cn.houno.houniaolvju.utils.DisplayUtil;
 import cn.houno.houniaolvju.utils.MyText2Utils;
 
@@ -29,15 +29,15 @@ import cn.houno.houniaolvju.utils.MyText2Utils;
 public class ScenicOtherAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
-    private List<OtherBean> mList;
+    private List<ScenicDetailBean.DataBean.OtherBean> mList;
 
-    public ScenicOtherAdapter(Context context, List<OtherBean> list) {
+    public ScenicOtherAdapter(Context context,List<ScenicDetailBean.DataBean.OtherBean> list) {
         mContext = context;
         mList = list;
         mInflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<OtherBean> list) {
+    public void setData(List<ScenicDetailBean.DataBean.OtherBean> list) {
         mList = list;
         notifyDataSetChanged();
     }

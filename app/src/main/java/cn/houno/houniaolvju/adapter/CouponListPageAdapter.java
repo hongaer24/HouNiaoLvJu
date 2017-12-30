@@ -12,12 +12,7 @@ import android.widget.TextView;
 
 import com.shizhefei.view.indicator.IndicatorViewPager;
 
-import java.util.ArrayList;
-
 import cn.houno.houniaolvju.R;
-import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.ActiScenicBean;
-import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.TgHotelBean;
-import cn.houno.houniaolvju.fragment.home.ActivityFragment;
 import cn.houno.houniaolvju.fragment.myinfo.coupon.CouponListPage;
 
 /**

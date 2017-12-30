@@ -14,7 +14,7 @@ import org.xutils.x;
 import java.util.List;
 
 import cn.houno.houniaolvju.R;
-import cn.houno.houniaolvju.bean.ScenicIndexBean.LocalBean;
+import cn.houno.houniaolvju.bean.ScenicIndexBean;
 import cn.houno.houniaolvju.utils.DisplayUtil;
 import cn.houno.houniaolvju.utils.MyText2Utils;
 
@@ -30,15 +30,15 @@ import cn.houno.houniaolvju.utils.MyText2Utils;
 public class ScenicLocalAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
-    private List<LocalBean> mList;
+    private List<ScenicIndexBean.MainBean> mList;
 
-    public ScenicLocalAdapter(Context context, List<LocalBean> list) {
+    public ScenicLocalAdapter(Context context, List<ScenicIndexBean.MainBean> list) {
         mContext = context;
         mList = list;
         mInflater = LayoutInflater.from(context);
     }
 
-    public void setData(List<LocalBean> list) {
+    public void setData(List<ScenicIndexBean.MainBean> list) {
         mList = list;
         notifyDataSetChanged();
     }
@@ -95,13 +95,13 @@ public class ScenicLocalAdapter extends BaseAdapter {
         }
         x.image().bind(viewHolder.ivImg, mList.get(position).getDefaultpic(), DisplayUtil.getImageOptions());
         viewHolder.tvTitle.setText(mList.get(position).getScenicname());
-        //viewHolder.tvStar.setText(mList.get(position).getStar());
+        viewHolder.tvStar.setText(mList.get(position).getOpentime());
         //viewHolder.tvCate.setText(mList.get(position).getCate_name());
-        viewHolder.tvHits.setText(mList.get(position).getHits());
-        if (mList.get(position).getWebprice() != null && mList.get(position).getWebprice() != null
-                && !mList.get(position).getWebprice().equals("") && !mList.get(position).getWebprice().equals("")) {
+        viewHolder.tvHits.setText(mList.get(position).getScenicaddress());
+        if (mList.get(position).getSaleprice() != null && mList.get(position).getSaleprice() != null
+                && !mList.get(position).getSaleprice().equals("") && !mList.get(position).getSaleprice().equals("")) {
 
-            MyText2Utils.formatYuanPrice(mContext, viewHolder.tvPrice, mList.get(position).getWebprice());
+            MyText2Utils.formatYuanPrice(mContext, viewHolder.tvPrice, mList.get(position).getSaleprice());
         }else {
             viewHolder.tvPrice.setText("暂无价格");
         }

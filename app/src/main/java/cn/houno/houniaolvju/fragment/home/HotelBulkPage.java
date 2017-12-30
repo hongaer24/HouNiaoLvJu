@@ -106,7 +106,6 @@ public class HotelBulkPage extends Fragment {
         if (flTgLabel.getVisibility() != View.VISIBLE) {
             flTgLabel.setVisibility(View.VISIBLE);
         }
-
         if (null != data) {
             llView.setVisibility(View.VISIBLE);
             hid = data.getId();

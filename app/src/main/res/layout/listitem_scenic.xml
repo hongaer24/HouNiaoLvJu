@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="120dp"
         android:orientation="horizontal">
 
         <FrameLayout
@@ -17,24 +17,21 @@
 
             <ImageView
                 android:id="@+id/iv_scenic_img"
-                android:layout_width="130dp"
-                android:layout_height="90dp"
-                android:scaleType="fitXY"
+                android:layout_width="140dp"
+                android:layout_height="120dp"
                 android:background="@color/imageview_background_gray"
-               />
+                android:scaleType="fitXY" />
 
             <FrameLayout
                 android:id="@+id/fl_scenic_label"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-               >
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/iv_scenic_label"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                   />
+                    android:layout_height="wrap_content" />
 
                 <TextView
                     android:id="@+id/tv_scenic_label"
@@ -42,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="12sp"/>
+                    android:textSize="12sp" />
             </FrameLayout>
         </FrameLayout>
 
@@ -64,7 +61,7 @@
                 android:singleLine="true"
                 android:text=""
                 android:textColor="#505050"
-                android:textSize="16sp"/>
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/tv_scenic_star"
@@ -73,8 +70,8 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text=""
-                android:textColor="@color/light_gray_txt"
-                />
+                android:maxLines="1"
+                android:textColor="@color/light_gray_txt" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -88,9 +85,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@drawable/shape_label_green"
-                    android:text="可预订"
+                    android:text="今日可预定"
                     android:textColor="@color/label_dark_green"
-                    android:textSize="13sp"/>
+                    android:textSize="13sp" />
 
                 <TextView
                     android:id="@+id/tv_scenic_cate"
@@ -98,10 +95,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/shape_label_red"
-                    android:text=""
+                    android:text="优惠"
                     android:textColor="@color/label_dark_red"
-                    android:textSize="13sp"/>
+                    android:textSize="13sp" />
 
+                <TextView
+                    android:id="@+id/tv_scenic_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="35dp"
+                    android:textColor="@color/orgs_txt" />
 
             </LinearLayout>
 
@@ -123,38 +128,34 @@
                         android:id="@+id/tv_scenic_hits"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=""
-                        android:textColor="@color/orgs_txt"
-                        />
-
-                    <TextView
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="11"
+                        android:textColor="@color/light_gray_txt" />
+<!--
+                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="人关注"
                         android:textColor="@color/light_gray_txt"
-                        />
+                        />-->
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="10dp"
-                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_scenic_price"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end|center_vertical"
-                        android:text=""
-                        android:textColor="@color/orgs_txt"
-                        />
-
-                </LinearLayout>
             </RelativeLayout>
 
         </LinearLayout>
+      <!--  <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            >
+
+
+        </LinearLayout>-->
+
     </LinearLayout>
 </LinearLayout>

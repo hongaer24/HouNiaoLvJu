@@ -1,16 +1,13 @@
 package cn.houno.houniaolvju.adapter;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,13 +16,11 @@ import java.util.List;
 
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.scenic.FillInScenicOrderActivity;
-//import cn.houno.houniaolvju.bean.ScenicDetailBean.DataBean.TicketBean.TicketDataBean;
-import cn.houno.houniaolvju.application.MyApplication;
+import cn.houno.houniaolvju.activity.scenic.ScenicBookInfoActivity;
 import cn.houno.houniaolvju.bean.ScenicDetailBean;
-import cn.houno.houniaolvju.fragment.myinfo.LoginActivity;
 import cn.houno.houniaolvju.utils.MyText2Utils;
-import cn.houno.houniaolvju.utils.PassengerStorage;
-import cn.houno.houniaolvju.utils.PrefUtils;
+
+//import cn.houno.houniaolvju.bean.ScenicDetailBean.DataBean.TicketBean.TicketDataBean;
 
 /**
  * 项目名称：HouNiaoLvJu
@@ -89,7 +84,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.listitem_scenic_ticket, parent, false);
             viewHolder = new ViewHolder();
             viewHolder.title = (TextView) convertView.findViewById(R.id.tv_ticket_title);
-            viewHolder.ivHead = (ImageView) convertView.findViewById(R.id.iv_ticket_head);
+           // viewHolder.ivHead = (ImageView) convertView.findViewById(R.id.iv_ticket_head);
             viewHolder.know = (TextView) convertView.findViewById(R.id.tv_ticket_know);
             viewHolder.price = (TextView) convertView.findViewById(R.id.tv_ticket_price);
             viewHolder.llBook = (LinearLayout) convertView.findViewById(R.id.ll_ticket_book);
@@ -97,9 +92,10 @@ public class ScenicTicketAdapter extends BaseAdapter {
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
+
         String title = list.get(position).getProductName().trim();
         viewHolder.title.setText(title);
-        if (!TextUtils.isEmpty(title)) {
+       /* if (!TextUtils.isEmpty(title)) {
             if (viewHolder.ivHead.getVisibility() == View.GONE) {
                 viewHolder.ivHead.setVisibility(View.VISIBLE);
             }
@@ -112,7 +108,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
             } else {
                 viewHolder.ivHead.setVisibility(View.GONE);
             }
-        }
+        }*/
         final int price;
         if (list.get(position).getWebPrice() != null
                 && !list.get(position).getWebPrice().equals("")
@@ -135,6 +131,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
                     intent.putExtra("ticketTitle", list.get(position).getProductName().trim());
                     intent.putExtra("price", price);
                     intent.putExtra("custInfoLimit", list.get(position).getTicketlistinfo().getCustinfolimit());
+                    //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
                     intent.putExtra("position", position);
 
                    // Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
@@ -146,12 +143,15 @@ public class ScenicTicketAdapter extends BaseAdapter {
             viewHolder.price.setText("暂无价格");
             viewHolder.llBook.setClickable(false);
         }
-        inpolicy = list.get(position).getTicketlistinfo().getInfo();
+        //inpolicy = list.get(position).getTicketlistinfo().getInfo();
         viewHolder.know.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                builder.setTitle("预订须知");
+                Intent intent = new Intent(mContext, ScenicBookInfoActivity.class);
+                intent.putExtra("book", (Serializable) list);
+                intent.putExtra("position", position);
+                mContext.startActivity(intent);
+           /*     builder.setTitle("预订须知");
                 builder.setMessage(inpolicy);
                 builder.setCancelable(true);
 
@@ -161,7 +161,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
                         dialog.dismiss();
                     }
                 });
-                builder.create().show();
+                builder.create().show();*/
 
             }
         });
@@ -170,7 +170,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
     }
 
     static class ViewHolder {
-        ImageView ivHead;
+       // ImageView ivHead;
         TextView title;
         TextView know;
         TextView price;

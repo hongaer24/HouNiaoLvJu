@@ -54,6 +54,7 @@ public class EndOrderPager extends Fragment {
     XRefreshView rfvEndOrder;
     @Bind(R.id.ll_no_order)
     LinearLayout llNoOrder;
+
     private MainActivity mActivity;
 
     private String userid;
@@ -61,6 +62,7 @@ public class EndOrderPager extends Fragment {
     private List<OrderListBean.DataBean> mEndOrderList = new ArrayList<>();
 
     public static boolean refresh = false;
+    private String info;
 
 
     @Nullable
@@ -229,6 +231,8 @@ public class EndOrderPager extends Fragment {
         } else {
             endListAdapter.setData(mEndOrderList);
         }
+   /*    info = PrefUtils.getString(mActivity, "info", "");
+        wvScenicDetailInfo.loadDataWithBaseURL(null,    info, "text/html", "utf-8", null);*/
     }
 
     @Override
@@ -236,7 +240,7 @@ public class EndOrderPager extends Fragment {
         super.onResume();
         System.out.println("EndOrderPage:onResume");
         if (refresh) {
-            refresh=false;
+            refresh = false;
             getDataFromServer();
         }
     }

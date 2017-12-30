@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical">
     <!--标题栏-->
     <RelativeLayout
         android:id="@+id/ly_top_bar"
@@ -33,39 +34,139 @@
             android:textSize="18sp"/>
     </RelativeLayout>
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/shape_white_gray"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginTop="120dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/ll_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/icon_hotel_list_search"/>
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                style="@style/Widget.AppCompat.ProgressBar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
 
-        <EditText
-            android:id="@+id/et_search"
+                android:indeterminateTint="#009A44"
+                android:indeterminateTintMode="src_atop"
+                tools:targetApi="lollipop"/>
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:id="@+id/tv_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="城市定位中..."/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_content"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:background="@null"
-            android:singleLine="true"
-            android:maxLines="1"
-            android:hint="输入城市名、景点或游玩主题"
-            android:textColor="@color/black_txt"
-            android:imeOptions="actionSearch"
-            android:textSize="16sp"
-            />
-    </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@drawable/line_dddddd"/>
-    <com.zxl.library.DropDownMenu
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/ll_scenic_loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:padding="2dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/icon_scenic_loc"/>
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:text="--"
+                        android:textColor="@color/black_txt"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/shape_white_gray"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/icon_hotel_list_search"/>
+
+                    <EditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:background="@null"
+                        android:singleLine="true"
+                        android:maxLines="1"
+                        android:hint="输入城市名、景点或游玩主题"
+                        android:textColor="@color/black_txt"
+                        android:imeOptions="actionSearch"
+                        android:textSize="16sp"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.andview.refreshview.XRefreshView
+                android:id="@+id/rfv_scenic_index"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.andview.refreshview.XScrollView
+                    android:id="@+id/sv_scenic_index"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!--内容-->
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                            <cn.houno.houniaolvju.view.InnerListView
+                                android:id="@+id/lv_scenic_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ffffff"/>
+
+                    </LinearLayout>
+                </com.andview.refreshview.XScrollView>
+
+            </com.andview.refreshview.XRefreshView>
+
+
+        </LinearLayout>
+
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@drawable/line_dddddd"/>
+    </RelativeLayout>
+
+   <!-- <com.zxl.library.DropDownMenu
         android:id="@+id/ddm_scenic_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -77,5 +178,5 @@
         app:ddmenuUnselectedIcon="@mipmap/drop_down_unselected_icon"
         app:ddneedSetSlectedColor="true"
         app:ddtextSelectedColor="@color/app_theme_green"
-        app:ddtextUnselectedColor="@color/tab_txt"/>
+        app:ddtextUnselectedColor="@color/tab_txt"/>-->
 </LinearLayout>

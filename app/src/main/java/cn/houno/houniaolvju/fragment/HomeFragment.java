@@ -70,11 +70,11 @@ import cn.houno.houniaolvju.adapter.ScenicCateAdapter;
 import cn.houno.houniaolvju.adapter.TopPicAdapter;
 import cn.houno.houniaolvju.bean.FenQuanListBean;
 import cn.houno.houniaolvju.bean.HomeIndexDataBean;
-import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.ActiScenicBean;
 import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.MainHotelBean;
 import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.SportsBean;
 import cn.houno.houniaolvju.bean.HomeIndexDataBean.DataBean.TgHotelBean;
 import cn.houno.houniaolvju.bean.HomeRcmdScenicBean;
+import cn.houno.houniaolvju.bean.ScenicIndexBean;
 import cn.houno.houniaolvju.bean.TopPicBean;
 import cn.houno.houniaolvju.fragment.home.HotelBulkPage;
 import cn.houno.houniaolvju.fragment.home.MainHotelFqHousesPage;
@@ -183,6 +183,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private LocationHelper locationHelper = LocationHelper.getInstance();
     private String mLongitude;
     private String mLatitude;
+    private List<ScenicIndexBean.LocalBean> mLocalList;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -246,7 +247,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         mRollPagerView.setHintView(new ColorPointHintView(mActivity, Color.parseColor("#009A44"), Color.WHITE));
         mTopPicAdapter = new TopPicAdapter(mRollPagerView);
         mRollPagerView.setAdapter(mTopPicAdapter);
-
         locationHelper.start();
 
         getDataFromServer(LOC);
@@ -459,13 +459,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
                 intent.setClass(mActivity, ScenicDetailActivity.class);
-                intent.putExtra("id", mHomeScenicList.get(position).getId());
+                intent.putExtra("scenicid", mLocalList.get(position).getScenicid());
                 startActivity(intent);
             }
         });
     }
-
-
 
     /*
     * 加载更多数据
@@ -475,9 +473,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
     private void LoadMoreRcmdScenic() {
         page++;
-        RequestParams params = new RequestParams(Constants.HOME_RCMD_SCENIC);
+        RequestParams params = new RequestParams(Constants.SCENIC_INDEX);
         params.addBodyParameter("p", page + "");
-        params.addBodyParameter("cityId", mCityId);
+        params.addBodyParameter("cityid", mCityId);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
@@ -485,6 +483,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                     JSONObject obj = new JSONObject(result);
                     int status = obj.getInt("status");
                     if (status == 0) {
+                        Log.i("0111", "result===" + result);
+                        Log.i("0111", "result===" + mCityId);
+
                         setRcmdScenic(result);
                     } else {
                         mRefreshView.setLoadComplete(true);
@@ -516,15 +517,17 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     * */
     private void setRcmdScenic(String result) {
         Gson gson = new Gson();
-        HomeRcmdScenicBean homeRSBean = gson.fromJson(result, HomeRcmdScenicBean.class);
-        for (int i = 0; i < homeRSBean.getData().size(); i++) {
+       // HomeRcmdScenicBean homeRSBean = gson.fromJson(result, HomeRcmdScenicBean.class);
+        ScenicIndexBean scenicBean = gson.fromJson(result, ScenicIndexBean.class);
+                  mLocalList=scenicBean.getLocal();
+        /*for (int i = 0; i < homeRSBean.getData().size(); i++) {
             mHomeScenicList.add(homeRSBean.getData().get(i));
-        }
+        }*/
         if (mScenicAdapter == null) {
-            mScenicAdapter = new HomeScenicTicketAdapter(mActivity, mHomeScenicList);
+            mScenicAdapter = new HomeScenicTicketAdapter(mActivity, mLocalList);
             lvScenicTicket.setAdapter(mScenicAdapter);
         } else {
-            mScenicAdapter.setDatas(mHomeScenicList);
+            mScenicAdapter.setDatas(mLocalList);
         }
     }
 
@@ -556,12 +559,15 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             params = new RequestParams(Constants.HOME_TOP_PICTURE);
         } else if (type == INDEX) {
             params = new RequestParams(Constants.HOME_INDEX);
-            params.addBodyParameter("cityId", mCityId);
+            params.addBodyParameter("cityid", mCityId);
         } else if (type == FENQUAN) {
             params = new RequestParams(Constants.HOME_FENQUAN);
         } else if (type == RCMD_SCENIC) {
-            params = new RequestParams(Constants.HOME_RCMD_SCENIC);
-            params.addBodyParameter("cityId", mCityId);
+            //params = new RequestParams(Constants.HOME_RCMD_SCENIC);
+            params = new RequestParams(Constants.SCENIC_INDEX);
+            params.addBodyParameter("cityid", mCityId);
+            Log.i("111", "cityId===== "+mCityId);
+
         }
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
@@ -659,19 +665,19 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                     } else {
                         tgHotelBean = null;
                     }
-                  List<ActiScenicBean> actiScenic = homeIndexDataBean.getData().getActiScenic();
-                    ActiScenicBean actiScenicBean;
+                    List<HomeIndexDataBean.DataBean.ActiToursScenicBean> actiScenic = homeIndexDataBean.getData().getActiToursScenic();
+                    HomeIndexDataBean.DataBean.ActiToursScenicBean actiToursScenicBean;
                     if (actiScenic != null && actiScenic.size() != 0) {
-                        actiScenicBean = homeIndexDataBean.getData().getActiScenic().get(0);
+                        actiToursScenicBean = homeIndexDataBean.getData().getActiToursScenic().get(0);
                     } else {
-                        actiScenicBean = null;
+                        actiToursScenicBean = null;
                     }
                     if (isFirstSetHs) {
-                        setHotelScenicPageData(tgHotelBean, actiScenicBean);
+                        setHotelScenicPageData(tgHotelBean, actiToursScenicBean);
                         isFirstSetHs = false;
                     } else {
                         hotelBulkPage.setPageData(tgHotelBean);
-                        scenicTicketPage.setPageData(actiScenicBean);
+                        scenicTicketPage.setPageData(actiToursScenicBean);
                     }
                     //设置主推酒店
                     mainHotel = homeIndexDataBean.getData().getMainHotel();
@@ -705,13 +711,15 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
                 //解析景区门票数据
                 else if (type == RCMD_SCENIC) {
-                    HomeRcmdScenicBean homeRSBean = gson.fromJson(result, HomeRcmdScenicBean.class);
-                    mHomeScenicList = homeRSBean.getData();
+                    //HomeRcmdScenicBean homeRSBean = gson.fromJson(result, HomeRcmdScenicBean.class);
+                    //mHomeScenicList = homeRSBean.getData();
+                    ScenicIndexBean scenicBean = gson.fromJson(result, ScenicIndexBean.class);
+                    mLocalList=scenicBean.getLocal();
                     if (mScenicAdapter == null) {
-                        mScenicAdapter = new HomeScenicTicketAdapter(mActivity, mHomeScenicList);
+                        mScenicAdapter = new HomeScenicTicketAdapter(mActivity, mLocalList);
                         lvScenicTicket.setAdapter(mScenicAdapter);
                     } else {
-                        mScenicAdapter.setDatas(mHomeScenicList);
+                        mScenicAdapter.setDatas(mLocalList);
                     }
                     page = 1;
 
@@ -723,7 +731,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             e.printStackTrace();
         }
     }
-
 
     /*
     * 限时抢购
@@ -767,7 +774,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     /*
     * 酒店拼团、景点门票
     * */
-    private void setHotelScenicPageData(TgHotelBean tgHotelBean, ActiScenicBean actiScenicBean) {
+    private void setHotelScenicPageData(TgHotelBean tgHotelBean,HomeIndexDataBean.DataBean.ActiToursScenicBean actiScenicBean) {
         mHsAdapter = new HomeHSAdapter(mActivity, getChildFragmentManager(), hsFragments, tgHotelBean, actiScenicBean);
         ivpHs.setAdapter(mHsAdapter);
         if (sivHs.getCurrentItem() != 0) {
