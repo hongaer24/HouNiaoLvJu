@@ -905,7 +905,7 @@ public class HomeIndexDataBean implements Serializable {
             }
         }
 
-        public static class MainHotelBean {
+        public static class MainHotelBean implements Serializable {
             /**
              * id : 33421
              * cate_id : 1
@@ -1260,7 +1260,7 @@ public class HomeIndexDataBean implements Serializable {
                 this.room = room;
             }
 
-            public static class RoomBeanX {
+            public static class RoomBeanX implements Serializable {
                 /**
                  * id : 959625
                  * title : 高级大床房（无窗）
@@ -1357,7 +1357,7 @@ public class HomeIndexDataBean implements Serializable {
             }
         }
 
-        public static class MainToursBean {
+        public static class MainToursBean implements  Serializable {
             /**
              * id : 6753
              * productname : <埃及-迪拜10日游>阿航成都直飞，马车巡游卢克索神庙，帆船游香蕉岛，2晚红海，棕榈岛单轨列车，全程WIFI，性价比连游，金字塔，狮身人面像

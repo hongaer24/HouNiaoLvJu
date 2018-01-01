@@ -31,6 +31,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.houno.houniaolvju.MainActivity;
 import cn.houno.houniaolvju.R;
+import cn.houno.houniaolvju.activity.scenic.ScenicOrderDetailActivity;
 import cn.houno.houniaolvju.activity.train.TrainOrderDetailActivity;
 import cn.houno.houniaolvju.adapter.EndOrderAdapter;
 import cn.houno.houniaolvju.bean.OrderListBean;
@@ -105,7 +106,6 @@ public class EndOrderPager extends Fragment {
         lvEndList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 Intent intent = new Intent();
                 intent.putExtra("data", mEndOrderList.get(position));
                 String type = mEndOrderList.get(position).getType();
@@ -114,6 +114,9 @@ public class EndOrderPager extends Fragment {
                     intent.setClass(mActivity, TrainOrderDetailActivity.class);
                 } else if (TextUtils.equals(type, "Flight")) {
                     intent.setClass(mActivity, FlightOrderActivity.class);
+                } else if (TextUtils.equals(type, "toursscenic")) {
+                    intent.putExtra("orderno", mEndOrderList.get(position).getOrderno());
+                    intent.setClass(mActivity, ScenicOrderDetailActivity.class);
                 } else {
                     intent.setClass(mActivity, EndOrderDetailActivity.class);
                 }

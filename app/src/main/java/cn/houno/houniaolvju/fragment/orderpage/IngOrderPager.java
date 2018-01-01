@@ -32,6 +32,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.houno.houniaolvju.MainActivity;
 import cn.houno.houniaolvju.R;
+import cn.houno.houniaolvju.activity.scenic.ScenicOrderDetailActivity;
 import cn.houno.houniaolvju.activity.train.TrainOrderDetailActivity;
 import cn.houno.houniaolvju.adapter.IngOrderAdapter;
 import cn.houno.houniaolvju.bean.OrderListBean;
@@ -109,31 +110,27 @@ public class IngOrderPager extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-
                 Intent intent = new Intent();
-                String type = mIngOrderList.get(position).getType();
-                String address=mIngOrderList.get(position).getDetail().getAddress();
-                String addTime=mIngOrderList.get(position).getAdd_time();
-
-
+             /*   String address=mIngOrderList.get(position).getDetail().getAddress();
+                String addTime=mIngOrderList.get(position).getAdd_time();*/
                 intent.putExtra("data", (Serializable) mIngOrderList.get(position));
-                intent.putExtra("address", address);
-                intent.putExtra("addtime", addTime);
+                String type = mIngOrderList.get(position).getType();
+
+              /*  intent.putExtra("address", address);
+                intent.putExtra("addtime", addTime);*/
 
                 if (TextUtils.equals(type, "Flight")) {
                     intent.setClass(mActivity, FlightOrderActivity.class);
                 } else if (TextUtils.equals(type, "Train")) {
                     intent.putExtra("orderno", mIngOrderList.get(position).getOrderno());
                     intent.setClass(mActivity, TrainOrderDetailActivity.class);
-                } else if (TextUtils.equals(type, "")) {
+                } else if (TextUtils.equals(type, "toursscenic")) {
                     intent.putExtra("orderno", mIngOrderList.get(position).getOrderno());
-                    intent.setClass(mActivity, TrainOrderDetailActivity.class);
-                }
-                else {
+                    intent.setClass(mActivity, ScenicOrderDetailActivity.class);
+                } else {
                     intent.setClass(mActivity, IngOrderDetailActivity.class);
                 }
                 startActivity(intent);
-
             }
         });
     }

@@ -115,7 +115,6 @@ public class  OrderDetailActivity extends Activity {
     private void initData() {
         userid = PrefUtils.getString(OrderDetailActivity.this, "userid", "");
         Intent intent = getIntent();
-
         orderno = intent.getStringExtra("orderno");
         title = intent.getStringExtra("title");
         type = intent.getStringExtra("type");
@@ -145,7 +144,6 @@ public class  OrderDetailActivity extends Activity {
             mprice=intent.getStringExtra("mprice");
             price=intent.getIntExtra("price",0)+"";
         }
-
 
         tvOrder.setText(orderno);
         tvTitle.setText(title);
