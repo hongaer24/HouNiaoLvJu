@@ -124,7 +124,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
                    /* Intent intent = new Intent();
                     intent.setClass(mContext, FillInScenicOrderActivity.class);*/
                     Intent intent = new Intent(mContext, FillInScenicOrderActivity .class);
-                     intent.putExtra("sid",  list.get(position).getTicketlistinfo().getScenicid());
+                    // intent.putExtra("sid", list.get(position).);
                     intent.putExtra("tid", list.get(position).getProductId());
                     intent.putExtra("scenicTitle", scenicTitle.trim());
                     intent.putExtra("scenicAddress", scenicAddress.trim());
@@ -133,10 +133,11 @@ public class ScenicTicketAdapter extends BaseAdapter {
                     intent.putExtra("custInfoLimit", list.get(position).getTicketlistinfo().getCustinfolimit());
                     //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
                     intent.putExtra("position", position);
-                    intent.putExtra("pricecalendar", (Serializable) list.get(position).getTicketlistinfo().getPricecalendar());
                     intent.putExtra("today", list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
                     intent.putExtra("minday", list.get(position).getTicketlistinfo().getPricecalendar().get(1).getSalePrice());
-                     //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
+                    intent.putExtra("pricecalendar", (Serializable) list.get(position).getTicketlistinfo().getPricecalendar());
+
+                    //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
                     mContext.startActivity(intent);
 
                 }

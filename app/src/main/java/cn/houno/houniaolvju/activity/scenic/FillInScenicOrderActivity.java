@@ -203,7 +203,8 @@ public class FillInScenicOrderActivity extends Activity {
         if(data1.equals("0")){
             btnData.setText("今天不可定");
             btnData.setEnabled(false);
-            btnData.setBackgroundColor(Color.parseColor("#dddddd"));
+            btnData.setBackgroundResource(R.drawable.shape_dark_gray);
+            //btnData.setBackgroundColor(Color.parseColor("#dddddd"));
         }else {
             btnData.setText("今天¥"+data1);
         }
@@ -249,29 +250,36 @@ public class FillInScenicOrderActivity extends Activity {
         mBtnReferSub.setOnClickListener(new TicketClick());
         mBtnReferAdd.setOnClickListener(new TicketClick());
         //btnData.setEnabled(btnData.isClickable());
-        btnData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (ischeck) {
-                    mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
-                    mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
-                    btnData.setBackgroundResource(R.drawable.shape_org);
-                    btnData.setTextColor(Color.parseColor("#ffffff"));
-                    MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data1 + "");
-                    btnData1.setEnabled(false);
-                    mTvDaysSelector.setEnabled(false);
-                    nowData=departDate1;
-                } else {
-                    btnData.setBackgroundResource(R.drawable.shape_white_gray);
-                    btnData.setTextColor(Color.parseColor("#000000"));
-                    MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
-                    btnData1.setEnabled(true);
-                    mTvDaysSelector.setEnabled(true);
-                }
-                ischeck = !ischeck;
+       if(!data1.equals("0")){
+           btnData.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
 
-            }
-        });
+                   if (ischeck) {
+                       mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                       mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
+                       btnData.setBackgroundResource(R.drawable.shape_org);
+                       btnData.setTextColor(Color.parseColor("#ffffff"));
+                       MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data1 + "");
+                       btnData1.setEnabled(false);
+                       mTvDaysSelector.setEnabled(false);
+                       nowData=departDate1;
+                   } else {
+                       btnData.setBackgroundResource(R.drawable.shape_white_gray);
+                       btnData.setTextColor(Color.parseColor("#000000"));
+                       MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+                       btnData1.setEnabled(true);
+                       mTvDaysSelector.setEnabled(true);
+                   }
+                   ischeck = !ischeck;
+
+               }
+           });
+
+       }
+
+
+
         btnData1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -285,6 +293,10 @@ public class FillInScenicOrderActivity extends Activity {
                     mTvDaysSelector.setEnabled(false);
                     nowData=departDate2;
                 } else {
+                     if(data1.equals("0")){
+                         btnData.setBackgroundResource(R.drawable.shape_dark_gray);
+                         //btnData.setTextColor(Color.parseColor("#dddddd"));
+                     }
                     btnData1.setBackgroundResource(R.drawable.shape_white_gray);
                     btnData1.setTextColor(Color.parseColor("#000000"));
                     MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");

@@ -226,7 +226,7 @@
                 <Button
                     android:id="@+id/tv_days_selector"
                     android:layout_width="0dp"
-                    android:layout_height="52dp"
+                    android:layout_height="55dp"
                     android:layout_weight="6"
                     android:layout_marginLeft="15dp"
                     android:background="@drawable/shape_white_gray"

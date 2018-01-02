@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -133,6 +134,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     private String mCheckName;
     private String mCheckPhone;
     private ScenicOrderDetailActivity mActivity;
+    private String address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,6 +144,18 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
         ButterKnife.bind(this);
         initData();
+    }
+    private void initData() {
+        userid = PrefUtils.getString(ScenicOrderDetailActivity.this, "userid", "");
+        Intent intent = getIntent();
+        OrderListBean.DataBean dataBean = (OrderListBean.DataBean) intent.getSerializableExtra("data");
+       /* address=  intent.getStringExtra("address");
+        addTime=  intent.getStringExtra("addtime");*/
+        orderNo = dataBean.getOrderno();
+        qxid = dataBean.getId();
+        type = dataBean.getType();
+        getDataFromServer();
+
     }
     private void showApplyRefundDialog() {
         CustomDialog.Builder callDialog = new CustomDialog.Builder(this);
@@ -241,19 +255,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         }
     }
 
-    private void initData() {
-        userid = PrefUtils.getString(ScenicOrderDetailActivity.this, "userid", "");
-        Intent intent = getIntent();
-        OrderListBean.DataBean dataBean = (OrderListBean.DataBean) intent.getSerializableExtra("data");
-       /* address=  intent.getStringExtra("address");
-        addTime=  intent.getStringExtra("addtime");*/
 
-        orderNo = dataBean.getOrderno();
-        qxid = dataBean.getId();
-        type = dataBean.getType();
-        getDataFromServer();
-
-    }
 
     public void getDataFromServer() {
         Map<String, String> map = new HashMap<>();
@@ -369,7 +371,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
                     mTotalPrice = json.getJSONObject("data").getString("price");
                     mCheckName = json.getJSONObject("data").getJSONObject("contact").getString("name").trim();
                     mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
-                    //address = json.getJSONObject("data").getString("scenicaddress");
+                    address = json.getJSONObject("data").getString("scenicaddress");
 
                     //mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
 
@@ -402,6 +404,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvOrderName.setText(productname);
             tvCount.setText("门票数量：" + mRoomCount + "张");
             tvOrderTime.setText("出游时间" + mCheckInDate);
+            tvAddress.setText(address);
             //tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
             //tvAddress.setText(address);
             // tvOther.setVisibility(View.GONE);
@@ -468,9 +471,9 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         }
         if (mOrderStatusInt == 2 && mPayStatusInt == 0||mOrderStatusInt == 0 && mPayStatusInt == 0) {
             tvReturnMessage.setText("待支付");
-
             tvOrderCancel.setVisibility(View.VISIBLE);
             tvPay.setVisibility(View.VISIBLE);
+            tvPay.setBackgroundColor(Color.parseColor("#CC0000"));
             //tvOrderStatu.setText("待支付");
         } else if (mOrderStatusInt == 3 && mPayStatusInt == 1) {
             tvReturnMessage.setText("出票中");

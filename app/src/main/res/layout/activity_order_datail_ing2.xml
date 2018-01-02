@@ -214,7 +214,9 @@
                         android:layout_marginRight="10dp"
                         android:padding="5dp"
                         android:text="立即支付"
+                        android:textColor="#fff"
                         android:visibility="gone"
+                        android:background="@color/red"
                         app:followTextColor="false"
                         app:strokeColor="#ffdddddd"
                         app:strokeWidth="1.0dip" />
@@ -226,6 +228,8 @@
                         android:layout_alignParentRight="true"
                         android:padding="5dp"
                         android:text="取消订单"
+                        android:background="@color/orgs_txt"
+                        android:textColor="#fff"
                         android:visibility="gone"
                         app:followTextColor="false"
                         app:strokeColor="#ffdddddd"
@@ -238,6 +242,7 @@
                         android:layout_marginRight="10.0dip"
                         android:padding="5dp"
                         android:text="申请退票"
+                        android:textColor="#fff"
                         android:visibility="gone"
                         app:followTextColor="false"
                         app:strokeColor="#ffdddddd"
@@ -347,6 +352,15 @@
                     android:layout_height="1px"
                     android:background="#dddddd" />
 
+                <TextView
+                    android:id="@+id/tv_refund_rule"
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:text="本景点预订成功后，不支持退改，敬请谅解"
+                    android:textColor="#606060"
+                    android:textSize="16sp" />
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -398,7 +412,7 @@
                     android:layout_height="45dp"
                     android:layout_marginLeft="15dp"
                     android:gravity="center_vertical"
-                    android:text="支付方式"
+                    android:text="支付方式 网上支付"
                     android:textColor="#606060"
                     android:textSize="16sp" />
 
