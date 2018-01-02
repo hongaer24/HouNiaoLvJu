@@ -55,6 +55,7 @@ import cn.houno.houniaolvju.bean.ScenicDetailBean.DataBean.OtherBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.MyText2Utils;
 import cn.houno.houniaolvju.utils.PrefUtils;
+import cn.houno.houniaolvju.utils.StatusBarUtils;
 import cn.houno.houniaolvju.view.CustomViewPager;
 import cn.houno.houniaolvju.view.GradationScrollView;
 import cn.houno.houniaolvju.view.NoScrollViewPager;
@@ -317,7 +318,6 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             }
         });
     }
-
     private void setData() {
         ViewTreeObserver vto = rpvScenicDetail.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -338,7 +338,6 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             }
         });
     }
-
     private void parseData(String result) {
         Log.i("222", "result===" + result);
         Gson gson = new Gson();
@@ -443,7 +442,6 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             }*/
         }
     }
-
     private void initEvent() {
 
      /*   rfvScenicDetail.setPullLoadEnable(false);
@@ -500,7 +498,6 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         });
     }
 
-
     @OnClick({R.id.iv_back, R.id.iv_share, R.id.tv_time, R.id.ll_scenic_address/*, R.id.ll_webview_book, R.id.ll_webview_info*/})
     public void onClick(View view) {
         switch (view.getId()) {
@@ -533,7 +530,6 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
                 break;*/
         }
     }
-
     private void shareTheScenic() {
         ShareSDK.initSDK(this);
         OnekeyShare oks = new OnekeyShare();
@@ -559,7 +555,6 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         // 启动分享GUI
         oks.show(this);
     }
-
 
    /* private void unfoldBookWebView() {
         if (tvDetailBook.getText().equals("—")) {

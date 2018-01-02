@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -16,6 +15,7 @@ import org.json.JSONObject;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +40,11 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
     private String mTicketTitle;
     private int price;
     private int allPrice;
+    private String mScenicId;
+    private String mTicketId;
+  //  private Serializable mPricecalendar;
+    private  List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>  Pricecalendarlist=new ArrayList<>();
+
     //private List<PricecalendarBean> dataPrice;
     // private List<DataPrice.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> dataPrice;
 
@@ -71,104 +76,14 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
 
 
     }
-
-
     private void initData() {
-         getDataFromServer();
+        Intent intent = getIntent();
+        mScenicId = intent.getStringExtra("sid");
+        mTicketId = intent.getStringExtra("tid");
+        Pricecalendarlist= (List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>) intent.getSerializableExtra("pricecalendars");
+        addData(Pricecalendarlist);
+        //getDataFromServer();
     }
-
-    private void getDataFromServer() {
-
-       /* RequestParams params = new RequestParams(Constant.SCENIC_LIST);
-        params.addBodyParameter("id", "19940");
-        params.addBodyParameter("UserID","1117");*/
-        RequestParams params=new RequestParams(Constants.SCENIC_DETAIL);
-        params.addBodyParameter("id", "19940");
-        params.addBodyParameter("UserID","1117");
-        x.http().post(params, new org.xutils.common.Callback.CommonCallback<String>() {
-            @Override
-            public void onSuccess(String result) {
-
-                try {
-                    Log.i("999", "result==="+result);
-                    JSONObject obj = new JSONObject(result);
-                    int status = obj.getInt("status");
-
-                    if (status == 0) {
-                        parseData(result);
-
-                    } else {
-                        //Toast.makeText(mActivity, obj.getString("msg"), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-
-            }
-        });
-      /*  x.http().post(params, new Callback.CommonCallback<String>() {
-
-
-            @Override
-            public void onSuccess(String result) {
-                try {
-                    Log.i("999", "result==="+result);
-                    JSONObject obj = new JSONObject(result);
-                    int status = obj.getInt("status");
-
-                    if (status == 0) {
-                        parseData(result);
-
-                    } else {
-                        //Toast.makeText(mActivity, obj.getString("msg"), Toast.LENGTH_SHORT).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-               *//* pbLoading.setVisibility(View.GONE);
-                tvLoading.setText("加载失败");*//*
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-                //rfvScenicDetail.stopRefresh();
-            }
-        });*/
-    }
-
-    private void parseData(String result) {
-        Gson gson = new Gson();
-        ScenicDetailBean databaseList = gson.fromJson(result, ScenicDetailBean.class);
-        List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean> data = databaseList.getData().getInfo().getTicketlist();
-        pricecalendarBeanList= data.get(position).getTicketlistinfo().getPricecalendar();
-        addData(pricecalendarBeanList);
-
-    }
-
     private void addData(List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> pricecalendarBeanList) {
         for (ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean productDatePrice : pricecalendarBeanList) {//把价格数据改为同一个月的list 在一个key value里，减少渲染界面时循环判断数量
             productDatePrice.getDepartDate();
@@ -210,26 +125,32 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
                 for (int i = 0; i < obj.size(); i++) {
                     ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean datePrice = (ScenicDetailBean .DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean) obj.get(i);
                     if (datePrice==null){
-                        continue;
-                    }
+                        continue;}
                     if (TextUtils.equals(datePrice.getDepartDate(),priceDate)){
 
-                        Intent intent1 = new Intent(mActivity, FillInScenicOrderActivity.class);
-                        intent1.putExtra("nowData",datePrice.getDepartDate());
+                        Intent intent = new Intent();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("nowData", datePrice.getDepartDate());
+                        bundle.putString("nowPrice", String.valueOf(datePrice.getSalePrice()));
+                        intent.putExtra("bundle", bundle);
+                        setResult(RESULT_CODE, intent);
+                        finish();
+                        return;
+                        // Intent intent1 = new Intent(mActivity, FillInScenicOrderActivity.class);
+                       // intent1.putExtra("nowData",datePrice.getDepartDate());
+                        //intent1.putExtra("nowPrice",datePrice.getSalePrice());
                        /* intent1.putExtra("scenicTitle",  mScenicTitle);
                         intent1.putExtra("scenicAddress", mScenicAddress);
                         intent1.putExtra("ticketTitle", mTicketTitle);
                         intent1.putExtra("ticketTitle", mTicketTitle);
                         intent1.putExtra("price", price);
                         intent1.putExtra("allPrice", allPrice);*/
-                        setResult(RESULT_CODE, intent1);
-                        finish();
 
-                       // Toast.makeText(MoreInfoCalendarActivity.this, datePrice.toString(), Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(MoreInfoCalendarActivity.this, datePrice.toString(), Toast.LENGTH_SHORT).show();
                     }
 
                 }
-                finish();
+                // finish();
             }
 
             @Override
@@ -251,6 +172,101 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+  /*  private void getDataFromServer() {
+
+       *//* RequestParams params = new RequestParams(Constant.SCENIC_LIST);
+        params.addBodyParameter("id", "19940");
+        params.addBodyParameter("UserID","1117");*//*
+        RequestParams params=new RequestParams(Constants.SCENIC_DETAIL);
+        params.addBodyParameter("id", "19940");
+        params.addBodyParameter("UserID","1117");
+        x.http().post(params, new org.xutils.common.Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+
+                try {
+                    Log.i("999", "result==="+result);
+                    JSONObject obj = new JSONObject(result);
+                    int status = obj.getInt("status");
+
+                    if (status == 0) {
+                        parseData(result);
+
+                    } else {
+                        //Toast.makeText(mActivity, obj.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+      *//*  x.http().post(params, new Callback.CommonCallback<String>() {
+
+
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    Log.i("999", "result==="+result);
+                    JSONObject obj = new JSONObject(result);
+                    int status = obj.getInt("status");
+
+                    if (status == 0) {
+                        parseData(result);
+
+                    } else {
+                        //Toast.makeText(mActivity, obj.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+               *//**//* pbLoading.setVisibility(View.GONE);
+                tvLoading.setText("加载失败");*//**//*
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+                //rfvScenicDetail.stopRefresh();
+            }
+        });*//*
+    }
+*/
+   /* private void parseData(String result) {
+        Gson gson = new Gson();
+        ScenicDetailBean databaseList = gson.fromJson(result, ScenicDetailBean.class);
+        List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean> data = databaseList.getData().getInfo().getTicketlist();
+        pricecalendarBeanList= data.get(position).getTicketlistinfo().getPricecalendar();
+        addData(pricecalendarBeanList);
+
+    }*/
+
 
 
 }

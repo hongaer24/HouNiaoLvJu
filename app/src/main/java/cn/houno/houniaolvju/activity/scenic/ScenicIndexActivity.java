@@ -260,6 +260,7 @@ public class ScenicIndexActivity extends Activity {
                         Intent intent = new Intent();
                         intent.putExtra("keyword", mEtScenicSearch.getText().toString().trim());
                         intent.putExtra("cates", mCates);
+                        intent.putExtra("cityid", cityId);
                         intent.setClass(mActivity, ScenicListActivity.class);
                         startActivity(intent);
                     }

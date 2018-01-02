@@ -173,7 +173,7 @@ public class ScenicListActivity extends Activity {
             etSearch.setText(mKeyword);
         }
         getMyLoc();
-        //getDataFromServer(INDEX);
+        getDataFromServer(INDEX);
         // initContentView();
         rfvScenicIndex.startRefresh();
     }

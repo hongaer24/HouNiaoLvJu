@@ -47,6 +47,7 @@ import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.pay.alipay.PayResult;
 import cn.houno.houniaolvju.utils.OkHttpClientManager;
 import cn.houno.houniaolvju.utils.PrefUtils;
+import cn.houno.houniaolvju.utils.StatusBarUtils;
 import cn.houno.houniaolvju.view.Border2TextView;
 import cn.houno.houniaolvju.view.CustomDialog;
 
@@ -138,6 +139,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_datail_ing2);
         mActivity = ScenicOrderDetailActivity.this;
+        StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
         ButterKnife.bind(this);
         initData();
     }
@@ -466,6 +468,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         }
         if (mOrderStatusInt == 2 && mPayStatusInt == 0||mOrderStatusInt == 0 && mPayStatusInt == 0) {
             tvReturnMessage.setText("待支付");
+
             tvOrderCancel.setVisibility(View.VISIBLE);
             tvPay.setVisibility(View.VISIBLE);
             //tvOrderStatu.setText("待支付");

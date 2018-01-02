@@ -18,9 +18,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.bigkoo.pickerview.OptionsPickerView;
-import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,6 +26,7 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,16 +36,12 @@ import butterknife.OnClick;
 import cn.houno.houniaolvju.MainActivity;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.OrderDetailActivity;
-import cn.houno.houniaolvju.adapter.PassengersAdapter;
 import cn.houno.houniaolvju.adapter.PersonInfoAdapter;
-import cn.houno.houniaolvju.adapter.PersonsListAdapter;
-import cn.houno.houniaolvju.application.MyApplication;
 import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
-import cn.houno.houniaolvju.bean.PassengersListBean;
+import cn.houno.houniaolvju.bean.ScenicDetailBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.DateUtil;
 import cn.houno.houniaolvju.utils.MyText2Utils;
-import cn.houno.houniaolvju.utils.PassengerStorage;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
 
@@ -115,6 +110,12 @@ public class FillInScenicOrderActivity extends Activity {
     LinearLayout llIdcard;
     @Bind(R.id.lv_person)
     ListView lvPerson;
+    @Bind(R.id.btn_data)
+    Button btnData;
+    @Bind(R.id.btn_data1)
+    Button btnData1;
+   /* @Bind(R.id.btn_data2)
+    Button btnData2;*/
 
 
     private FillInScenicOrderActivity mActivity;
@@ -139,10 +140,17 @@ public class FillInScenicOrderActivity extends Activity {
     private int position;
     private String nowData;
     private PersonInfoAdapter madapter;
+    private boolean ischeck = true;
     //private List<GetScenicPassengerBean.DataBean> touristDataBean;
-    private List<GetScenicPassengerBean.DataBean> mPassnersList=new ArrayList<>();
+    private List<GetScenicPassengerBean.DataBean> mPassnersList = new ArrayList<>();
     private OptionsPickerView pvOption;
     private ArrayList<String> list = new ArrayList<>();
+    private String data1;
+    private String data2;
+    private String nowPrice;
+    private  List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>  Pricecalendarlist=new ArrayList<>();
+    private String departDate1;
+    private String departDate2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,17 +168,9 @@ public class FillInScenicOrderActivity extends Activity {
     private void initView() {
 
     }
-
-    private void initEvent() {
-        mBtnReferSub.setOnClickListener(new TicketClick());
-        mBtnReferAdd.setOnClickListener(new TicketClick());
-    }
-
     private void initData() {
-
         isLogined = PrefUtils.getBoolean(mActivity, "isLogined", false);
         // custInfoLimit = Integer.parseInt(intent.getStringExtra("custInfoLimit"));
-
         if (isLogined) {
             userid = PrefUtils.getString(mActivity, "userid", "");
             mEtJdName.setText(PrefUtils.getString(mActivity, "nick", ""));
@@ -184,33 +184,47 @@ public class FillInScenicOrderActivity extends Activity {
         if (custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7) {
             llPersoninfo.setVisibility(View.VISIBLE);
         }
-        if (custInfoLimit == 4||custInfoLimit == 6||custInfoLimit == 7) {
+        if (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7) {
             llIdcard.setVisibility(View.VISIBLE);
         }
-
         mScenicTitle = intent.getStringExtra("scenicTitle");
         mScenicAddress = intent.getStringExtra("scenicAddress");
         mTicketTitle = intent.getStringExtra("ticketTitle");
         mScenicId = intent.getStringExtra("sid");
         mTicketId = intent.getStringExtra("tid");
-        //nowData = intent.getStringExtra("nowData");
+        Pricecalendarlist= (List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>) intent.getSerializableExtra("pricecalendar");
+        //获得今天和明天的日期数据
+        departDate1=Pricecalendarlist.get(0).getDepartDate();
+        departDate2=Pricecalendarlist.get(1).getDepartDate();
+
+         data1 = intent.getIntExtra("today",0)+"";
+         data2=intent.getIntExtra("minday",0)+"";
+
+        if(data1.equals("0")){
+            btnData.setText("今天不可定");
+            btnData.setEnabled(false);
+            btnData.setBackgroundColor(Color.parseColor("#dddddd"));
+        }else {
+            btnData.setText("今天¥"+data1);
+        }
+        btnData1.setText("明天¥"+data2);
         price = intent.getIntExtra("price", 0);
-        //dataPrice=intent.getStringExtra("dataPrice");
         position = intent.getIntExtra("position", 0);
         Log.i("0102", "result===" + dataPrice);
 
         mTvTopbarTitle.setText(mScenicTitle);
         mTvScenicOrderTitle.setText(mTicketTitle);
         mTvScenicOrderAddress.setText(mScenicAddress);
-        //mTvScenicOrderPrice.setText(price);
         MyText2Utils.formatTicketPrice(mActivity, mTvScenicOrderPrice, price + "");
         allPrice = price;
-        MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, allPrice + "");
+        MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
         mCheckDate = DateUtil.getNowTime(DateUtil.DATE_SMALL_STR);
         mCheckWeek = DateUtil.getWeek(mCheckDate);
-       // mTvDaysSelector.setText(nowData);
-
-        madapter = new PersonInfoAdapter(mActivity, mPassnersList,intTicketNum);
+        if(nowData!=null){
+            MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice + "");
+        }
+        // mTvDaysSelector.setText(nowData);
+        madapter = new PersonInfoAdapter(mActivity, mPassnersList, intTicketNum);
         lvPerson.setAdapter(madapter);
 
         list.add("身份证");
@@ -218,8 +232,6 @@ public class FillInScenicOrderActivity extends Activity {
         list.add("军官证");
         list.add("港澳通行证");
         list.add("台胞证");
-
-
 /*
         List<GetScenicPassengerBean.DataBean> PassengerList = getPassengerList();
         if(PassengerList!=null&&PassengerList.size()>0){
@@ -232,9 +244,88 @@ public class FillInScenicOrderActivity extends Activity {
 
         }*/
 
-
-        // getPersonInfoDataFromServer();
     }
+    private void initEvent() {
+        mBtnReferSub.setOnClickListener(new TicketClick());
+        mBtnReferAdd.setOnClickListener(new TicketClick());
+        //btnData.setEnabled(btnData.isClickable());
+        btnData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ischeck) {
+                    mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                    mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
+                    btnData.setBackgroundResource(R.drawable.shape_org);
+                    btnData.setTextColor(Color.parseColor("#ffffff"));
+                    MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data1 + "");
+                    btnData1.setEnabled(false);
+                    mTvDaysSelector.setEnabled(false);
+                    nowData=departDate1;
+                } else {
+                    btnData.setBackgroundResource(R.drawable.shape_white_gray);
+                    btnData.setTextColor(Color.parseColor("#000000"));
+                    MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+                    btnData1.setEnabled(true);
+                    mTvDaysSelector.setEnabled(true);
+                }
+                ischeck = !ischeck;
+
+            }
+        });
+        btnData1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ischeck) {
+                    mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                    mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
+                    btnData1.setBackgroundResource(R.drawable.shape_org);
+                    btnData1.setTextColor(Color.parseColor("#ffffff"));
+                    MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2 + "");
+                    btnData.setEnabled(false);
+                    mTvDaysSelector.setEnabled(false);
+                    nowData=departDate2;
+                } else {
+                    btnData1.setBackgroundResource(R.drawable.shape_white_gray);
+                    btnData1.setTextColor(Color.parseColor("#000000"));
+                    MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+                    btnData.setEnabled(true);
+                    mTvDaysSelector.setEnabled(true);
+                }
+                ischeck = !ischeck;
+
+            }
+        });
+         mTvDaysSelector.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent date = new Intent();
+                 date.putExtra("position", position);
+                 date.putExtra("sid", mScenicId);
+                 date.putExtra("pricecalendars", (Serializable) Pricecalendarlist);
+                 date.setClass(mActivity, MoreInfoCalendarActivity.class);
+                 startActivityForResult(date, 301);
+                /* if (ischeck) {
+                     //MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice + "");
+                     btnData1.setEnabled(false);
+                     btnData.setEnabled(false);
+                 } else {
+                     btnData.setBackgroundResource(R.drawable.shape_white_gray);
+                     btnData.setTextColor(Color.parseColor("#000000"));
+                     MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+                     btnData1.setEnabled(true);
+                     btnData.setEnabled(true);
+                 }
+                 ischeck = !ischeck;*/
+             }
+         });
+        /*btnData.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnData.setBackgroundResource(R.drawable.selector_orgs_btn);
+            }
+        });*/
+    }
+
 
 /*
     private List<GetScenicPassengerBean.DataBean> getPassengerList() {
@@ -252,15 +343,15 @@ public class FillInScenicOrderActivity extends Activity {
     }
 */
 
-    @OnClick({R.id.tv_idcard,R.id.iv_back, R.id.iv_home, R.id.tv_days_selector, R.id.btn_jd_tjdd, R.id.iv_number_person})
+    @OnClick({R.id.tv_idcard, R.id.iv_back, R.id.iv_home, R.id.tv_days_selector, R.id.btn_jd_tjdd, R.id.iv_number_person})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
             case R.id.tv_idcard:
-                 showPickerView();
-                 pvOption.show();
+                showPickerView();
+                pvOption.show();
                 break;
             case R.id.iv_home:
                 //返回主页面
@@ -272,6 +363,8 @@ public class FillInScenicOrderActivity extends Activity {
             case R.id.tv_days_selector:
                 Intent date = new Intent();
                 date.putExtra("position", position);
+                date.putExtra("sid", mScenicId);
+                date.putExtra("pricecalendars", (Serializable) Pricecalendarlist);
                 date.setClass(mActivity, MoreInfoCalendarActivity.class);
                 startActivityForResult(date, 301);
                 break;
@@ -287,7 +380,6 @@ public class FillInScenicOrderActivity extends Activity {
     }
 
     private void showPickerView() {
-
 
 
         pvOption = new OptionsPickerView.Builder(this, new OptionsPickerView.OnOptionsSelectListener() {
@@ -354,10 +446,11 @@ public class FillInScenicOrderActivity extends Activity {
         params.addBodyParameter("contact[name]", mEtJdName.getText().toString().trim());
         params.addBodyParameter("info[bookNumber]", mTvReferNum.getText().toString().trim());
         params.addBodyParameter("info[totalprice]", allPrice + "");
+        params.addBodyParameter(" info[address]", mScenicAddress);
 
-          //custInfoLimit=2、3、6、7时,传游客资料表
+        //custInfoLimit=2、3、6、7时,传游客资料表
         if (custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7) {
-            for(int i=0;i<mPassnersList.size();i++){
+            for (int i = 0; i < mPassnersList.size(); i++) {
                 params.addBodyParameter("touristlist[" + i + "][tel]", mPassnersList.get(i).getPhone());
                 params.addBodyParameter("touristlist[" + i + "][identityNo]", mPassnersList.get(i).getIdentityno());
                 params.addBodyParameter("touristlist[" + i + "][name]", mPassnersList.get(i).getName());
@@ -365,28 +458,24 @@ public class FillInScenicOrderActivity extends Activity {
 
             }
         }
-
         //custInfoLimit=4、6、7时,传identityNo和identityType
-        if (custInfoLimit == 4||custInfoLimit == 6||custInfoLimit == 7) {
+        if (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7) {
             //params.addBodyParameter("contact[identityType]", mPassnersList.get(i).getPhone());
-            params.addBodyParameter("contact[identityNo]",etIdcard.getText().toString().trim());
+            params.addBodyParameter("contact[identityNo]", etIdcard.getText().toString().trim());
             String id = tvIdcard.getText().toString();
-            if(id.equals(list.get(0)))
-            {
-                params.addBodyParameter("contact[identityType]","1");
+            if (id.equals(list.get(0))) {
+                params.addBodyParameter("contact[identityType]", "1");
 
-            }else if(id.equals(list.get(1))) {
-                params.addBodyParameter("contact[identityType]","2");
-            }else if(id.equals(list.get(2))) {
-                params.addBodyParameter("contact[identityType]","3");
-            }else if(id.equals(list.get(3))) {
-                params.addBodyParameter("contact[identityType]","4");
-            }else if(id.equals(list.get(4))) {
-                params.addBodyParameter("contact[identityType]","5");
+            } else if (id.equals(list.get(1))) {
+                params.addBodyParameter("contact[identityType]", "2");
+            } else if (id.equals(list.get(2))) {
+                params.addBodyParameter("contact[identityType]", "3");
+            } else if (id.equals(list.get(3))) {
+                params.addBodyParameter("contact[identityType]", "4");
+            } else if (id.equals(list.get(4))) {
+                params.addBodyParameter("contact[identityType]", "5");
             }
         }
-
-
 
 
         x.http().post(params, new Callback.CommonCallback<String>() {
@@ -505,11 +594,19 @@ public class FillInScenicOrderActivity extends Activity {
            /* Bundle extras = data.getExtras();
             mCheckDate = extras.getString("dateIn");
             mCheckWeek = extras.getString("dateInWeek");*/
-            nowData= data.getStringExtra("nowData");
-            mTvDaysSelector.setText(nowData);
-
-        }if (requestCode == 666 && resultCode == RESULT_OK) {
-            mPassnersList= (ArrayList<GetScenicPassengerBean.DataBean>) data.getSerializableExtra("list");
+            Bundle bundle = data.getBundleExtra("bundle"); //city即为回传的值
+             nowData = bundle.getString("nowData");
+             nowPrice = bundle.getString("nowPrice");
+            //MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice + "");
+            // nowData = data.getStringExtra("nowData");
+           // nowPrice = data.getStringExtra("nowPrice");
+            mTvDaysSelector.setText(nowData+"\n"+"¥"+nowPrice+"起");
+            mTvDaysSelector.setBackgroundResource(R.drawable.shape_org);
+            mTvDaysSelector.setTextColor(Color.parseColor("#ffffff"));
+            //mTvZxzfMoney.setText("¥"+nowData+"起");
+        }
+        if (requestCode == 666 && resultCode == RESULT_OK) {
+            mPassnersList = (ArrayList<GetScenicPassengerBean.DataBean>) data.getSerializableExtra("list");
             madapter.setData(mPassnersList);
         }
     }

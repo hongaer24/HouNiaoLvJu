@@ -110,12 +110,12 @@ public class ScenicTicketAdapter extends BaseAdapter {
             }
         }*/
         final int price;
-        if (list.get(position).getWebPrice() != null
-                && !list.get(position).getWebPrice().equals("")
-                && list.get(position).getWebPrice()!= null
-                && !TextUtils.isEmpty(list.get(position).getWebPrice())) {
-            price = Integer.parseInt(MyText2Utils.getIntPrice(list.get(position).getWebPrice()));
-            MyText2Utils.formatYuanPrice(mContext, viewHolder.price, list.get(position).getWebPrice());
+        if (list.get(position).getSalePrice() != null
+                && !list.get(position).getSalePrice().equals("")
+                && list.get(position).getSalePrice()!= null
+                && !TextUtils.isEmpty(list.get(position).getSalePrice())) {
+            price = Integer.parseInt(MyText2Utils.getIntPrice(list.get(position).getSalePrice()));
+            MyText2Utils.formatYuanPrice(mContext, viewHolder.price, list.get(position).getSalePrice());
             //点击预定跳转
             viewHolder.llBook.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,7 +124,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
                    /* Intent intent = new Intent();
                     intent.setClass(mContext, FillInScenicOrderActivity.class);*/
                     Intent intent = new Intent(mContext, FillInScenicOrderActivity .class);
-                    // intent.putExtra("sid", list.get(position).);
+                     intent.putExtra("sid",  list.get(position).getTicketlistinfo().getScenicid());
                     intent.putExtra("tid", list.get(position).getProductId());
                     intent.putExtra("scenicTitle", scenicTitle.trim());
                     intent.putExtra("scenicAddress", scenicAddress.trim());
@@ -133,8 +133,10 @@ public class ScenicTicketAdapter extends BaseAdapter {
                     intent.putExtra("custInfoLimit", list.get(position).getTicketlistinfo().getCustinfolimit());
                     //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
                     intent.putExtra("position", position);
-
-                   // Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
+                    intent.putExtra("pricecalendar", (Serializable) list.get(position).getTicketlistinfo().getPricecalendar());
+                    intent.putExtra("today", list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
+                    intent.putExtra("minday", list.get(position).getTicketlistinfo().getPricecalendar().get(1).getSalePrice());
+                     //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
                     mContext.startActivity(intent);
 
                 }

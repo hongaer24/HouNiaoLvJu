@@ -143,7 +143,7 @@ public class Constants {
     //public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail";
     public static final String ORDER_DETAIL_URL = "http://apis.houno.cn/orderdetail";
     //取消订单
-   public static final String CANCEL_ORDER_URL = "http://apis.houno.cn/cancelorder.php";
+    public static final String CANCEL_ORDER_URL = "http://apis.houno.cn/cancelorder.php";
 
    //景点取消订单
     public static final String CANCEL_SCENICORDER_URL = "http://apis.houno.cn/hounoscenicOrderCancel ";

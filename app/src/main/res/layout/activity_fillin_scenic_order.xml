@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <!--标题栏-->
     <RelativeLayout
@@ -189,7 +190,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="80dp"
                 android:background="#ffffff"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
@@ -199,11 +200,51 @@
                     android:id="@+id/tv_yw"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_weight="5"
                     android:text="游玩日期"
                     android:textSize="16sp" />
-
-                <TextView
+                <Button
+                    android:id="@+id/btn_data"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="4"
+                    android:background="@drawable/shape_white_gray"
+                    android:padding="10dp"
+                    android:text="今天  108"
+                    android:textSize="13sp" />
+                <Button
+                    android:id="@+id/btn_data1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="4"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/shape_white_gray"
+                    android:padding="10dp"
+                    android:text="明天  108"
+                    android:textColor="#2c2b2b"
+                    android:textSize="13sp" />
+                <Button
+                    android:id="@+id/tv_days_selector"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="6"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/shape_white_gray"
+                    android:padding="10dp"
+                    android:text="更多日期>"
+                    android:textColor="#2c2b2b"
+                    android:textSize="13sp" />
+              <!--  <cn.houno.houniaolvju.view.Border2TextView
+                    android:id="@+id/tv_pay"
+                    android:layout_width="60dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:padding="5dp"
+                    android:text="今天150"
+                    app:followTextColor="false"
+                    app:strokeColor="#ffdddddd"
+                    app:strokeWidth="1.0dip" />-->
+             <!--   <TextView
                     android:id="@+id/tv_days_selector"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -211,7 +252,7 @@
                     android:gravity="center_vertical"
                     android:text=""
                     android:textColor="@color/black_txt"
-                    android:textSize="16sp" />
+                    android:textSize="16sp" />-->
             </LinearLayout>
 
             <Space
@@ -349,7 +390,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dip"
+                android:layout_height="200dip"
                 android:background="#ffffff"
                 android:gravity="center_vertical"
                 android:orientation="vertical"
