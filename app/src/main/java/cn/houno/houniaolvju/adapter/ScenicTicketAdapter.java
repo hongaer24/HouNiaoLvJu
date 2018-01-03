@@ -17,6 +17,7 @@ import java.util.List;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.scenic.FillInScenicOrderActivity;
 import cn.houno.houniaolvju.activity.scenic.ScenicBookInfoActivity;
+import cn.houno.houniaolvju.activity.scenic.ScenicRefundLIstActivity;
 import cn.houno.houniaolvju.bean.ScenicDetailBean;
 import cn.houno.houniaolvju.utils.MyText2Utils;
 
@@ -123,7 +124,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
                    // PrefUtils.deleteString(MyApplication.getContex());
                    /* Intent intent = new Intent();
                     intent.setClass(mContext, FillInScenicOrderActivity.class);*/
-                    Intent intent = new Intent(mContext, FillInScenicOrderActivity .class);
+                    Intent intent = new Intent(mContext, ScenicRefundLIstActivity.class);
                     // intent.putExtra("sid", list.get(position).);
                     intent.putExtra("tid", list.get(position).getProductId());
                     intent.putExtra("scenicTitle", scenicTitle.trim());

@@ -107,7 +107,8 @@ public class Constants {
     //银联支付
     public static final String UNION_PAY = "http://apis.houno.cn/unionpay.php";
     //申请退款
-    public static final String APPLY_REFUND = "http://apis.houno.cn/refundOrder.php";
+   // public static final String APPLY_REFUND = "http://apis.houno.cn/refundOrder.php";
+     public static final String APPLY_REFUND = "http://apis.houno.cn/hounoScenicOrderRefund";
     //支付成功回调接口
     public static final String GET_PAY_STATUS = "http://apis.houno.cn/getpaystatus.php";
     //登录

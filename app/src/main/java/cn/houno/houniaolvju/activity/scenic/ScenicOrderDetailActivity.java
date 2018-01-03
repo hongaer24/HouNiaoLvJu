@@ -34,6 +34,8 @@ import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,7 +44,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.OrderDetailActivity;
+import cn.houno.houniaolvju.activity.hotel.CommentListActivity;
 import cn.houno.houniaolvju.bean.OrderListBean;
+import cn.houno.houniaolvju.fragment.orderpage.IngOrderDetailActivity;
 import cn.houno.houniaolvju.fragment.orderpage.IngOrderPager;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.pay.alipay.PayResult;
@@ -72,8 +76,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     TextView tvOrderTime;
     @Bind(R.id.tv_count)
     TextView tvCount;
-    @Bind(R.id.tv_order_price)
-    TextView tvOrderPrice;
+    /*@Bind(R.id.tv_order_price1)
+    TextView tvOrderPrice1;*/
     @Bind(R.id.tv_address)
     TextView tvAddress;
     @Bind(R.id.tv_pay)
@@ -90,12 +94,16 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     TextView tvPhone;
     @Bind(R.id.tv_rule)
     TextView tvRule;
+    @Bind(R.id.tv_order_money)
+    TextView tvOrderMoney;
     @Bind(R.id.tv_order_info)
     TextView tvOrderInfo;
     @Bind(R.id.tv_order_data)
     TextView tvOrderData;
-    @Bind(R.id.tv_pay_way)
-    TextView tvPayWay;
+    @Bind(R.id.tv_order_date)
+    TextView getTvOrderDate;
+   /* @Bind(R.id.tv_custom_phone)
+    TextView tvPayWay;*/
     @Bind(R.id.tv_custom_phone)
     TextView tvCustomPhone;
     @Bind(R.id.ll_others)
@@ -135,6 +143,9 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     private String mCheckPhone;
     private ScenicOrderDetailActivity mActivity;
     private String address;
+    private String addTime;
+    private String result;
+    private String mCanCancel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,75 +165,22 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         orderNo = dataBean.getOrderno();
         qxid = dataBean.getId();
         type = dataBean.getType();
+        addTime=  intent.getStringExtra("addtime");
+        result = formatData("yyyy-MM-dd HH:mm:ss", Long.valueOf(addTime));
         getDataFromServer();
 
     }
-    private void showApplyRefundDialog() {
-        CustomDialog.Builder callDialog = new CustomDialog.Builder(this);
-        callDialog.setMessage("是否确定申请退款");
-        callDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                applyRefund();
-            }
-        });
-
-        callDialog.setNegativeButton("取消",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-
-        callDialog.create().show();
+    public  String formatData(String dataFormat, long timeStamp) {
+        if (timeStamp == 0) {
+            return "";
+        }
+        timeStamp = timeStamp * 1000;
+        String result = "";
+        SimpleDateFormat format = new SimpleDateFormat(dataFormat);
+        result = format.format(new Date(timeStamp));
+        return result;
     }
 
-    private void applyRefund() {
-        final ProgressDialog mProgressDialog = new ProgressDialog(this);
-        mProgressDialog.setMessage("正在提交退款申请");
-        mProgressDialog.setCanceledOnTouchOutside(false);
-        mProgressDialog.setCancelable(true);
-        mProgressDialog.show();
-        RequestParams params = new RequestParams(Constants.APPLY_REFUND);
-        params.addBodyParameter("userid", userid);
-        params.addBodyParameter("orderno", orderNo);
-        Log.e("hotel_refund", "userid=" + userid + "&orderno=" + orderNo);
-        x.http().post(params, new Callback.CommonCallback<String>() {
-            @Override
-            public void onSuccess(String result) {
-
-                try {
-                    JSONObject jsonObject = new JSONObject(result);
-                    int status = jsonObject.getInt("status");
-                    if (status == 0) {
-                        //tvRefund.setVisibility(View.GONE);
-                        //tvOrderStatus.setText("已支付/退款中");
-                    }
-                    Toast.makeText(ScenicOrderDetailActivity.this, jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-            @Override
-            public void onError(Throwable ex, boolean isOnCallback) {
-
-            }
-
-            @Override
-            public void onCancelled(CancelledException cex) {
-
-            }
-
-            @Override
-            public void onFinished() {
-                if (mProgressDialog.isShowing()) {
-                    mProgressDialog.dismiss();
-                }
-            }
-        });
-    }
 
     private void showPayDialogs() {
         mAlertView = new AlertView("请选择支付方式", null, "取消", null,
@@ -372,9 +330,9 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
                     mCheckName = json.getJSONObject("data").getJSONObject("contact").getString("name").trim();
                     mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
                     address = json.getJSONObject("data").getString("scenicaddress");
+                    mCanCancel = json.getJSONObject("data").getJSONObject("canRefunds").getJSONObject("data").getString("canCancel").trim();
 
-                    //mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
-
+                  //mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
                     // mCheckOutDate = json.getJSONObject("data").getString("checkout");
                     // mHotelAddress = json.getJSONObject("data").getJSONObject("detail").getString("address").trim();
                     //mTotalPrice = Double.parseDouble(json.getJSONObject("data").getString("price")) + "";
@@ -404,7 +362,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvOrderName.setText(productname);
             tvCount.setText("门票数量：" + mRoomCount + "张");
             tvOrderTime.setText("出游时间" + mCheckInDate);
-            tvAddress.setText(address);
+            tvAddress.setText("地址： "+address);
+            getTvOrderDate.setText(result);
             //tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
             //tvAddress.setText(address);
             // tvOther.setVisibility(View.GONE);
@@ -412,8 +371,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvPhone.setText("手机号：" + mCheckPhone);
 
         }
-        tvOrderNumber.setText(orderNo);
-        tvOrderPrice.setText("订单总额¥" + mTotalPrice);
+         tvOrderNumber.setText(orderNo);
+         tvOrderMoney.setText("¥" + mTotalPrice);
         //tvTotalPrice.setText(Html.fromHtml("订单金额：<font color=\"#009A44\">¥" + mTotalPrice + "</font>"));
 
     }
@@ -484,9 +443,16 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvOrderCancel.setVisibility(View.GONE);
             tvPay.setVisibility(View.GONE);
         } else if(mOrderStatusInt==4&&mPayStatusInt==1){
-            tvReturnMessage.setText("出票");
+            tvReturnMessage.setText("已出票");
             tvOrderCancel.setVisibility(View.GONE);
             tvPay.setVisibility(View.GONE);
+            if(mCanCancel.equals("1")){
+                tvReturnTicket.setVisibility(View.VISIBLE);
+            }else {
+                tvReturnTicket.setVisibility(View.GONE);
+            }
+        }else if(mOrderStatusInt==4&&mPayStatusInt==1){
+
         }
     }
     /*
@@ -736,6 +702,81 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             }
         });
     }
+
+    private void showApplyRefundDialog() {
+        CustomDialog.Builder callDialog = new CustomDialog.Builder(this);
+        callDialog.setMessage("是否确定申请退款");
+        callDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                Intent intent = new Intent();
+                intent.putExtra("orderno", orderNo);
+                intent.setClass(mActivity,ScenicRefundLIstActivity.class);
+                startActivity(intent);
+                //applyRefund();
+            }
+        });
+
+        callDialog.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        callDialog.create().show();
+    }
+
+    private void applyRefund() {
+        final ProgressDialog mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setMessage("正在提交退款申请");
+        mProgressDialog.setCanceledOnTouchOutside(false);
+        mProgressDialog.setCancelable(true);
+        mProgressDialog.show();
+        RequestParams params = new RequestParams(Constants.APPLY_REFUND);
+        params.addBodyParameter("userid", userid);
+        params.addBodyParameter("orderno", orderNo);
+        params.addBodyParameter("causeType", orderNo);
+        params.addBodyParameter("causeContent", orderNo);
+
+        Log.e("hotel_refund", "userid=" + userid + "&orderno=" + orderNo);
+        x.http().post(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    int status = jsonObject.getInt("status");
+                    if (status == 0) {
+                        //tvRefund.setVisibility(View.GONE);
+                        //tvOrderStatus.setText("已支付/退款中");
+                    }
+                    Toast.makeText(ScenicOrderDetailActivity.this, jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+                if (mProgressDialog.isShowing()) {
+                    mProgressDialog.dismiss();
+                }
+            }
+        });
+    }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data == null) {
@@ -782,7 +823,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             case R.id.tv_order_cancel:
                 showCancelOrderDialog();
                 break;
-            case R.id.tv_refund:
+            case R.id.tv_return_ticket:
                 showApplyRefundDialog();
                 break;
             case R.id.tv_pay:
@@ -794,7 +835,6 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
                 intent.putExtra("title", scenicName + " - " + productname);
                 intent.setClass(mActivity, OrderDetailActivity.class);
                 startActivity(intent);
-
                 break;
 
         }

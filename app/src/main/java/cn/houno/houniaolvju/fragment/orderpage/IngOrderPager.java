@@ -113,8 +113,11 @@ public class IngOrderPager extends Fragment {
                 Intent intent = new Intent();
              /*   String address=mIngOrderList.get(position).getDetail().getAddress();
                 String addTime=mIngOrderList.get(position).getAdd_time();*/
-                intent.putExtra("data", (Serializable) mIngOrderList.get(position));
                 String type = mIngOrderList.get(position).getType();
+                String addTime = mIngOrderList.get(position).getAdd_time();
+
+                intent.putExtra("data", (Serializable) mIngOrderList.get(position));
+                intent.putExtra("addtime", addTime);
 
               /*  intent.putExtra("address", address);
                 intent.putExtra("addtime", addTime);*/

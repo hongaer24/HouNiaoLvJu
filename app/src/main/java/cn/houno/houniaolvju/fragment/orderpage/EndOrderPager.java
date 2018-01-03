@@ -107,8 +107,12 @@ public class EndOrderPager extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent();
-                intent.putExtra("data", mEndOrderList.get(position));
                 String type = mEndOrderList.get(position).getType();
+                String addTime = mEndOrderList.get(position).getAdd_time();
+
+                intent.putExtra("data", mEndOrderList.get(position));
+                intent.putExtra("addtime", addTime);
+
                 if (TextUtils.equals(type, "Train")) {
                     intent.putExtra("orderno", mEndOrderList.get(position).getOrderno());
                     intent.setClass(mActivity, TrainOrderDetailActivity.class);
