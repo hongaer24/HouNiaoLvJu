@@ -2,6 +2,7 @@ package cn.houno.houniaolvju.adapter;
 
 import android.content.Context;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +11,21 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
+
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.bean.OrderListBean.DataBean;
+import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.MyText2Utils;
+import cn.houno.houniaolvju.utils.PrefUtils;
 
 /**
  * 结束订单列表
@@ -27,6 +36,11 @@ public class EndOrderAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater mInflater;
     private List<DataBean> mList;
+    private String userid;
+    private Context mActivity;
+    private String orderNo;
+    private String canCancel;
+  /*  private String orderno;*/
 
     public EndOrderAdapter(Context context, List<DataBean> list) {
         mInflater = LayoutInflater.from(context);
@@ -59,7 +73,7 @@ public class EndOrderAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         if (convertView == null) {
-            convertView = mInflater.inflate(R.layout.listitem_order, parent, false);
+            convertView = mInflater.inflate(R.layout.listitem_order_end, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
@@ -67,6 +81,8 @@ public class EndOrderAdapter extends BaseAdapter {
         }
 
         String type = mList.get(position).getType();
+
+
 
         //判断是否是火车票
         if (TextUtils.equals(type, "Train")) {
@@ -201,12 +217,34 @@ public class EndOrderAdapter extends BaseAdapter {
             } else {
                 holder.tvPayStatus.setText("已完成");
             }
-        } else {
-            if(TextUtils.equals(status, "1")&&TextUtils.equals(pay_status, "0")||TextUtils.equals(status, "10")&&TextUtils.equals(pay_status, "0")){
+        } else if(TextUtils.equals(type, "toursscenic")) {
+            String orderno = mList.get(position).getOrderno();
+            getDataFromServer(orderno);
+            if (TextUtils.equals(status, "1") && TextUtils.equals(pay_status, "0") || TextUtils.equals(status, "10") && TextUtils.equals(pay_status, "0")) {
                 holder.tvPayStatus.setText("已取消");
-            }else if(TextUtils.equals(status, "4")){
-                holder.tvPayStatus.setText("已完成");
+            } else if (TextUtils.equals(status, "4") && TextUtils.equals(pay_status, "1")) {
+                if (canCancel.equals("1")) {
+                    holder.tvPayStatus.setText("已出票");
+                } else {
+                    holder.tvPayStatus.setText("已退票");
+                }
+
+            } else if (TextUtils.equals(status, "6") && TextUtils.equals(pay_status, "1")) {
+                holder.tvPayStatus.setText("退票中");
+            } else if (TextUtils.equals(status, "7") && TextUtils.equals(pay_status, "1")) {
+                holder.tvPayStatus.setText("已退票");
             }
+        }else {
+               if (TextUtils.equals(status, "2")) {
+                holder.tvPayStatus.setText("已取消");
+            } else if (TextUtils.equals(status, "3")) {
+                holder.tvPayStatus.setText("已完成");
+            } else if (TextUtils.equals(status, "4")) {
+                holder.tvPayStatus.setText("已退款");
+            } else {
+                holder.tvPayStatus.setText("待支付");
+            }
+        }
            /* if (TextUtils.equals(status, "2")) {
                 holder.tvPayStatus.setText("已取消");
             } else if (TextUtils.equals(status, "3")) {
@@ -216,12 +254,55 @@ public class EndOrderAdapter extends BaseAdapter {
             } else {
                 holder.tvPayStatus.setText("待支付");
             }*/
-        }
+
         //String price = Double.parseDouble(mList.get(position).getPrice()) + "";
         //MyText2Utils.formatTicketPrice(mContext, holder.tvOrderPrice, price);
         return convertView;
     }
 
+    public void getDataFromServer(String orderNo) {
+        userid = PrefUtils.getString(mContext, "userid", "");
+
+        RequestParams params = new RequestParams(Constants.SCENIC_REFUND_URL);
+        params.addBodyParameter("userid", userid);
+        params.addBodyParameter("orderno", orderNo);
+
+        x.http().post(params, new Callback.CommonCallback<String>() {
+
+
+            @Override
+            public void onSuccess(String result) {
+
+                Log.e("end_order_pager", result);
+                try {
+                    JSONObject json = new JSONObject(result);
+                    int status = json.getInt("status");
+                   if (status == 0) {
+                       canCancel = json.getJSONObject("data").getString("canCancel");
+
+
+                   }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+                /*rfvEndOrder.stopRefresh();*/
+            }
+        });
+    }
 
     static class ViewHolder {
         @Bind(R.id.tv_train_arrive_time)

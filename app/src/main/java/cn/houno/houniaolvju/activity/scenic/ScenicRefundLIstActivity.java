@@ -1,10 +1,12 @@
 package cn.houno.houniaolvju.activity.scenic;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -23,11 +25,13 @@ import butterknife.ButterKnife;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.OrderDetailActivity;
 import cn.houno.houniaolvju.adapter.ScenicRefundListAdapter;
+import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.PrefUtils;
+import cn.houno.houniaolvju.utils.StatusBarUtils;
 import cn.houno.houniaolvju.view.InnerListView;
 
-public class ScenicRefundLIstActivity extends AppCompatActivity {
+public class ScenicRefundLIstActivity extends Activity implements ScenicRefundListAdapter.CheckInterface{
 
 
     @Bind(R.id.iv_back)
@@ -55,13 +59,17 @@ public class ScenicRefundLIstActivity extends AppCompatActivity {
     private String[] refundType = {"行程变更", "价格不优惠", "门票预订错误", "未收到入园凭证", "景区闭园", "其他原因"};
     private ScenicRefundListAdapter mAdapter;
     private ScenicRefundLIstActivity mAcitivity;
+    private int causeType;
+    private String causeContent;
+    private ScenicRefundLIstActivity mActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenic_refund_list);
-        ButterKnife.bind(this);
         mAcitivity = ScenicRefundLIstActivity.this;
+        StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
+        ButterKnife.bind(this);
         initData();
         initEvent();
     }
@@ -69,10 +77,11 @@ public class ScenicRefundLIstActivity extends AppCompatActivity {
 
     private void initData() {
         userid = PrefUtils.getString(ScenicRefundLIstActivity.this, "userid", "");
-       /* Intent intent = getIntent();
-        orderNo = intent.getStringExtra("orderno");*/
+        Intent intent = getIntent();
+        orderNo = intent.getStringExtra("orderno");
         if (mAdapter == null) {
-            mAdapter = new ScenicRefundListAdapter(mAcitivity,refundType);
+             mAdapter = new ScenicRefundListAdapter(mAcitivity,refundType);
+             mAdapter.setCheckInterface(this);
              lvPassengers.setAdapter(mAdapter);
         }else {
             mAdapter.setDatas(refundType);
@@ -82,10 +91,22 @@ public class ScenicRefundLIstActivity extends AppCompatActivity {
     }
 
     private void initEvent() {
+                    btnRefund.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            applyRefund();
 
+                        }
+                    });
 
     }
-/*
+
+    @Override
+    public void CheckType(int position, String type) {
+           causeType =position;
+           causeContent=type;
+    }
+
     private void applyRefund() {
         final ProgressDialog mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("正在提交退款申请");
@@ -95,7 +116,7 @@ public class ScenicRefundLIstActivity extends AppCompatActivity {
         RequestParams params = new RequestParams(Constants.APPLY_REFUND);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("orderno", orderNo);
-        params.addBodyParameter("causeType", causeType);
+        params.addBodyParameter("causeType", causeType+"");
         params.addBodyParameter("causeContent", causeContent);
 
         Log.e("hotel_refund", "userid=" + userid + "&orderno=" + orderNo);
@@ -104,13 +125,14 @@ public class ScenicRefundLIstActivity extends AppCompatActivity {
             public void onSuccess(String result) {
 
                 try {
-                    JSONObject jsonObject = new JSONObject(result);
-                    int status = jsonObject.getInt("status");
-                    if (status == 0) {
+                    JSONObject json = new JSONObject(result);
+
+                    String msg = json.getString("msg");
+                  /*  if (status == 0) {
                         //tvRefund.setVisibility(View.GONE);
                         //tvOrderStatus.setText("已支付/退款中");
-                    }
-                    Toast.makeText(ScenicRefundLIstActivity.this, jsonObject.getString("msg"), Toast.LENGTH_SHORT).show();
+                    }*/
+                    Toast.makeText(ScenicRefundLIstActivity.this, msg, Toast.LENGTH_SHORT).show();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -134,5 +156,5 @@ public class ScenicRefundLIstActivity extends AppCompatActivity {
                 }
             }
         });
-    }*/
+    }
 }

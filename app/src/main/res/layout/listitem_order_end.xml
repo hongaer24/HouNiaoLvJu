@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#dddddd" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="40dp">
+
+        <ImageView
+            android:id="@+id/iv_order_type"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:padding="10dp"
+            android:src="@drawable/label_order_hotel" />
+
+        <TextView
+            android:id="@+id/tv_order_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_order_type"
+            android:text="酒店 |"
+            android:textColor="@color/black_txt"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_orderno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3514460"
+            android:textSize="15sp"
+            android:textColor="#918f8f"
+            android:layout_toRightOf="@+id/tv_order_type"
+            android:paddingLeft="10dp"
+            android:layout_centerVertical="true"
+            />
+
+        <TextView
+            android:id="@+id/tv_pay_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="已支付"
+            android:textColor="#898989"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="#dddddd" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_order_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="北戴河老年生态颐养中心"
+            android:textColor="@color/black_txt"
+            android:textSize="16sp" />
+
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_order_project"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:id="@+id/tv_order_project_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预订项目：" />
+
+            <TextView
+                android:id="@+id/tv_order_project"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="少林寺成人票" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_order_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:id="@+id/tv_order_number_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预订人数：" />
+
+            <TextView
+                android:id="@+id/tv_order_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1人" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_order_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:text="¥100"
+            android:textColor="#a3a1a1"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_order_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/tv_check_date_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预订日期：" />
+
+        <TextView
+            android:id="@+id/tv_check_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017-03-18" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_airlines"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingLeft="10dp">
+
+        <TextView
+            android:id="@+id/tv_train_arrive_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="航班信息：" />
+
+        <TextView
+            android:id="@+id/tv_airlines"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="深圳航空公司 ZH9708" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#dddddd" />
+
+</LinearLayout>

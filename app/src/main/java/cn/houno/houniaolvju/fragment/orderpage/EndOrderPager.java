@@ -65,7 +65,6 @@ public class EndOrderPager extends Fragment {
     public static boolean refresh = false;
     private String info;
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -139,6 +138,7 @@ public class EndOrderPager extends Fragment {
     public void getDataFromServer() {
         userid = PrefUtils.getString(mActivity, "userid", "");
         page = 1;
+
         RequestParams params = new RequestParams(Constants.MYORDER_URL);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("page", page + "");

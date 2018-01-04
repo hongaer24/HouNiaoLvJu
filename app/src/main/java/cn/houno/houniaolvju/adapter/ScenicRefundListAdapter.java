@@ -15,6 +15,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.scenic.ScenicRefundLIstActivity;
+import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
 import cn.houno.houniaolvju.bean.ScenicListBean;
 
 /**
@@ -26,6 +27,8 @@ public class ScenicRefundListAdapter extends BaseAdapter {
     private  Context mContext;
     private LayoutInflater mInflater;
     private String[] mDatas;
+    private int num=1;
+    private CheckInterface checkInterface;
 
    /* public ScenicRefundListAdapter(Context context) {
         mContext = context;
@@ -44,7 +47,9 @@ public class ScenicRefundListAdapter extends BaseAdapter {
         notifyDataSetChanged();
 
     }
-
+    public void setCheckInterface(CheckInterface checkInterface) {
+        this.checkInterface = checkInterface;
+    }
 
 
     @Override
@@ -64,7 +69,7 @@ public class ScenicRefundListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         final ViewHolder holder;
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.listitem_refund, parent, false);
@@ -73,7 +78,31 @@ public class ScenicRefundListAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-            holder.tvPassengersName.setText(mDatas[position]);
+            holder.cbPassengersCheck.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                        if(num>0){
+                            checkInterface.CheckType(position,mDatas[position]);
+                            if(holder.cbPassengersCheck.isChecked()){
+                                num--;
+                            }else {
+                                num++;
+                            }
+                        }else if(num==0){
+
+                            if(holder.cbPassengersCheck.isChecked()){
+                                holder.cbPassengersCheck.setChecked(false);
+                            }else {
+                                num++;
+                            }
+                        }
+
+
+                }
+            });
+
+        holder.tvPassengersName.setText(mDatas[position]);
+
         return convertView;
     }
 
@@ -88,5 +117,11 @@ public class ScenicRefundListAdapter extends BaseAdapter {
         ViewHolder(View view) {
             ButterKnife.bind(this, view);
         }
+    }
+
+
+    public interface CheckInterface {
+        void CheckType(int position,String type);
+
     }
 }

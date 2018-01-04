@@ -443,16 +443,19 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvOrderCancel.setVisibility(View.GONE);
             tvPay.setVisibility(View.GONE);
         } else if(mOrderStatusInt==4&&mPayStatusInt==1){
-            tvReturnMessage.setText("已出票");
-            tvOrderCancel.setVisibility(View.GONE);
-            tvPay.setVisibility(View.GONE);
             if(mCanCancel.equals("1")){
                 tvReturnTicket.setVisibility(View.VISIBLE);
+                tvReturnMessage.setText("已出票");
             }else {
                 tvReturnTicket.setVisibility(View.GONE);
+                tvReturnMessage.setText("已退票");
             }
-        }else if(mOrderStatusInt==4&&mPayStatusInt==1){
-
+           /* tvOrderCancel.setVisibility(View.GONE);
+            tvPay.setVisibility(View.GONE);*/
+        }else if(mOrderStatusInt==6&&mPayStatusInt==1){
+            tvReturnMessage.setText("退票中");
+        }else if(mOrderStatusInt==7&&mPayStatusInt==1){
+            tvReturnMessage.setText("已退票");
         }
     }
     /*
@@ -808,7 +811,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         }
         PrefUtils.setInt(ScenicOrderDetailActivity.this, "wxpaystatus", -3);
     }
-       @OnClick({R.id.iv_back, R.id.tv_pay_way, R.id.tv_order_price, R.id.tv_pay, R.id.tv_order_cancel})
+       @OnClick({R.id.iv_back, R.id.tv_pay_way, R.id.tv_order_price, R.id.tv_pay, R.id.tv_order_cancel,R.id.tv_return_ticket})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:

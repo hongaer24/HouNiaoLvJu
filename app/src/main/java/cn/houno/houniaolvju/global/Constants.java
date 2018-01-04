@@ -80,6 +80,8 @@ public class Constants {
     //景点订单
    // public static final String SCENIC_ORDER_URL = "http://apis.houno.cn/addScenicOrder";
      public static final String SCENIC_ORDER_URL = "http://apis.houno.cn/addToursScenicOrder";
+   //景点获取可否退款
+   public static final String SCENIC_REFUND_URL = "http://apis.houno.cn/hounosceniccanRefund";
 
 
 

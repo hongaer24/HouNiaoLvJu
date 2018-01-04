@@ -124,7 +124,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
                    // PrefUtils.deleteString(MyApplication.getContex());
                    /* Intent intent = new Intent();
                     intent.setClass(mContext, FillInScenicOrderActivity.class);*/
-                    Intent intent = new Intent(mContext, ScenicRefundLIstActivity.class);
+                    Intent intent = new Intent(mContext, FillInScenicOrderActivity.class);
                     // intent.putExtra("sid", list.get(position).);
                     intent.putExtra("tid", list.get(position).getProductId());
                     intent.putExtra("scenicTitle", scenicTitle.trim());
