@@ -223,11 +223,11 @@ public class EndOrderAdapter extends BaseAdapter {
             if (TextUtils.equals(status, "1") && TextUtils.equals(pay_status, "0") || TextUtils.equals(status, "10") && TextUtils.equals(pay_status, "0")) {
                 holder.tvPayStatus.setText("已取消");
             } else if (TextUtils.equals(status, "4") && TextUtils.equals(pay_status, "1")) {
-                if (canCancel.equals("1")) {
+               /* if (canCancel.equals("1")) {
                     holder.tvPayStatus.setText("已出票");
                 } else {
                     holder.tvPayStatus.setText("已退票");
-                }
+                }*/
 
             } else if (TextUtils.equals(status, "6") && TextUtils.equals(pay_status, "1")) {
                 holder.tvPayStatus.setText("退票中");

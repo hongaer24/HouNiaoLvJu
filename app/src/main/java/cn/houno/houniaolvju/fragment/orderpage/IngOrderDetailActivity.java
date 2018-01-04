@@ -1098,7 +1098,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
     private void cancelOrder() {
         RequestParams params = new RequestParams(Constants.CANCEL_ORDER_URL);
         params.addBodyParameter("userid", userid);
-        params.addBodyParameter("orderno", orderNo);
+        params.addBodyParameter("type", type);
         params.addBodyParameter("id", qxid);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
