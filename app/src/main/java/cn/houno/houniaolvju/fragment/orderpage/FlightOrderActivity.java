@@ -15,11 +15,15 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
+import org.xutils.x;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,6 +35,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.flight.FlightOrderPayActivity;
+import cn.houno.houniaolvju.activity.scenic.ScenicOrderDetailActivity;
 import cn.houno.houniaolvju.adapter.FlightOrderPassengers2Adapter;
 import cn.houno.houniaolvju.bean.FlightModifyRefundBean;
 import cn.houno.houniaolvju.bean.FlightModifyRefundBean.DataBean.RuleInfosBean.RuleFeeListBean;
@@ -100,6 +105,9 @@ public class FlightOrderActivity extends Activity {
     Border2TextView tvRefund;
     @Bind(R.id.tv_link_man)
     TextView tvLinkMan;
+    @Bind(R.id.tv_order_cancel)
+    Border2TextView tvOrderCancel;
+
 
     private final int GET_MODIFY_REFUND_PRICE = 101; //退改签价格说明
     private final int GET_TICKET_INFO = 102;  //获取机票状态
@@ -228,9 +236,9 @@ public class FlightOrderActivity extends Activity {
             params.put("userid", mUserid);
             params.put("orderno", mOrderno);
             params.put("type", mType);
-            Log.d("222", "userid===="+mUserid+"\n"+
-                                    "orderno==="+mOrderno+"\n"+
-                                     "type======"+ mType);
+            Log.d("222", "userid====" + mUserid + "\n" +
+                    "orderno===" + mOrderno + "\n" +
+                    "type======" + mType);
             connectUrl = Constants.ORDER_DETAIL_URL;
         }
         System.out.println("userid=" + mUserid + "&orderno=" + mOrderno + "&type=" + mType);
@@ -241,7 +249,7 @@ public class FlightOrderActivity extends Activity {
                         switch (msg.what) {
                             case R.id.doSucceed:
                                 String result = msg.obj.toString();
-                                Log.e("getDataSuccess-" , getDataType + ":" + result);
+                                Log.e("getDataSuccess-", getDataType + ":" + result);
                                 try {
                                     JSONObject object = new JSONObject(result);
                                     int status = object.getInt("status");
@@ -302,6 +310,7 @@ public class FlightOrderActivity extends Activity {
             } else {
                 //未支付，请立即支付
                 tvPay.setVisibility(View.VISIBLE);
+                tvOrderCancel.setVisibility(View.VISIBLE);
             }
         } else {
             String changestatus = flightOrderDetailBean.getData().getChangestatus();
@@ -320,7 +329,7 @@ public class FlightOrderActivity extends Activity {
                     //已支付待出票
                 } else if (TextUtils.equals(status, "3")) {
                     //已出票
-                   // tvChangeSign.setVisibility(View.VISIBLE);
+                    // tvChangeSign.setVisibility(View.VISIBLE);
                     tvRefund.setVisibility(View.VISIBLE);
                 } else if (TextUtils.equals(status, "4")) {
                     //退票申请中
@@ -353,7 +362,7 @@ public class FlightOrderActivity extends Activity {
     }
 
     @OnClick({R.id.iv_back, R.id.tv_change_refund_rule, R.id.tv_change_pay, R.id.tv_pay
-            , R.id.tv_refund, R.id.tv_Change_sign})
+            , R.id.tv_refund, R.id.tv_Change_sign,R.id.tv_order_cancel})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
@@ -391,6 +400,11 @@ public class FlightOrderActivity extends Activity {
                 intent.setClass(mActivity, FlightChangeSignActivity.class);
                 startActivityForResult(intent, CHANGE_SIGN);
                 break;
+
+            case R.id.tv_order_cancel:
+                //取消订单
+                showCancelOrderDialog();
+                break;
         }
     }
 
@@ -410,7 +424,7 @@ public class FlightOrderActivity extends Activity {
         });
 
         callDialog.setNegativeButton("取消",
-                new android.content.DialogInterface.OnClickListener() {
+                new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
@@ -531,5 +545,64 @@ public class FlightOrderActivity extends Activity {
             }
         }
     }
+    /*
+* 取消订单弹窗
+* */
+    private void showCancelOrderDialog() {
+        CustomDialog.Builder callDialog = new CustomDialog.Builder(this);
+        callDialog.setMessage("确定要取消订单吗？");
+        callDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                cancelOrder();
+            }
+        });
 
+        callDialog.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        callDialog.create().show();
+    }
+
+    /*
+* 取消订单
+* */
+    private void cancelOrder() {
+        RequestParams params = new RequestParams(Constants.FLIGHT_CANCEL_ORDER);
+        params.addBodyParameter("userid", mUserid);
+        params.addBodyParameter("orderno", mOrderno);
+       // params.addBodyParameter("type", mType);
+        x.http().post(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject json = new JSONObject(result);
+                    String msg = json.getString("msg");
+                    IngOrderPager.refresh = true;
+                    Toast.makeText(FlightOrderActivity.this, msg, Toast.LENGTH_SHORT).show();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+                finish();
+            }
+        });
+    }
 }

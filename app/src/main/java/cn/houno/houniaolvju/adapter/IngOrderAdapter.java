@@ -71,6 +71,9 @@ public class IngOrderAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         String type = mList.get(position).getType();
+        holder.tvOrderno.setText(mList.get(position).getOrderno());
+        holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
+
 
         //判断是否是火车票
         if (TextUtils.equals(type, "Train")) {
@@ -186,7 +189,6 @@ public class IngOrderAdapter extends BaseAdapter {
                 if(mList.get(position).getPrice()!=null){
                     holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice().trim());
                 }
-                holder.tvOrderno.setText(mList.get(position).getOrderno());
                 String checkIn = mList.get(position).getCheckin();
                 holder.tvCheckDate.setText(checkIn);
             } else {

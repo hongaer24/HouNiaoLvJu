@@ -181,6 +181,8 @@ public class Constants {
     public static final String GET_MODIFY_REFUND = "http://apis.houno.cn/v2/getModifyAndRefund";
     //机票取消订单
     //public static final String FLIGHT_CANCEL_ORDER = "http://apis.houno.cn/v2/ljbFlightOrderCancel";
+    public static final String FLIGHT_CANCEL_ORDER = "http://apis.houno.cn/flightOrderCancel.php";
+
     //退票接口   orderno
     public static final String FLIGHT_REFUND = "http://apis.houno.cn/flightRefund";
     //机票改签

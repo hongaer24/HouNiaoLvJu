@@ -174,13 +174,13 @@
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_centerVertical="true"
-                            android:drawableEnd="@drawable/icon_home_flash_sale_more"
-                            android:drawablePadding="2dp"
-                            android:drawableRight="@drawable/icon_home_flash_sale_more"
-                            android:padding="7dp"
-                            android:text="更多"
-                            android:textColor="@color/xsqg_txt"
-                            android:textSize="14sp" />
+                            android:drawableEnd="@drawable/icon_go"
+                            android:drawablePadding="3dp"
+                            android:drawableRight="@drawable/icon_go"
+                            android:padding="2dp"
+                            android:text="更多景点"
+                            android:textColor="#009944"
+                            android:textSize="18sp" />
 
                         <View
                             android:layout_width="match_parent"

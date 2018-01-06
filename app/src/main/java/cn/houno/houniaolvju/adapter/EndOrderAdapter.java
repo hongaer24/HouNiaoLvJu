@@ -81,6 +81,8 @@ public class EndOrderAdapter extends BaseAdapter {
         }
 
         String type = mList.get(position).getType();
+        holder.tvOrderno.setText(mList.get(position).getOrderno());
+        holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
 
 
 
@@ -164,8 +166,7 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
-                holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
-                holder.tvOrderno.setText(mList.get(position).getOrderno());
+                getDataFromServer(mList.get(position).getOrderno());
                 String checkIn = mList.get(position).getCheckin();
                 holder.tvCheckDate.setText(checkIn);
             } else {
@@ -204,7 +205,7 @@ public class EndOrderAdapter extends BaseAdapter {
         String status = mList.get(position).getStatus();
         String pay_status = mList.get(position).getPay_status();
 
-
+       // String orderno = mList.get(position).getOrderno();
         if (TextUtils.equals(type, "Train")) {
             if (TextUtils.equals(status, "1")) {
                 holder.tvPayStatus.setText("已取消");
@@ -218,16 +219,16 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvPayStatus.setText("已完成");
             }
         } else if(TextUtils.equals(type, "toursscenic")) {
-            String orderno = mList.get(position).getOrderno();
-            getDataFromServer(orderno);
+
+
             if (TextUtils.equals(status, "1") && TextUtils.equals(pay_status, "0") || TextUtils.equals(status, "10") && TextUtils.equals(pay_status, "0")) {
                 holder.tvPayStatus.setText("已取消");
             } else if (TextUtils.equals(status, "4") && TextUtils.equals(pay_status, "1")) {
-               /* if (canCancel.equals("1")) {
+                if (canCancel.equals("1")) {
                     holder.tvPayStatus.setText("已出票");
                 } else {
                     holder.tvPayStatus.setText("已退票");
-                }*/
+                }
 
             } else if (TextUtils.equals(status, "6") && TextUtils.equals(pay_status, "1")) {
                 holder.tvPayStatus.setText("退票中");

@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -26,9 +28,6 @@ import com.google.gson.Gson;
 import com.jude.rollviewpager.RollPagerView;
 import com.jude.rollviewpager.hintview.TextHintView;
 import com.shizhefei.view.indicator.IndicatorViewPager;
-import com.shizhefei.view.indicator.ScrollIndicatorView;
-import com.shizhefei.view.indicator.slidebar.ColorBar;
-import com.shizhefei.view.indicator.transition.OnTransitionTextListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,9 +54,9 @@ import cn.houno.houniaolvju.bean.ScenicDetailBean.DataBean.OtherBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.MyText2Utils;
 import cn.houno.houniaolvju.utils.PrefUtils;
-import cn.houno.houniaolvju.utils.StatusBarUtils;
-import cn.houno.houniaolvju.view.CustomViewPager;
 import cn.houno.houniaolvju.view.GradationScrollView;
+import cn.houno.houniaolvju.view.InnerGridView;
+import cn.houno.houniaolvju.view.InnerListView;
 import cn.houno.houniaolvju.view.NoScrollViewPager;
 import cn.sharesdk.framework.ShareSDK;
 import cn.sharesdk.onekeyshare.OnekeyShare;
@@ -115,26 +114,60 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
     LinearLayout llComment;*/
  /*   @Bind(R.id.gv_scenic_other)
     InnerGridView gvScenicOther;*/
-    @Bind(R.id.ll_content)
-    LinearLayout llContent;
-    @Bind(R.id.sv_scenic)
-    GradationScrollView svScenic;
-   /* @Bind(R.id.rfv_scenic_detail)
-    XRefreshView rfvScenicDetail;*/
-    @Bind(R.id.rl_scenic_roll)
-    RelativeLayout rlScenicRoll;
-    @Bind(R.id.iv_back)
-    ImageView ivBack;
-    @Bind(R.id.tv_topbar_title)
-    TextView tvTopbarTitle;
+  /*  @Bind(R.id.ll_content)
+    LinearLayout llContent;*/
+   /* @Bind(R.id.sv_scenic)
+    GradationScrollView svScenic;*/
+    /* @Bind(R.id.rfv_scenic_detail)
+     XRefreshView rfvScenicDetail;*/
+   /* @Bind(R.id.rl_scenic_roll)
+    RelativeLayout rlScenicRoll;*/
+  /*  @Bind(R.id.iv_back)
+    ImageView ivBack;*/
+  /*  @Bind(R.id.tv_topbar_title)
+    TextView tvTopbarTitle;*/
     @Bind(R.id.iv_share)
     ImageView ivShare;
     @Bind(R.id.rl_top_bar)
     RelativeLayout rlTopBar;
-    @Bind(R.id.siv_home_hs)
+    @Bind(R.id.rb_ddlb_ing)
+    TextView rbDdlbIng;
+    @Bind(R.id.rb_ddlb_end)
+    TextView rbDdlbEnd;
+    @Bind(R.id.rg_top_bar)
+    LinearLayout rgTopBar;
+    @Bind(R.id.lv_ticket)
+    InnerListView lvTicket;
+    @Bind(R.id.tv_scenic_info)
+    TextView tvScenicInfo;
+    @Bind(R.id.gv_scenic_other)
+    InnerGridView gvScenicOther;
+    @Bind(R.id.ll_bookinfo)
+    LinearLayout llBookinfo;
+    @Bind(R.id.wv_scenic_detail_info)
+    WebView wvScenicDetailInfo;
+    @Bind(R.id.ll_content)
+    LinearLayout llContent;
+    @Bind(R.id.rl_scenic_roll)
+    RelativeLayout rlScenicRoll;
+    /*@Bind(R.id.v_line)
+    View vLine;*/
+    @Bind(R.id.iv_back)
+    ImageView ivBack;
+    @Bind(R.id.v_linel)
+    View vLinel;
+    @Bind(R.id.v_liner)
+    View vLiner;
+    @Bind(R.id.tv_scenic_info_icon)
+    ImageView tvScenicInfoIcon;
+    @Bind(R.id.sv_scenic)
+    GradationScrollView svScenic;
+    @Bind(R.id.tv_topbar_title)
+    TextView tvTopbarTitle;
+   /* @Bind(R.id.siv_home_hs)
     ScrollIndicatorView sivHf;
     @Bind(R.id.vp_home_hs)
-    CustomViewPager vpHf;
+    CustomViewPager vpHf;*/
 /*    @Bind(R.id.ll_same_scenic)
     LinearLayout llSameScenic;*/
 
@@ -191,6 +224,7 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
     private OrderAdapter orderAdapter;
     private NoScrollViewPager mViewPager;
     private LinearLayout llSameScenic;
+    private List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean> newDataList =new ArrayList<>();
     //private FragmentManager childFragmentManager;
 
 
@@ -232,11 +266,11 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         //lvScenicComment.addHeaderView(headerView);
         footerView = (RelativeLayout) inflater.inflate(R.layout.footerview_comment_list, null);
         mTvCommentMore = (TextView) footerView.findViewById(R.id.tv_comment_more);
-     //llSameScenic = findViewById(R.id.ll_same_scenic);
+        //llSameScenic = findViewById(R.id.ll_same_scenic);
         //lvScenicComment.addFooterView(footerView);
 
 
-        hfFragments = new ArrayList<>();
+      /*  hfFragments = new ArrayList<>();
         scenicDetailBookPage = new ScenicDetailBookPage();
         scenicDetailInfoPage = new ScenicDetailInfoPage();
         hfFragments.add(scenicDetailBookPage);
@@ -252,12 +286,87 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         ivpHf = new IndicatorViewPager(sivHf, vpHf);
         mTKAdapter = new ScenicDetailTKAdapter(mActivity, getSupportFragmentManager(), hfFragments);
         ivpHf.setAdapter(mTKAdapter);
-
+*/
 
         getDataFromServer();
 
     }
-    private void hideWindows(){
+
+    private void initEvent() {
+        rbDdlbIng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                wvScenicDetailInfo.setVisibility(View.GONE);
+                llBookinfo.setVisibility(View.VISIBLE);
+                vLinel.setVisibility(View.VISIBLE);
+                vLiner.setVisibility(View.GONE);
+
+            }
+        });
+        rbDdlbEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                wvScenicDetailInfo.setVisibility(View.VISIBLE);
+                llBookinfo.setVisibility(View.GONE);
+                vLinel.setVisibility(View.GONE);
+                vLiner.setVisibility(View.VISIBLE);
+            }
+        });
+     /*   rfvScenicDetail.setPullLoadEnable(false);
+        rfvScenicDetail.setMoveForHorizontal(true);
+        rfvScenicDetail.setXRefreshViewListener(new XRefreshView.XRefreshViewListener() {
+            @Override
+            public void onRefresh() {
+
+                getDataFromServer();
+            }
+
+            @Override
+            public void onLoadMore(boolean isSilence) {
+
+            }
+
+            @Override
+            public void onRelease(float direction) {
+
+            }
+
+            @Override
+            public void onHeaderMove(double headerMovePercent, int offsetY) {
+                if (offsetY > 0) {
+                    rlTopBar.setVisibility(View.GONE);
+                } else {
+                    rlTopBar.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+*/
+
+        gvScenicOther.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                intent.setClass(mActivity, ScenicDetailActivity.class);
+                intent.putExtra("scenicid", mOtherScenicList.get(position).getScenicid());
+                startActivity(intent);
+            }
+        });
+
+        footerView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.putExtra("from", "scenic");
+                intent.putExtra("sid", mId);
+                intent.putExtra("average", mAverage);
+                intent.putExtra("commentnum", mCommentnum);
+                intent.setClass(mActivity, CommentListActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void hideWindows() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getWindow();
@@ -271,11 +380,12 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             window.setNavigationBarColor(Color.TRANSPARENT);
         }
     }
+
     private void getDataFromServer() {
         userid = PrefUtils.getString(mActivity, "userid", "");
         RequestParams params = new RequestParams(Constants.SCENIC_DETAIL);
         params.addBodyParameter("id", mId);
-        //params.addBodyParameter("UserID", userid);
+        params.addBodyParameter("UserID", userid);
         Log.i("888", "id===" + userid);
         x.http().post(params, new Callback.CommonCallback<String>() {
             @Override
@@ -289,7 +399,7 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
                         llLoading.setVisibility(View.GONE);
                         ivShare.setVisibility(View.VISIBLE);
                         svScenic.setVisibility(View.VISIBLE);
-                       // rfvScenicDetail.setVisibility(View.VISIBLE);
+                        // rfvScenicDetail.setVisibility(View.VISIBLE);
                         //llSameScenic.setVisibility(View.GONE);
                         setData();
                         ivShare.setClickable(true);
@@ -318,6 +428,7 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             }
         });
     }
+
     private void setData() {
         ViewTreeObserver vto = rpvScenicDetail.getViewTreeObserver();
         vto.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -338,6 +449,7 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             }
         });
     }
+
     private void parseData(String result) {
         Log.i("222", "result===" + result);
         Gson gson = new Gson();
@@ -392,24 +504,33 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             }
         }
         //设置门票信息和详情
-        mTicketList = scenicDetailBean.getData().getInfo().getTicketlist();
+       /* mTicketList = scenicDetailBean.getData().getInfo().getTicketlist();
         mOtherScenicList = scenicDetailBean.getData().getOther();
         mScenicdetail = infoBean.getScenicdescription();
         if (mTicketList != null) {
-            mTKAdapter = new ScenicDetailTKAdapter(mActivity, getSupportFragmentManager(), hfFragments, mTicketList, mScenicdetail, mTitle, mAddress,  mOtherScenicList,mId);
-            ivpHf.setAdapter(mTKAdapter);
+            mTKAdapter = new ScenicDetailTKAdapter(mActivity, getSupportFragmentManager(), hfFragments, mTicketList, mScenicdetail, mTitle, mAddress, mOtherScenicList, mId);
+            ivpHf.setAdapter(mTKAdapter);*/
 
-        /*mTicketList = scenicDetailBean.getData().getInfo().getTicketlist();
+       //去掉Ticketlistinfo为空的数据
+        mTicketList = scenicDetailBean.getData().getInfo().getTicketlist();
+        if (mTicketList != null&&mTicketList.size()>0) {
+            for(int i=0;i<mTicketList.size();i++){
+                if(mTicketList.get(i).getTicketlistinfo()!=null){
+                    newDataList.add(mTicketList.get(i));
+                }
+            }
+
+        }
         if (mTicketAdapter == null) {
-            mTicketAdapter = new ScenicTicketAdapter(mActivity, mTicketList, mTitle, mAddress);
+            mTicketAdapter = new ScenicTicketAdapter(mActivity, newDataList, mTitle, mAddress);
             lvTicket.setAdapter(mTicketAdapter);
         } else {
             mTicketAdapter.setData(mTicketList, mTitle, mAddress);
-        }*/
-            //wvScenicDetailBook.loadDataWithBaseURL(null, infoBean.getScenicdescription(), "text/html", "utf-8", null);
-            //wvScenicDetailInfo.loadDataWithBaseURL(null, infoBean.getScenicdescription(), "text/html", "utf-8", null);
+        }
+        //wvScenicDetailBook.loadDataWithBaseURL(null, infoBean.getScenicdescription(), "text/html", "utf-8", null);
+        wvScenicDetailInfo.loadDataWithBaseURL(null, infoBean.getScenicdescription(), "text/html", "utf-8", null);
 
-            //评论
+        //评论
         /*CommentBean commentBean = scenicDetailBean.getData().getComment();
         mAverage = infoBean.getAverage();
         mCommentnum = commentBean.getCount();
@@ -432,73 +553,18 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             }
 
         }*/
-            //周边
-           /* mOtherScenicList = scenicDetailBean.getData().getOther();
-            if (mOtherAdapter == null) {
-                mOtherAdapter = new ScenicOtherAdapter(mActivity, mOtherScenicList);
-                gvScenicOther.setAdapter(mOtherAdapter);
-            } else {
-                mOtherAdapter.setData(mOtherScenicList);
-            }*/
+        //周边
+        mOtherScenicList = scenicDetailBean.getData().getOther();
+        if (mOtherAdapter == null) {
+            mOtherAdapter = new ScenicOtherAdapter(mActivity, mOtherScenicList);
+            gvScenicOther.setAdapter(mOtherAdapter);
+        } else {
+            mOtherAdapter.setData(mOtherScenicList);
         }
     }
-    private void initEvent() {
 
-     /*   rfvScenicDetail.setPullLoadEnable(false);
-        rfvScenicDetail.setMoveForHorizontal(true);
-        rfvScenicDetail.setXRefreshViewListener(new XRefreshView.XRefreshViewListener() {
-            @Override
-            public void onRefresh() {
 
-                getDataFromServer();
-            }
-
-            @Override
-            public void onLoadMore(boolean isSilence) {
-
-            }
-
-            @Override
-            public void onRelease(float direction) {
-
-            }
-
-            @Override
-            public void onHeaderMove(double headerMovePercent, int offsetY) {
-                if (offsetY > 0) {
-                    rlTopBar.setVisibility(View.GONE);
-                } else {
-                    rlTopBar.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-*/
-
-     /*   gvScenicOther.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent();
-                intent.setClass(mActivity, ScenicDetailActivity.class);
-                intent.putExtra("id", mOtherScenicList.get(position).getId());
-                startActivity(intent);
-            }
-        });*/
-
-        footerView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.putExtra("from", "scenic");
-                intent.putExtra("sid", mId);
-                intent.putExtra("average", mAverage);
-                intent.putExtra("commentnum", mCommentnum);
-                intent.setClass(mActivity, CommentListActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
-    @OnClick({R.id.iv_back, R.id.iv_share, R.id.tv_time, R.id.ll_scenic_address/*, R.id.ll_webview_book, R.id.ll_webview_info*/})
+    @OnClick({R.id.iv_back, R.id.iv_share, R.id.tv_time, R.id.ll_scenic_address,R.id.tv_scenic_info_icon})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
@@ -522,14 +588,15 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
                     startActivity(intent);
                 }
                 break;
-           /* case R.id.ll_webview_book:
-                //unfoldBookWebView();
+            case R.id.tv_scenic_info_icon:
+                Intent intent1 = new Intent(mActivity, ScenicInfoActivity.class);
+                intent1.putExtra("id", mId);
+                startActivity(intent1);
                 break;
-            case R.id.ll_webview_info:
-               // unfoldInfoWebView();
-                break;*/
+
         }
     }
+
     private void shareTheScenic() {
         ShareSDK.initSDK(this);
         OnekeyShare oks = new OnekeyShare();

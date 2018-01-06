@@ -255,6 +255,17 @@
                         app:followTextColor="false"
                         app:strokeColor="#dddddd"
                         app:strokeWidth="1dp" />
+                    <cn.houno.houniaolvju.view.Border2TextView
+                        android:id="@+id/tv_order_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="3.0dip"
+                        android:text="取消订单"
+                        android:visibility="gone"
+                        app:followTextColor="false"
+                        app:strokeColor="#ffdddddd"
+                        app:strokeWidth="1.0dip" />
 
                     <cn.houno.houniaolvju.view.Border2TextView
                         android:id="@+id/tv_Change_sign"

@@ -160,7 +160,12 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
                 if (TextUtils.equals(productDatePrice.getDepartDate(), String.format("%s-%s-%s", gridItemYear,
                         StringUtils.leftPad(gridItemMonth + "", 2, "0"), StringUtils.leftPad(String.valueOf(gridItemDay), 2, "0")))) {
                     CommonCalendarView.GridViewHolder viewHolder = (CommonCalendarView.GridViewHolder) view.getTag();
-                    viewHolder.mPriceTv.setText(String.format("¥ %s", productDatePrice.getSalePrice()));
+                    if( productDatePrice.getSalePrice()==0){
+                        viewHolder.mPriceTv.setText("今日不可定");
+                    }else {
+                        viewHolder.mPriceTv.setText(String.format("¥ %s", productDatePrice.getSalePrice()));
+
+                    }
                     view.setEnabled(true);
                     viewHolder.mTextView.setEnabled(true);
                 }
