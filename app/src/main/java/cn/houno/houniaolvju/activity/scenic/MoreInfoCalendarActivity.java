@@ -2,20 +2,12 @@ package cn.houno.houniaolvju.activity.scenic;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 
-import com.google.gson.Gson;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.xutils.http.RequestParams;
-import org.xutils.x;
-
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,7 +15,6 @@ import java.util.Map;
 
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.bean.ScenicDetailBean;
-import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.StringUtils;
 
 public class MoreInfoCalendarActivity extends AppCompatActivity {
@@ -161,7 +152,10 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
                         StringUtils.leftPad(gridItemMonth + "", 2, "0"), StringUtils.leftPad(String.valueOf(gridItemDay), 2, "0")))) {
                     CommonCalendarView.GridViewHolder viewHolder = (CommonCalendarView.GridViewHolder) view.getTag();
                     if( productDatePrice.getSalePrice()==0){
-                        viewHolder.mPriceTv.setText("今日不可定");
+                        viewHolder.mPriceTv.setText("今日"+"\n"+"不可定");
+                        viewHolder.mPriceTv.setTextColor(Color.parseColor("#dddddd"));
+                        viewHolder.mTextView.setEnabled(false);
+
                     }else {
                         viewHolder.mPriceTv.setText(String.format("¥ %s", productDatePrice.getSalePrice()));
 

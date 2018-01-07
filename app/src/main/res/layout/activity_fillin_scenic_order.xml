@@ -221,7 +221,6 @@
                     android:background="@drawable/shape_white_gray"
                     android:padding="10dp"
                     android:text="明天  108"
-                    android:textColor="#2c2b2b"
                     android:textSize="13sp" />
                 <Button
                     android:id="@+id/tv_days_selector"

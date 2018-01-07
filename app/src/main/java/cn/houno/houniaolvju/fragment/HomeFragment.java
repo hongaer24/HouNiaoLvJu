@@ -269,6 +269,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         hsFragments.add(hotelBulkPage);
         hsFragments.add(scenicTicketPage);
         sivHs.setScrollBar(new ColorBar(mActivity, getResources().getColor(R.color.app_theme_green), 5));
+
         float unSelectSize = 18;
         //float selectSize = unSelectSize * 1.2f;
         float selectSize = unSelectSize;

@@ -204,11 +204,19 @@ public class FillInScenicOrderActivity extends Activity {
             btnData.setText("今天不可定");
             btnData.setEnabled(false);
             btnData.setBackgroundResource(R.drawable.shape_dark_gray);
-            //btnData.setBackgroundColor(Color.parseColor("#dddddd"));
+            btnData.setBackgroundColor(Color.parseColor("#dddddd"));
         }else {
             btnData.setText("今天¥"+data1);
         }
-        btnData1.setText("明天¥"+data2);
+        if(data2.equals("0")){
+            btnData1.setText("今天不可定");
+            btnData1.setEnabled(false);
+            btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
+            btnData1.setBackgroundColor(Color.parseColor("#dddddd"));
+        }else {
+            btnData1.setText("今天¥"+data2);
+        }
+        //btnData1.setText("明天¥"+data2);
         price = intent.getIntExtra("price", 0);
         position = intent.getIntExtra("position", 0);
         Log.i("0102", "result===" + dataPrice);
