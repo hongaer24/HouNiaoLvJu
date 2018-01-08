@@ -7,21 +7,28 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.bean.ScenicDetailBean;
+import cn.houno.houniaolvju.utils.StatusBarUtils;
 import cn.houno.houniaolvju.utils.StringUtils;
 
 public class MoreInfoCalendarActivity extends AppCompatActivity {
 
-    private  CommonCalendarView calendarView;
-    private Map<String,List> mYearMonthMap = new HashMap<>();
-    private List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> pricecalendarBeanList=new ArrayList<>();
+    @Bind(R.id.iv_back)
+    ImageView ivBack;
+    private CommonCalendarView calendarView;
+    private Map<String, List> mYearMonthMap = new HashMap<>();
+    private List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> pricecalendarBeanList = new ArrayList<>();
     private int position;
     private Context context;
     private MoreInfoCalendarActivity mActivity;
@@ -33,8 +40,8 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
     private int allPrice;
     private String mScenicId;
     private String mTicketId;
-  //  private Serializable mPricecalendar;
-    private  List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>  Pricecalendarlist=new ArrayList<>();
+    //  private Serializable mPricecalendar;
+    private List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> Pricecalendarlist = new ArrayList<>();
 
     //private List<PricecalendarBean> dataPrice;
     // private List<DataPrice.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> dataPrice;
@@ -44,10 +51,12 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_more_info_calendar);
+        ButterKnife.bind(this);
         mActivity = MoreInfoCalendarActivity.this;
+        StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
         initData();
         Intent intent = getIntent();
-        position=intent.getIntExtra("position",0);
+        position = intent.getIntExtra("position", 0);
        /* mScenicTitle = intent.getStringExtra("scenicTitle");
         mScenicAddress = intent.getStringExtra("scenicAddress");
         mTicketTitle = intent.getStringExtra("ticketTitle");
@@ -67,14 +76,16 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
 
 
     }
+
     private void initData() {
         Intent intent = getIntent();
         mScenicId = intent.getStringExtra("sid");
         mTicketId = intent.getStringExtra("tid");
-        Pricecalendarlist= (List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>) intent.getSerializableExtra("pricecalendars");
+        Pricecalendarlist = (List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>) intent.getSerializableExtra("pricecalendars");
         addData(Pricecalendarlist);
         //getDataFromServer();
     }
+
     private void addData(List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> pricecalendarBeanList) {
         for (ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean productDatePrice : pricecalendarBeanList) {//把价格数据改为同一个月的list 在一个key value里，减少渲染界面时循环判断数量
             productDatePrice.getDepartDate();
@@ -108,16 +119,17 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
 
             @Override
             public void onDayOfMonthAndDataSelected(int year, int month, int day, List obj) {
-                if (obj==null){
+                if (obj == null) {
                     return;
                 }
                 String priceDate = String.format("%s-%s-%s", year,
                         StringUtils.leftPad(month + "", 2, "0"), StringUtils.leftPad(String.valueOf(day), 2, "0"));
                 for (int i = 0; i < obj.size(); i++) {
-                    ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean datePrice = (ScenicDetailBean .DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean) obj.get(i);
-                    if (datePrice==null){
-                        continue;}
-                    if (TextUtils.equals(datePrice.getDepartDate(),priceDate)){
+                    ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean datePrice = (ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean) obj.get(i);
+                    if (datePrice == null) {
+                        continue;
+                    }
+                    if (TextUtils.equals(datePrice.getDepartDate(), priceDate)) {
 
                         Intent intent = new Intent();
                         Bundle bundle = new Bundle();
@@ -128,7 +140,7 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
                         finish();
                         return;
                         // Intent intent1 = new Intent(mActivity, FillInScenicOrderActivity.class);
-                       // intent1.putExtra("nowData",datePrice.getDepartDate());
+                        // intent1.putExtra("nowData",datePrice.getDepartDate());
                         //intent1.putExtra("nowPrice",datePrice.getSalePrice());
                        /* intent1.putExtra("scenicTitle",  mScenicTitle);
                         intent1.putExtra("scenicAddress", mScenicAddress);
@@ -147,16 +159,16 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
             @Override
             public void showOtherFields(Object obj, View view, int gridItemYear, int gridItemMonth, int gridItemDay) {
                 //当你设置了数据源之后，界面渲染会循环调用showOtherFields方法，在该方法中实现同一日期设置界面显示效果。
-                ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean productDatePrice  = (ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean) obj;
+                ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean productDatePrice = (ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean) obj;
                 if (TextUtils.equals(productDatePrice.getDepartDate(), String.format("%s-%s-%s", gridItemYear,
                         StringUtils.leftPad(gridItemMonth + "", 2, "0"), StringUtils.leftPad(String.valueOf(gridItemDay), 2, "0")))) {
                     CommonCalendarView.GridViewHolder viewHolder = (CommonCalendarView.GridViewHolder) view.getTag();
-                    if( productDatePrice.getSalePrice()==0){
-                        viewHolder.mPriceTv.setText("今日"+"\n"+"不可定");
+                    if (productDatePrice.getSalePrice() == 0) {
+                        viewHolder.mPriceTv.setText("今日" + "\n" + "不可定");
                         viewHolder.mPriceTv.setTextColor(Color.parseColor("#dddddd"));
                         viewHolder.mTextView.setEnabled(false);
 
-                    }else {
+                    } else {
                         viewHolder.mPriceTv.setText(String.format("¥ %s", productDatePrice.getSalePrice()));
 
                     }
@@ -170,6 +182,15 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
                 return mYearMonthMap;
             }
         });
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+        }
     }
 
 
@@ -265,7 +286,6 @@ public class MoreInfoCalendarActivity extends AppCompatActivity {
         addData(pricecalendarBeanList);
 
     }*/
-
 
 
 }

@@ -82,6 +82,9 @@ public class FlashSaleDetailActivity extends Activity {
     private String ksDate;
     private String jsDate;
     private String mUrl;
+    private String currentDate;
+    private boolean isNotEnd;
+    private boolean isNotStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,7 +154,7 @@ public class FlashSaleDetailActivity extends Activity {
     private void initEvent() {
     }
 
-    private void setDetailData(String result) {
+    private void setDetailData(final String result) {
         try {
             JSONObject obj = new JSONObject(result);
             JSONObject infoObject = obj.getJSONObject("data").getJSONObject("info");
@@ -170,9 +173,12 @@ public class FlashSaleDetailActivity extends Activity {
             ksDate = infoObject.getString("ksdate");
             jsDate = infoObject.getString("jsdate");
 
-            String currentDate = infoObject.getString("currentDate");
-            boolean isNotEnd = DateUtil.compareDate(currentDate, jsDate);
-            if (isNotEnd) {
+            currentDate = infoObject.getString("currentDate");
+            //与当前时间比较早晚,如果输入的方法比当前时间晚，则返回true
+            isNotEnd = DateUtil.compareDate(currentDate,   jsDate);
+           isNotStart=DateUtil.compareDate(currentDate,    ksDate);
+            chekDownTime(currentDate, isNotEnd, isNotStart);
+                   /* if (isNotEnd) {
                 long milliSecond = DateUtil.getCompareMilliSecond(currentDate, jsDate);
                 mCdvFlashSaleDetail.start(milliSecond);
             } else {
@@ -181,13 +187,65 @@ public class FlashSaleDetailActivity extends Activity {
                 mCdvFlashSaleDetail.setVisibility(View.GONE);
                 mTvAddOrder.setBackgroundColor(Color.parseColor("#8C8C8C"));
                 mTvAddOrder.setClickable(false);
-            }
+            }*/
 
             String info = infoObject.getString("info");
             mWvDetail.loadDataWithBaseURL(null, info, "text/html", "utf-8", null);
 
         } catch (JSONException e) {
             e.printStackTrace();
+        }
+    }
+
+    private void chekDownTime(final String currentDate, final boolean isNotEnd, final boolean isNotStart) {
+
+        if (!isNotStart) {
+            mTvTime.setText("距离活动结束还有");
+            mTvAddOrder.setText("立即抢购");
+            mTvAddOrder.setBackgroundColor(Color.parseColor("#FF9911"));
+            mTvAddOrder.setClickable(true);
+            long milliSecond = DateUtil.getCompareMilliSecond(currentDate, jsDate);
+            mCdvFlashSaleDetail.start(milliSecond);
+            mCdvFlashSaleDetail.setOnCountdownEndListener(new CountdownView.OnCountdownEndListener() {
+                @Override
+                public void onEnd(CountdownView cv) {
+                    mTvTime.setText("已结束");
+                    mTvAddOrder.setText("已结束");
+                    mCdvFlashSaleDetail.setVisibility(View.GONE);
+                    mTvAddOrder.setBackgroundColor(Color.parseColor("#8C8C8C"));
+                    mTvAddOrder.setClickable(false);
+
+                }
+            });
+            if(!isNotEnd){
+                mTvTime.setText("已结束");
+                mTvAddOrder.setText("已结束");
+                mCdvFlashSaleDetail.setVisibility(View.GONE);
+                mTvAddOrder.setBackgroundColor(Color.parseColor("#8C8C8C"));
+                mTvAddOrder.setClickable(false);
+
+            }
+        } else {
+            mTvTime.setText("距离活动开始还有");
+            mTvAddOrder.setText("即将开始");
+            mTvAddOrder.setBackgroundColor(Color.parseColor("#8C8C8C"));
+            mTvAddOrder.setClickable(false);
+            long milliSecond = DateUtil.getCompareMilliSecond(currentDate,  ksDate);
+            mCdvFlashSaleDetail.start(milliSecond);
+            //mCdvFlashSaleDetail.setVisibility(View.GONE);
+            mCdvFlashSaleDetail.setOnCountdownEndListener(new CountdownView.OnCountdownEndListener() {
+                @Override
+                public void onEnd(CountdownView cv) {
+                    //getDataFromServer();
+                    mTvTime.setText("距离活动结束还有");
+                    mTvAddOrder.setText("立即抢购");
+                    mTvAddOrder.setBackgroundColor(Color.parseColor("#FF9911"));
+                    mTvAddOrder.setClickable(true);
+                    long milliSecond = DateUtil.getCompareMilliSecond(currentDate, jsDate);
+                    mCdvFlashSaleDetail.start(milliSecond);
+
+                }
+            });
         }
     }
 

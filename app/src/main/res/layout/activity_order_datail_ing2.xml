@@ -191,9 +191,11 @@
                 android:layout_height="45dp"
                 android:layout_marginLeft="15dp"
                 android:gravity="center_vertical"
-                android:text="地址"
+                android:text="地址:海南省按时到id菩萨的按键发经发局发觉安居房阿发经发局"
+                android:layout_marginTop="4dp"
                 android:textColor="#606060"
-                android:textSize="16sp" />
+                android:textSize="14sp"
+                android:padding="6dp"/>
 
          <!--   <View
                 android:layout_width="match_parent"

@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
+    <RelativeLayout
+        android:id="@+id/ly_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/app_theme_green"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:padding="5dp"
+            android:src="@drawable/icon_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="景点门票"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
     <cn.houno.houniaolvju.activity.scenic.CommonCalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </cn.houno.houniaolvju.activity.scenic.CommonCalendarView>
-</RelativeLayout>
+</LinearLayout>

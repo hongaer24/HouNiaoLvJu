@@ -47,6 +47,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.ActivityListActivity;
 import cn.houno.houniaolvju.activity.CitySelectActivity;
@@ -105,6 +107,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private static final int INDEX = 3; //首页数据
     private static final int FENQUAN = 4; //分权数据
     private static final int RCMD_SCENIC = 5;   //景区门票
+    @Bind(R.id.iv_more_scenic)
+    ImageView ivMoreScenic;
+
 
     private boolean isFirstIn = true;
 
@@ -319,7 +324,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     @Override
     protected void initEvent() {
 
-                        //
+
         locationHelper.setCallBack(new LocationHelper.LocationCallBack() {
             @Override
             public void callBack(BDLocation bdLocation) {
@@ -372,33 +377,39 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             }
         });
 
-        mRollPagerView.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Intent intent = new Intent();
-                String sUrl = topUrl.get(position);
 
-                //url拆分出hid
-                //    String hid = sUrl.split("/hid/")[1].split("/rid/")[0];
-                String url_1 = sUrl.split("/hid/")[1];
-                StringBuilder hid = new StringBuilder();
-                for (int i = 0; i < url_1.length(); i++) {
-                    char c = url_1.charAt(i);
-                    if (!Character.isDigit(c)) {
-                        break;//只要有一位不符合要求退出循环
+            mRollPagerView.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(int position) {
+                    Intent intent = new Intent();
+                    String sUrl = topUrl.get(position);
+
+                    //url拆分出hid
+                    //    String hid = sUrl.split("/hid/")[1].split("/rid/")[0];
+                    String url_1 = sUrl.split("/hid/")[1];
+                    StringBuilder hid = new StringBuilder();
+                    for (int i = 0; i < url_1.length(); i++) {
+                        char c = url_1.charAt(i);
+                        if (!Character.isDigit(c)) {
+                            break;//只要有一位不符合要求退出循环
+                        }
+                        hid.append(c);
                     }
-                    hid.append(c);
+                    intent.putExtra("hid", hid.toString());
+                    if (sUrl.contains("Foreign")) {
+                        intent.putExtra("from", "foreign");
+                    } else {
+                        intent.putExtra("from", "home");
+                    }
+                    if(hid!=null ){
+                        intent.setClass(mActivity, HotelDetailActivity.class);
+                        startActivity(intent);
+                    }
+
                 }
-                intent.putExtra("hid", hid.toString());
-                if (sUrl.contains("Foreign")) {
-                    intent.putExtra("from", "foreign");
-                } else {
-                    intent.putExtra("from", "home");
-                }
-                intent.setClass(mActivity, HotelDetailActivity.class);
-                startActivity(intent);
-            }
-        });
+            });
+
+
 
         gvCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -518,9 +529,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     * */
     private void setRcmdScenic(String result) {
         Gson gson = new Gson();
-       // HomeRcmdScenicBean homeRSBean = gson.fromJson(result, HomeRcmdScenicBean.class);
+        // HomeRcmdScenicBean homeRSBean = gson.fromJson(result, HomeRcmdScenicBean.class);
         ScenicIndexBean scenicBean = gson.fromJson(result, ScenicIndexBean.class);
-                  mLocalList=scenicBean.getLocal();
+        mLocalList = scenicBean.getLocal();
         /*for (int i = 0; i < homeRSBean.getData().size(); i++) {
             mHomeScenicList.add(homeRSBean.getData().get(i));
         }*/
@@ -567,7 +578,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             //params = new RequestParams(Constants.HOME_RCMD_SCENIC);
             params = new RequestParams(Constants.SCENIC_INDEX);
             params.addBodyParameter("cityid", mCityId);
-            Log.i("111", "cityId===== "+mCityId);
+            Log.i("111", "cityId===== " + mCityId);
 
         }
         x.http().post(params, new Callback.CommonCallback<String>() {
@@ -659,7 +670,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                         mLlFlashSale.setVisibility(View.GONE);
                     }
                     //设置酒店拼团、景点门票数据
-                   List<TgHotelBean> tgHotel = homeIndexDataBean.getData().getTgHotel();
+                    List<TgHotelBean> tgHotel = homeIndexDataBean.getData().getTgHotel();
                     TgHotelBean tgHotelBean;
                     if (tgHotel != null && tgHotel.size() != 0) {
                         tgHotelBean = homeIndexDataBean.getData().getTgHotel().get(0);
@@ -715,7 +726,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                     //HomeRcmdScenicBean homeRSBean = gson.fromJson(result, HomeRcmdScenicBean.class);
                     //mHomeScenicList = homeRSBean.getData();
                     ScenicIndexBean scenicBean = gson.fromJson(result, ScenicIndexBean.class);
-                    mLocalList=scenicBean.getLocal();
+                    mLocalList = scenicBean.getLocal();
                     if (mScenicAdapter == null) {
                         mScenicAdapter = new HomeScenicTicketAdapter(mActivity, mLocalList);
                         lvScenicTicket.setAdapter(mScenicAdapter);
@@ -737,7 +748,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     * 限时抢购
     * */
 
-    private void setFlashSaleData(List<HomeIndexDataBean.DataBean.SportsBean> sports) throws JSONException {
+    private void setFlashSaleData(List<SportsBean> sports) throws JSONException {
         x.image().bind(mIvFlashSaleImg, sports.get(0).getImg());
         mSportsId = sports.get(0).getId();
         mTvFlashSaleTitle.setText(sports.get(0).getTitle());
@@ -775,7 +786,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     /*
     * 酒店拼团、景点门票
     * */
-    private void setHotelScenicPageData(TgHotelBean tgHotelBean,HomeIndexDataBean.DataBean.ActiToursScenicBean actiScenicBean) {
+    private void setHotelScenicPageData(TgHotelBean tgHotelBean, HomeIndexDataBean.DataBean.ActiToursScenicBean actiScenicBean) {
         mHsAdapter = new HomeHSAdapter(mActivity, getChildFragmentManager(), hsFragments, tgHotelBean, actiScenicBean);
         ivpHs.setAdapter(mHsAdapter);
         if (sivHs.getCurrentItem() != 0) {
@@ -796,6 +807,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 intent.setClass(mActivity, FlashSaleListActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.iv_more_scenic:
+                intent.setClass(mActivity, FlashSaleListActivity.class);
+                startActivity(intent);
+                break;
             case R.id.layout_home_flash_sale:
                 intent.setClass(mActivity, FlashSaleDetailActivity.class);
                 intent.putExtra("id", mSportsId);
@@ -812,7 +827,6 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
             mCityName = bundle.getString("city");
             mCityId = bundle.getString("cityId");
             tvLocationCity.setText(mCityName);
-
             mRefreshView.startRefresh();
 
         }
@@ -825,4 +839,17 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         locationHelper.stop();
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
 }

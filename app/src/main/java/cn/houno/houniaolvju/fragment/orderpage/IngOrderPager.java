@@ -174,7 +174,7 @@ public class IngOrderPager extends Fragment {
                             if (status == 1) {
                                 //Toast.makeText(mActivity, "没有订单...", Toast.LENGTH_SHORT).show();
                                 rfvIngOrder.setVisibility(View.GONE);
-                               // llNoOrder.setVisibility(View.VISIBLE);
+                                llNoOrder.setVisibility(View.VISIBLE);
                             } else if (status == 0) {
                                 llNoOrder.setVisibility(View.GONE);
                                 rfvIngOrder.setVisibility(View.VISIBLE);

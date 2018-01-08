@@ -484,10 +484,10 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             mTopPicAdapter.setImgs(topImagesList);
         }
         if (infoBean.getMap().size() > 0 && infoBean.getMap() != null) {
-            mLng = infoBean.getMap().get(0);
-            mLat = infoBean.getMap().get(1);
+            mLat = infoBean.getMap().get(0);
+            mLng = infoBean.getMap().get(1);
         }
-        if (!MyText2Utils.isEmpty(infoBean.getMap().get(0))) {
+      /*  if (!MyText2Utils.isEmpty(infoBean.getMap().get(0))) {
             String map = infoBean.getMap().get(0);
 
             String[] latAndLng;
@@ -502,7 +502,7 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             } else {
 
             }
-        }
+        }*/
         //设置门票信息和详情
        /* mTicketList = scenicDetailBean.getData().getInfo().getTicketlist();
         mOtherScenicList = scenicDetailBean.getData().getOther();
@@ -511,7 +511,7 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
             mTKAdapter = new ScenicDetailTKAdapter(mActivity, getSupportFragmentManager(), hfFragments, mTicketList, mScenicdetail, mTitle, mAddress, mOtherScenicList, mId);
             ivpHf.setAdapter(mTKAdapter);*/
 
-       //去掉Ticketlistinfo为空的数据
+        //去掉Ticketlistinfo为空
         mTicketList = scenicDetailBean.getData().getInfo().getTicketlist();
         if (mTicketList != null&&mTicketList.size()>0) {
             for(int i=0;i<mTicketList.size();i++){
