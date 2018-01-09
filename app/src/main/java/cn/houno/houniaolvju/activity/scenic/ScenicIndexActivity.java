@@ -482,7 +482,6 @@ public class ScenicIndexActivity extends Activity {
             case R.id.et_scenic_search:
                 break;
             case R.id.tv_more_scenic:
-
                 //intent.putExtra("cate", position + 1);    //这里+1是因为分类最全面加了全部 0：全部
                 intent.putExtra("cates", mCates);
                 intent.putExtra("cityid", cityId);
