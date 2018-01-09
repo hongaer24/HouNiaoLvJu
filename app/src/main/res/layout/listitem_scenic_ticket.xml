@@ -72,8 +72,8 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:layout_marginTop="5dp"
                     android:id="@+id/tv_ticket_info"
+                    android:layout_marginTop="5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="当天21点前可预订当日票"

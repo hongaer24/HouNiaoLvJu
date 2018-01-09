@@ -581,7 +581,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         }
     }
     private void setText() {
-        tvTabTitle.setText(mHotelName);     //图片文字
+        //tvTabTitle.setText(mHotelName);     //图片文字
         x.image().bind(ivTabImg, mHotelImg);    //图片
         tvOrderNo.setText("订单编号：" + orderNo);     //订单编号
 

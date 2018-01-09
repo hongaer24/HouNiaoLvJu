@@ -286,7 +286,10 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="48dp"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal"
                                 android:padding="10dp">
@@ -314,9 +317,9 @@
                                     android:layout_alignParentEnd="true"
                                     android:layout_alignParentRight="true"
                                     android:layout_centerVertical="true"
+                                    android:layout_marginLeft="150dp"
                                     android:padding="2dp"
                                     android:text="更多景点"
-                                    android:layout_marginLeft="150dp"
                                     android:textColor="@color/app_theme_green"
                                     android:textSize="18sp" />
 

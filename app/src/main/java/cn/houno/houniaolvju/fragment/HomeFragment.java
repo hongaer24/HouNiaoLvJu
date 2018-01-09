@@ -382,29 +382,33 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
                 @Override
                 public void onItemClick(int position) {
                     Intent intent = new Intent();
-                    String sUrl = topUrl.get(position);
-
-                    //url拆分出hid
-                    //    String hid = sUrl.split("/hid/")[1].split("/rid/")[0];
-                    String url_1 = sUrl.split("/hid/")[1];
-                    StringBuilder hid = new StringBuilder();
-                    for (int i = 0; i < url_1.length(); i++) {
-                        char c = url_1.charAt(i);
-                        if (!Character.isDigit(c)) {
-                            break;//只要有一位不符合要求退出循环
+                    if(position==0||position==2){
+                        String sUrl = topUrl.get(position);
+                        //url拆分出hid
+                        //    String hid = sUrl.split("/hid/")[1].split("/rid/")[0];
+                        String url_1 = sUrl.split("/hid/")[1];
+                        StringBuilder hid = new StringBuilder();
+                        for (int i = 0; i < url_1.length(); i++) {
+                            char c = url_1.charAt(i);
+                            if (!Character.isDigit(c)) {
+                                break;//只要有一位不符合要求退出循环
+                            }
+                            hid.append(c);
                         }
-                        hid.append(c);
+
+                        intent.putExtra("hid", hid.toString());
+                        if (sUrl.contains("Foreign")) {
+                            intent.putExtra("from", "foreign");
+                        } else {
+                            intent.putExtra("from", "home");
+                        }
+                        if(hid!=null ){
+                            intent.setClass(mActivity, HotelDetailActivity.class);
+                            startActivity(intent);
+                        }
                     }
-                    intent.putExtra("hid", hid.toString());
-                    if (sUrl.contains("Foreign")) {
-                        intent.putExtra("from", "foreign");
-                    } else {
-                        intent.putExtra("from", "home");
-                    }
-                    if(hid!=null ){
-                        intent.setClass(mActivity, HotelDetailActivity.class);
-                        startActivity(intent);
-                    }
+
+
 
                 }
             });

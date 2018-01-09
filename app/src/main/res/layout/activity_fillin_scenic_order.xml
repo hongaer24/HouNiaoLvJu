@@ -213,15 +213,15 @@
                     android:text="今天  108"
                     android:textSize="13sp" />
                 <Button
-                    android:id="@+id/btn_data1"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="4"
-                    android:layout_marginLeft="15dp"
-                    android:background="@drawable/shape_white_gray"
-                    android:padding="10dp"
-                    android:text="明天  108"
-                    android:textSize="13sp" />
+                android:id="@+id/btn_data1"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="4"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/shape_white_gray"
+                android:padding="10dp"
+                android:text="明天  108"
+                android:textSize="13sp" />
                 <Button
                     android:id="@+id/tv_days_selector"
                     android:layout_width="0dp"

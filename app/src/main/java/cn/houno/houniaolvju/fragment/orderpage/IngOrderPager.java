@@ -115,9 +115,10 @@ public class IngOrderPager extends Fragment {
                 String addTime=mIngOrderList.get(position).getAdd_time();*/
                 String type = mIngOrderList.get(position).getType();
                 String addTime = mIngOrderList.get(position).getAdd_time();
-
+                String rid= mIngOrderList.get(position).getHid();
                 intent.putExtra("data", (Serializable) mIngOrderList.get(position));
                 intent.putExtra("addtime", addTime);
+
 
               /*  intent.putExtra("address", address);
                 intent.putExtra("addtime", addTime);*/
@@ -128,6 +129,7 @@ public class IngOrderPager extends Fragment {
                     intent.putExtra("orderno", mIngOrderList.get(position).getOrderno());
                     intent.setClass(mActivity, TrainOrderDetailActivity.class);
                 } else if (TextUtils.equals(type, "toursscenic")) {
+                    intent.putExtra("rid", rid);
                     intent.putExtra("orderno", mIngOrderList.get(position).getOrderno());
                     intent.setClass(mActivity, ScenicOrderDetailActivity.class);
                 } else {

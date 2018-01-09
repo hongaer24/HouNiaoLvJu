@@ -51,7 +51,7 @@
                 <ImageView
                     android:id="@+id/iv_tab_img"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                    android:layout_height="160dp"
                     android:scaleType="fitXY"
                     android:src="@drawable/loading_default_img" />
 
@@ -83,7 +83,7 @@
 
                 android:id="@+id/tv_order_title"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:gravity="center_vertical"
                 android:text="房源名称：豪华观景房"

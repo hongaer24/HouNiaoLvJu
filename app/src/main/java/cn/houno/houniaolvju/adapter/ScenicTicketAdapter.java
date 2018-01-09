@@ -88,6 +88,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
            // viewHolder.ivHead = (ImageView) convertView.findViewById(R.id.iv_ticket_head);
             viewHolder.know = (TextView) convertView.findViewById(R.id.tv_ticket_know);
             viewHolder.price = (TextView) convertView.findViewById(R.id.tv_ticket_price);
+            viewHolder.bookTime = (TextView) convertView.findViewById(R.id.tv_ticket_info);
             viewHolder.llBook = (LinearLayout) convertView.findViewById(R.id.ll_ticket_book);
             convertView.setTag(viewHolder);
         } else {
@@ -95,7 +96,10 @@ public class ScenicTicketAdapter extends BaseAdapter {
         }
 
         String title = list.get(position).getProductName().trim();
+        String bookTime=list.get(position).getTicketlistinfo().getBooknotice();
+        String newBookTime=bookTime.substring(7,9);
         viewHolder.title.setText(title);
+        viewHolder.bookTime.setText("当天"+newBookTime+"前可预订当日票");
        /* if (!TextUtils.isEmpty(title)) {
             if (viewHolder.ivHead.getVisibility() == View.GONE) {
                 viewHolder.ivHead.setVisibility(View.VISIBLE);
@@ -179,6 +183,6 @@ public class ScenicTicketAdapter extends BaseAdapter {
         TextView know;
         TextView price;
         LinearLayout llBook;
-
+        TextView  bookTime;
     }
 }

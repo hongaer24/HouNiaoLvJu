@@ -4,13 +4,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -44,16 +44,13 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.OrderDetailActivity;
-import cn.houno.houniaolvju.activity.hotel.CommentListActivity;
 import cn.houno.houniaolvju.bean.OrderListBean;
-import cn.houno.houniaolvju.fragment.orderpage.IngOrderDetailActivity;
 import cn.houno.houniaolvju.fragment.orderpage.IngOrderPager;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.pay.alipay.PayResult;
 import cn.houno.houniaolvju.utils.OkHttpClientManager;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
-import cn.houno.houniaolvju.view.Border2TextView;
 import cn.houno.houniaolvju.view.CustomDialog;
 
 public class ScenicOrderDetailActivity extends Activity implements OnItemClickListener {
@@ -81,11 +78,11 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     @Bind(R.id.tv_address)
     TextView tvAddress;
     @Bind(R.id.tv_pay)
-    Border2TextView tvPay;
+    Button tvPay;
     @Bind(R.id.tv_order_cancel)
-    Border2TextView tvOrderCancel;
+    Button tvOrderCancel;
     @Bind(R.id.tv_return_ticket)
-    Border2TextView tvReturnTicket;
+    Button tvReturnTicket;
     @Bind(R.id.tv_order_person_info)
     TextView tvOrderPersonInfo;
     @Bind(R.id.tv_name)
@@ -102,8 +99,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     TextView tvOrderData;
     @Bind(R.id.tv_order_date)
     TextView getTvOrderDate;
-   /* @Bind(R.id.tv_custom_phone)
-    TextView tvPayWay;*/
+    /* @Bind(R.id.tv_custom_phone)
+     TextView tvPayWay;*/
     @Bind(R.id.tv_custom_phone)
     TextView tvCustomPhone;
     @Bind(R.id.ll_others)
@@ -118,6 +115,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     LinearLayout llLoading;
     @Bind(R.id.sv_order_detail)
     ScrollView svOrderDetail;
+    @Bind(R.id.iv_title_go)
+    ImageView ivTitleGo;
     private String userid;
     private String orderNo;
     private String qxid;
@@ -146,6 +145,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     private String addTime;
     private String result;
     private String mCanCancel;
+    private String rid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -156,6 +156,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         ButterKnife.bind(this);
         initData();
     }
+
     private void initData() {
         userid = PrefUtils.getString(ScenicOrderDetailActivity.this, "userid", "");
         Intent intent = getIntent();
@@ -165,12 +166,14 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         orderNo = dataBean.getOrderno();
         qxid = dataBean.getId();
         type = dataBean.getType();
-        addTime=  intent.getStringExtra("addtime");
+        addTime = intent.getStringExtra("addtime");
+        rid = intent.getStringExtra("rid");
         result = formatData("yyyy-MM-dd HH:mm:ss", Long.valueOf(addTime));
         getDataFromServer();
 
     }
-    public  String formatData(String dataFormat, long timeStamp) {
+
+    public String formatData(String dataFormat, long timeStamp) {
         if (timeStamp == 0) {
             return "";
         }
@@ -214,17 +217,16 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     }
 
 
-
     public void getDataFromServer() {
         Map<String, String> map = new HashMap<>();
         map.put("userid", userid);
         map.put("orderno", orderNo);
-        if(type.equals("toursscenic")){
-            type="tuniuscenic";
+        if (type.equals("toursscenic")) {
+            type = "tuniuscenic";
         }
         map.put("type", type);
-        Log.i("66", "getDataFromServer:=== "+map);
-        Log.i("66", "getDataFromServer:=== "+Constants.ORDER_DETAIL_URL);
+        Log.i("66", "getDataFromServer:=== " + map);
+        Log.i("66", "getDataFromServer:=== " + Constants.ORDER_DETAIL_URL);
 
       /*  RequestParams params = new RequestParams(Constants.ORDER_DETAIL_URL);
         params.addBodyParameter("userid", userid);
@@ -302,7 +304,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             }
         }
     };
-       private void parserData(String result) {
+
+    private void parserData(String result) {
         try {
             JSONObject json = new JSONObject(result);
             if (json.getInt("status") == 0) {
@@ -320,7 +323,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
 
                 mOrderStatusInt = Integer.parseInt(json.getJSONObject("data").getString("status"));
                 mPayStatusInt = Integer.parseInt(json.getJSONObject("data").getString("pay_status"));
-              if ("tuniuscenic".equalsIgnoreCase(type)) {
+                if ("tuniuscenic".equalsIgnoreCase(type)) {
                     //mRoomName = json.getJSONObject("data").getJSONObject("detail").getString("roomname");
                     productname = json.getJSONObject("data").getString("productname");
                     scenicName = json.getJSONObject("data").getString("scenicName");
@@ -332,7 +335,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
                     address = json.getJSONObject("data").getString("scenicaddress");
                     mCanCancel = json.getJSONObject("data").getJSONObject("canRefunds").getJSONObject("data").getString("canCancel").trim();
 
-                  //mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
+                    //mCheckPhone = json.getJSONObject("data").getJSONObject("contact").getString("tel").trim();
                     // mCheckOutDate = json.getJSONObject("data").getString("checkout");
                     // mHotelAddress = json.getJSONObject("data").getJSONObject("detail").getString("address").trim();
                     //mTotalPrice = Double.parseDouble(json.getJSONObject("data").getString("price")) + "";
@@ -343,7 +346,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
 
                 }
 
-                }
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -362,7 +365,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvOrderName.setText(productname);
             tvCount.setText("门票数量：" + mRoomCount + "张");
             tvOrderTime.setText("出游时间" + mCheckInDate);
-            tvAddress.setText("地址： "+address);
+            tvAddress.setText("地址： " + address);
             getTvOrderDate.setText(result);
             //tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));
             //tvAddress.setText(address);
@@ -371,8 +374,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvPhone.setText("手机号：" + mCheckPhone);
 
         }
-         tvOrderNumber.setText(orderNo);
-         tvOrderMoney.setText("¥" + mTotalPrice);
+        tvOrderNumber.setText(orderNo);
+        tvOrderMoney.setText("¥" + mTotalPrice);
         //tvTotalPrice.setText(Html.fromHtml("订单金额：<font color=\"#009A44\">¥" + mTotalPrice + "</font>"));
 
     }
@@ -428,36 +431,37 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
                 //"拒单";
                 break;
         }
-        if (mOrderStatusInt == 2 && mPayStatusInt == 0||mOrderStatusInt == 0 && mPayStatusInt == 0) {
+        if (mOrderStatusInt == 2 && mPayStatusInt == 0 || mOrderStatusInt == 0 && mPayStatusInt == 0) {
             tvReturnMessage.setText("待支付");
             tvOrderCancel.setVisibility(View.VISIBLE);
             tvPay.setVisibility(View.VISIBLE);
-            tvPay.setBackgroundColor(Color.parseColor("#CC0000"));
+            //tvPay.setBackgroundColor(Color.parseColor("#CC0000"));
             //tvOrderStatu.setText("待支付");
         } else if (mOrderStatusInt == 3 && mPayStatusInt == 1) {
             tvReturnMessage.setText("出票中");
             // tvOrderStatu.setText("出票中");
             //tvOrderStatu.setText("正在出票，请耐心等待");
-        }else if (mOrderStatusInt == 1 && mPayStatusInt == 0 || mOrderStatusInt == 10 && mPayStatusInt == 0){
+        } else if (mOrderStatusInt == 1 && mPayStatusInt == 0 || mOrderStatusInt == 10 && mPayStatusInt == 0) {
             tvReturnMessage.setText("已取消");
             tvOrderCancel.setVisibility(View.GONE);
             tvPay.setVisibility(View.GONE);
-        } else if(mOrderStatusInt==4&&mPayStatusInt==1){
-            if(mCanCancel.equals("1")){
+        } else if (mOrderStatusInt == 4 && mPayStatusInt == 1) {
+            if (mCanCancel.equals("1")) {
                 tvReturnTicket.setVisibility(View.VISIBLE);
                 tvReturnMessage.setText("已出票");
-            }else {
+            } else {
                 tvReturnTicket.setVisibility(View.GONE);
                 tvReturnMessage.setText("已退票");
             }
            /* tvOrderCancel.setVisibility(View.GONE);
             tvPay.setVisibility(View.GONE);*/
-        }else if(mOrderStatusInt==6&&mPayStatusInt==1){
+        } else if (mOrderStatusInt == 6 && mPayStatusInt == 1) {
             tvReturnMessage.setText("退票中");
-        }else if(mOrderStatusInt==7&&mPayStatusInt==1){
+        } else if (mOrderStatusInt == 7 && mPayStatusInt == 1) {
             tvReturnMessage.setText("已退票");
         }
     }
+
     /*
  * 提交订单到服务器,返回标准订单数据然后进行支付
  * */
@@ -473,6 +477,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         params.put("type", type);
         OkHttpClientManager.postAsync(url, params, null, mHandler, R.id.doSucceed, R.id.doFail);
     }
+
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -506,6 +511,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             }
         }
     };
+
     /*
   * 支付宝支付
   * */
@@ -645,6 +651,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             }
         }
     };
+
     /*
  * 取消订单弹窗
  * */
@@ -714,7 +721,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
                 dialog.dismiss();
                 Intent intent = new Intent();
                 intent.putExtra("orderno", orderNo);
-                intent.setClass(mActivity,ScenicRefundLIstActivity.class);
+                intent.setClass(mActivity, ScenicRefundLIstActivity.class);
                 startActivity(intent);
                 //applyRefund();
             }
@@ -811,18 +818,14 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         }
         PrefUtils.setInt(ScenicOrderDetailActivity.this, "wxpaystatus", -3);
     }
-       @OnClick({R.id.iv_back, R.id.tv_pay_way, R.id.tv_order_price, R.id.tv_pay, R.id.tv_order_cancel,R.id.tv_return_ticket})
+
+    @OnClick({R.id.iv_back, R.id.tv_pay_way, R.id.tv_order_price, R.id.tv_pay, R.id.tv_order_cancel, R.id.tv_return_ticket,R.id.iv_title_go})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
                 finish();
                 break;
-         /*   case R.id.tv_cash_pay:
-                showPayWithMoneyDialog();
-                break;*/
-           /* case R.id.tv_pay:
-                showPayDialogs();
-                break;*/
+
             case R.id.tv_order_cancel:
                 showCancelOrderDialog();
                 break;
@@ -839,6 +842,14 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
                 intent.setClass(mActivity, OrderDetailActivity.class);
                 startActivity(intent);
                 break;
+
+            case R.id.iv_title_go:
+                Intent intent1 = new Intent();
+                intent1.putExtra("scenicid", rid);
+                intent1.setClass(mActivity, ScenicDetailActivity.class);
+                startActivity(intent1);
+                break;
+
 
         }
 

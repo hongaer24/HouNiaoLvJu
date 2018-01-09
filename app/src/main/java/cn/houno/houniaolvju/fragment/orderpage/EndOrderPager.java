@@ -108,6 +108,7 @@ public class EndOrderPager extends Fragment {
                 Intent intent = new Intent();
                 String type = mEndOrderList.get(position).getType();
                 String addTime = mEndOrderList.get(position).getAdd_time();
+                String rid=  mEndOrderList.get(position).getHid();
 
                 intent.putExtra("data", mEndOrderList.get(position));
                 intent.putExtra("addtime", addTime);
@@ -118,6 +119,7 @@ public class EndOrderPager extends Fragment {
                 } else if (TextUtils.equals(type, "Flight")) {
                     intent.setClass(mActivity, FlightOrderActivity.class);
                 } else if (TextUtils.equals(type, "toursscenic")) {
+                    intent.putExtra("rid", rid);
                     intent.putExtra("orderno", mEndOrderList.get(position).getOrderno());
                     intent.setClass(mActivity, ScenicOrderDetailActivity.class);
                 } else {
