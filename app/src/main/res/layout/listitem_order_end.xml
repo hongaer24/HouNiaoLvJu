@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@+id/iv_order_type"
-            android:text="酒店 |"
+            android:text="火车票"
             android:textColor="@color/black_txt"
             android:textSize="18sp" />
 
@@ -36,7 +36,7 @@
             android:id="@+id/tv_orderno"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3514460"
+            android:text="201811017320708811011117"
             android:textSize="15sp"
             android:textColor="#918f8f"
             android:layout_toRightOf="@+id/tv_order_type"
@@ -53,7 +53,7 @@
             android:layout_marginRight="10dp"
             android:text="已支付"
             android:textColor="#898989"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <View

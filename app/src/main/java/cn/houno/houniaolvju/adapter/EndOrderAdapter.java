@@ -39,13 +39,15 @@ public class EndOrderAdapter extends BaseAdapter {
     private String userid;
     private Context mActivity;
     private String orderNo;
-    private String canCancel;
+    private int canCancel;
+
   /*  private String orderno;*/
 
     public EndOrderAdapter(Context context, List<DataBean> list) {
         mInflater = LayoutInflater.from(context);
         mContext = context;
         mList = list;
+
 
     }
 
@@ -83,6 +85,7 @@ public class EndOrderAdapter extends BaseAdapter {
         String type = mList.get(position).getType();
         holder.tvOrderno.setText(mList.get(position).getOrderno());
         holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
+        getDataFromServer(mList.get(position).getOrderno());
 
 
 
@@ -166,7 +169,6 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
-                getDataFromServer(mList.get(position).getOrderno());
                 String checkIn = mList.get(position).getCheckin();
                 holder.tvCheckDate.setText(checkIn);
             } else {
@@ -224,8 +226,10 @@ public class EndOrderAdapter extends BaseAdapter {
             if (TextUtils.equals(status, "1") && TextUtils.equals(pay_status, "0") || TextUtils.equals(status, "10") && TextUtils.equals(pay_status, "0")) {
                 holder.tvPayStatus.setText("已取消");
             } else if (TextUtils.equals(status, "4") && TextUtils.equals(pay_status, "1")) {
-                if (canCancel.equals("1")) {
+                //holder.tvPayStatus.setText("已出票");
+                if (canCancel==1) {
                     holder.tvPayStatus.setText("已出票");
+
                 } else {
                     holder.tvPayStatus.setText("已退票");
                 }
@@ -270,17 +274,15 @@ public class EndOrderAdapter extends BaseAdapter {
 
         x.http().post(params, new Callback.CommonCallback<String>() {
 
-
             @Override
             public void onSuccess(String result) {
 
-                Log.e("end_order_pager", result);
                 try {
                     JSONObject json = new JSONObject(result);
                     int status = json.getInt("status");
                    if (status == 0) {
-                       canCancel = json.getJSONObject("data").getString("canCancel");
-
+                      canCancel= Integer.parseInt(json.getJSONObject("data").getString("canCancel"));
+                       Log.i("666", result);
 
                    }
                 } catch (JSONException e) {
@@ -303,6 +305,7 @@ public class EndOrderAdapter extends BaseAdapter {
                 /*rfvEndOrder.stopRefresh();*/
             }
         });
+
     }
 
     static class ViewHolder {

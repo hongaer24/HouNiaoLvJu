@@ -3,10 +3,13 @@ package cn.houno.houniaolvju.activity.scenic;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -22,20 +25,18 @@ import org.xutils.x;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
-import cn.houno.houniaolvju.activity.OrderDetailActivity;
 import cn.houno.houniaolvju.adapter.ScenicRefundListAdapter;
-import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
 import cn.houno.houniaolvju.view.InnerListView;
 
-public class ScenicRefundLIstActivity extends Activity implements ScenicRefundListAdapter.CheckInterface{
+public class ScenicRefundLIstActivity extends Activity implements ScenicRefundListAdapter.CheckInterface {
 
 
-    @Bind(R.id.iv_back)
-    ImageView ivBack;
+
     @Bind(R.id.rl_top_bar)
     RelativeLayout rlTopBar;
     @Bind(R.id.tv_orderno_title)
@@ -54,6 +55,8 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
     ScrollView svOrderDetail;
     @Bind(R.id.btn_refund)
     Button btnRefund;
+    @Bind(R.id.iv_back)
+    ImageView ivBack;
     private String userid;
     private String orderNo;
     private String[] refundType = {"行程变更", "价格不优惠", "门票预订错误", "未收到入园凭证", "景区闭园", "其他原因"};
@@ -62,10 +65,12 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
     private int causeType;
     private String causeContent;
     private ScenicRefundLIstActivity mActivity;
+    private String price;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        hideWindows();
         setContentView(R.layout.activity_scenic_refund_list);
         mAcitivity = ScenicRefundLIstActivity.this;
         StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
@@ -79,11 +84,14 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
         userid = PrefUtils.getString(ScenicRefundLIstActivity.this, "userid", "");
         Intent intent = getIntent();
         orderNo = intent.getStringExtra("orderno");
+        price = intent.getStringExtra("price");
+        tvOrderMoney.setText("¥"+price);
+        tvRefundMoney.setText("¥"+price);
         if (mAdapter == null) {
-             mAdapter = new ScenicRefundListAdapter(mAcitivity,refundType);
-             mAdapter.setCheckInterface(this);
-             lvPassengers.setAdapter(mAdapter);
-        }else {
+            mAdapter = new ScenicRefundListAdapter(mAcitivity, refundType);
+            mAdapter.setCheckInterface(this);
+            lvPassengers.setAdapter(mAdapter);
+        } else {
             mAdapter.setDatas(refundType);
         }
 
@@ -91,20 +99,36 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
     }
 
     private void initEvent() {
-                    btnRefund.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            applyRefund();
+        btnRefund.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                applyRefund();
+                finish();
 
-                        }
-                    });
+            }
+        });
 
+    }
+
+    private void hideWindows() {
+        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
+                    | WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+            window.getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.TRANSPARENT);
+            window.setNavigationBarColor(Color.TRANSPARENT);
+        }
     }
 
     @Override
     public void CheckType(int position, String type) {
-           causeType =position;
-           causeContent=type;
+        causeType = position;
+        causeContent = type;
     }
 
     private void applyRefund() {
@@ -116,7 +140,7 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
         RequestParams params = new RequestParams(Constants.APPLY_REFUND);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("orderno", orderNo);
-        params.addBodyParameter("causeType", causeType+"");
+        params.addBodyParameter("causeType", causeType + "");
         params.addBodyParameter("causeContent", causeContent);
 
         Log.e("hotel_refund", "userid=" + userid + "&orderno=" + orderNo);
@@ -156,5 +180,14 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
                 }
             }
         });
+    }
+
+    @OnClick(R.id.iv_back)
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+        }
     }
 }

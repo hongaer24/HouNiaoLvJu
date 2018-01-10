@@ -312,6 +312,19 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         StatusBarUtils.setWindowStatusBarColor(IngOrderDetailActivity.this, R.color.app_theme_green);
         initData();
     }
+    private void initData() {
+        userid = PrefUtils.getString(IngOrderDetailActivity.this, "userid", "");
+        Intent intent = getIntent();
+        OrderListBean.DataBean dataBean = (OrderListBean.DataBean) intent.getSerializableExtra("data");
+        address=  intent.getStringExtra("address");
+        addTime=  intent.getStringExtra("addtime");
+
+        orderNo = dataBean.getOrderno();
+        qxid = dataBean.getId();
+        type = dataBean.getType();
+        getDataFromServer();
+
+    }
 
     private void showApplyRefundDialog() {
         CustomDialog.Builder callDialog = new CustomDialog.Builder(this);
@@ -411,19 +424,7 @@ public class IngOrderDetailActivity extends Activity implements OnItemClickListe
         }
     }
 
-    private void initData() {
-        userid = PrefUtils.getString(IngOrderDetailActivity.this, "userid", "");
-        Intent intent = getIntent();
-        OrderListBean.DataBean dataBean = (OrderListBean.DataBean) intent.getSerializableExtra("data");
-        address=  intent.getStringExtra("address");
-        addTime=  intent.getStringExtra("addtime");
 
-        orderNo = dataBean.getOrderno();
-        qxid = dataBean.getId();
-        type = dataBean.getType();
-        getDataFromServer();
-
-    }
 
     public void getDataFromServer() {
         Map<String, String> map = new HashMap<>();

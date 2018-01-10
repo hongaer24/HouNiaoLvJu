@@ -174,6 +174,8 @@ public class ScenicIndexActivity extends Activity {
         mRpvScenic.setHintView(new ColorPointHintView(mActivity, Color.parseColor("#009A44"), Color.WHITE));
         mTopPicAdapter = new TopPicAdapter(mRpvScenic);
         mRpvScenic.setAdapter(mTopPicAdapter);
+        mRpvScenic.setHintView(null);
+        //mRpvScenic.setPlayDelay(10000);
 
 
     /*    //特色主题

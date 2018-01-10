@@ -721,6 +721,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
                 dialog.dismiss();
                 Intent intent = new Intent();
                 intent.putExtra("orderno", orderNo);
+                intent.putExtra("price", mTotalPrice);
                 intent.setClass(mActivity, ScenicRefundLIstActivity.class);
                 startActivity(intent);
                 //applyRefund();

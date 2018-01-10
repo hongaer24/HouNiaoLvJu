@@ -231,7 +231,6 @@
                     android:background="@drawable/shape_white_gray"
                     android:padding="10dp"
                     android:text="更多日期>"
-                    android:textColor="#2c2b2b"
                     android:textSize="13sp" />
               <!--  <cn.houno.houniaolvju.view.Border2TextView
                     android:id="@+id/tv_pay"
@@ -337,7 +336,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="身份证"
+                    android:text="身份证▼"
                     android:textSize="16sp" />
 
                 <EditText

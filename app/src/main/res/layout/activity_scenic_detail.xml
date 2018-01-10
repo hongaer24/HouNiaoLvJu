@@ -52,7 +52,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:visibility="gone">
+                android:visibility="gone"
+                android:scrollbars="none">
                 <!--内容区域-->
                 <LinearLayout
                     android:id="@+id/ll_content"
@@ -71,7 +72,7 @@
                             android:layout_height="match_parent"
                             app:rollviewpager_hint_gravity="right"
                             app:rollviewpager_hint_paddingRight="10dp"
-                            app:rollviewpager_play_delay="3000" />
+                            app:rollviewpager_play_delay="0" />
 
                         <TextView
                             android:id="@+id/tv_order_title_txt"

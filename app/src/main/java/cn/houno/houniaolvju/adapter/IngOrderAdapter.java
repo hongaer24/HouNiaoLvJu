@@ -179,9 +179,9 @@ public class IngOrderAdapter extends BaseAdapter {
                     holder.tvPayStatus.setText("出票中");
                 } else if(TextUtils.equals(payStatus, "0")&&TextUtils.equals(Status, "2")) {
                     holder.tvPayStatus.setText("待支付");
-                }else if(TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "1")||TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "2")){
+                }/*else if(TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "1")||TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "2")){
                     holder.tvPayStatus.setText("出票失败");
-                }
+                }*/
 
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
