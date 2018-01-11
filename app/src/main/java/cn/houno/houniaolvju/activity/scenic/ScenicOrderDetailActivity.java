@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.alipay.sdk.app.PayTask;
+import com.andview.refreshview.XRefreshView;
 import com.bigkoo.alertview.AlertView;
 import com.bigkoo.alertview.OnItemClickListener;
 import com.tencent.mm.sdk.modelpay.PayReq;
@@ -117,6 +118,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     ScrollView svOrderDetail;
     @Bind(R.id.iv_title_go)
     ImageView ivTitleGo;
+   /* @Bind(R.id.rfv_ing_order)
+    XRefreshView rfvIngOrder;*/
     private String userid;
     private String orderNo;
     private String qxid;
@@ -146,6 +149,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
     private String result;
     private String mCanCancel;
     private String rid;
+    private String orderNo1;
+    public static boolean refresh = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,7 +160,10 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
         ButterKnife.bind(this);
         initData();
+        //initEvent();
+        //rfvIngOrder.startRefresh();
     }
+
 
     private void initData() {
         userid = PrefUtils.getString(ScenicOrderDetailActivity.this, "userid", "");
@@ -172,6 +180,31 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         getDataFromServer();
 
     }
+  /*  private void initEvent() {
+        rfvIngOrder.setPullLoadEnable(true);
+        rfvIngOrder.setXRefreshViewListener(new XRefreshView.XRefreshViewListener() {
+            @Override
+            public void onRefresh() {
+                getDataFromServer();
+            }
+
+            @Override
+            public void onLoadMore(boolean isSilence) {
+                getDataFromServer();
+            }
+
+            @Override
+            public void onRelease(float direction) {
+
+            }
+
+            @Override
+            public void onHeaderMove(double headerMovePercent, int offsetY) {
+
+            }
+        });
+    }*/
+
 
     public String formatData(String dataFormat, long timeStamp) {
         if (timeStamp == 0) {
@@ -435,6 +468,7 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvReturnMessage.setText("待支付");
             tvOrderCancel.setVisibility(View.VISIBLE);
             tvPay.setVisibility(View.VISIBLE);
+            //tvReturnTicket.setVisibility(View.VISIBLE);
             //tvPay.setBackgroundColor(Color.parseColor("#CC0000"));
             //tvOrderStatu.setText("待支付");
         } else if (mOrderStatusInt == 3 && mPayStatusInt == 1) {
@@ -457,7 +491,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             tvPay.setVisibility(View.GONE);*/
         } else if (mOrderStatusInt == 6 && mPayStatusInt == 1) {
             tvReturnMessage.setText("退票中");
-        } else if (mOrderStatusInt == 7 && mPayStatusInt == 1) {
+            tvReturnTicket.setVisibility(View.GONE);
+        } else if (mOrderStatusInt == 17 && mPayStatusInt == 1) {
             tvReturnMessage.setText("已退票");
         }
     }
@@ -719,11 +754,10 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
         callDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                Intent intent = new Intent();
+                Intent intent = new Intent(mActivity, ScenicRefundLIstActivity.class);
                 intent.putExtra("orderno", orderNo);
                 intent.putExtra("price", mTotalPrice);
-                intent.setClass(mActivity, ScenicRefundLIstActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 888);
                 //applyRefund();
             }
         });
@@ -803,12 +837,18 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             Toast.makeText(ScenicOrderDetailActivity.this, "支付取消", Toast.LENGTH_SHORT).show();
         }
 
+       /* if (requestCode == 888 && resultCode == 887) {
+            orderNo1 = data.getStringExtra("orderNo");
+            getDataFromServer();
+        }*/
+
 
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        initData();
         int wxstatus = PrefUtils.getInt(ScenicOrderDetailActivity.this, "wxpaystatus", -3);
         if (wxstatus == 0) {
             checkOrderIsPayed();
@@ -818,9 +858,10 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             Toast.makeText(ScenicOrderDetailActivity.this, "支付失败", Toast.LENGTH_SHORT).show();
         }
         PrefUtils.setInt(ScenicOrderDetailActivity.this, "wxpaystatus", -3);
+
     }
 
-    @OnClick({R.id.iv_back, R.id.tv_pay_way, R.id.tv_order_price, R.id.tv_pay, R.id.tv_order_cancel, R.id.tv_return_ticket,R.id.iv_title_go})
+    @OnClick({R.id.iv_back, R.id.tv_pay_way, R.id.tv_order_price, R.id.tv_pay, R.id.tv_order_cancel, R.id.tv_return_ticket, R.id.iv_title_go})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:

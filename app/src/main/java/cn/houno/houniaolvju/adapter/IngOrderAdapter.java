@@ -182,7 +182,9 @@ public class IngOrderAdapter extends BaseAdapter {
                 }/*else if(TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "1")||TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "2")){
                     holder.tvPayStatus.setText("出票失败");
                 }*/
-
+                else if(TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "6")) {
+                    holder.tvPayStatus.setText("退票中");
+                }
                 holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                 holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");

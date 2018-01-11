@@ -487,6 +487,7 @@ public class ScenicIndexActivity extends Activity {
                 //intent.putExtra("cate", position + 1);    //这里+1是因为分类最全面加了全部 0：全部
                 intent.putExtra("cates", mCates);
                 intent.putExtra("cityid", cityId);
+                intent.putExtra("cityname", cityName);
                 intent.setClass(mActivity, ScenicListActivity.class);
                 startActivity(intent);
                 break;

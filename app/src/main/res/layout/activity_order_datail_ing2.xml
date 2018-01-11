@@ -30,6 +30,10 @@
 
     </RelativeLayout>
 
+   <!-- <com.andview.refreshview.XRefreshView
+        android:id="@+id/rfv_ing_order"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">-->
     <ScrollView
         android:id="@+id/sv_order_detail"
         android:layout_width="match_parent"
@@ -882,4 +886,5 @@
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
+   <!-- </com.andview.refreshview.XRefreshView>-->
 </LinearLayout>

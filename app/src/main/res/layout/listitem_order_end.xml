@@ -30,7 +30,7 @@
             android:layout_toRightOf="@+id/iv_order_type"
             android:text="火车票"
             android:textColor="@color/black_txt"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_orderno"

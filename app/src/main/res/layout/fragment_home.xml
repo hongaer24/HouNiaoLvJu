@@ -157,13 +157,13 @@
                         android:numColumns="3"
                         android:overScrollMode="always" />
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
                         android:orientation="horizontal">
 
                         <ImageView
+                            android:layout_centerVertical="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:contentDescription="@null"
@@ -171,19 +171,19 @@
 
 
                         <TextView
+                            android:layout_centerVertical="true"
                             android:id="@+id/tv_flash_sale_more"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_centerVertical="true"
                             android:padding="1dp"
                             android:text="更多"
-                            android:layout_marginLeft="170dp"
+                            android:layout_toLeftOf="@+id/iv_more_scenic"
                             android:textColor="@color/app_theme_green"
                             android:textSize="17sp" />
 
+
                         <ImageView
+                            android:layout_alignParentRight="true"
                             android:id="@+id/iv_more_scenic"
                             android:layout_width="45dp"
                             android:layout_height="45dp"
@@ -195,7 +195,7 @@
                             android:layout_height="1px"
                             android:layout_alignParentBottom="true"
                             android:background="@color/match_width_view" />
-                    </LinearLayout>
+                    </RelativeLayout>
 
                     <include
                         android:id="@+id/layout_home_flash_sale"

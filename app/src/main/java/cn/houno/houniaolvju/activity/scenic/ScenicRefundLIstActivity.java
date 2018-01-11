@@ -27,6 +27,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.houno.houniaolvju.R;
+import cn.houno.houniaolvju.activity.OrderDetailActivity;
 import cn.houno.houniaolvju.adapter.ScenicRefundListAdapter;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.PrefUtils;
@@ -36,7 +37,7 @@ import cn.houno.houniaolvju.view.InnerListView;
 public class ScenicRefundLIstActivity extends Activity implements ScenicRefundListAdapter.CheckInterface {
 
 
-
+    private static final int RESULT_REFUND = 887;
     @Bind(R.id.rl_top_bar)
     RelativeLayout rlTopBar;
     @Bind(R.id.tv_orderno_title)
@@ -64,17 +65,18 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
     private ScenicRefundLIstActivity mAcitivity;
     private int causeType;
     private String causeContent;
-    private ScenicRefundLIstActivity mActivity;
+   // private ScenicRefundLIstActivity mActivity;
     private String price;
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hideWindows();
         setContentView(R.layout.activity_scenic_refund_list);
-        mAcitivity = ScenicRefundLIstActivity.this;
-        StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
+        StatusBarUtils.setWindowStatusBarColor(mAcitivity, R.color.app_theme_green);
         ButterKnife.bind(this);
+        mAcitivity = ScenicRefundLIstActivity.this;
         initData();
         initEvent();
     }
@@ -99,11 +101,18 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
     }
 
     private void initEvent() {
+            //mProgressDialog = new ProgressDialog(this);
         btnRefund.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
+             /*   mProgressDialog.setMessage("正在提交退款申请");
+                mProgressDialog.setCanceledOnTouchOutside(false);
+                mProgressDialog.setCancelable(true);
+                mProgressDialog.show();*/
                 applyRefund();
-                finish();
+                //finish();
 
             }
         });
@@ -132,11 +141,13 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
     }
 
     private void applyRefund() {
-        final ProgressDialog mProgressDialog = new ProgressDialog(this);
+        mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setMessage("正在提交退款申请");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.setCancelable(true);
         mProgressDialog.show();
+
+
         RequestParams params = new RequestParams(Constants.APPLY_REFUND);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("orderno", orderNo);
@@ -157,6 +168,15 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
                         //tvOrderStatus.setText("已支付/退款中");
                     }*/
                     Toast.makeText(ScenicRefundLIstActivity.this, msg, Toast.LENGTH_SHORT).show();
+                  /*  Intent intent = new Intent();
+                    intent.putExtra("orderNo",orderNo);
+                    setResult(RESULT_REFUND,intent);
+                    finish();*/
+                     //finish();
+                     //Intent intent = new Intent();
+                   /* intent.setClass(mAcitivity, ScenicOrderDetailActivity.class);
+                    startActivity(intent);*/
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -178,8 +198,14 @@ public class ScenicRefundLIstActivity extends Activity implements ScenicRefundLi
                 if (mProgressDialog.isShowing()) {
                     mProgressDialog.dismiss();
                 }
+                 finish();
             }
+
         });
+       /* Intent intent = new Intent();
+        intent.putExtra("orderNo",orderNo);
+        setResult(RESULT_REFUND,intent);
+        finish();*/
     }
 
     @OnClick(R.id.iv_back)

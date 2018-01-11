@@ -166,6 +166,9 @@ public class ScenicListActivity extends Activity {
         mKeyword = intent.getStringExtra("keyword");
         cate = intent.getIntExtra("cate", 0);
         cates = intent.getStringArrayExtra("cates");
+        cityName = intent.getStringExtra("cityname");
+         tvCity.setText(cityName);
+
         if (TextUtils.isEmpty(mKeyword)) {
             cityId = intent.getStringExtra("cityid");
             mType = intent.getStringExtra("type");

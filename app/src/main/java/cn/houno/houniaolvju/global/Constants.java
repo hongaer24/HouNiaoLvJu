@@ -120,9 +120,11 @@ public class Constants {
     //我的收藏
     public static final String COLLECTION_URL = "http://webapi.houno.cn/favorlist.php";
     //注册成功
-    public static final String REGISTER_URL = "http://webapi.houno.cn/reg.php";
+    //public static final String REGISTER_URL = "http://webapi.houno.cn/reg.php";
+    public static final String REGISTER_URL = "http://apis.houno.cn/reg.php";
     //注册获取验证码
-    public static final String GETCODE_URL = "http://webapi.houno.cn/regcode.php";
+    //public static final String GETCODE_URL = "http://webapi.houno.cn/regcode.php";
+    public static final String GETCODE_URL = "http://apis.houno.cn/regcode.php";
     //找回密码
     public static final String BACKPSW_URL = "http://webapi.houno.cn/editpwd.php";
     //找回密码验证码

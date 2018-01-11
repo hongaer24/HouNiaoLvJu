@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\work\\work file\\HouNiaoLvJu\\slidingmenu\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "outputFile": "F:\\work\\HouNiaoLvJu\\slidingmenu\\build\\intermediates\\res\\merged\\androidTest\\debug\\values\\values.xml",
             "map": [
                 {
-                    "source": "F:\\work\\work file\\HouNiaoLvJu\\slidingmenu\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+                    "source": "F:\\work\\HouNiaoLvJu\\slidingmenu\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
                     "from": {
                         "startLines": "14",
                         "startColumns": "4",

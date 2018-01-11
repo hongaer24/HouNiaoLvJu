@@ -30,7 +30,7 @@
             android:layout_toRightOf="@+id/iv_order_type"
             android:text="酒店 |"
             android:textColor="@color/black_txt"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tv_orderno"
@@ -53,7 +53,7 @@
             android:layout_marginRight="10dp"
             android:text="已支付"
             android:textColor="#ff7b00"
-            android:textSize="15sp" />
+            android:textSize="14sp" />
     </RelativeLayout>
 
     <View

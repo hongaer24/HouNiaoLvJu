@@ -285,18 +285,14 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical">
 
-                            <LinearLayout
+                            <RelativeLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="48dp"
-                                android:layout_alignParentLeft="true"
-                                android:layout_alignParentStart="true"
-                                android:layout_alignParentTop="true"
-                                android:gravity="center_vertical"
+                                android:layout_height="wrap_content"
                                 android:orientation="horizontal"
-                                android:padding="10dp">
+                                android:padding="5dp">
 
                                 <View
-                                    android:layout_width="2dp"
+                                    android:layout_width="5dp"
                                     android:layout_height="match_parent"
                                     android:layout_marginBottom="7dp"
                                     android:layout_marginTop="7dp"
@@ -307,6 +303,7 @@
                                     android:layout_height="wrap_content"
                                     android:paddingLeft="10dp"
                                     android:text="本地景点"
+                                    android:layout_centerVertical="true"
                                     android:textColor="@color/black_txt"
                                     android:textSize="17sp" />
 
@@ -315,20 +312,19 @@
                                     android:id="@+id/tv_more_scenic"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_alignParentEnd="true"
-                                    android:layout_alignParentRight="true"
                                     android:layout_centerVertical="true"
-                                    android:layout_marginLeft="150dp"
-                                    android:padding="2dp"
+                                    android:padding="1dp"
                                     android:text="更多景点"
+                                    android:layout_toLeftOf="@+id/iv_more_scenic"
                                     android:textColor="@color/app_theme_green"
-                                    android:textSize="18sp" />
+                                    android:textSize="17sp" />
 
                                 <ImageView
+                                    android:id="@+id/iv_more_scenic"
                                     android:layout_width="45dp"
                                     android:layout_height="45dp"
                                     android:layout_alignParentRight="true"
-                                    android:padding="15dp"
+                                    android:padding="14dp"
                                     android:src="@drawable/icon_go" />
 
                                 <!--  <ImageView
@@ -339,7 +335,7 @@
                                       android:layout_alignParentRight="true"
                                       android:src="@drawable/icon_go"
                                      />-->
-                            </LinearLayout>
+                            </RelativeLayout>
 
                             <View
                                 android:layout_width="match_parent"
