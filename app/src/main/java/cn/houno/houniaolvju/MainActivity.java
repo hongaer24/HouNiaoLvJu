@@ -122,7 +122,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         initEvent();
         select(0);
         versionUpdate();
-        onViewClicked( homeFragment);
+        //onViewClicked( homeFragment);
     }
 
     private void initView() {
