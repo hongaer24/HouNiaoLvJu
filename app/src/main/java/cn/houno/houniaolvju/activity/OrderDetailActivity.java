@@ -1,6 +1,7 @@
 package cn.houno.houniaolvju.activity;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -40,6 +41,7 @@ import cn.houno.houniaolvju.pay.alipay.PayResult;
 import cn.houno.houniaolvju.utils.OkHttpClientManager;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
+import cn.houno.houniaolvju.view.CustomDialog;
 
 /**
  * 酒店订单详情、支付
@@ -461,13 +463,32 @@ public class  OrderDetailActivity extends Activity {
         }
         PrefUtils.setInt(OrderDetailActivity.this, "wxpaystatus", -3);
     }
+    private void showCancelOrderDialog() {
+        CustomDialog.Builder callDialog = new CustomDialog.Builder(this);
+        callDialog.setMessage("您的支付尚未完成，是否取消？");
+        callDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
+        callDialog.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        callDialog.create().show();
+    }
 
 
     @OnClick({R.id.iv_back, R.id.iv_home, R.id.ll_pay_wx, R.id.ll_pay_ali, R.id.ll_pay_union, R.id.tv_qtxf})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.iv_back:
-                finish();
+                showCancelOrderDialog();
                 break;
             case R.id.iv_home:
                 //返回主页面

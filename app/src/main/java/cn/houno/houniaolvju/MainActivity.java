@@ -1,6 +1,5 @@
 package cn.houno.houniaolvju;
 
-import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,15 +12,14 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
+import android.os.Process;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -38,6 +36,8 @@ import org.xutils.x;
 
 import java.io.File;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
 import cn.houno.houniaolvju.activity.AboutActivity;
 import cn.houno.houniaolvju.activity.ScanPromptActivity;
 import cn.houno.houniaolvju.fragment.HomeFragment;
@@ -54,6 +54,8 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class MainActivity extends FragmentActivity implements RadioGroup.OnCheckedChangeListener {
 
+    @Bind(R.id.fl_content)
+    FrameLayout flContent;
     private RadioGroup radioGroup;
     private RadioButton rbHome;
     private RadioButton rbSurrounding;
@@ -91,7 +93,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
      * 新版本apk的下载路径
      */
     private Handler handler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
             switch (msg.what) {
                 case SHOW_UPDATE_DIALOG:// 显示应用更新对话框
                     String desc = (String) msg.obj;
@@ -113,12 +115,14 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
         StatusBarUtils.setWindowStatusBarColor(MainActivity.this, R.color.app_theme_green);
         initView();
         initData();
         initEvent();
         select(0);
         versionUpdate();
+        onViewClicked( homeFragment);
     }
 
     private void initView() {
@@ -137,6 +141,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         // 设置触摸屏幕的模式
         mLeftMenu.setTouchModeAbove(SlidingMenu.TOUCHMODE_MARGIN);
         mLeftMenu.setShadowWidthRes(R.dimen.shadow_width);
+
 //        menu.setShadowDrawable(R.drawable.shadow);
 
         // 设置滑动菜单视图的宽度
@@ -157,6 +162,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         mLeftMenu.findViewById(R.id.ll_scan).setOnClickListener(new leftMenuClick());
         mLeftMenu.findViewById(R.id.ll_clear).setOnClickListener(new leftMenuClick());
         mLeftMenu.findViewById(R.id.ll_update).setOnClickListener(new leftMenuClick());
+       // mLeftMenu.addIgnoredView(flContent);
+
     }
 
     private void initEvent() {
@@ -167,7 +174,18 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
 
     }
 
+    public void onViewClicked(Fragment fragment) {
+        // TODO Auto-generated method stub
+      homeFragment = (HomeFragment) fragment;
+        getSupportFragmentManager().beginTransaction().replace(R.id.fl_content, fragment).commit();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+              getLeftMenu().showContent();
+            }
+        },100);
 
+    }
     private void select(int i) {
         FragmentManager fm = getSupportFragmentManager();  //获得Fragment管理器
         FragmentTransaction ft = fm.beginTransaction(); //开启一个事务
@@ -256,7 +274,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         });
 
         callDialog.setNegativeButton("取消",
-                new android.content.DialogInterface.OnClickListener() {
+                new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
@@ -453,7 +471,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         });
 
         clearDialog.setNegativeButton("取消",
-                new android.content.DialogInterface.OnClickListener() {
+                new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }
@@ -614,7 +632,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivityForResult(intent, 0);// 如果用户取消安装的话,
                             // 会返回结果,回调方法onActivityResult
-                            android.os.Process.killProcess(android.os.Process.myPid());
+                            Process.killProcess(Process.myPid());
                         }
 
                         @Override
@@ -642,7 +660,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         });
 
         upDataDialog.setNegativeButton("取消",
-                new android.content.DialogInterface.OnClickListener() {
+                new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
                     }

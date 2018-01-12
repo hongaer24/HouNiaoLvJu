@@ -206,7 +206,7 @@ public class TrainOrderDetailActivity extends Activity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.iv_back: {
-                finish();
+                showCancelOrderDialog();
                 break;
             }
 
@@ -416,6 +416,26 @@ public class TrainOrderDetailActivity extends Activity {
 
         callDialog.create().show();
     }
+    private void showCancelOrderDialog() {
+        CustomDialog.Builder callDialog = new CustomDialog.Builder(this);
+        callDialog.setMessage("您的支付尚未完成，是否取消？");
+        callDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                finish();
+            }
+        });
+
+        callDialog.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        callDialog.create().show();
+    }
+
 
 
     @Override

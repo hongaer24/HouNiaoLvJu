@@ -319,6 +319,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         if (!mRefreshView.getPullLoadEnable()) {
             mRefreshView.setPullLoadEnable(true);//可以上拉加载
         }
+       /* slidingMenu.addIgnoredView(mRefreshView);
+        slidingMenu.addIgnoredView(mScrollView);*/
+
     }
 
     @Override

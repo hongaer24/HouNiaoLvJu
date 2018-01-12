@@ -53,7 +53,7 @@
                     android:background="@drawable/shape_label_green"
                     android:text="网上支付"
                     android:textColor="@color/label_dark_green"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/tv_scenic_cate"
@@ -63,7 +63,7 @@
                     android:background="@drawable/shape_label_red"
                     android:text="今日可预订"
                     android:textColor="@color/label_dark_red"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
             <RelativeLayout

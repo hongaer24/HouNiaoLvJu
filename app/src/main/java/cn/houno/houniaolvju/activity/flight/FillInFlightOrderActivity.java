@@ -3,6 +3,7 @@ package cn.houno.houniaolvju.activity.flight;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.DataSetObserver;
@@ -56,6 +57,7 @@ import cn.houno.houniaolvju.utils.OkHttpClientManager;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.RegexUtils;
 import cn.houno.houniaolvju.utils.StatusBarUtils;
+import cn.houno.houniaolvju.view.CustomDialog;
 import cn.houno.houniaolvju.view.InnerListView;
 
 /**
@@ -253,14 +255,32 @@ public class FillInFlightOrderActivity extends Activity {
 
     }
 
+    private void showCancelOrderDialog() {
+        CustomDialog.Builder callDialog = new CustomDialog.Builder(this);
+        callDialog.setMessage("您的支付尚未完成，是否取消？");
+        callDialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                finish();
+            }
+        });
 
+        callDialog.setNegativeButton("取消",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+        callDialog.create().show();
+    }
     @OnClick({R.id.iv_back, R.id.iv_home, R.id.tv_back_alter_ticket, R.id.tv_add_passengers
             , R.id.tv_prompt_carry, R.id.btn_submit_order})
     public void onClick(View view) {
         Intent intent = new Intent();
         switch (view.getId()) {
             case R.id.iv_back:
-                finish();
+                showCancelOrderDialog();
                 break;
             case R.id.iv_home:
                 //返回主页面
@@ -598,6 +618,7 @@ public class FillInFlightOrderActivity extends Activity {
             }
         }
     }
+
 
   /*  @Override
     protected void onStop() {

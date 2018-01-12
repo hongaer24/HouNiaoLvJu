@@ -61,7 +61,7 @@ import cn.houno.houniaolvju.view.InnerListView;
  */
 public class ScenicListActivity extends Activity {
     /*@Bind(R.id.iv_back)
-    ImageView ivBack;*/
+        ImageView ivBack;*/
     @Bind(R.id.ly_top_bar)
     RelativeLayout lyTopBar;
     @Bind(R.id.pb_loading)
@@ -98,6 +98,8 @@ public class ScenicListActivity extends Activity {
     private EditText etSearch;
     private static final int LOC = 1;
     private static final int INDEX = 2;
+    private static final int SEARCH = 3;
+
 
     private DropDownMenu ddmScenicList;
     private String headers[] = {"分类", "星级", "排序"};
@@ -223,7 +225,7 @@ public class ScenicListActivity extends Activity {
                     Toast.makeText(mActivity, "请输入关键字", Toast.LENGTH_SHORT).show();
                 } else {
                     etSearch.clearFocus();
-                    getDataFromServer(INDEX);
+                    getDataFromServer(SEARCH);
                 }
                 return true;
             }
@@ -340,6 +342,12 @@ public class ScenicListActivity extends Activity {
             params.addBodyParameter("sort", sort + "");
             params.addBodyParameter("p", page + "");
             //params.addBodyParameter("type", mType);
+        }else if(type==SEARCH){
+            params = new RequestParams(Constants.SCENIC_LIST);
+            params.addBodyParameter("keyword", etSearch.getText().toString().trim());
+            params.addBodyParameter("UserID", userid);
+            params.addBodyParameter("sort", sort + "");
+            params.addBodyParameter("p", page + "");
         }
 
         x.http().post(params, new Callback.CommonCallback<String>() {
@@ -366,6 +374,9 @@ public class ScenicListActivity extends Activity {
                             getIndexScenic();
                         } else if (type == INDEX) {
                             parseData(result, false);
+                        }else if(type==SEARCH){
+                            parseData(result, false);
+
                         }
 
 

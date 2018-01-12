@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.houno.houniaolvju">
-
+    <uses-sdk android:targetSdkVersion="17"/>
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- <uses-permission android:name="android.permission.REAL_GET_TASKS" -->
     <!-- android:permissionGroup="android.permission-group.APP_INFO" -->
