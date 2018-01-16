@@ -1,6 +1,5 @@
 package cn.houno.houniaolvju.activity.scenic;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -186,6 +185,7 @@ public class PersonsEditActivity extends AppCompatActivity {
             Toast.makeText(mActivity, "姓名不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
+        getScenicBean.setName(etEditName.getText().toString());
 
         boolean isTel = true;
         //判断输入的用户名是否是电话号码
@@ -200,9 +200,10 @@ public class PersonsEditActivity extends AppCompatActivity {
         } else {
             isTel = false;
         }
+        getScenicBean.setPhone(etJdPhone.getText().toString());
 
         boolean isID = true;
-        //判断输入的用户名是否是电话号码
+        //判断输入的身份证是否是合法
         if (etEditIDcard.getText().toString().length() == 18) {
             for (int i = 0; i < etEditIDcard.getText().toString().length(); i++) {
                 char c = etEditIDcard.getText().toString().charAt(i);
@@ -214,6 +215,7 @@ public class PersonsEditActivity extends AppCompatActivity {
         } else {
             isID = false;
         }
+        getScenicBean.setIdentityno(etEditIDcard.getText().toString());
 
         if (TextUtils.isEmpty(etJdPhone.getText())) {
             Toast.makeText(mActivity, "手机号不能为空", Toast.LENGTH_SHORT).show();
