@@ -165,9 +165,11 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvOrderNumberTxt.setText("预订人数：");
                 holder.ivOrderType.setImageResource(R.drawable.label_order_scenic);
                 holder.tvOrderType.setText("景点");
+                if(mList.get(position).getDetail()!=null){
+                    holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
+                    holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
+                }
 
-                holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
-                holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
                 String checkIn = mList.get(position).getCheckin();
                 holder.tvCheckDate.setText(checkIn);

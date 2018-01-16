@@ -107,7 +107,8 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="15dp"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <TextView
                         android:id="@+id/tv_scenic_order_price"
@@ -225,7 +226,7 @@
                 <Button
                     android:id="@+id/tv_days_selector"
                     android:layout_width="0dp"
-                    android:layout_height="55dp"
+                    android:layout_height="50dp"
                     android:layout_weight="6"
                     android:layout_marginLeft="15dp"
                     android:background="@drawable/shape_white_gray"

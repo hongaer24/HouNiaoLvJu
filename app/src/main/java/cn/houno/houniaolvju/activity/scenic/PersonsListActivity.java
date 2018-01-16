@@ -36,6 +36,7 @@ import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.PassengerStorage;
 import cn.houno.houniaolvju.utils.PrefUtils;
+import cn.houno.houniaolvju.utils.StatusBarUtils;
 
 public class PersonsListActivity extends AppCompatActivity implements PersonsListAdapter.GetScenicListener, PersonsListAdapter.CheckInterface {
 
@@ -72,6 +73,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
         setContentView(R.layout.activity_fill_numer_of_person);
         ButterKnife.bind(this);
         mActivity = PersonsListActivity.this;
+        StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
         initData();
     }
 

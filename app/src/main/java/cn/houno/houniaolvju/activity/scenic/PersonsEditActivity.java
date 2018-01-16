@@ -28,6 +28,7 @@ import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
 import cn.houno.houniaolvju.global.Constants;
 import cn.houno.houniaolvju.utils.PrefUtils;
 import cn.houno.houniaolvju.utils.SPDialogUtils;
+import cn.houno.houniaolvju.utils.StatusBarUtils;
 
 public class PersonsEditActivity extends AppCompatActivity {
 
@@ -66,6 +67,7 @@ public class PersonsEditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_persons_edit);
         ButterKnife.bind(this);
         mActivity = PersonsEditActivity.this;
+        StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
         initData();
     }
 
@@ -115,8 +117,6 @@ public class PersonsEditActivity extends AppCompatActivity {
                     Log.i("999", "id===" + result);
                     if (status == 0) {
                         showToast(obj.getString("msg"));
-                    } else {
-
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -159,8 +159,6 @@ public class PersonsEditActivity extends AppCompatActivity {
 
                     if (status == 0) {
                         showToast(obj.getString("msg"));
-                    } else {
-
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -183,8 +181,60 @@ public class PersonsEditActivity extends AppCompatActivity {
             }
         });
     }
+    private void checkInputAndGetData() {
+        if (TextUtils.isEmpty(etEditName.getText().toString().trim())) {
+            Toast.makeText(mActivity, "姓名不能为空", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-    private boolean checkData() {
+        boolean isTel = true;
+        //判断输入的用户名是否是电话号码
+        if (etJdPhone.getText().toString().length() == 11) {
+            for (int i = 0; i < etJdPhone.getText().toString().length(); i++) {
+                char c = etJdPhone.getText().toString().charAt(i);
+                if (!Character.isDigit(c)) {
+                    isTel = false;
+                    break;//只要有一位不符合要求退出循环
+                }
+            }
+        } else {
+            isTel = false;
+        }
+
+        boolean isID = true;
+        //判断输入的用户名是否是电话号码
+        if (etEditIDcard.getText().toString().length() == 18) {
+            for (int i = 0; i < etEditIDcard.getText().toString().length(); i++) {
+                char c = etEditIDcard.getText().toString().charAt(i);
+                if (!Character.isDigit(c)) {
+                    isID = false;
+                    break;//只要有一位不符合要求退出循环
+                }
+            }
+        } else {
+            isID = false;
+        }
+
+        if (TextUtils.isEmpty(etJdPhone.getText())) {
+            Toast.makeText(mActivity, "手机号不能为空", Toast.LENGTH_SHORT).show();
+        } else if (!isTel) {
+            Toast.makeText(mActivity, "手机号格式不对", Toast.LENGTH_SHORT).show();
+        } else  if(TextUtils.isEmpty(etEditIDcard.getText())){
+            Toast.makeText(mActivity, "身份证号不能为空", Toast.LENGTH_SHORT).show();
+        }else if(!isID){
+            Toast.makeText(mActivity, "身份证号为非法格式", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            //Log.i("FillInScenicOrderAct", "success");
+            if (getIntent() != null && getIntent().getSerializableExtra("consignee") != null) {
+                EditScenicPassenger(getScenicBean);
+            } else {
+                AddScenicPassenger(getScenicBean);
+            }
+            finish();  // getDataFromServer();
+        }
+    }
+   /* private boolean checkData() {
         if (TextUtils.isEmpty(etEditName.getText().toString())) {
             showToast("请输入姓名");
             return false;
@@ -204,7 +254,7 @@ public class PersonsEditActivity extends AppCompatActivity {
         }
         getScenicBean.setIdentityno(etEditIDcard.getText().toString());
         return true;
-    }
+    }*/
 
     @OnClick({R.id.iv_back,R.id.add_person_btn})
     public void onViewClicked(View view) {
@@ -215,17 +265,16 @@ public class PersonsEditActivity extends AppCompatActivity {
 
                 break;
             case R.id.add_person_btn:
-
-                if (checkData()) {
-                    if (getIntent() != null && getIntent().getSerializableExtra("consignee") != null) {
+                checkInputAndGetData();
+               /* if (checkData()) {*/
+                  /*  if (getIntent() != null && getIntent().getSerializableExtra("consignee") != null) {
                         EditScenicPassenger(getScenicBean);
-
                     } else {
                         AddScenicPassenger(getScenicBean);
                     }
-                    finish();
+                    finish();*/
                     break;
-                }
+               /* }*/
         }
     }
     public void showToast(String msg) {

@@ -140,7 +140,10 @@ public class FillInScenicOrderActivity extends Activity {
     private int position;
     private String nowData;
     private PersonInfoAdapter madapter;
-    private boolean ischeck = true;
+    private boolean isCheck=true;
+    private boolean isPress;
+
+
     //private List<GetScenicPassengerBean.DataBean> touristDataBean;
     private List<GetScenicPassengerBean.DataBean> mPassnersList = new ArrayList<>();
     private OptionsPickerView pvOption;
@@ -259,11 +262,12 @@ public class FillInScenicOrderActivity extends Activity {
         mBtnReferAdd.setOnClickListener(new TicketClick());
         //btnData.setEnabled(btnData.isClickable());
        if(!data1.equals("0")){
+
            btnData.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
-
-                   if (ischeck) {
+                   if (isCheck) {
+                       //设置选中后和未选中的按键状态
                        mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
                        mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
                        btnData.setBackgroundResource(R.drawable.shape_org);
@@ -312,8 +316,8 @@ public class FillInScenicOrderActivity extends Activity {
 
 
                    }
-                   ischeck = !ischeck;
-
+                   isCheck = !isCheck;
+                   isPress=!isPress;
                }
            });
 
@@ -324,7 +328,7 @@ public class FillInScenicOrderActivity extends Activity {
             btnData1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if (ischeck) {
+                    if (isCheck) {
                         mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
                         mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
 
@@ -363,6 +367,7 @@ public class FillInScenicOrderActivity extends Activity {
                             btnData1.setTextColor(Color.parseColor("#000000"));
 
                             MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+
                             btnData.setEnabled(true);
                             btnData.setBackgroundResource(R.drawable.shape_white_gray);
                             btnData.setTextColor(Color.parseColor("#000000"));
@@ -372,9 +377,9 @@ public class FillInScenicOrderActivity extends Activity {
                             mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
                         }
 
-
                     }
-                    ischeck = !ischeck;
+                    isCheck = !isCheck;
+                    isPress=!isPress;
 
                 }
             });
@@ -382,12 +387,46 @@ public class FillInScenicOrderActivity extends Activity {
          mTvDaysSelector.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
-                 Intent date = new Intent();
-                 date.putExtra("position", position);
-                 date.putExtra("sid", mScenicId);
-                 date.putExtra("pricecalendars", (Serializable) Pricecalendarlist);
-                 date.setClass(mActivity, MoreInfoCalendarActivity.class);
-                 startActivityForResult(date, 301);
+                 if(isCheck){
+
+                     Intent date = new Intent();
+                     date.putExtra("position", position);
+                     date.putExtra("sid", mScenicId);
+                     date.putExtra("pricecalendars", (Serializable) Pricecalendarlist);
+                     date.setClass(mActivity, MoreInfoCalendarActivity.class);
+                     startActivityForResult(date, 301);
+                     //
+                   /*  mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                     mTvDaysSelector.setTextColor(Color.parseColor("#000000"));*/
+
+                     mTvDaysSelector.setBackgroundResource(R.drawable.shape_org);
+                     mTvDaysSelector.setTextColor(Color.parseColor("#ffffff"));
+                     MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2 + "");
+                     btnData.setEnabled(false);
+                     btnData.setBackgroundResource(R.drawable.shape_dark_gray);
+                     btnData.setTextColor(Color.parseColor("#FFAEA9A9"));
+
+                     btnData1.setEnabled(false);
+                     btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
+                     btnData1.setTextColor(Color.parseColor("#FFAEA9A9"));
+                 }else {
+                     mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                     mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
+
+                     MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+
+                     btnData.setEnabled(true);
+                     btnData.setBackgroundResource(R.drawable.shape_white_gray);
+                     btnData.setTextColor(Color.parseColor("#000000"));
+
+                     btnData1.setEnabled(true);
+                     btnData1.setBackgroundResource(R.drawable.shape_white_gray);
+                     btnData1.setTextColor(Color.parseColor("#000000"));
+
+                 }
+                 isCheck = !isCheck;
+                 isPress=!isPress;
+
                 /* if (ischeck) {
                      //MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice + "");
                      btnData1.setEnabled(false);
@@ -488,6 +527,10 @@ public class FillInScenicOrderActivity extends Activity {
             Toast.makeText(mActivity, "姓名不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (!isPress) {
+            Toast.makeText(mActivity, "请选择出游时期", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         boolean isTel = true;
         //判断输入的用户名是否是电话号码
@@ -503,11 +546,32 @@ public class FillInScenicOrderActivity extends Activity {
             isTel = false;
         }
 
+        boolean isID = true;
+        //判断输入的用户名是否是电话号码
+        if (etIdcard.getText().toString().length() == 18) {
+            for (int i = 0; i < etIdcard.getText().toString().length(); i++) {
+                char c = etIdcard.getText().toString().charAt(i);
+                if (!Character.isDigit(c)) {
+                    isID = false;
+                    break;//只要有一位不符合要求退出循环
+                }
+            }
+        } else {
+            isID = false;
+        }
+
         if (TextUtils.isEmpty(mEtJdPhone.getText())) {
             Toast.makeText(mActivity, "手机号不能为空", Toast.LENGTH_SHORT).show();
         } else if (!isTel) {
             Toast.makeText(mActivity, "手机号格式不对", Toast.LENGTH_SHORT).show();
-        } else {
+        } else  if(TextUtils.isEmpty(etIdcard.getText())){
+            Toast.makeText(mActivity, "身份证号不能为空", Toast.LENGTH_SHORT).show();
+        }else if(!isID){
+            Toast.makeText(mActivity, "身份证号为非法格式", Toast.LENGTH_SHORT).show();
+        } else if( mPassnersList.size()==0){
+            Toast.makeText(mActivity, "请选择出游人", Toast.LENGTH_SHORT).show();
+        }
+        else {
             Log.i("FillInScenicOrderAct", "success");
             getDataFromServer();
         }
