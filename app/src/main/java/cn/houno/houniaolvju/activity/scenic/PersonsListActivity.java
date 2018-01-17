@@ -1,6 +1,7 @@
 package cn.houno.houniaolvju.activity.scenic;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -75,6 +76,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
         mActivity = PersonsListActivity.this;
         StatusBarUtils.setWindowStatusBarColor(mActivity, R.color.app_theme_green);
         initData();
+        initEvent();
     }
 
     private void initData() {
@@ -85,7 +87,13 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
         PrefUtils.setInt(mActivity, "num", personNum);
         PrefUtils.setInt(mActivity, "variaNum", variaNum);
         tvTitlePerson.setText("您还需选择" + personNum + "个出游人（0/" + personNum + "）");
+        addAddressBtn.setClickable(false);
+        addAddressBtn.setBackgroundColor(Color.parseColor("#dddddd"));
         getDataFromServer();
+
+    }
+    private void initEvent() {
+
 
     }
 
@@ -182,7 +190,6 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 mIntent.putExtra("list", (Serializable) GetScenicBeanList);
                 setResult(RESULT_OK, mIntent);
                 finish();
-
                 break;
             case R.id.tv_add_person:
                 Intent intent = new Intent(this, PersonsEditActivity.class);
@@ -232,6 +239,13 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 PassengerStorage.getInstance().updataData(GetScenicBean);
             }
 
+        }
+        if(variaNum==0){
+            addAddressBtn.setBackgroundResource(R.drawable.selector_orgs_btn);
+            addAddressBtn.setClickable(true);
+        }else {
+            addAddressBtn.setClickable(false);
+            addAddressBtn.setBackgroundColor(Color.parseColor("#dddddd"));
         }
         PrefUtils.setInt(mActivity, "variaNum", variaNum);
         //touristDataBean.get(position).setChoosed(ischecked);

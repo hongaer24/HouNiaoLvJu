@@ -14,12 +14,15 @@ import android.widget.TextView;
 import java.io.Serializable;
 import java.util.List;
 
+import cn.houno.houniaolvju.MainActivity;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.activity.scenic.FillInScenicOrderActivity;
 import cn.houno.houniaolvju.activity.scenic.ScenicBookInfoActivity;
 import cn.houno.houniaolvju.activity.scenic.ScenicRefundLIstActivity;
 import cn.houno.houniaolvju.bean.ScenicDetailBean;
+import cn.houno.houniaolvju.fragment.myinfo.LoginActivity;
 import cn.houno.houniaolvju.utils.MyText2Utils;
+import cn.houno.houniaolvju.utils.PrefUtils;
 
 //import cn.houno.houniaolvju.bean.ScenicDetailBean.DataBean.TicketBean.TicketDataBean;
 
@@ -42,6 +45,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
     private String scenicTitle;
     private String scenicAddress;
     private String inpolicy;
+    private boolean isLogined;
 
 
     public ScenicTicketAdapter(Context context, List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean> list
@@ -115,42 +119,53 @@ public class ScenicTicketAdapter extends BaseAdapter {
             }
         }*/
         final int price;
-        if (list.get(position).getSalePrice() != null
-                && !list.get(position).getSalePrice().equals("")
-                && list.get(position).getSalePrice()!= null
-                && !TextUtils.isEmpty(list.get(position).getSalePrice())) {
-            price = Integer.parseInt(MyText2Utils.getIntPrice(list.get(position).getSalePrice()));
-            MyText2Utils.formatYuanPrice(mContext, viewHolder.price, list.get(position).getSalePrice());
-            //点击预定跳转
-            viewHolder.llBook.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                   // PrefUtils.deleteString(MyApplication.getContex());
+        isLogined = PrefUtils.getBoolean(mContext, "isLogined", false);
+
+             if (list.get(position).getSalePrice() != null
+                     && !list.get(position).getSalePrice().equals("")
+                     && list.get(position).getSalePrice()!= null
+                     && !TextUtils.isEmpty(list.get(position).getSalePrice())) {
+                 price = Integer.parseInt(MyText2Utils.getIntPrice(list.get(position).getSalePrice()));
+                 MyText2Utils.formatYuanPrice(mContext, viewHolder.price, list.get(position).getSalePrice());
+                 //点击预定跳转
+                 viewHolder.llBook.setOnClickListener(new View.OnClickListener() {
+                     @Override
+                     public void onClick(View v) {
+                         // PrefUtils.deleteString(MyApplication.getContex());
                    /* Intent intent = new Intent();
                     intent.setClass(mContext, FillInScenicOrderActivity.class);*/
-                    Intent intent = new Intent(mContext, FillInScenicOrderActivity.class);
-                    // intent.putExtra("sid", list.get(position).);
-                    intent.putExtra("tid", list.get(position).getProductId());
-                    intent.putExtra("scenicTitle", scenicTitle.trim());
-                    intent.putExtra("scenicAddress", scenicAddress.trim());
-                    intent.putExtra("ticketTitle", list.get(position).getProductName().trim());
-                    intent.putExtra("price", price);
-                    intent.putExtra("custInfoLimit", list.get(position).getTicketlistinfo().getCustinfolimit());
-                    //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
-                    intent.putExtra("position", position);
-                    intent.putExtra("today", list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
-                    intent.putExtra("minday", list.get(position).getTicketlistinfo().getPricecalendar().get(1).getSalePrice());
-                    intent.putExtra("pricecalendar", (Serializable) list.get(position).getTicketlistinfo().getPricecalendar());
+                   if(isLogined){
+                       Intent intent = new Intent(mContext, FillInScenicOrderActivity.class);
+                       // intent.putExtra("sid", list.get(position).);
+                       intent.putExtra("tid", list.get(position).getProductId());
+                       intent.putExtra("scenicTitle", scenicTitle.trim());
+                       intent.putExtra("scenicAddress", scenicAddress.trim());
+                       intent.putExtra("ticketTitle", list.get(position).getProductName().trim());
+                       intent.putExtra("price", price);
+                       intent.putExtra("custInfoLimit", list.get(position).getTicketlistinfo().getCustinfolimit());
+                       //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getCustinfolimit());
+                       intent.putExtra("position", position);
+                       intent.putExtra("today", list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
+                       intent.putExtra("minday", list.get(position).getTicketlistinfo().getPricecalendar().get(1).getSalePrice());
+                       intent.putExtra("pricecalendar", (Serializable) list.get(position).getTicketlistinfo().getPricecalendar());
+                       //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
+                       mContext.startActivity(intent);
+                   }else {
+                       Intent intent = new Intent(mContext, LoginActivity.class);
+                       mContext.startActivity(intent);
+                   }
+                     }
+                 });
+             } else {
+                 viewHolder.price.setText("暂无价格");
+                 viewHolder.llBook.setClickable(false);
+             }
+        /* }else {
+             Intent intent = new Intent(mContext, LoginActivity.class);
+             mContext.startActivity(intent);
 
-                    //Log.i("0102", "result===" + list.get(position).getTicketlistinfo().getPricecalendar().get(0).getSalePrice());
-                    mContext.startActivity(intent);
+         }*/
 
-                }
-            });
-        } else {
-            viewHolder.price.setText("暂无价格");
-            viewHolder.llBook.setClickable(false);
-        }
         //inpolicy = list.get(position).getTicketlistinfo().getInfo();
         viewHolder.know.setOnClickListener(new View.OnClickListener() {
             @Override
