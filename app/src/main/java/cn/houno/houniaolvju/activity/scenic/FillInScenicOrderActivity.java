@@ -383,7 +383,6 @@ public class FillInScenicOrderActivity extends Activity {
              @Override
              public void onClick(View v) {
                  if(isCheck){
-
                      Intent date = new Intent();
                      date.putExtra("position", position);
                      date.putExtra("sid", mScenicId);
@@ -409,15 +408,21 @@ public class FillInScenicOrderActivity extends Activity {
                      mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
 
                      MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+                    if(data1==0){
+                        btnData.setBackgroundResource(R.drawable.shape_dark_gray);
+                    }else {
+                        btnData.setEnabled(true);
+                        btnData.setBackgroundResource(R.drawable.shape_white_gray);
+                        btnData.setTextColor(Color.parseColor("#000000"));
+                    }
 
-                     btnData.setEnabled(true);
-                     btnData.setBackgroundResource(R.drawable.shape_white_gray);
-                     btnData.setTextColor(Color.parseColor("#000000"));
-
-                     btnData1.setEnabled(true);
-                     btnData1.setBackgroundResource(R.drawable.shape_white_gray);
-                     btnData1.setTextColor(Color.parseColor("#000000"));
-
+                     if(data2==0){
+                         btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
+                     }else {
+                         btnData1.setEnabled(true);
+                         btnData1.setBackgroundResource(R.drawable.shape_white_gray);
+                         btnData1.setTextColor(Color.parseColor("#000000"));
+                     }
                  }
                  isCheck = !isCheck;
                  isPress=!isPress;
@@ -564,16 +569,15 @@ public class FillInScenicOrderActivity extends Activity {
             Toast.makeText(mActivity, "手机号不能为空", Toast.LENGTH_SHORT).show();
         } else if (!isTel) {
             Toast.makeText(mActivity, "手机号格式不对", Toast.LENGTH_SHORT).show();
-        } else  if(TextUtils.isEmpty(etIdcard.getText())){
+        } else  if(TextUtils.isEmpty(etIdcard.getText())&& (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7)){
             Toast.makeText(mActivity, "身份证号不能为空", Toast.LENGTH_SHORT).show();
-        }else if(!isID){
+        }else if(!isID&& (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7)){
             Toast.makeText(mActivity, "身份证号为非法格式", Toast.LENGTH_SHORT).show();
-        } else if( mPassnersList.size()==0||mPassnersList.size()<intTicketNum){
+        } else if( mPassnersList.size()==0&&mPassnersList.size()<intTicketNum&&(custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)){
             Toast.makeText(mActivity, "您还需要填写"+num+"个出游人信息", Toast.LENGTH_SHORT).show();
-        } else if(mPassnersList.size()>intTicketNum){
+        } else if(mPassnersList.size()>intTicketNum&&(custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)){
             Toast.makeText(mActivity, "您需要删除"+num1+"个出游人信息", Toast.LENGTH_SHORT).show();
-        }
-        else {
+        } else {
             Log.i("FillInScenicOrderAct", "success");
             getDataFromServer();
         }
@@ -759,7 +763,7 @@ public class FillInScenicOrderActivity extends Activity {
             //MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice + "");
             // nowData = data.getStringExtra("nowData");
            // nowPrice = data.getStringExtra("nowPrice");
-            mTvDaysSelector.setText(nowData+"\n"+"¥"+nowPrice+"起");
+            mTvDaysSelector.setText(moreData+"\n"+"¥"+nowPrice+"起");
             mTvDaysSelector.setBackgroundResource(R.drawable.shape_org);
             mTvDaysSelector.setTextColor(Color.parseColor("#ffffff"));
             //mTvZxzfMoney.setText("¥"+nowData+"起");
