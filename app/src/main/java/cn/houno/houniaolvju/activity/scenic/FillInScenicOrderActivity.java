@@ -114,6 +114,8 @@ public class FillInScenicOrderActivity extends Activity {
     Button btnData;
     @Bind(R.id.btn_data1)
     Button btnData1;
+    @Bind(R.id.tv_card)
+    TextView tvCard;
    /* @Bind(R.id.btn_data2)
     Button btnData2;*/
 
@@ -140,22 +142,23 @@ public class FillInScenicOrderActivity extends Activity {
     private int position;
     private String nowData;
     private PersonInfoAdapter madapter;
-    private boolean isCheck=true;
+    private boolean isCheck = true;
     private boolean isPress;
 
 
     //private List<GetScenicPassengerBean.DataBean> touristDataBean;
     private List<GetScenicPassengerBean.DataBean> mPassnersList = new ArrayList<>();
+    //private ArrayList<String> list = new ArrayList<>();
     private OptionsPickerView pvOption;
-    private ArrayList<String> list = new ArrayList<>();
     private int data1;
     private int data2;
     private int nowPrice;
-    private  List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>  Pricecalendarlist=new ArrayList<>();
+    private List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean> Pricecalendarlist = new ArrayList<>();
     private String departDate1;
     private String departDate2;
     private Bundle bundle;
     private String moreData;
+    private String[] idCard={"22","11","44","55"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -173,6 +176,7 @@ public class FillInScenicOrderActivity extends Activity {
     private void initView() {
 
     }
+
     private void initData() {
         isLogined = PrefUtils.getBoolean(mActivity, "isLogined", false);
         // custInfoLimit = Integer.parseInt(intent.getStringExtra("custInfoLimit"));
@@ -197,29 +201,29 @@ public class FillInScenicOrderActivity extends Activity {
         mTicketTitle = intent.getStringExtra("ticketTitle");
         mScenicId = intent.getStringExtra("sid");
         mTicketId = intent.getStringExtra("tid");
-        Pricecalendarlist= (List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>) intent.getSerializableExtra("pricecalendar");
+        Pricecalendarlist = (List<ScenicDetailBean.DataBean.InfoBean.TicketlistBean.TicketlistinfoBean.PricecalendarBean>) intent.getSerializableExtra("pricecalendar");
         //获得今天和明天的日期数据
-        departDate1=Pricecalendarlist.get(0).getDepartDate();
-        departDate2=Pricecalendarlist.get(1).getDepartDate();
+        departDate1 = Pricecalendarlist.get(0).getDepartDate();
+        departDate2 = Pricecalendarlist.get(1).getDepartDate();
 
-         data1 = intent.getIntExtra("today",0);
-         data2=intent.getIntExtra("minday",0);
+        data1 = intent.getIntExtra("today", 0);
+        data2 = intent.getIntExtra("minday", 0);
 
-        if(data1==0){
+        if (data1 == 0) {
             btnData.setText("今天不可定");
             btnData.setEnabled(false);
             btnData.setBackgroundResource(R.drawable.shape_dark_gray);
             //btnData.setBackgroundColor(Color.parseColor("#dddddd"));
-        }else {
-            btnData.setText("今天¥"+data1);
+        } else {
+            btnData.setText("今天¥" + data1);
         }
-        if(data2==0){
+        if (data2 == 0) {
             btnData1.setText("明天不可定");
             btnData1.setEnabled(false);
             btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
-           // btnData1.setBackgroundColor(Color.parseColor("#dddddd"));
-        }else {
-            btnData1.setText("明天¥"+data2);
+            // btnData1.setBackgroundColor(Color.parseColor("#dddddd"));
+        } else {
+            btnData1.setText("明天¥" + data2);
         }
         //btnData1.setText("明天¥"+data2);
         price = intent.getIntExtra("price", 0);
@@ -228,98 +232,95 @@ public class FillInScenicOrderActivity extends Activity {
         mTvTopbarTitle.setText(mScenicTitle);
         mTvScenicOrderTitle.setText(mTicketTitle);
         mTvScenicOrderAddress.setText(mScenicAddress);
-       // MyText2Utils.formatTicketPrice(mActivity, mTvScenicOrderPrice, price + "");
+        // MyText2Utils.formatTicketPrice(mActivity, mTvScenicOrderPrice, price + "");
         //allPrice = price;
-        if(isPress){
-            MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, price*intTicketNum + "");
-        }else {
+        if (isPress) {
+            MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, price * intTicketNum + "");
+        } else {
             MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
         }
         mCheckDate = DateUtil.getNowTime(DateUtil.DATE_SMALL_STR);
         mCheckWeek = DateUtil.getWeek(mCheckDate);
 
-        if(moreData!=null){
-            MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice*intTicketNum + "");
+        if (moreData != null) {
+            MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice * intTicketNum + "");
         }
         // mTvDaysSelector.setText(nowData);
         madapter = new PersonInfoAdapter(mActivity, mPassnersList, intTicketNum);
         lvPerson.setAdapter(madapter);
 
-        list.add("身份证▼");
-        list.add("护照▼");
-        list.add("军官证▼");
-        list.add("港澳通行证▼");
-        list.add("台胞证▼");
+
 
     }
+
     private void initEvent() {
         mBtnReferSub.setOnClickListener(new TicketClick());
         mBtnReferAdd.setOnClickListener(new TicketClick());
         //btnData.setEnabled(btnData.isClickable());
-       if(data1!=0){
+        if (data1 != 0) {
 
-           btnData.setOnClickListener(new View.OnClickListener() {
-               @Override
-               public void onClick(View view) {
-                   if (isCheck) {
-                       //设置选中后和未选中的按键状态
-                       mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
-                       mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
-                       btnData.setBackgroundResource(R.drawable.shape_org);
-                       btnData.setTextColor(Color.parseColor("#ffffff"));
-                       MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data1*intTicketNum + "");
+            btnData.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (isCheck) {
+                        //设置选中后和未选中的按键状态
+                        mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                        mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
+                        btnData.setBackgroundResource(R.drawable.shape_org);
+                        btnData.setTextColor(Color.parseColor("#ffffff"));
+                        MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data1 * intTicketNum + "");
 
-                       btnData1.setEnabled(false);
-                       btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
-                       btnData1.setTextColor(Color.parseColor("#FFAEA9A9"));
+                        btnData1.setEnabled(false);
+                        btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
+                        btnData1.setTextColor(Color.parseColor("#FFAEA9A9"));
 
 
-                       //btnData1.setBackgroundColor(Color.parseColor("#ffffff"));
+                        //btnData1.setBackgroundColor(Color.parseColor("#ffffff"));
 
-                       mTvDaysSelector.setEnabled(false);
-                       mTvDaysSelector.setBackgroundResource(R.drawable.shape_dark_gray);
-                       mTvDaysSelector.setTextColor(Color.parseColor("#FFAEA9A9"));
-                       nowData=departDate1;
-                   } else {
-                       if(data2==0){
+                        mTvDaysSelector.setEnabled(false);
+                        mTvDaysSelector.setBackgroundResource(R.drawable.shape_dark_gray);
+                        mTvDaysSelector.setTextColor(Color.parseColor("#FFAEA9A9"));
+                        nowData = departDate1;
+                    } else {
+                        if (data2 == 0) {
 
-                           btnData.setBackgroundResource(R.drawable.shape_white_gray);
-                           btnData.setTextColor(Color.parseColor("#000000"));
-                           MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+                            btnData.setBackgroundResource(R.drawable.shape_white_gray);
+                            btnData.setTextColor(Color.parseColor("#000000"));
+                            MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
                          /*  btnData1.setEnabled(true);
                            btnData1.setBackgroundResource(R.drawable.shape_white_gray);
                            btnData1.setTextColor(Color.parseColor("#000000"));
-*/                          btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
-                           //btnData1.setBackgroundColor(Color.parseColor("#ffffff"));
-                           mTvDaysSelector.setEnabled(true);
-                           mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
-                           mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
-                       }else {
-                           btnData.setBackgroundResource(R.drawable.shape_white_gray);
-                           btnData.setTextColor(Color.parseColor("#000000"));
-                           MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
-                           btnData1.setEnabled(true);
-                           btnData1.setBackgroundResource(R.drawable.shape_white_gray);
-                           btnData1.setTextColor(Color.parseColor("#000000"));
+*/
+                            btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
+                            //btnData1.setBackgroundColor(Color.parseColor("#ffffff"));
+                            mTvDaysSelector.setEnabled(true);
+                            mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                            mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
+                        } else {
+                            btnData.setBackgroundResource(R.drawable.shape_white_gray);
+                            btnData.setTextColor(Color.parseColor("#000000"));
+                            MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+                            btnData1.setEnabled(true);
+                            btnData1.setBackgroundResource(R.drawable.shape_white_gray);
+                            btnData1.setTextColor(Color.parseColor("#000000"));
 
-                           //btnData1.setBackgroundColor(Color.parseColor("#ffffff"));
-                           mTvDaysSelector.setEnabled(true);
-                           mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
-                           mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
-                       }
-
-
-
-                   }
-                   isCheck = !isCheck;
-                   isPress=!isPress;
-               }
-           });
-
-       }
+                            //btnData1.setBackgroundColor(Color.parseColor("#ffffff"));
+                            mTvDaysSelector.setEnabled(true);
+                            mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                            mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
+                        }
 
 
-        if(data2!=0) {
+                    }
+                    isCheck = !isCheck;
+                    isPress = !isPress;
+                }
+            });
+
+        }
+
+
+        if (data2 != 0) {
             btnData1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -329,7 +330,7 @@ public class FillInScenicOrderActivity extends Activity {
 
                         btnData1.setBackgroundResource(R.drawable.shape_org);
                         btnData1.setTextColor(Color.parseColor("#ffffff"));
-                        MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2*intTicketNum + "");
+                        MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2 * intTicketNum + "");
                         btnData.setEnabled(false);
                         btnData.setBackgroundResource(R.drawable.shape_dark_gray);
                         btnData.setTextColor(Color.parseColor("#FFAEA9A9"));
@@ -341,7 +342,7 @@ public class FillInScenicOrderActivity extends Activity {
 
                         nowData = departDate2;
                     } else {
-                        if (data1==0) {
+                        if (data1 == 0) {
                             btnData.setBackgroundResource(R.drawable.shape_dark_gray);
                             //btnData.setEnabled(true);
                             btnData1.setBackgroundResource(R.drawable.shape_white_gray);
@@ -357,7 +358,7 @@ public class FillInScenicOrderActivity extends Activity {
                             //mTvDaysSelector.setBackgroundResource(R.drawable.shape_dark_gray);
 
                             //btnData.setTextColor(Color.parseColor("#dddddd"));
-                        }else {
+                        } else {
                             btnData1.setBackgroundResource(R.drawable.shape_white_gray);
                             btnData1.setTextColor(Color.parseColor("#000000"));
 
@@ -374,58 +375,58 @@ public class FillInScenicOrderActivity extends Activity {
 
                     }
                     isCheck = !isCheck;
-                    isPress=!isPress;
+                    isPress = !isPress;
 
                 }
             });
         }
-         mTvDaysSelector.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 if(isCheck){
-                     Intent date = new Intent();
-                     date.putExtra("position", position);
-                     date.putExtra("sid", mScenicId);
-                     date.putExtra("pricecalendars", (Serializable) Pricecalendarlist);
-                     date.setClass(mActivity, MoreInfoCalendarActivity.class);
-                     startActivityForResult(date, 301);
-                     //
+        mTvDaysSelector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isCheck) {
+                    Intent date = new Intent();
+                    date.putExtra("position", position);
+                    date.putExtra("sid", mScenicId);
+                    date.putExtra("pricecalendars", (Serializable) Pricecalendarlist);
+                    date.setClass(mActivity, MoreInfoCalendarActivity.class);
+                    startActivityForResult(date, 301);
+                    //
                    /*  mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
                      mTvDaysSelector.setTextColor(Color.parseColor("#000000"));*/
 
-                     mTvDaysSelector.setBackgroundResource(R.drawable.shape_org);
-                     mTvDaysSelector.setTextColor(Color.parseColor("#ffffff"));
-                     MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2 + "");
-                     btnData.setEnabled(false);
-                     btnData.setBackgroundResource(R.drawable.shape_dark_gray);
-                     btnData.setTextColor(Color.parseColor("#FFAEA9A9"));
+                    mTvDaysSelector.setBackgroundResource(R.drawable.shape_org);
+                    mTvDaysSelector.setTextColor(Color.parseColor("#ffffff"));
+                    MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2 + "");
+                    btnData.setEnabled(false);
+                    btnData.setBackgroundResource(R.drawable.shape_dark_gray);
+                    btnData.setTextColor(Color.parseColor("#FFAEA9A9"));
 
-                     btnData1.setEnabled(false);
-                     btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
-                     btnData1.setTextColor(Color.parseColor("#FFAEA9A9"));
-                 }else {
-                     mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
-                     mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
+                    btnData1.setEnabled(false);
+                    btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
+                    btnData1.setTextColor(Color.parseColor("#FFAEA9A9"));
+                } else {
+                    mTvDaysSelector.setBackgroundResource(R.drawable.shape_white_gray);
+                    mTvDaysSelector.setTextColor(Color.parseColor("#000000"));
 
-                     MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
-                    if(data1==0){
+                    MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, 0 + "");
+                    if (data1 == 0) {
                         btnData.setBackgroundResource(R.drawable.shape_dark_gray);
-                    }else {
+                    } else {
                         btnData.setEnabled(true);
                         btnData.setBackgroundResource(R.drawable.shape_white_gray);
                         btnData.setTextColor(Color.parseColor("#000000"));
                     }
 
-                     if(data2==0){
-                         btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
-                     }else {
-                         btnData1.setEnabled(true);
-                         btnData1.setBackgroundResource(R.drawable.shape_white_gray);
-                         btnData1.setTextColor(Color.parseColor("#000000"));
-                     }
-                 }
-                 isCheck = !isCheck;
-                 isPress=!isPress;
+                    if (data2 == 0) {
+                        btnData1.setBackgroundResource(R.drawable.shape_dark_gray);
+                    } else {
+                        btnData1.setEnabled(true);
+                        btnData1.setBackgroundResource(R.drawable.shape_white_gray);
+                        btnData1.setTextColor(Color.parseColor("#000000"));
+                    }
+                }
+                isCheck = !isCheck;
+                isPress = !isPress;
 
                 /* if (ischeck) {
                      //MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice + "");
@@ -439,8 +440,8 @@ public class FillInScenicOrderActivity extends Activity {
                      btnData.setEnabled(true);
                  }
                  ischeck = !ischeck;*/
-             }
-         });
+            }
+        });
         /*btnData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -498,22 +499,26 @@ public class FillInScenicOrderActivity extends Activity {
                 Intent intent1 = new Intent(this, PersonsListActivity.class);
                 intent1.putExtra("persons", intTicketNum);
                 startActivityForResult(intent1, 666);
-                //5MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, allPrice+"");
-               // MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2*intTicketNum+"");
+
 
                 break;
         }
     }
 
     private void showPickerView() {
-
+        final ArrayList<String> list = new ArrayList<>();
+        list.add("身份证");
+        list.add("护照");
+        list.add("军官证");
+        list.add("港澳通行证");
+        list.add("台胞证");
 
         pvOption = new OptionsPickerView.Builder(this, new OptionsPickerView.OnOptionsSelectListener() {
             @Override
             public void onOptionsSelect(int options1, int options2, int options3, View v) {
 
                 String sex = list.get(options1);
-                tvIdcard.setText(sex+"▼");
+                tvIdcard.setText(sex);
             }
 
         }).setTitleText("请选择证件类型")
@@ -562,21 +567,21 @@ public class FillInScenicOrderActivity extends Activity {
         } else {
             isID = false;
         }
-         int num=intTicketNum-mPassnersList.size();
-         int num1=mPassnersList.size()-intTicketNum;
+        int num = intTicketNum - mPassnersList.size();
+        int num1 = mPassnersList.size() - intTicketNum;
 
         if (TextUtils.isEmpty(mEtJdPhone.getText())) {
             Toast.makeText(mActivity, "手机号不能为空", Toast.LENGTH_SHORT).show();
         } else if (!isTel) {
             Toast.makeText(mActivity, "手机号格式不对", Toast.LENGTH_SHORT).show();
-        } else  if(TextUtils.isEmpty(etIdcard.getText())&& (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7)){
+        } else if (TextUtils.isEmpty(etIdcard.getText()) && (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7)) {
             Toast.makeText(mActivity, "身份证号不能为空", Toast.LENGTH_SHORT).show();
-        }else if(!isID&& (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7)){
+        } else if (!isID && (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7)) {
             Toast.makeText(mActivity, "身份证号为非法格式", Toast.LENGTH_SHORT).show();
-        } else if( /*mPassnersList.size()==0&&*/mPassnersList.size()<intTicketNum&&(custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)){
-            Toast.makeText(mActivity, "您还需要填写"+num+"个出游人信息", Toast.LENGTH_SHORT).show();
-        } else if(mPassnersList.size()>intTicketNum&&(custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)){
-            Toast.makeText(mActivity, "您需要删除"+num1+"个出游人信息", Toast.LENGTH_SHORT).show();
+        } else if ( /*mPassnersList.size()==0&&*/mPassnersList.size() < intTicketNum && (custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)) {
+            Toast.makeText(mActivity, "您还需要填写" + num + "个出游人信息", Toast.LENGTH_SHORT).show();
+        } else if (mPassnersList.size() > intTicketNum && (custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)) {
+            Toast.makeText(mActivity, "您需要删除" + num1 + "个出游人信息", Toast.LENGTH_SHORT).show();
         } else {
             Log.i("FillInScenicOrderAct", "success");
             getDataFromServer();
@@ -594,16 +599,16 @@ public class FillInScenicOrderActivity extends Activity {
         RequestParams params = new RequestParams(Constants.SCENIC_ORDER_URL);
         params.addBodyParameter("userid", userid);
         params.addBodyParameter("info[productId]", mTicketId);
-        if(moreData!=null){
+        if (moreData != null) {
             params.addBodyParameter("info[startTime]", moreData);
-        }else {
-            params.addBodyParameter("info[startTime]",nowData);
+        } else {
+            params.addBodyParameter("info[startTime]", nowData);
         }
         params.addBodyParameter("info[productname]", mTicketTitle);
         params.addBodyParameter("contact[tel]", mEtJdPhone.getText().toString().trim());
         params.addBodyParameter("contact[name]", mEtJdName.getText().toString().trim());
         params.addBodyParameter("info[bookNumber]", mTvReferNum.getText().toString().trim());
-        params.addBodyParameter("info[totalprice]", price*intTicketNum + "");
+        params.addBodyParameter("info[totalprice]", price * intTicketNum + "");
         params.addBodyParameter(" info[address]", mScenicAddress);
 
         //custInfoLimit=2、3、6、7时,传游客资料表
@@ -621,15 +626,15 @@ public class FillInScenicOrderActivity extends Activity {
             //params.addBodyParameter("contact[identityType]", mPassnersList.get(i).getPhone());
             params.addBodyParameter("contact[identityNo]", etIdcard.getText().toString().trim());
             String id = tvIdcard.getText().toString();
-            if (id.equals(list.get(0))) {
+            if (id.equals("身份证")) {
                 params.addBodyParameter("contact[identityType]", "1");
-            } else if (id.equals(list.get(1))) {
+            } else if (id.equals("护照")) {
                 params.addBodyParameter("contact[identityType]", "2");
-            } else if (id.equals(list.get(2))) {
+            } else if (id.equals("军官证")) {
                 params.addBodyParameter("contact[identityType]", "3");
-            } else if (id.equals(list.get(3))) {
+            } else if (id.equals("港澳通行证")) {
                 params.addBodyParameter("contact[identityType]", "4");
-            } else if (id.equals(list.get(4))) {
+            } else if (id.equals("台胞证")) {
                 params.addBodyParameter("contact[identityType]", "5");
             }
         }
@@ -741,10 +746,10 @@ public class FillInScenicOrderActivity extends Activity {
                     tvNumberPerson.setText("出游人（需要填写" + intTicketNum + "个出游人）");
                 }
             }
-             if(isPress){
-                 allPrice =price * intTicketNum;
-                 MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, allPrice + "");
-             }
+            if (isPress) {
+                allPrice = price * intTicketNum;
+                MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, allPrice + "");
+            }
             //allPrice = price * intTicketNum;
         }
     }
@@ -757,13 +762,13 @@ public class FillInScenicOrderActivity extends Activity {
            /* Bundle extras = data.getExtras();
             mCheckDate = extras.getString("dateIn");
             mCheckWeek = extras.getString("dateInWeek");*/
-             bundle = data.getBundleExtra("bundle"); //city即为回传的值
-             moreData = bundle.getString("nowData");
-             nowPrice = Integer.parseInt(bundle.getString("nowPrice"));
+            bundle = data.getBundleExtra("bundle"); //city即为回传的值
+            moreData = bundle.getString("nowData");
+            nowPrice = Integer.parseInt(bundle.getString("nowPrice"));
             //MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, nowPrice + "");
             // nowData = data.getStringExtra("nowData");
-           // nowPrice = data.getStringExtra("nowPrice");
-            mTvDaysSelector.setText(moreData+"\n"+"¥"+nowPrice+"起");
+            // nowPrice = data.getStringExtra("nowPrice");
+            mTvDaysSelector.setText(moreData + "\n" + "¥" + nowPrice + "起");
             mTvDaysSelector.setBackgroundResource(R.drawable.shape_org);
             mTvDaysSelector.setTextColor(Color.parseColor("#ffffff"));
             //mTvZxzfMoney.setText("¥"+nowData+"起");
@@ -772,14 +777,14 @@ public class FillInScenicOrderActivity extends Activity {
             mPassnersList = (ArrayList<GetScenicPassengerBean.DataBean>) data.getSerializableExtra("list");
             madapter.setData(mPassnersList);
             //mTvZxzfMoney.setText(allPrice);
-           //MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2*intTicketNum+"");
+            //MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2*intTicketNum+"");
         }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-       // MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2*intTicketNum+"");
+        // MyText2Utils.formatTicketPrice(mActivity, mTvZxzfMoney, data2*intTicketNum+"");
         initData();
     }
 

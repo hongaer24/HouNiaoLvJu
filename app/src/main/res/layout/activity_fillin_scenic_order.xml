@@ -335,17 +335,24 @@
 
                 <TextView
                     android:id="@+id/tv_idcard"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="身份证▼"
+                    android:text="身份证"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="▼"
                     android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/et_idcard"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_weight="3"
+                    android:layout_marginLeft="15dp"
                     android:background="@null"
                     android:gravity="center_vertical"
                     android:hint="用于景区入园等凭证"
