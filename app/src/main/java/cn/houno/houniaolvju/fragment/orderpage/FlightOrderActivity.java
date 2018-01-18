@@ -12,6 +12,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -88,7 +89,7 @@ public class FlightOrderActivity extends Activity {
     @Bind(R.id.tv_change_refund_rule)
     TextView tvChangeRefundRule;
     @Bind(R.id.tv_Change_sign)
-    Border2TextView tvChangeSign;
+    Button tvChangeSign;
     @Bind(R.id.tv_total_price)
     TextView tvTotalPrice;
     @Bind(R.id.tv_orderno)
@@ -98,15 +99,15 @@ public class FlightOrderActivity extends Activity {
     @Bind(R.id.tv_phone)
     TextView tvPhone;
     @Bind(R.id.tv_change_pay)
-    Border2TextView tvChangePay;
+    Button tvChangePay;
     @Bind(R.id.tv_pay)
-    Border2TextView tvPay;
+    Button tvPay;
     @Bind(R.id.tv_refund)
-    Border2TextView tvRefund;
+    Button tvRefund;
     @Bind(R.id.tv_link_man)
     TextView tvLinkMan;
     @Bind(R.id.tv_order_cancel)
-    Border2TextView tvOrderCancel;
+    Button tvOrderCancel;
 
 
     private final int GET_MODIFY_REFUND_PRICE = 101; //退改签价格说明

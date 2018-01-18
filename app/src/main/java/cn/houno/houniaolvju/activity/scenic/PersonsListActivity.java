@@ -187,9 +187,11 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 finish();
                 break;
             case R.id.add_address_btn:
-                mIntent.putExtra("list", (Serializable) GetScenicBeanList);
+                //mIntent.putExtra("list", (Serializable) GetScenicBeanList);
+                mIntent.putExtra("list", (Serializable) madapter.getSelectList());
                 setResult(RESULT_OK, mIntent);
                 finish();
+
                 break;
             case R.id.tv_add_person:
                 Intent intent = new Intent(this, PersonsEditActivity.class);
@@ -225,7 +227,7 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 checkdeNum++;
                 tvTitlePerson.setText("您还需选择" + variaNum + "个出游人（"+checkdeNum+"/" + newNum + "）");
                 GetScenicBean.setChoosed(ischecked);
-                GetScenicBeanList.add(GetScenicBean);
+               // GetScenicBeanList.add(GetScenicBean);
 
             }
 
@@ -236,10 +238,19 @@ public class PersonsListActivity extends AppCompatActivity implements PersonsLis
                 checkdeNum--;
                 tvTitlePerson.setText("您还需选择" + variaNum + "个出游人（"+checkdeNum+"/" + newNum + "）");
                 GetScenicBean.setChoosed(ischecked);
-                PassengerStorage.getInstance().updataData(GetScenicBean);
+                //PassengerStorage.getInstance().updataData(GetScenicBean);
             }
 
         }
+
+       /* for(int i=0;i<GetScenicBeanList.size();i++){
+            if( GetScenicBean.isChoosed()){
+                GetScenicBeanList.add(GetScenicBean);
+            }else {
+
+            }
+        }*/
+
         if(variaNum==0){
             addAddressBtn.setBackgroundResource(R.drawable.selector_orgs_btn);
             addAddressBtn.setClickable(true);

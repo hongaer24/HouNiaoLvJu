@@ -247,11 +247,12 @@ public class EndOrderPager extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        System.out.println("EndOrderPage:onResume");
+        getDataFromServer();
+       /* System.out.println("EndOrderPage:onResume");
         if (refresh) {
             refresh = false;
             getDataFromServer();
-        }
+        }*/
     }
 
 

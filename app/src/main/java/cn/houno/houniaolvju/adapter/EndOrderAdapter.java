@@ -98,7 +98,7 @@ public class EndOrderAdapter extends BaseAdapter {
             holder.tvCheckDateTxt.setText("出发时间： ");
             holder.tvCheckDate.setText(depTime);
             holder.ivOrderType.setImageResource(R.drawable.label_order_train);
-            holder.tvOrderType.setText("火车票");
+            holder.tvOrderType.setText("火车票|");
             holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
 
             String depName = mList.get(position).getDetail().getFrom_station_name();
@@ -118,7 +118,7 @@ public class EndOrderAdapter extends BaseAdapter {
             holder.llAirlines.setVisibility(View.VISIBLE);
             holder.tvCheckDateTxt.setText("出发时间：");
             holder.ivOrderType.setImageResource(R.drawable.label_order_flight);
-            holder.tvOrderType.setText("机票");
+            holder.tvOrderType.setText("机票 |");
             holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice());
 
             String depName = mList.get(position).getDetail().getDepname();
@@ -145,7 +145,7 @@ public class EndOrderAdapter extends BaseAdapter {
             holder.llOrderNumber.setVisibility(View.VISIBLE);
             holder.llAirlines.setVisibility(View.GONE);
             holder.ivOrderType.setImageResource(R.drawable.label_order_activity);
-            holder.tvOrderType.setText("活动");
+            holder.tvOrderType.setText("活动 |");
 
             holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
             holder.tvOrderNumberTxt.setText("预订人数：");
@@ -164,7 +164,7 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvOrderProjectTxt.setText("预订项目：");
                 holder.tvOrderNumberTxt.setText("预订人数：");
                 holder.ivOrderType.setImageResource(R.drawable.label_order_scenic);
-                holder.tvOrderType.setText("景点");
+                holder.tvOrderType.setText("景点 |");
                 if(mList.get(position).getDetail()!=null){
                     holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
                     holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
@@ -181,15 +181,15 @@ public class EndOrderAdapter extends BaseAdapter {
                 if (TextUtils.equals(type, "hotel")) {
                     holder.tvOrderProjectTxt.setText("预订房型：");
                     holder.ivOrderType.setImageResource(R.drawable.label_order_hotel);
-                    holder.tvOrderType.setText("酒店");
+                    holder.tvOrderType.setText("酒店 |");
                 } else if (TextUtils.equals(type, "groupon")) {
                     holder.tvOrderProjectTxt.setText("预订房型：");
                     holder.ivOrderType.setImageResource(R.drawable.label_order_pintuan);
-                    holder.tvOrderType.setText("拼团");
+                    holder.tvOrderType.setText("拼团 |");
                 } else {
                     holder.tvOrderProjectTxt.setText("预订项目：");
                     holder.ivOrderType.setImageResource(R.drawable.label_order_yiyang);
-                    holder.tvOrderType.setText("异养");
+                    holder.tvOrderType.setText("异养 |");
                 }
 
                 holder.tvOrderNumber.setText(mList.get(position).getDays() + "晚");
@@ -223,7 +223,6 @@ public class EndOrderAdapter extends BaseAdapter {
                 holder.tvPayStatus.setText("已完成");
             }
         } else if(TextUtils.equals(type, "toursscenic")) {
-
 
             if (TextUtils.equals(status, "1") && TextUtils.equals(pay_status, "0") || TextUtils.equals(status, "10") && TextUtils.equals(pay_status, "0")) {
                 holder.tvPayStatus.setText("已取消");

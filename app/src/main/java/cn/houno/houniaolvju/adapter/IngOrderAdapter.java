@@ -82,7 +82,7 @@ public class IngOrderAdapter extends BaseAdapter {
             holder.llAirlines.setVisibility(View.VISIBLE);
             holder.tvCheckDateTxt.setText("出发时间： ");
             holder.ivOrderType.setImageResource(R.drawable.label_order_train);
-            holder.tvOrderType.setText("火车票");
+            holder.tvOrderType.setText("火车票|");
             String payStatus = mList.get(position).getPay_status();
             if (TextUtils.equals(payStatus, "1")) {//已支付
                 holder.tvPayStatus.setText("已支付");
@@ -111,7 +111,7 @@ public class IngOrderAdapter extends BaseAdapter {
             holder.llAirlines.setVisibility(View.VISIBLE);
             holder.tvCheckDateTxt.setText("出发时间： ");
             holder.ivOrderType.setImageResource(R.drawable.label_order_flight);
-            holder.tvOrderType.setText("机票");
+            holder.tvOrderType.setText("机票 |");
             String payStatus = mList.get(position).getPay_status();
             if (TextUtils.equals(payStatus, "1")) {//已支付
                 holder.tvPayStatus.setText("已支付");
@@ -143,7 +143,7 @@ public class IngOrderAdapter extends BaseAdapter {
             holder.llOrderNumber.setVisibility(View.VISIBLE);
             holder.llAirlines.setVisibility(View.GONE);
             holder.ivOrderType.setImageResource(R.drawable.label_order_activity);
-            holder.tvOrderType.setText("活动");
+            holder.tvOrderType.setText("活动 |");
             String payStatus = mList.get(position).getPay_status();
             if (TextUtils.equals(payStatus, "1")) {//已支付
                 holder.tvPayStatus.setText("已支付");
@@ -185,8 +185,11 @@ public class IngOrderAdapter extends BaseAdapter {
                 else if(TextUtils.equals(payStatus, "1")&&TextUtils.equals(Status, "6")) {
                     holder.tvPayStatus.setText("退票中");
                 }
-                holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
-                holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
+                if(mList.get(position).getDetail()!=null){
+                    holder.tvOrderTitle.setText(mList.get(position).getDetail().getTitle());
+                    holder.tvOrderProject.setText(mList.get(position).getDetail().getRoomname());
+                }
+
                 holder.tvOrderNumber.setText(mList.get(position).getNum() + "人");
                 if(mList.get(position).getPrice()!=null){
                     holder.tvOrderPrice.setText("¥"+mList.get(position).getPrice().trim());
@@ -201,7 +204,7 @@ public class IngOrderAdapter extends BaseAdapter {
                 if (TextUtils.equals(type, "hotel")) {
                     holder.tvOrderProjectTxt.setText("预订房型：");
                     holder.ivOrderType.setImageResource(R.drawable.label_order_hotel);
-                    holder.tvOrderType.setText("酒店");
+                    holder.tvOrderType.setText("酒店 |");
                 } else if (TextUtils.equals(type, "groupon")) {
                     holder.tvOrderProjectTxt.setText("预订房型：");
                     holder.ivOrderType.setImageResource(R.drawable.label_order_pintuan);
@@ -209,7 +212,7 @@ public class IngOrderAdapter extends BaseAdapter {
                 } else {
                     holder.tvOrderProjectTxt.setText("预订项目：");
                     holder.ivOrderType.setImageResource(R.drawable.label_order_yiyang);
-                    holder.tvOrderType.setText("异养");
+                    holder.tvOrderType.setText("异养 |");
                 }
 
                 String payStatus = mList.get(position).getPay_status();

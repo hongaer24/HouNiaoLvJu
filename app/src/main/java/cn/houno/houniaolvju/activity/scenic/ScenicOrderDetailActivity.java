@@ -396,8 +396,8 @@ public class ScenicOrderDetailActivity extends Activity implements OnItemClickLi
             //type = "tuniuscenic";
             tvOrdernoTitle.setText(scenicName);
             tvOrderName.setText(productname);
-            tvCount.setText("门票数量：" + mRoomCount + "张");
-            tvOrderTime.setText("出游时间" + mCheckInDate);
+            tvCount.setText("门票数量: " + mRoomCount + "张");
+            tvOrderTime.setText("出游时间: " + mCheckInDate);
             tvAddress.setText("地址： " + address);
             getTvOrderDate.setText(result);
             //tvTime.setText(Html.fromHtml("预定时间：<font color=\"#009A44\">" + mCheckInDate + "</font>"));

@@ -10,13 +10,17 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.houno.houniaolvju.R;
 import cn.houno.houniaolvju.bean.GetScenicPassengerBean;
+import cn.houno.houniaolvju.bean.PassengersListBean;
 import cn.houno.houniaolvju.utils.PassengerStorage;
 import cn.houno.houniaolvju.utils.PrefUtils;
 
@@ -40,6 +44,9 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
     CheckBox checkBox;
     private GetScenicPassengerBean.DataBean touristsBean;
     private CheckInterface checkInterface;
+    private List<GetScenicPassengerBean.DataBean>  mSelectList = new ArrayList<>(); //选中列表
+    public HashMap<Integer, Boolean> mIsChecked = new HashMap<>();   //选中数
+    private Boolean isChecked;
     //private PersonInfoInterface personInfoInterface;
 
 
@@ -51,6 +58,9 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
         mInflate = LayoutInflater.from(context);
         variaNum = PrefUtils.getInt(context, "variaNum", 0);
         constantNum=variaNum;
+        for (int i = 0; i < datas.size(); i++) {
+            mIsChecked.put(i, false);
+        }
 
     }
 
@@ -63,6 +73,11 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
     public void setData(List<GetScenicPassengerBean.DataBean> touristsMessageBeanList) {
         if (touristsMessageBeanList == null) return;
         this.datas = touristsMessageBeanList;
+        for (int i = 0; i < datas.size(); i++) {
+            if (mIsChecked.get(i) == null) {
+                mIsChecked.put(i, false);
+            }
+        }
         this.notifyDataSetChanged();
     }
 
@@ -115,6 +130,7 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
                       }else {
                           constantNum++;
                       }
+                      mIsChecked.put(position, ((CheckBox) v).isChecked());
                   }else if(constantNum==0){
                       if (touristsBean.isChoosed()) {
                           holder.checkBox.setChecked(((CheckBox) v).isChecked());
@@ -124,8 +140,11 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
                           } else {
                               constantNum++;
                           }
+                          mIsChecked.put(position, ((CheckBox) v).isChecked());
                       } else {
                           holder.checkBox.setChecked(false);
+                          Toast.makeText(context,"您最多能选择"+personNum+"个出游人",Toast.LENGTH_SHORT).show();
+
                       }
                   }
                   touristsBean.setChoosed(((CheckBox) v).isChecked());
@@ -149,7 +168,15 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
         return convertView;
     }
 
-
+    public List<GetScenicPassengerBean.DataBean>  getSelectList() {
+        //获取选中的列表返回
+        for (int i = 0; i < mIsChecked.size(); i++) {
+            if (mIsChecked.get(i)) {
+                    mSelectList.add(datas.get(i));
+            }
+        }
+        return mSelectList;
+    }
 
     @Override
     public void onClick(View view) {
@@ -169,6 +196,17 @@ public class PersonsListAdapter extends BaseAdapter implements View.OnClickListe
 
         }
     }
+  /*  public List<PassengersListBean.DataBean> getSelectList() {
+        //获取选中的列表返回
+        for (int i = 0; i < mIsChecked.size(); i++) {
+            if (mIsChecked.get(i)) {
+                if (!mList.get(i).getBirthday().isEmpty()&&!mList.get(i).getPhone().isEmpty()){
+                    mSelectList.add(mList.get(i));
+                }
+            }
+        }
+        return mSelectList;
+    }*/
 
 
     static class ViewHolder {

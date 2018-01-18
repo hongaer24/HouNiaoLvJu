@@ -573,7 +573,7 @@ public class FillInScenicOrderActivity extends Activity {
             Toast.makeText(mActivity, "身份证号不能为空", Toast.LENGTH_SHORT).show();
         }else if(!isID&& (custInfoLimit == 4 || custInfoLimit == 6 || custInfoLimit == 7)){
             Toast.makeText(mActivity, "身份证号为非法格式", Toast.LENGTH_SHORT).show();
-        } else if( mPassnersList.size()==0&&mPassnersList.size()<intTicketNum&&(custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)){
+        } else if( /*mPassnersList.size()==0&&*/mPassnersList.size()<intTicketNum&&(custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)){
             Toast.makeText(mActivity, "您还需要填写"+num+"个出游人信息", Toast.LENGTH_SHORT).show();
         } else if(mPassnersList.size()>intTicketNum&&(custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7)){
             Toast.makeText(mActivity, "您需要删除"+num1+"个出游人信息", Toast.LENGTH_SHORT).show();
@@ -610,9 +610,9 @@ public class FillInScenicOrderActivity extends Activity {
         if (custInfoLimit == 2 || custInfoLimit == 3 || custInfoLimit == 6 || custInfoLimit == 7) {
             for (int i = 0; i < mPassnersList.size(); i++) {
                 params.addBodyParameter("touristlist[" + i + "][tel]", mPassnersList.get(i).getPhone());
-                params.addBodyParameter("touristlist[" + i + "][identityNo]", mPassnersList.get(i).getIdentityno());
+                params.addBodyParameter("touristlist[" + i + "][psptId]", mPassnersList.get(i).getIdentityno());
                 params.addBodyParameter("touristlist[" + i + "][name]", mPassnersList.get(i).getName());
-                params.addBodyParameter("touristlist[" + i + "][identityType]", mPassnersList.get(i).getIdentitytype());
+                params.addBodyParameter("touristlist[" + i + "][psptType]", mPassnersList.get(i).getIdentitytype());
 
             }
         }
