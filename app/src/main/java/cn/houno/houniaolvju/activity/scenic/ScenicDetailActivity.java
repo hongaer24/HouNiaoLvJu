@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -250,6 +251,9 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             rlTopBar.setPadding(10, mStatusBarHeight + 10, 10, 10);
         }
+        WebSettings settings = wvScenicDetailInfo.getSettings();
+        //settings.setUseWideViewPort(true);
+        //settings.setLoadWithOverviewMode(true);
 
         Intent intent = getIntent();
         mId = intent.getStringExtra("scenicid");
@@ -296,7 +300,18 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         rbDdlbIng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+               /* svScenic.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        svScenic.fullScroll(svScenic.FOCUS_UP);
+                    }
+                });*/
+               // 解决切换时scroll没置顶
+                svScenic.smoothScrollTo(0,20);
+                llBookinfo.setFocusable(false);
+                wvScenicDetailInfo.setFocusable(false);
                 wvScenicDetailInfo.setVisibility(View.GONE);
+                //wvScenicDetailInfo.smoothScrollTo(0,20);
                 llBookinfo.setVisibility(View.VISIBLE);
                 vLinel.setVisibility(View.VISIBLE);
                 vLiner.setVisibility(View.GONE);
@@ -306,7 +321,17 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         rbDdlbEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /*svScenic.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        svScenic.fullScroll(svScenic.FOCUS_UP);
+                    }
+                });*/
+                svScenic.smoothScrollTo(0,20);
+                wvScenicDetailInfo.setFocusable(false);
+                llBookinfo.setFocusable(false);
                 wvScenicDetailInfo.setVisibility(View.VISIBLE);
+                //llBookinfo.setFocusable(true);
                 llBookinfo.setVisibility(View.GONE);
                 vLinel.setVisibility(View.GONE);
                 vLiner.setVisibility(View.VISIBLE);
@@ -524,6 +549,7 @@ public class ScenicDetailActivity extends FragmentActivity implements GradationS
         if (mTicketAdapter == null) {
             mTicketAdapter = new ScenicTicketAdapter(mActivity, newDataList, mTitle, mAddress);
             lvTicket.setAdapter(mTicketAdapter);
+            svScenic.smoothScrollTo(0,20);
         } else {
             mTicketAdapter.setData(mTicketList, mTitle, mAddress);
         }

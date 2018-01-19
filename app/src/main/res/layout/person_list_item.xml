@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="120dip"
+    android:layout_height="88dip"
     android:orientation="vertical"
    >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="120dip"
+        android:layout_height="87dip"
         android:layout_gravity="center">
 
         <Button
@@ -25,14 +25,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_toRightOf="@+id/person_edit_btn"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp">
+            android:paddingTop="5dp"
+            android:layout_centerVertical="true">
 
             <TextView
                 android:id="@+id/person_edit_txtv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/address_edit_btn"
                 android:text="张三"
                 android:gravity="center_vertical|left"
                 android:paddingLeft="30dp"
@@ -41,8 +40,7 @@
             <TextView
                 android:id="@+id/person_edit_txtv2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/address_edit_btn"
+                android:layout_height="wrap_content"
                 android:text="手机：18202020144"
                 android:lines="2"
                 android:gravity="center_vertical|left"
@@ -51,12 +49,12 @@
             <TextView
                 android:id="@+id/person_edit_txtv3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/address_edit_btn"
+                android:layout_height="wrap_content"
                 android:text="身份证：460103210090020001"
                 android:lines="2"
                 android:gravity="center_vertical|left"
-                android:paddingLeft="30dp" />
+                android:paddingLeft="30dp"
+                android:paddingBottom="10dp"/>
 
         </LinearLayout>
        <!-- <Button
@@ -92,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"/>
+            android:layout_marginRight="20dp"/>
 
         </RelativeLayout>
 

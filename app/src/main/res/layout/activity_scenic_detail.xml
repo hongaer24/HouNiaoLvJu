@@ -50,9 +50,12 @@
             <cn.houno.houniaolvju.view.GradationScrollView
                 android:id="@+id/sv_scenic"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:visibility="gone"
+                android:fillViewport="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:scrollbars="none">
                 <!--内容区域-->
                 <LinearLayout
@@ -344,7 +347,7 @@
                     <WebView
                         android:id="@+id/wv_scenic_detail_info"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:visibility="gone"/>
                     <!--    <View
                             android:layout_width="match_parent"

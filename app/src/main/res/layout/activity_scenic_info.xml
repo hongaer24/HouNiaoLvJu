@@ -10,7 +10,7 @@
     <RelativeLayout
         android:id="@+id/ly_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:background="@color/app_theme_green"
         android:focusable="true"
@@ -20,19 +20,18 @@
 
         <ImageView
             android:id="@+id/iv_back"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:padding="4dp"
-            android:layout_marginTop="35dp"
+            android:layout_marginTop="25dp"
             android:src="@drawable/icon_back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:paddingTop="20dp"
             android:text="景点须知"
+            android:layout_marginTop="30dp"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 

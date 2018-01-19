@@ -84,7 +84,7 @@ public class HomeScenicTicketAdapter extends BaseAdapter {
         x.image().bind(viewHolder.ivImg, mDatas.get(position).getDefaultpic(), DisplayUtil.getImageOptions());
         viewHolder.tvTitle.setText(mDatas.get(position).getScenicname().trim());
         viewHolder.tvAddress.setText(mDatas.get(position).getScenicaddress().trim());
-        MyText2Utils.formatYuanPrice(mContext, viewHolder.tvPrice, mDatas.get(position).getWebprice());
+        MyText2Utils.formatYuanPrice(mContext, viewHolder.tvPrice, mDatas.get(position).getSaleprice());
         return convertView;
     }
 

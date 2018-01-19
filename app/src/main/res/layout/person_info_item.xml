@@ -13,7 +13,6 @@
                 android:id="@+id/tv_personinfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_toRightOf="@+id/address_edit_btn"
                 android:text="张三"
                 android:gravity="center_vertical|left"
                 android:paddingLeft="30dp"

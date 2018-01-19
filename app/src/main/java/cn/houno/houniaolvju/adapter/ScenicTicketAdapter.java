@@ -103,7 +103,7 @@ public class ScenicTicketAdapter extends BaseAdapter {
         String bookTime=list.get(position).getTicketlistinfo().getBooknotice();
         String newBookTime=bookTime.substring(7,9);
         viewHolder.title.setText(title);
-        viewHolder.bookTime.setText("当天"+newBookTime+"前可预订当日票");
+        viewHolder.bookTime.setText("当天"+newBookTime+"点前可预订当日票");
        /* if (!TextUtils.isEmpty(title)) {
             if (viewHolder.ivHead.getVisibility() == View.GONE) {
                 viewHolder.ivHead.setVisibility(View.VISIBLE);

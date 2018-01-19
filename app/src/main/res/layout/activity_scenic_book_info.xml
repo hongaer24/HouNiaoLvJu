@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/ly_top_bar"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="60dp"
         android:layout_alignParentTop="true"
         android:background="@color/app_theme_green"
         android:focusable="true"
@@ -18,18 +18,19 @@
 
         <ImageView
             android:id="@+id/iv_back"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="25dp"
             android:layout_alignParentLeft="true"
-            android:padding="10dp"
+            android:padding="4dp"
             android:src="@drawable/icon_back"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:text="预订须知"
+            android:layout_marginTop="30dp"
             android:textColor="#ffffff"
             android:textSize="18sp"/>
 

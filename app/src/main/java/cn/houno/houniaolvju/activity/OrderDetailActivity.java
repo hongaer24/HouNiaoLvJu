@@ -137,7 +137,9 @@ public class  OrderDetailActivity extends Activity {
             }
         }else if (type.equals("ydhotel")){
             price = intent.getDoubleExtra("price", 0)+"";
-        }else {
+        }else if(type.equals("tuniuscenic")){
+            mprice=intent.getStringExtra("mprice");
+        } else  {
           /*  if(getIntent()!=null&&getIntent().getStringExtra("price")!=null){
                 mprice=intent.getStringExtra("price");
                 tvPrice.setText(mprice + "元");
@@ -146,12 +148,11 @@ public class  OrderDetailActivity extends Activity {
             mprice=intent.getStringExtra("mprice");
             price=intent.getIntExtra("price",0)+"";
         }
-
         tvOrder.setText(orderno);
         tvTitle.setText(title);
         if (getIntent() != null && getIntent().getStringExtra("mprice") != null) {
-
             tvPrice.setText(mprice + "元");
+
         } else if (getIntent() != null && getIntent().getIntExtra("price", 0) > 0) {
             tvPrice.setText(price + "元");
         }

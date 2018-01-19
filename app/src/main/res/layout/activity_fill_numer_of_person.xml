@@ -62,9 +62,10 @@
         <TextView
             android:id="@+id/tv_title_person"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:padding="12dp"
+            android:layout_height="48dp"
+            android:padding="15dp"
             android:layout_gravity="center"
+            android:layout_centerVertical="true"
             android:text="您还需选择1个出游人（0/0）"
             android:background="#dcdbdb"/>
         <View

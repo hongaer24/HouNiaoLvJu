@@ -654,7 +654,7 @@ public class FillInScenicOrderActivity extends Activity {
                         Log.i("0101", "result===" + obj.getString("orderno"));
                         Intent intent = new Intent();
                         intent.putExtra("type", "tuniuscenic");
-                        intent.putExtra("price", allPrice);
+                        intent.putExtra("mprice", price * intTicketNum + "");
                         intent.putExtra("orderno", obj.getString("orderno"));
                         intent.putExtra("title", mScenicTitle + " - " + mTicketTitle);
                         intent.setClass(mActivity, OrderDetailActivity.class);
